@@ -1,0 +1,160 @@
+<!-- HTML5 DOCUMENT -->
+
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+        <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <link href="css/one.css" rel="stylesheet" type="text/css"/>
+        <link href="static/css/template/index.css" rel="stylesheet" type="text/css" media="all" />
+        <style>
+.settingTr {
+	height: 45px;
+	border: none;
+	width: 100%;
+	font-size: 16px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e2e4ea;
+}
+
+.round table tbody tr td{
+	padding: 15px 0;
+}
+
+.round table tbody tr td:nth-child(1) {
+	text-align: right;
+}
+
+.round table tbody tr td:nth-child(2) {
+	text-align: left;
+	text-indent: 20px;
+}
+.cardexplain{
+	position:absolute;
+	height:80%;
+	overflow-y: auto;
+	width: 100%;
+}
+
+</style>
+<script type="text/javascript">
+	
+</script>
+    </head>
+    <body>
+    	<script type="text/javascript" src="js/index_head.js?_show_search=0&_show_left_menu=1" id="index_head_js"></script>
+    
+    	<form id="fm" method="post">
+		<div style="height:5px;width:100%;background-color:#f6f5fa;">&nbsp;</div>
+		<div class="cardexplain" >
+			<ul class="round" style="margin-top:-55px;border: none;">
+				<table id="tb_query">
+					<tr class="settingTr"  url="ldReport.html" id="10563021" style="display: none;">
+						<td><img src="images/p1.png" style="width: 30px;height: 30px;"></img></td>
+		                 <td>
+			                    <li class="nob">
+			                        	留档榜(留电数量排行)
+			                    </li>	    
+			            </td>
+					</tr>
+					<tr class="settingTr"  url="ddReport.html" id="10563022" style="display: none;">
+						<td><img src="images/p2.png" style="width: 30px;height: 30px;"></img></td>
+		                 <td>
+			                    <li class="nob">
+			                        	到店榜(到店、邀约排行)
+			                    </li>	    
+			            </td>
+					</tr>
+					<tr class="settingTr"  url="gjReport.html" id="10563023" style="display: none;">
+						<td><img src="images/p3.png" style="width: 30px;height: 30px;"></img></td>
+		                 <td>
+			                    <li class="nob">
+			                        	勤奋榜(跟进数量排行)
+			                    </li>	    
+			            </td>
+					</tr>
+					<tr class="settingTr"  url="orderReport.html" id="10563024" style="display: none;">
+						<td><img src="images/p1.png" style="width: 30px;height: 30px;"></img></td>
+		                 <td>
+			                    <li class="nob">
+			                        	英雄榜(订单、实销排行)
+			                    </li>	    
+			            </td>
+					</tr>
+					<tr class="settingTr" url="complaintReport.html" id="10563001" style="display: none;">
+					<td><img src="images/p2.png" style="width: 30px;height: 30px;"></img></td>
+						<td width="85%">
+							<li class="nob">
+								投诉单报表
+							</li>
+						</td>
+					</tr>
+					<tr class="settingTr" url="followToday.html" id="10563015" style="display: none;">
+					<td><img src="images/p3.png" style="width: 30px;height: 30px;"></img></td>
+						<td width="85%">
+							<li class="nob">
+								今日待跟进报表
+							</li>
+						</td>
+					</tr>
+					<tr class="settingTr"  url="First_followUp.html" id="10563020" style="display: none;">
+						<td><img src="images/p1.png" style="width: 30px;height: 30px;"></img></td>
+		                 <td>
+			                    <li class="nob">
+			                        	首次跟进报表(车厂下发)
+			                    </li>	    
+			            </td>
+					</tr>
+					<tr class="settingTr"  url="zbReport.html" id="10563025" style="display: none;">
+						<td><img src="images/p2.png" style="width: 30px;height: 30px;"></img></td>
+						<td>
+							<li class="nob">
+								战败报表
+							</li>
+						</td>
+					</tr>
+					<tr class="settingTr"  url="khyx.html" id="10563026" style="display: none;">
+						<td><img src="images/p3.png" style="width: 30px;height: 30px;"></img></td>
+		                 <td>
+			                    <li class="nob">
+			                        	客户意向报表
+			                    </li>	    
+			            </td>
+					</tr>
+					<tr class="settingTr"  url="khly.html" id="10563027" style="display: none;">
+						<td><img src="images/p1.png" style="width: 30px;height: 30px;"></img></td>
+		                 <td>
+			                    <li class="nob">
+			                        	客户来源分析
+			                    </li>	    
+			            </td>
+					</tr>
+				</table>
+			</ul>
+			<div style="height: 50px;"></div>
+		</div>
+	</form>
+    <script type="text/javascript" src="js/index_bottom.js?_active_url=report_list.html" id="index_buttom_js"></script>
+	</body>
+<script type="text/javascript">
+var dealerShortName = "";
+$(document).ready(function() {
+	//加载菜单
+	_loadMenu("105630");
+	
+	mui("#tb_query").on("tap",".settingTr",function(){
+		var url = this.getAttribute("url");
+		ToUrl(url+"?dealerName="+dealerShortName);
+	});
+	
+//	var IS_MANAGER = getLocalStorage("IS_MANAGER");
+//	if (IS_MANAGER == 10041001) {//销售经理
+//		$("#10563022").attr("url","ddReport.html");
+//	} else {
+//		$("#10563022").attr("url","ddgwreport.html");
+//	}
+});
+</script>
+</html>	

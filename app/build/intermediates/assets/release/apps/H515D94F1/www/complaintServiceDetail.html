@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>投诉单明细</title>
+<style type="text/css">
+	.tarea {
+		font-size: 14px/1.5 Microsoft YaHei, Helvitica, Verdana, Arial, san-serif;
+		color: #676767;
+		width: 95%;
+	}
+</style>
+</head>
+<body onLoad="_loadData();" onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=投诉单明细&_is_loading=1" id="detail_head_js"></script>
+	<form method="post" id="fm">
+		<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+			<script>
+				var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+				document.write(isAndroid > -1 ? "<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>"
+								: "<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+			</script>
+		</div>
+		<div id="_showLoading"></div>
+		<div class="cardexplain" id="_showContent">
+			<ul class="round">
+				<form action="javascript:;" method="post">
+					<li class="title mb">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td align="center"  nowrap="nowrap">
+									<span id="show1" style="bgcolor:#14387c;color:blue" ><a  onclick="showOrHidden(1);">请求</a></span>
+								</td>
+								<td align="center"  nowrap="nowrap">
+									<span id="show2" style="bgcolor:#14387c" ><a  onclick="showOrHidden(2);">客户</a></span>
+								</td>
+								<td align="center"  nowrap="nowrap">
+									<span id="show3" style="bgcolor:#14387c" ><a  onclick="showOrHidden(3);">工单</a></span>
+								</td>
+								<td align="center" width="35%" nowrap="nowrap">
+									<span id="show4" style="bgcolor:#14387c" ><a  onclick="queryCommnucation();">沟通记录</a></span>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<div class="tab-pane active" id="panel-1">
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>服务请求编号</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="SR_NUM" name="SR_NUM">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%" >
+								<tr class="biaoge">
+									<td>
+										服务请求级别
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="SR_SEV_CD" name="SR_SEV_CD">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										服务请求状态
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="SR_STAT_ID" name="SR_STAT_ID">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										被投诉经销代码
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="OU_NUM" name="OU_NUM">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										被投诉经销名称
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="OU_NAME" name="OU_NAME">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										一级来源
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly"   id="SOURCE_TYPE_CD" name="SOURCE_TYPE_CD">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										二级来源
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="SR_ERR_SRC_CD" name="SR_ERR_SRC_CD">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										一级类型
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="SR_CAT_TYPE_CD" name="SR_CAT_TYPE_CD">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										二级类型
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly"  id="SR_SUBTYPE_CD" name="SR_SUBTYPE_CD">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										三级类型
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="SR_AREA" name="SR_AREA">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										四级类型
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="COMM_METHOD" name="COMM_METHOD">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										问题汇总
+									</td>
+									<td>
+										<!-- <textarea cols="20" rows="2" class="tarea" readonly="readonly">前几天到服务站事故车维修，现在发现有两个螺丝没有上，要求协助。</textarea> -->
+										<textarea id="SR_TITLE" name="SR_TITLE" class="pxtextarea" style=" height:99px;overflow-y:visible"  readonly="readonly"></textarea>
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										描述
+									</td>
+									<td>
+										<textarea  id="DESC_TEXT" name="DESC_TEXT"  class="pxtextarea" style=" height:99px;overflow-y:visible"  readonly="readonly"></textarea>
+									</td>
+								</tr>
+							</table>
+						</li>
+					</div>
+					<div class="tab-pane active" id="panel-2" style="display: none">
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										客户名称
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly"  id="LAST_NAME" name="LAST_NAME" >
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										移动电话
+									</td>
+									<td width="45%">
+										<input type="text" class="px"  readonly="readonly" id="CELL_PH_NUM" name="CELL_PH_NUM"></input>
+									</td>
+									<td nowrap="nowrap">
+									<img onClick="callAndSms(1);" style="margin-top:-5px;" height="21px;" src="static/img/bohao.png"></img>
+									&nbsp;
+										<img onClick="callAndSms(2);" style="margin-top:-5px;" height="21px;" src="static/img/duanxing.png"></img>
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										家庭电话
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="HOME_PH_NUM" name="HOME_PH_NUM">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										车系
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="ATTRIB41" name="ATTRIB41">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										车型
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="ATTRIB42" name="ATTRIB42">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										VIN
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="SERIAL_NUM" name="SERIAL_NUM">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										车牌号
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="X_LCNS_NUM" name="X_LCNS_NUM">
+									</td>
+								</tr>
+							</table>
+						</li>
+					</div>
+					<div class="tab-pane active" id="panel-3" style="display: none">
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										工单编号
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="WS_NUM" name="WS_NUM">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										工单状态
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="WS_STATUS" name="WS_STATUS">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										派发时间
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="ASSIGNED_DT" name="ASSIGNED_DT">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										到期时间
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="DUE_DT" name="DUE_DT">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										派发次数
+									</td>
+									<td>
+										<input type="text" class="px"  readonly="readonly" id="ASSIGNED_CNT" name="ASSIGNED_CNT">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										驳回时间
+									</td>
+									<td>
+										<input type="text" class="px" readonly="readonly" id="MOD_DT" name="MOD_DT">
+									</td>
+								</tr>
+							</table>
+						</li>
+						<li class="nob">
+							<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>
+										驳回原因
+									</td>
+									<td>
+										<textarea id="REJECT_REASON" name="REJECT_REASON" class="pxtextarea" style=" height:99px;overflow-y:visible"  readonly="readonly"></textarea>
+									</td>
+								</tr>
+							</table>
+						</li>
+					</div>
+					<!--<li class="title mb">
+						<table>
+							<tr>
+								<td>
+									<span style="bgcolor:#14387c">投诉处理</span>
+								</td>
+								<td align="right">
+								<span style="bgcolor:#14387c" >
+									<input id="submitBtn3" class="submit" value="沟通记录" type="submit" style="width: 50%" onClick="queryCommnucation();"/>
+								</span>								
+								</td>
+							</tr>
+						</table>
+							
+					</li>-->
+				</form>
+			</ul>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	_loadTcCode("3025", "EVT_STAT_CD");
+	
+	function _toUpdateOrDetailPage(id,tabType) {
+		if(tabType == "0") {
+			_toPage("communiRecordDetail.html?id="+id);
+		} else if(tabType == "1") {
+			_toPage("communiRecordDetail.html?id="+id);
+		}
+	}
+	
+	function _loadData() {
+		var wsNum = UrlParm.parm("wsNum");
+		var url = httpUrlHead + "ComplaintServiceApp/queryComplaintDetailInfo.json?wsNum=" + wsNum + "&" + httpUrlEnd;
+		makeFormCall(
+				url,
+				function(json) {
+					if (json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+						var map = json.RESULT.maps[0];
+						document.getElementById("SR_NUM").value = map.SR_NUM;
+						document.getElementById("SR_SEV_CD").value = map.SR_SEV_CD;
+						document.getElementById("SOURCE_TYPE_CD").value = map.SOURCE_TYPE_CD;
+						document.getElementById("SR_ERR_SRC_CD").value = map.SR_ERR_SRC_CD;
+						document.getElementById("SR_CAT_TYPE_CD").value = map.SR_CAT_TYPE_CD;
+						document.getElementById("SR_SUBTYPE_CD").value = map.SR_SUBTYPE_CD;
+						document.getElementById("SR_STAT_ID").value = map.SR_STAT_ID;
+						document.getElementById("OU_NUM").value = map.OU_NUM;
+						document.getElementById("OU_NAME").value = map.OU_NAME;
+						document.getElementById("SR_AREA").value = map.SR_AREA;
+						document.getElementById("COMM_METHOD").value = map.COMM_METHOD;
+						document.getElementById("SR_TITLE").value = map.SR_TITLE;
+						document.getElementById("DESC_TEXT").value = map.DESC_TEXT;
+						document.getElementById("LAST_NAME").value = map.LAST_NAME;
+						document.getElementById("CELL_PH_NUM").value = map.CELL_PH_NUM;
+						document.getElementById("HOME_PH_NUM").value = map.HOME_PH_NUM;
+						document.getElementById("ATTRIB41").value = map.ATTRIB41;
+						document.getElementById("ATTRIB42").value = map.ATTRIB42;
+						document.getElementById("SERIAL_NUM").value = map.SERIAL_NUM;
+						document.getElementById("X_LCNS_NUM").value = map.X_LCNS_NUM;
+						document.getElementById("WS_NUM").value = map.WS_NUM;
+						document.getElementById("WS_STATUS").value = map.WS_STATUS;
+						document.getElementById("ASSIGNED_DT").value = map.ASSIGNED_DT;
+						document.getElementById("DUE_DT").value = map.DUE_DT;
+						document.getElementById("ASSIGNED_CNT").value = map.ASSIGNED_CNT;
+						document.getElementById("REJECT_REASON").value = map.REJECT_REASON;
+						
+						if (map.ASSIGNED_CNT > 1) {
+							document.getElementById("MOD_DT").value = map.MOD_DT;
+						}
+						if (map.WS_STATUS == "已处理") {
+							document.getElementById("submitBtn2").setAttribute("type", "hidden");
+						}
+
+
+					//	document.getElementById("VISIT_DATE").innerHTML = visitTimeDate.getFullYear()+"-"+(visitTimeDate.getMonth()+1)+"-"+visitTimeDate.getDate();
+					//	document.getElementById("VISIT_DATE_INPUT").value = visitTimeDate.getFullYear()+"-"+(visitTimeDate.getMonth()+1)+"-"+visitTimeDate.getDate();
+					//	document.getElementById('VISIT_TIME').valueAsDate = new Date(visitTimeDate.getFullYear(), visitTimeDate.getMonth(), visitTimeDate.getDate(), (visitTimeDate.getHours()+8)%24, visitTimeDate.getMinutes());
+					//	document.getElementById('LEAVE_TIME').valueAsDate = new Date(leaveTimeDate.getFullYear(), leaveTimeDate.getMonth(), leaveTimeDate.getDate(), (leaveTimeDate.getHours()+8)%24, leaveTimeDate.getMinutes());
+						
+					//	if(map.TEST_DRIVE_TIME != null) {
+					//		var testDriveTimeDate = new Date(map.TEST_DRIVE_TIME);
+					//		document.getElementById("TEST_DRIVE_DATE").innerHTML = testDriveTimeDate.getFullYear()+"-"+(testDriveTimeDate.getMonth()+1)+"-"+testDriveTimeDate.getDate();
+					//		document.getElementById("TEST_DRIVE_TIME").value = testDriveTimeDate.getFullYear()+"-"+(testDriveTimeDate.getMonth()+1)+"-"+testDriveTimeDate.getDate();
+					//	} else {
+					//		document.getElementById("TEST_DRIVE_DATE").innerHTML = visitTimeDate.getFullYear()+"-"+(visitTimeDate.getMonth()+1)+"-"+visitTimeDate.getDate();
+					//		document.getElementById("TEST_DRIVE_TIME").value = visitTimeDate.getFullYear()+"-"+(visitTimeDate.getMonth()+1)+"-"+visitTimeDate.getDate();
+					//	}
+					}
+				}, "fm", false,true);
+		}
+	
+	function praseDate(date){
+	     var year = date.getFullYear();
+	     var month = date.getMonth()+1;    //js从0开始取 
+	     var date1 = date.getDate(); 
+	     var hour = date.getHours(); 
+	     var minutes = date.getMinutes(); 
+	     var second = date.getSeconds();
+	     return year+"-"+month+"-"+date1+" "+hour+":"+minutes +":"+second;
+	}
+
+
+		function validateForm(obValue){
+			document.getElementById("dealSub").value = obValue;
+	    }
+		
+		$("#fm").html5Validate(function() {
+	});
+		
+		function queryCommnucation() {
+			_toPage("communiRecordQuery.html?wsNum="+document.getElementById('WS_NUM').value);
+		}
+		
+		function showOrHidden(obj){
+			if (obj == 1) {
+				document.getElementById("panel-1").style.display='';
+				document.getElementById("panel-2").style.display='none';
+				document.getElementById("panel-3").style.display='none';
+				document.getElementById("show1").style.color='blue';
+				document.getElementById("show2").style.color='';
+				document.getElementById("show3").style.color='';
+			} else if (obj ==2) {
+				document.getElementById("panel-1").style.display='none';
+				document.getElementById("panel-2").style.display='';
+				document.getElementById("panel-3").style.display='none';
+				document.getElementById("show1").style.color='';
+				document.getElementById("show2").style.color='blue';
+				document.getElementById("show3").style.color='';
+			} else if (obj ==3) {
+				document.getElementById("panel-1").style.display='none';
+				document.getElementById("panel-2").style.display='none';
+				document.getElementById("panel-3").style.display='';
+				document.getElementById("show1").style.color='';
+				document.getElementById("show2").style.color='';
+				document.getElementById("show3").style.color='blue';
+			}
+		}
+		function callAndSms(obj) {
+			var cellPhNum = document.getElementById("CELL_PH_NUM").value;
+			if (obj == 1) {
+				window.location.href='tel:'+cellPhNum;
+			} else {
+				window.location.href='sms:'+cellPhNum;
+			}
+		}
+</script>
+</html>

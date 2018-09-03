@@ -1,0 +1,111 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background: #E2E2E2;
+}
+
+body {
+  background: #E2E2E2;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.login-form-wrap {
+background: url(../images/bj.jpg);
+background-size:100% 100%;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5170ad', endColorstr='#355493',GradientType=1 );
+  width: 100%;
+  height: 100%;
+  padding: 20px 45px 0 45px;
+  text-align: center;
+}
+.login-form-wrap:before {
+	background: url(../images/0vLxyVB.png);
+	background-size:82px 80px;
+	display: block;
+	content: '';
+	width: 82px;
+	height: 80px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 15px;
+}
+.login-form-wrap > h1 {
+	margin: 0 0 20px 0;
+	padding: 0;
+	font-size: 17px;
+	color: #fff;
+	font-weight: normal;
+}
+.login-form-wrap > h5 {
+  margin-top: 40px;
+}
+.login-form-wrap > h5 > a {
+	font-size: 12px;
+	color: #76d9ff;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+	width: 100%;
+	outline: none;
+	color: #fff;
+	font-weight: 400;
+	font-family: 'Lato', sans-serif;
+	cursor: pointer;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-radius: 20px;
+	height: 38px;
+	margin-top: 12px;
+	text-indent: 48px;
+	margin-bottom: 12px;
+}
+.login-form input[type="text"] {
+	background-color:#2190cd;
+	background-image: url(../images/lod1.png);
+	background-size:37px 31px;
+	background-repeat: no-repeat;
+	font-size: 17px;
+}
+.login-form input[type="password"] {	background-image: url(../images/lod2.png);background-size:37px 31px;
+	background-color:#0ea5d6;background-repeat: no-repeat;
+	font-size: 17px;
+}
+
+
+
+.login-form input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  background: #0a2b70;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0e0e0', endColorstr='#cecece',GradientType=0 );
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  padding: 11px;
+  font-size: 17px;
+  color: #fff;
+ 
+  font-weight: 700;
+ 
+}
+.login-form input[type="submit"]:hover {
+  background: #0c3488;
+}
+.login-form input[type="submit"]:active {
+  padding-top: 9px;
+  padding-bottom: 7px;
+  background: #0a2b70;
+}
+

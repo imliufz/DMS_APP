@@ -1,0 +1,628 @@
+﻿{
+    "version":  "1521120391",
+    "data":  {
+                 "baidu.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*baidu\\.com\\/from\\=.*%40%E5%BF%AB%E7%9C%8B%E6%BC%AB%E7%94%BB.*",
+                                       "appid":  "__WEAPP__603392522"
+                                   },
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*baidu\\.com\\/from\\=.*%40%E5%BF%AB%E7%9C%8B%E6%BC%AB%E7%94%BB.*",
+                                       "appid":  "H58C55D54"
+                                   },
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*shenzhouzhuanche_[0-9]+\\.apk$",
+                                       "appid":  "H58600B4E"
+                                   },
+                                   {
+                                       "t":  "r",
+                                       "r":  "^https\\:\\/\\/mobile\\.baidu\\.com\\/app\\?action\\=log\u0026logtype=click\u0026\\S+%E7%A5%9E%E5%B7%9E%E4%B8%93%E8%BD%A6",
+                                       "appid":  "H58600B4E"
+                                   },
+                                   {
+                                       "t":  "r",
+                                       "r":  "gdown\\.baidu\\.com*wangyiyoudaocidian*",
+                                       "appid":  "H56022FE5"
+                                   },
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "waimai"
+                                             ],
+                                       "appid":  "__W2A__waimai.baidu.com"
+                                   },
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*mobaidanche_[0-9]+\\.apk$",
+                                       "appid":  "__WEAPP__1168866021"
+                                   },
+                                   {
+                                       "t":  "r",
+                                       "r":  "^https\\:\\/\\/mobile\\.baidu\\.com\\/item?\\S+%E6%91%A9%E6%8B%9C%E5%8D%95%E8%BD%A6\u0026from=.*",
+                                       "appid":  "__WEAPP__1168866021"
+                                   }
+                               ],
+                 "ifeng.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*",
+                                       "appid":  "__W2A__i.ifeng.com"
+                                   }
+                               ],
+                 "qunar.com":  [
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "touch.train",
+                                                 "www",
+                                                 "touch",
+                                                 "train",
+                                                 "m",
+                                                 "flight",
+                                                 ""
+                                             ],
+                                       "appid":  "__W2A__H5E349CB7"
+                                   },
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "R:[0-9a-z.]{1,}\\/\\/qunar\\.com\\/?$"
+                                             ],
+                                       "appid":  "__W2A__H5E349CB7"
+                                   },
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "touch.train",
+                                                 "www",
+                                                 "touch",
+                                                 "train",
+                                                 "m",
+                                                 "flight",
+                                                 ""
+                                             ],
+                                       "appid":  "__W2A__m.qunar.com"
+                                   },
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "R:[0-9a-z.]{1,}\\/\\/qunar\\.com\\/?$"
+                                             ],
+                                       "appid":  "__W2A__m.qunar.com"
+                                   }
+                               ],
+                 "sohu.com":  [
+                                  {
+                                      "t":  "a",
+                                      "a":  [
+                                                "m",
+                                                "www"
+                                            ],
+                                      "appid":  "H549F25F0"
+                                  },
+                                  {
+                                      "t":  "a",
+                                      "a":  [
+                                                "m",
+                                                "www"
+                                            ],
+                                      "appid":  "__W2A__m.sohu.com"
+                                  },
+                                  {
+                                      "t":  "r",
+                                      "r":  "m.tv",
+                                      "appid":  "__W2A__m.tv.sohu.com"
+                                  },
+                                  {
+                                      "t":  "r",
+                                      "r":  ".*m\\.tv\\.sohu\\.com.*",
+                                      "appid":  "__W2A__m.tv.sohu.com"
+                                  },
+                                  {
+                                      "t":  "r",
+                                      "r":  ".*m\\.tv\\.sohu\\.com\\/v[0-9]+\\.shtml*",
+                                      "appid":  "__W2A__m.tv.sohu.com"
+                                  }
+                              ],
+                 "qq.com":  [
+                                {
+                                    "t":  "r",
+                                    "r":  ".*sj\\.qq\\.com\\/myapp.*\\.kuaikan.*",
+                                    "appid":  "__WEAPP__603392522"
+                                },
+                                {
+                                    "t":  "r",
+                                    "r":  ".*sj\\.qq\\.com\\/myapp.*\\.kuaikan.*",
+                                    "appid":  "H58C55D54"
+                                },
+                                {
+                                    "t":  "r",
+                                    "r":  ".*com\\.szzc\\.ucar\\.pilot.*",
+                                    "appid":  "H58600B4E"
+                                },
+                                {
+                                    "t":  "a",
+                                    "a":  [
+                                              "m.y",
+                                              "y",
+                                              "i.y",
+                                              "c.y"
+                                          ],
+                                    "appid":  "__W2A__m.y.qq.com"
+                                },
+                                {
+                                    "t":  "r",
+                                    "r":  ".*com\\.mobike\\.mobikeapp.*",
+                                    "appid":  "__WEAPP__1168866021"
+                                }
+                            ],
+                 "beequick.cn":  [
+                                     {
+                                         "t":  "r",
+                                         "r":  ".*",
+                                         "appid":  "__W2A__H5AE54D45"
+                                     }
+                                 ],
+                 "maizuo.com":  [
+                                    {
+                                        "t":  "r",
+                                        "r":  ".*",
+                                        "appid":  "H5A0B1958"
+                                    }
+                                ],
+                 "kuaikanmanhua.com":  [
+                                           {
+                                               "t":  "a",
+                                               "a":  [
+                                                         "www",
+                                                         "m"
+                                                     ],
+                                               "appid":  "__WEAPP__603392522"
+                                           },
+                                           {
+                                               "t":  "a",
+                                               "a":  [
+                                                         "www",
+                                                         "m"
+                                                     ],
+                                               "appid":  "H58C55D54"
+                                           }
+                                       ],
+                 "ayushan.cc":  [
+                                    {
+                                        "t":  "a",
+                                        "a":  [
+                                                  "kkmh"
+                                              ],
+                                        "appid":  "__WEAPP__603392522"
+                                    },
+                                    {
+                                        "t":  "a",
+                                        "a":  [
+                                                  "kkmh"
+                                              ],
+                                        "appid":  "H58C55D54"
+                                    }
+                                ],
+                 "eyushan.net":  [
+                                     {
+                                         "t":  "a",
+                                         "a":  [
+                                                   "kkmh"
+                                               ],
+                                         "appid":  "__WEAPP__603392522"
+                                     },
+                                     {
+                                         "t":  "a",
+                                         "a":  [
+                                                   "kkmh"
+                                               ],
+                                         "appid":  "H58C55D54"
+                                     }
+                                 ],
+                 "ifanr.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  "ifanr\\.com",
+                                       "appid":  "__W2A__www.ifanr.com"
+                                   }
+                               ],
+                 "elong.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*",
+                                       "appid":  "__W2A__m.elong.com"
+                                   }
+                               ],
+                 "edaijia.cn":  [
+                                    {
+                                        "t":  "r",
+                                        "r":  ".*",
+                                        "appid":  "__W2A__edaijia.cn"
+                                    }
+                                ],
+                 "zuche.com":  [
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "zhuanche"
+                                             ],
+                                       "appid":  "H58600B4E"
+                                   }
+                               ],
+                 "nuomi.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*",
+                                       "appid":  "__W2A__m.nuomi.com"
+                                   }
+                               ],
+                 "yidianzixun.com":  [
+                                         {
+                                             "t":  "a",
+                                             "a":  [
+                                                       "www",
+                                                       "m"
+                                                   ],
+                                             "appid":  "__W2A__www.yidianzixun.com"
+                                         }
+                                     ],
+                 "weibo.cn":  [
+                                  {
+                                      "t":  "a",
+                                      "a":  [
+                                                "",
+                                                "www",
+                                                "m",
+                                                "passport"
+                                            ],
+                                      "appid":  "__W2A__m.weibo.cn"
+                                  }
+                              ],
+                 "qiushibaike.com":  [
+                                         {
+                                             "t":  "a",
+                                             "a":  [
+                                                       "www",
+                                                       "m",
+                                                       ""
+                                                   ],
+                                             "appid":  "__W2A__qiushibaike.com"
+                                         }
+                                     ],
+                 "qidian.com":  [
+                                    {
+                                        "t":  "r",
+                                        "r":  ".*",
+                                        "appid":  "__W2A__m.qidian.com"
+                                    }
+                                ],
+                 "mafengwo.com":  [
+                                      {
+                                          "t":  "a",
+                                          "a":  [
+                                                    "www",
+                                                    "touch",
+                                                    "h5",
+                                                    "m"
+                                                ],
+                                          "appid":  "__W2A__m.mafengwo.cn"
+                                      }
+                                  ],
+                 "mafengwo.cn":  [
+                                     {
+                                         "t":  "a",
+                                         "a":  [
+                                                   "www",
+                                                   "touch",
+                                                   "h5",
+                                                   "m"
+                                               ],
+                                         "appid":  "__W2A__m.mafengwo.cn"
+                                     }
+                                 ],
+                 "baike.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*",
+                                       "appid":  "__W2A__m.baike.com"
+                                   }
+                               ],
+                 "diditaxi.com.cn":  [
+                                         {
+                                             "t":  "a",
+                                             "a":  [
+                                                       "",
+                                                       "common",
+                                                       "www",
+                                                       "m",
+                                                       "h5",
+                                                       "touch"
+                                                   ],
+                                             "appid":  "__W2A__diditaxi.cn"
+                                         }
+                                     ],
+                 "jd.com":  [
+                                {
+                                    "t":  "r",
+                                    "r":  "daojia",
+                                    "appid":  "__W2A__daojia.jd.com"
+                                },
+                                {
+                                    "t":  "r",
+                                    "r":  ".*",
+                                    "appid":  "__W2A__m.sjjd.com"
+                                }
+                            ],
+                 "meituan.com":  [
+                                     {
+                                         "t":  "r",
+                                         "r":  ".*",
+                                         "appid":  "__W2A__meituan.com"
+                                     }
+                                 ],
+                 "ele.me":  [
+                                {
+                                    "t":  "r",
+                                    "r":  ".*ele.me\\/?$",
+                                    "appid":  "__W2A__m.ele.me"
+                                },
+                                {
+                                    "t":  "r",
+                                    "r":  ".*ele.me\\/msite\\/?$",
+                                    "appid":  "__W2A__m.ele.me"
+                                },
+                                {
+                                    "t":  "r",
+                                    "r":  ".*ele.me\\/search\\/\\#\\/shop\\?keyword\\=.*",
+                                    "appid":  "__W2A__m.ele.me"
+                                }
+                            ],
+                 "daojia.com":  [
+                                    {
+                                        "t":  "a",
+                                        "a":  [
+                                                  "",
+                                                  "m",
+                                                  "www",
+                                                  "jzt"
+                                              ],
+                                        "appid":  "__W2A__m.daojia.com"
+                                    }
+                                ],
+                 "163.com":  [
+                                 {
+                                     "t":  "r",
+                                     "r":  "music",
+                                     "appid":  "__W2A__music.163.com"
+                                 }
+                             ],
+                 "ximalaya.com":  [
+                                      {
+                                          "t":  "r",
+                                          "r":  ".*",
+                                          "appid":  "__W2A__ximalaya.com"
+                                      }
+                                  ],
+                 "6.cn":  [
+                              {
+                                  "t":  "r",
+                                  "r":  ".*6\\.cn$",
+                                  "appid":  "__W2A__m.v.6.cn"
+                              },
+                              {
+                                  "t":  "r",
+                                  "r":  ".*6\\.cn\\/$",
+                                  "appid":  "__W2A__m.v.6.cn"
+                              }
+                          ],
+                 "maoyan.com":  [
+                                    {
+                                        "t":  "r",
+                                        "r":  ".*",
+                                        "appid":  "__W2A__m.maoyan.com"
+                                    }
+                                ],
+                 "youdao.com":  [
+                                    {
+                                        "t":  "r",
+                                        "r":  "(m|simsent)\\.youdao\\.com(\\/)?$",
+                                        "appid":  "H56022FE5"
+                                    },
+                                    {
+                                        "t":  "r",
+                                        "r":  "m\\.youdao\\.com\\/dict\\?",
+                                        "appid":  "H56022FE5"
+                                    }
+                                ],
+                 "lashou.com":  [
+                                    {
+                                        "t":  "a",
+                                        "a":  [
+                                                  "",
+                                                  "www",
+                                                  "m",
+                                                  "h5",
+                                                  "touch"
+                                              ],
+                                        "appid":  "__W2A__m.lashou.com"
+                                    }
+                                ],
+                 "58.com":  [
+                                {
+                                    "t":  "r",
+                                    "r":  ".*",
+                                    "appid":  "__W2A__luna.58.com"
+                                }
+                            ],
+                 "mogujie.com":  [
+                                     {
+                                         "t":  "r",
+                                         "r":  ".*mogujie\\.com$",
+                                         "appid":  "__W2A__H5F4563E8"
+                                     },
+                                     {
+                                         "t":  "r",
+                                         "r":  ".*mogujie\\.com\\/$",
+                                         "appid":  "__W2A__H5F4563E8"
+                                     }
+                                 ],
+                 "tianya.cn":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*",
+                                       "appid":  "__W2A__www.tianya.cn"
+                                   }
+                               ],
+                 "dangdang.com":  [
+                                      {
+                                          "t":  "r",
+                                          "r":  ".*",
+                                          "appid":  "__W2A__m.dangdang.com"
+                                      }
+                                  ],
+                 "nicaifu.com":  [
+                                     {
+                                         "t":  "r",
+                                         "r":  ".*nicaifu\\.com$",
+                                         "appid":  "H5EA885FD"
+                                     },
+                                     {
+                                         "t":  "r",
+                                         "r":  ".*",
+                                         "appid":  "H5EA885FD"
+                                     }
+                                 ],
+                 "zhangyue.com":  [
+                                      {
+                                          "t":  "a",
+                                          "a":  [
+                                                    "",
+                                                    "www",
+                                                    "m"
+                                                ],
+                                          "appid":  "__W2A__m.ireader.com"
+                                      }
+                                  ],
+                 "yhd.com":  [
+                                 {
+                                     "t":  "r",
+                                     "r":  ".*yhd\\.com$",
+                                     "appid":  "__W2A__m.yhd.com"
+                                 },
+                                 {
+                                     "t":  "r",
+                                     "r":  ".*",
+                                     "appid":  "__W2A__m.yhd.com"
+                                 }
+                             ],
+                 "iqiyi.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*iqiyi\\.com$",
+                                       "appid":  "__W2A__m.iqiyi.com"
+                                   },
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "www",
+                                                 "touch",
+                                                 "h5",
+                                                 "m",
+                                                 "wenxue",
+                                                 "piao",
+                                                 "mall"
+                                             ],
+                                       "appid":  "__W2A__m.iqiyi.com"
+                                   },
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*\\/v\\_.*\\.html.*",
+                                       "appid":  "__W2A__m.iqiyi.com"
+                                   }
+                               ],
+                 "youku.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*youku\\.com",
+                                       "appid":  "__W2A__www.youku.com"
+                                   },
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 "www",
+                                                 "h5",
+                                                 "m",
+                                                 "m.vip",
+                                                 "live",
+                                                 "tv",
+                                                 "movie",
+                                                 "zy",
+                                                 "music",
+                                                 "comic",
+                                                 "child",
+                                                 "news",
+                                                 "ent",
+                                                 "jilupian"
+                                             ],
+                                       "appid":  "__W2A__www.youku.com"
+                                   },
+                                   {
+                                       "t":  "a",
+                                       "a":  [
+                                                 ".*\\/v\\_show|video\\/id_.*"
+                                             ],
+                                       "appid":  "__W2A__www.youku.com"
+                                   }
+                               ],
+                 "vip.com":  [
+                                 {
+                                     "t":  "r",
+                                     "r":  ".*",
+                                     "appid":  "H52588A9C"
+                                 }
+                             ],
+                 "dianping.com":  [
+                                      {
+                                          "t":  "a",
+                                          "a":  [
+                                                    "",
+                                                    "www",
+                                                    "m"
+                                                ],
+                                          "appid":  "__W2A__m.dianping.com"
+                                      }
+                                  ],
+                 "myapp.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*com\\.mobike\\.mobikeapp.*",
+                                       "appid":  "__WEAPP__1168866021"
+                                   }
+                               ],
+                 "taobao.com":  [
+                                    {
+                                        "t":  "r",
+                                        "r":  ".*",
+                                        "appid":  "__W2A__m.taobao.com"
+                                    }
+                                ],
+                 "tmall.com":  [
+                                   {
+                                       "t":  "r",
+                                       "r":  ".*",
+                                       "appid":  "__W2A__m.taobao.com"
+                                   }
+                               ],
+                 "jd.hk":  [
+                               {
+                                   "t":  "r",
+                                   "r":  ".*",
+                                   "appid":  "__W2A__m.sjjd.com"
+                               }
+                           ]
+             }
+}

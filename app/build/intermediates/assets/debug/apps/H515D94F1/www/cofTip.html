@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>圈子</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+		<script type="text/javascript" src="js/xlAjax.js"></script>
+		<script type="text/javascript" src="js/xlTools.js"></script>
+		<script type="text/javascript" src="js/xlMui.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/jquery.qqFace.js"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<script src="js/cof.js"></script>
+		<!--标准mui.css-->
+		<link rel="stylesheet" type="text/css" href="css/detail_head.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			#cofBody{
+				margin-top: 40px;
+			}
+			.pl {
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				width: 100%;
+				z-index: 999;
+				display: none;
+			}
+			#cofBody{
+				position:absolute;
+				height:90%;
+				width: 100%;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+			
+			.mui-card {
+			    font-size: 14px;
+			    position: relative;
+			    overflow: hidden;
+			    margin: 10px;
+			    border-radius: 2px;
+			    background-color: #fff;
+			    background-clip: padding-box;
+			    border-bottom: 1px solid lightgray;
+			    box-shadow: none;
+			}
+			
+			div[name=showSay] {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-align-items: center;/*垂直居中*/
+				align-items: center;/*垂直居中*/
+				/*-webkit-justify-content: center;
+				justify-content: center;*/  /*横向居中*/
+				word-break:break-all;
+			}
+			
+			div[name=showSay] div{
+				display: inline;
+			}
+			
+			div[name=showSay]>div>div:first-child{
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body style="background-color: white;">
+		<script type="text/javascript" src="js/detail_head.js?_menu_name=动态&_is_loading=1" id="detail_head_js"></script>
+		<div id="cofBody"></div>
+		<br />
+		<br />
+		<br />
+		<div class="pl">
+			<table style="width: 100%;">
+				<tr style="background-color: white;border: 1px solid #e2e2e3;">
+					<td style="width: 90%;"><textarea id="content" name="content" style="height:45px;border: 1px solid green;margin-bottom: -5px;"></textarea></td>
+					<td style="width: 10%;"><img ico src="images/biaoqing.png" style="margin-left:2px;cursor:pointer;width: 22px;height: 22px;margin-bottom: -5px;" id="emotion" name="emotion"></td>
+					<td style="width: 10%;"><img ico src="images/huifu.png" style="margin-left:2px;cursor:pointer;width: 22px;height: 22px;margin-bottom: -5px;" id="submitReply" name="submitReply"></td>
+				</tr>
+				<tr style="background-color: white; display: none;border: none;" id="faceTr">
+					<td colspan="3"><textarea id="faceContent" name="faceContent" style="border: none;"></textarea></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript">
+		autoTextarea(document.getElementById("content"),"");
+		var loginName = "";
+		var loginId = "";
+		var reportIsLoading = false;
+		var IS_MANAGER = getLocalStorage("IS_MANAGER");
+		$(document).ready(function() {
+			//查询新回复
+			var url = httpUrlHead + "PotcusAchieveService/queryNewReply.json?" + httpUrlEnd;
+			makeFormCall(url,function(json){
+				var tipNum = parseInt(json.tipNum);
+				if ( tipNum > 0 ){
+					$("#tipSpan").html(tipNum);
+					$("#tipDiv").show();
+				}
+			},null,false);
+			//查询圈子
+			queryCof();
+			//新回复提醒按钮事件
+			$("#tipBtn").click(function(){
+				ToUrl("cofTip.html");
+			});
+		});
+		
+		function queryCof(){
+			reportIsLoading = true;
+			var isFirstLoading = true;
+			var publishType = $("#publishType").val();
+			var roleType= $("#roleType").val();
+			var url = httpUrlHead + "PotcusAchieveService/queryCof.json?isTip=1&" + httpUrlEnd;
+			makeFormCall(url,function(json){
+				loginName = json.loginName;
+				loginId = json.loginId;
+				$("._nextLoad").remove();
+				makeCof(json);
+				reportIsLoading = false;
+			},null,isFirstLoading,true);
+		}
+		
+		function makeCof(json){
+			var appendHtml = "";
+			for (var i=0;i<json.cofList.length;i++){
+				appendHtml += '<div class="mui-card" style="margin-bottom: 15px;">';
+				if( json.cofList[i].TYPE == "2"){//主动发布
+					appendHtml += '<dl><dt><a href="javascript:;">'+json.cofList[i].NAME+'：</a></dt>';
+				}else{//跟进自动发布
+					appendHtml += '<dl><dt><a href="javascript:;">'+json.cofList[i].NAME+'：</a><span>'+json.cofList[i].PROM_WAY+'</span></dt>';
+				}
+				if( json.cofList[i].TYPE != "2"){
+					if( loginId == json.cofList[i].SALES_CONSULTANT_ID || IS_MANAGER == 10041001 ){//本人或者本店经理才能查看客户明细
+						var tabType = "1";
+						if( json.cofList[i].TYPE == "3"){
+							tabType = "2";
+						}
+						appendHtml += '<dd><span>客户：</span><span><a href="javascript:ToUrl('+"\'potcusDetail.html?tabType="+tabType+"&id="+json.cofList[i].PT_ACHIEVE_ID+'\');">'+json.cofList[i].CUSTOMER_NAME+'</a>&nbsp;&nbsp;&nbsp;&nbsp;'+json.cofList[i].INTENT_LEVEL+'</span></dd>';
+					}else{
+						appendHtml += '<dd><span>客户：</span><span><a href="javascript:">'+json.cofList[i].CUSTOMER_NAME+'</a>&nbsp;&nbsp;&nbsp;&nbsp;'+json.cofList[i].INTENT_LEVEL+'</span></dd>';
+					}
+				}
+				if( json.cofList[i].TYPE != "2"){
+					appendHtml += '<dd><span>下次跟进：</span><span>'+json.cofList[i].NEXT_TIME+'</span></dd>';
+				}
+				if( json.cofList[i].TYPE != "2"){
+					if(IsNull(json.cofList[i].SCENE)){
+						json.cofList[i].SCENE = "-";
+					}
+					appendHtml += '<dd><span>经过情景：</span><span>'+json.cofList[i].SCENE+'</span></dd>';
+				}else{
+					var scene = json.cofList[i].SCENE;
+					scene = scene.replace(/\[(.+?)\]/g,'<img src="images/qqFace/$1.gif" border="0" />');
+					appendHtml += '<dd><span>'+scene+'</span></dd>';
+				}
+				if( json.cofList[i].TYPE != "2"){
+					appendHtml += '<dd><span>跟进结果：</span><span>'+json.cofList[i].PROM_RESULT+'</span></dd>';
+				}
+				if(parseInt(json.cofList[i].ISCLICKLIKE) > 0){//如果此条圈子点赞过就不能再点赞了
+					appendHtml += '<dd style="margin-left:40px;" id="'+json.cofList[i].ID+'" sid="'+json.cofList[i].SALES_CONSULTANT_ID+'"><span style="color:#999;display:block;width:140px;float:left;">'+json.cofList[i].CREATE_DATE+'</span><span name="showLike" isLiked="true" style="display:block;width:60px;float:left;"><img ico src="images/hrt.png" style="margin-left:2px;cursor:pointer;width: 22px;height: 22px;"><span>取消</span></span><span name="showSay" style="margin-left:8px;"><img ico src="images/msg.png" style="cursor:pointer;width: 22px;height: 22px;">评论</span></dd>';
+
+				}else{
+					appendHtml += '<dd style="margin-left:40px;" id="'+json.cofList[i].ID+'" sid="'+json.cofList[i].SALES_CONSULTANT_ID+'"><span style="color:#999;display:block;width:140px;float:left;">'+json.cofList[i].CREATE_DATE+'</span><span name="showLike" style="display:block;width:60px;float:left;"><img ico src="images/hrt_.png" style="margin-left:2px;cursor:pointer;width: 22px;height: 22px;"><span>点赞</span></span><span name="showSay" style="margin-left:8px;"><img ico src="images/msg.png" name="showSay" style="cursor:pointer;width: 22px;height: 22px;">评论</span></dd>';
+
+				}
+				appendHtml += '<dd style="background:#f2f2f2;margin-left:40px;margin-right:12px;" id="'+json.cofList[i].ID+'" sid="'+json.cofList[i].SALES_CONSULTANT_ID+'">';
+				if (json.cofList[i].LIKENAMES != null) {
+					appendHtml += '<img ico src="images/hrt.png" style="width: 22px;height: 22px;"><span style="color:#00B1F1;vertical-align: bottom;" id="'+json.cofList[i].ID+'_likeName">'+json.cofList[i].LIKENAMES+'</span>';
+				}
+				if (json.cofList[i].replyList != null && typeof(json.cofList[i].replyList) != "undefined" && json.cofList[i].replyList != "") {
+					if (json.cofList[i].LIKENAMES != null) {
+						appendHtml += '<hr style="border:none;border-bottom:1px solid lightgray;" />';
+					}
+					for (var j=0;j<json.cofList[i].replyList.length;j++){
+						var replyNames = json.cofList[i].replyList[j].REPLY_NAME.split(":");
+						var content = json.cofList[i].replyList[j].REPLY_CONTENT;
+						if(!IsNull(content)){
+							content = content.replace(/\[(.+?)\]/g,'<img src="images/qqFace/$1.gif" border="0" />');
+						} else {
+							content = "";
+						}
+						if(replyNames.length == 2){
+							appendHtml += '<div name="showSay" replyId="'+json.cofList[i].replyList[j].REPLY_ID+'"><div><div style="color:#00B1F1;">'+replyNames[0]+'</div>回复<div style="color:#00B1F1;">'+replyNames[1]+'</div><div>:'+content+'</div></div></div>';
+						}else{
+							appendHtml += '<div name="showSay" replyId="'+json.cofList[i].replyList[j].REPLY_ID+'"><div><div style="color:#00B1F1;">'+replyNames[0]+'</div><div>:'+content+'</div></div></div>';
+
+						}
+					}
+				}
+				appendHtml += '</dd></dl></div>';
+			}
+			$('#cofBody').append(appendHtml);
+			$('span[name="showSay"]').each(function(){
+				var isAddEvent = $(this).attr("isAddEvent");
+				if (isAddEvent != "1"){//未绑定过事件
+					this.addEventListener('tap', function(e){
+						showSay(e,this);
+					});
+					$(this).attr("isAddEvent","1");
+				}
+			});
+			$('div[name="showSay"]').each(function(){
+				var replyId = $(this).attr("replyId");
+				if(replyId != loginId){//非本人才能回复
+					var isAddEvent = $(this).attr("isAddEvent");
+					if (isAddEvent != "1"){//未绑定过事件
+						this.addEventListener('tap', function(e){
+							showSay(e,this);
+						});
+						$(this).attr("isAddEvent","1");
+					}
+				}
+			});
+			$('span[name="showLike"]').each(function(){
+				$(this).unbind( "click" );
+			});
+			$('span[name="showLike"]').click(function(){
+				reply("","0",this);
+			});
+		}
+		function reply(content,type,obj){ //type 0-点赞 1-回复 2-取消点赞
+			var cofId = $(obj).parent().attr("id");
+			var replyName = "";
+			var replyId = "";
+			var sid = $(obj).parent().attr("sid");//发布这个圈子的顾问id
+			var isLiked = $(obj).attr("isLiked");//是否点过赞
+			if (type == "0") {//如果是点赞 暂时屏蔽按钮点击事件
+				$(obj).unbind( "click" );
+				if (isLiked == "true"){//取消点赞
+					type = "2";
+				}
+			}else{
+				if ($(obj).is("div")) {
+					replyName = $(obj).find("div>div:first").text();
+					replyName = encodeURI(replyName.replace(":", ""));
+					replyName = encodeURI(replyName);
+					replyId = $(obj).attr("replyId");
+				}
+			}
+			var  encodContent = encodeURI(content);
+			encodContent = encodeURI(encodContent);
+			var url = httpUrlHead + "PotcusAchieveService/replyCof.json?cofId="+cofId+"&replyId="+replyId+"&sid="+sid+"&type="+type+"&content="+encodContent+"&replyName="+replyName + "&" + httpUrlEnd;
+			makeFormCall(url,function(json){
+				if ( json.RESULT.funcStatus == 1 ){
+					if (type== "1") {
+						var appendHtml = "";
+						content = content.replace(/\[(.+?)\]/g,'<img src="images/qqFace/$1.gif" border="0" />');
+						if ($(obj).is("div")) {//点击列表回复
+							var name = $(obj).find("div>div:first").text();
+							appendHtml = '<div name="showSay"><div><div style="color:#00B1F1;">'+loginName+'</div>回复<div style="color:#00B1F1;">'+name+'</div><div>:'+content+'</div></div></div>';
+							if( $(obj).parent().find("hr").length == 0 && $(obj).parent().find("span").length > 0){
+								appendHtml = '<hr style="border:none;border-bottom:1px solid lightgray;" />' + appendHtml;
+							}
+							$(obj).parent().append(appendHtml);
+						}else{
+							appendHtml = '<div name="showSay"><div><div style="color:#00B1F1;">'+loginName+'</div><div>:'+content+'</div></div></div>';
+							if( $(obj).parent().next().find("hr").length == 0 && $(obj).parent().next().find("span").length > 0){
+								appendHtml = '<hr style="border:none;border-bottom:1px solid lightgray;" />' + appendHtml;
+							}
+							$(obj).parent().next().append(appendHtml);
+						}
+					}else{
+						//点赞只能点一次
+						var isLiked = $(obj).attr("isLiked");//是否点过赞
+						if (isLiked == "true"){//取消点赞
+							$(obj).find("img").attr("src","images/hrt_.png");
+							$(obj).find("span:first").text("点赞");
+							$(obj).attr("isLiked","false");
+						}else{
+							$(obj).find("img").attr("src","images/hrt.png");
+							$(obj).find("span:first").text("取消");
+							$(obj).attr("isLiked","true");
+							if ($("#"+cofId+"_likeName").text().length > 0) {
+								$("#"+cofId+"_likeName").append(","+loginName);
+							} else {
+								var appendHtml = '<img ico src="images/hrt.png" style="width: 22px;height: 22px;"><span style="color:#00B1F1;vertical-align: bottom;" id="'+cofId+'_likeName"></span></dd>';
+								if($(obj).parent().next().find("div[name='showSay']").length){
+									appendHtml += '<hr style="border:none;border-bottom:1px solid lightgray;" />';
+								}
+								$(obj).parent().next().prepend(appendHtml);
+							}
+						}
+						if( json.returnLikeNames.length > 0 ){
+							$("#"+cofId+"_likeName").text(json.returnLikeNames);
+						}else{
+							$("#"+cofId+"_likeName").prev().remove();
+							if($("#"+cofId+"_likeName").next().is("hr")){
+								$("#"+cofId+"_likeName").next().remove();
+							}
+							$("#"+cofId+"_likeName").remove();
+						}
+						//重新绑定取消点赞的事件
+						$(obj).click(function(){
+							reply("","0",this);
+						});
+					}
+				}else{
+					//点赞失败 那么重新绑定事件
+					if (type== "0") {
+						$(obj).click(function(){
+							reply("","0",this);
+						});
+					}
+				}
+			},null,true,true)
+		}
+		
+		var curShow = "0";//是否当前线索
+		var answerType = null;//回复类型
+		function showSay(e,obj){
+       	 	answerType = obj;
+       	 	curShow = "1";
+       	 	$(".pl").show();
+       	 	setTimeout(function(){
+       	 		$("#content").focus();
+       	 	},focusTime);
+       	 	
+       	 	$('#emotion').qqFace({
+				id : 'facebox', 
+				assign:'content', 
+				parAssign:'faceTr',
+				faceAssign:'faceContent',
+				path:'images/qqFace/',	//表情存放的路径
+				topOffset:12
+			});
+		}
+		
+		$('#submitReply').click(function(){
+			var content = $('#content').val();
+			if(IsNull(content)){
+				MuiMessage("请输入内容");
+				return false;
+			}
+			reply(content,1,answerType);
+			$(".pl").hide();
+			$("#content").val("");
+		});
+		
+		$("body>*").click(function(e){
+			var clickName = $(e.target)[0].name;
+			if(clickName != "qqFaceName" && clickName != "content" && clickName != "emotion" && clickName != "submitReply"){
+				if(curShow == "0"){
+					$(".pl").hide();
+				} else {
+					curShow = "0";
+				}
+			}
+		});
+		
+		function publishCof(){
+			ToUrl("cofPublish.html");
+		}
+	</script>
+</html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<title>战败审批</title>
+    </head>
+    <style type="text/css">
+    	.addImg{
+			background-image: url(images/add.gif);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 23px 23px;
+			height: 25px;
+			width: 45px;
+    	}
+    	
+    	.addSeach{
+		    color: #fff;
+		    border-radius: 15px;
+			background-color: #10a6e2;
+		    background-image: url(images/seach.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 15px 15px;
+			height: 25px;
+			width: 25px;
+			margin-right:10px;
+			margin-top:3px;
+    	}
+    	body{font-family:Microsoft YaHei,宋体;}
+    	input[type=text],input[type=tel],input[type=number]{border:none;}
+    </style>
+    <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" onLoad="">
+    <form id="fm" method="post">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=战败审批" id="detail_head_js"></script>
+	<div style="height: 55px;display: none;" id="blankDiv"></div>
+    <input type="hidden" name="tabType" id="tabType" value="" />
+    <input type="hidden" name="id" id="id" value="" />
+    <input type="hidden" id="detailId" name="detailId" />
+	<!--普通用户登录时显示-->
+	<div class="cardexplain" id="_showContentDiv1">
+	<div id="rp" style="position: fixed;z-index: 99;background-color: #edf0f8;width: 100%;">
+		<table width="100%" id="reportTable">
+			<tr>
+				<td style="width:25%;">
+					<input   name="topBtn" id="mu1" class="button" onclick="showTabs(1);" style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="客户资料" type="button">
+				</td>
+				<td style="width:25%;">
+					<input   name="topBtn" id="mu2" class="button" onclick="showTabs(2);" style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="意向车辆" type="button">
+				</td>
+				<td style="width:25%;">
+					<input  name="topBtn" id="mu3" class="button" onclick="showTabs(3);"  style=" background-color:#edf0f8; width: 90% ;height: 30px;border: 0px;" value="其它信息" type="button" >
+				</td>
+				<td style="width:25%;">
+					<input  name="topBtn" id="mu4" class="button" onclick="showTabs(4);"  style=" background-color:#edf0f8; width: 90% ;height: 30px;border: 0px;" value="战败审批" type="button" >
+				</td>
+			</tr>
+			<tr style="height: 3px;">
+				<td id="hg1" bgcolor="#FFFF00">
+					
+				</td>
+				<td id="hg2">
+					
+				</td>
+				<td id="hg3">
+					
+				</td>
+				<td id="hg4">
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="height: 33px;width: 100%;">&nbsp;</div>
+	<div id="tabs1">
+		<ul class="round">
+		<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>客户姓名</td>
+					<td><input name="customerName" class="px" id="customerName" value="-" placeholder="请输入客户姓名" type="text" readonly="readonly"></td>
+				</tr>
+			</table>
+		</li>
+        <li >
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>客户性别</td>
+                    <td>
+                        <select name="gender" id="gender" class="download dropdown-select-nosel" disabled="disabled">
+                        	<option value="">-</option>
+                            <option value="10031001">男</option>
+                            <option value="10031002">女</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>手机号码</td>
+					<td>
+					<td>
+						<input name="contactorMobile" class="px" id="contactorMobile" style="width: 50%;display: inline;" value="-" placeholder="请输入手机号码" type="telphone" >
+						<img  height="21px;" src="static/img/bohao.png" id="callTel" ></img>
+						&nbsp;<img id="weChat" height="21px;" src="images/weChat.png" style="display: none;"></img>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>微信昵称</td>
+					<td>
+					<td>
+						<input name="weixin" class="px" id="weixin" value="-" type="text" disabled="disabled">
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="biaoge">
+				<td>意向级别</td>
+				<td>
+					<select name="intentLevel" id="intentLevel" class="download dropdown-select-nosel" disabled></select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="biaoge">
+				<td>客户生日</td>
+				<td>
+					<input type="text" id="birthDay" name="birthDay" class="px" style="border: none;" value="-" readonly="readonly"/>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>销售顾问</td>
+                    <td><input name="soldBy" class="px" id="soldBy" value="-" type="text" readonly></td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>备注</td>
+                    <td>
+                    	<textarea style="width:95%;height:100%;font:  14px/1.5 Microsoft YaHei, Helvitica, Verdana, Arial, san-serif;" rows="4" id="remark" name="remark" readonly="readonly">-</textarea>
+                    </td>
+                </tr>
+            </table>
+        </li>
+	</ul>
+	</div>
+	<div id="tabs2" style="display:none;">
+		<ul class="round">
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="biaoge">
+				<td>意向车系</td>
+				<td>
+					<select name="intentSeries" id="intentSeries" class="download dropdown-select-nosel" disabled="disabled">
+						<option value="">-</option>
+					</select>
+				</td>
+				</tr>
+			</table>
+		
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="biaoge">
+				<td>意向车型</td>
+				<td>
+					<select name="intentModel" id="intentModel" class="download dropdown-select-nosel" disabled>
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>意向配置</td>
+                    <td>
+                        <select name="intentPackage" id="intentPackage" class="download dropdown-select-nosel" disabled>
+						</select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%" >
+                <tr class="biaoge">
+                    <td>意向颜色</td>
+                    <td>
+                        <select name="color" id="color" class="download dropdown-select-nosel" disabled>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="biaoge">
+				<td>是否试乘试驾<td>
+				<td>
+                    <select name="isPersonDriveCar" id="isPersonDriveCar" class="download dropdown-select-nosel" disabled>
+                    </select>
+                </td>
+				</tr>
+			</table>
+		</li>
+		</ul>
+	</div>
+	<div id="tabs3" style="display:none;">
+		<ul class="round">
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>是否OEM来源</td>
+					<td>
+						<select name="isOem" id="isOem" class="download dropdown-select-nosel" disabled style="border:none;">
+							<option value="1">是</option>
+							<option value="2">否</option>
+						</select>
+					</td>
+					</tr>
+				</table>
+			</li>
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td id="CLUE_SOURCE_NAME">OEM客户来源</td>
+					<td>
+						<select name="CLUE_SOURCE" id="CLUE_SOURCE" class="download dropdown-select-nosel" disabled style="border:none;">
+						</select>
+					</td>
+				  </tr>
+				</table>
+			</li>
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>了解途径</td>
+					<td>
+						<select name="mediaType" id="mediaType" class="download dropdown-select-nosel" disabled>
+						</select>
+					</td>
+					</tr>
+				</table>
+			</li>
+			
+			<li class="nob" id="liExpectedDate" style="display: none;">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="">
+					<td>预计到店时间</td>
+					<td>
+						<input name="expectedDate" id="expectedDate" type="text" readonly="readonly" class="px"/>
+					</td>
+					</tr>
+				</table>
+			</li>
+			
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>渠道细分</td>
+					<td>
+						<select name="mediaDetail" id="mediaDetail" class="download dropdown-select-nosel" disabled>
+						</select>
+					</td>
+					</tr>
+				</table>
+			</li>
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr class="biaoge">
+						<td>活动代码</td>
+						<td>
+							<input name="CAMPAIGN_CODE" class="px" id="CAMPAIGN_CODE" type="text" readonly="readonly" value="-" style="border:none;" disabled="disabled">
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr class="biaoge">
+						<td>活动名称</td>
+						<td>
+							<input name="CAMPAIGN_NAME" class="px" id="CAMPAIGN_NAME" type="text" readonly="readonly" value="-" disabled="disabled">
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr class="biaoge">
+						<td>到店次数</td>
+						<td><input name="num" class="px" id="num" value="-" placeholder="" type="text" readonly="readonly"></td>
+					</tr>
+				</table>
+			</li>
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr class="biaoge">
+						<td>是否推荐购车</td>
+						<td><input name="refereeFlag" class="px" id="refereeFlag" value="-" type="text" readonly="readonly" style="border:none;"></td>
+					</tr>
+				</table>
+			</li>
+			<li class="nob" id="refereeTimeId" style="display: none;">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr class="biaoge">
+						<td>推荐购车时间</td>
+						<td><input name="refereeTime" class="px" id="refereeTime" value="-" type="text" readonly="readonly" style="border:none;"></td>
+					</tr>
+				</table>
+			</li>
+			<li class="nob">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr class="">
+						<td>是否云店线索</td>
+						<td><input name="isCloudStore" class="px" id="isCloudStore" value="-" type="text" readonly="readonly" style="border:none;"></td>
+					</tr>
+				</table>
+			</li>
+			<div id="zhanbai"  style="display: none">
+	            <li class="nob">
+	                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr class="biaoge">
+	                        <td>战败类型</td>
+	                        <td>
+	                            <select name="failType" id="failType" class="download dropdown-select-nosel" disabled="disabled">
+	                            </select>
+	                        </td>
+	                    </tr>
+	                </table>
+	            </li>
+	            <div id="zhanbaiSeries" style="display:none">
+	            </div>
+	            <div>
+		            <li class="nob">
+		                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+		                    <tr class="biaoge">
+		                        <td>战败原因</td>
+		                        <td>
+		                            <select name="failReason" id="failReason" class="download dropdown-select-nosel" disabled="disabled">
+		                            </select>
+		                        </td>
+		                    </tr>
+		                </table>
+		            </li>
+		            <li class="nob">
+		                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+		                    <tr class="biaoge">
+		                        <td>
+		                        	原因备注
+		                        </td>
+		                        <td>
+		                            <textarea name="failReasonDesc" id="failReasonDesc" class="pxtextarea" style=" height:99px;overflow-y:visible" id="info" placeholder="请输入战败原因备注" disabled="disabled">-</textarea>
+		                        </td>
+		                    </tr>
+		                </table>
+		            </li>
+		        </div>
+			</div>
+		</ul>
+	</div>
+	<div id="tabs4" style="display:none;">
+	<div style="width:100%;height:10px;background-color:white;">&nbsp;</div>
+	<ul class="round" style="display: none;" id="failCheckId">
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>审核意见</td>
+                    <td>
+                        <textarea name="checkRemark" id="checkRemark" class="pxtextarea" style=" height:99px;overflow-y:visible" id="info1" placeholder="请输入审核意见"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>审核结果<font color="red">*</font></td>
+                    <td>
+                        <select name="checkResult" id="checkResult" class="download dropdown-select" onChange="isShow(this.value)">
+                            <option value="10041001">通过</option>
+                            <option value="10041002">驳回</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob" id="choiseSales" style="display: none;">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>重选顾问<font color="red">*</font></td>
+                    <td>
+                        <select name="salesConsultantSel" id="salesConsultantSel" class="download dropdown-select" >
+                            <option value="">分配顾问</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <div class="footReturn" id="pass" style="text-align:center;">
+        	<input id="showcard" class="submit" value="审批通过" type="button"  onclick="checkZb(1)" style="width:100%;"/> 
+        </div>
+        <div class="footReturn" id="nopass" style="text-align:center;display: none;">
+			<input id="showcard" class="submit2" value="驳回再分配" type="button"  onclick="checkZb(2)" style="width:100%;"/>  
+        </div>
+	</ul>
+	<div id="gj_ls">
+		<ul class="round">
+			<table id="gjt" border="1">
+				<thead>
+					<tr style="background-color:#edf0f8;">
+						<th align="center" width="30%" style="font-size:14px;">计划日期</th>
+						<th align="center" width="30%" style="font-size:14px;">实际日期</th>
+						<th align="center" width="25%" style="font-size:14px;">促进级别</th>
+						<th align="center" width="15%" style="font-size:14px;">明细</th>
+					</tr>
+				</thead>
+				<tbody id="gjls">
+            	</tbody>
+			</table>
+		</ul>
+		<div  style="height: 30px;text-align: center;">
+			<a href="javascript:queryMoreGj();" style="text-decoration:underline;color: red;">查看更多</a>
+		</div>
+	</div>
+</div>
+</form>
+</div>
+</body>
+<script type="text/javascript">
+	var changeFlag = false;
+	var chana = "";
+	$(document).ready(function() {
+		var logonUser = JSON.parse(getLocalStorage("logonUser"));
+		chana = logonUser.chana;
+		if(IsNull(chana)){
+			MuiAlert("部分信息获取失败,请重新登录!",function(){
+				_loginOut();
+			});
+			return;
+		}
+		
+		if(chana == "80081001"){
+			//轿车
+			var zhanbaiHtml = ""+
+			"<li class='nob'>"+
+			"	<table class='kuang' border='0' cellpadding='0' cellspacing='0' width='100%'>"+
+			"		<tr class='biaoge'>"+
+			"			<td>战败品牌</td>"+
+			"			<td>"+
+			"				<select name='failBran' id='failBran' class='download dropdown-select-nosel' disabled>"+
+			"				</select>"+
+			"			</td>"+
+			"		</tr>"+
+			"	</table>"+
+			"</li>"+
+			"<li class='nob'>"+
+			"	<table class='kuang' border='0' cellpadding='0' cellspacing='0' width='100%'>"+
+			"		<tr class='biaoge'>"+
+			"			<td>战败车系</td>"+
+			"			<td>"+
+			"				<select name='failSeries' id='failSeries' class='download dropdown-select-nosel' disabled>"+
+			"				</select>"+
+			"			</td>"+
+			"		</tr>"+
+			"	</table>"+
+			"</li>";
+			$("#zhanbaiSeries").html(zhanbaiHtml);
+		} else {
+			//商车
+			$("#nextGrade").append("<option value='13101008'>O级</option>");
+			var zhanbaiHtml = ""+
+			"<li class='nob'>"+
+			"	<table class='kuang' border='0' cellpadding='0' cellspacing='0' width='100%'>"+
+			"		<tr class='biaoge'>"+
+			"			<td>战败车型</td>"+
+			"			<td>"+
+			"				<select name='failModel' id='failModel' class='download dropdown-select-nosel' disabled>"+
+			"				</select>"+
+			"			</td>"+
+			"		</tr>"+
+			"	</table>"+
+			"</li>";
+			$("#zhanbaiSeries").html(zhanbaiHtml);
+		}
+		loadData();
+		
+		var flag = UrlParm.parm("flag");
+		if(flag == "2"){
+			//战败审批
+			showTabs("4");
+			$("#failCheckId").show();
+		} else {
+			//线索明细
+			showTabs("1");
+			$("#_menu_name").html("线索明细");
+			$("#mu4").val("跟进明细");
+		}
+		$("#callTel").click(function(){
+			var id = UrlParm.parm("id");
+			var phone = $("#contactorMobile").val();
+			_setCallLog(UrlParm.parm("tabType"),id,phone);
+			window.location.href="tel:"+phone;
+		});
+	});
+	
+	//初始化数据
+	$(":input").change(function(){
+		changeFlag=true;     
+	});
+	$("select").change(function(){
+		changeFlag=true;     
+	});
+	$("textarea").change(function(){
+		changeFlag=true;     
+	});
+ 
+	function isShow(val){
+		$("#choiseSales").hide();
+		$("#pass").hide();
+		$("#nopass").hide();
+        if(val == "10041001"){
+        	$("#pass").show();
+        } else if(val == "10041002") {
+        	$("#choiseSales").show();
+        	$("#nopass").show();
+        }
+    }
+
+	function loadData(){
+		var id = UrlParm.parm("id");
+		var tabType = UrlParm.parm("tabType");
+		document.getElementById("id").value = id;
+		document.getElementById("tabType").value = tabType;
+		var url = httpUrlHead+"PotcusAchieveService/queryPotentialCustomerDetail.json?id="+id+"&tabType="+tabType+"&"+httpUrlEnd;
+		makeFormCall(url,function(json){
+			if(json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+				var map = json.RESULT.maps[0];
+				document.getElementById("detailId").value = map.DETAIL_ID;
+				document.getElementById("customerName").value = map.CUSTOMER_NAME;
+				document.getElementById("gender").value = map.GENDER;
+				document.getElementById("contactorMobile").value = map.CONTACTOR_MOBILE;
+				document.getElementById("weixin").value = map.WEIXIN;
+				document.getElementById("soldBy").value = map.SALES_CONSULTANT;
+				document.getElementById("remark").innerText = map.REMARK;
+				document.getElementById("intentLevel").add(new Option(map.INTENT_LEVEL_DESC,map.INTENT_LEVEL));
+				
+				if(!IsNull(map.BIRTHDAY)){
+					document.getElementById("birthDay").value = map.BIRTHDAY;
+				}
+				
+				var logonUser = JSON.parse(getLocalStorage("logonUser"));
+				var salesConsultantPhone = logonUser.TEL;
+				var weChatUrl = logonUser.weChatUrl;
+				if(!IsNull(map.OPEN_ID) && !IsNull(salesConsultantPhone)){
+					$("#weChat").click(function(){
+						ToUrl(weChatUrl+"?openid="+map.OPEN_ID+"&mobile="+salesConsultantPhone);
+					});
+					$("#weChat").show();
+				}
+				
+				if (map.INTENT_SERIES != null && json.seriesList != null && json.seriesList.length > 0) {
+					var intentSeries = document.getElementById("intentSeries")
+					var selIndex = -1;
+					for ( var i = 0; i < json.seriesList.length; i++) {
+						intentSeries.add(new Option(json.seriesList[i].GROUP_NAME,json.seriesList[i].GROUP_CODE));
+						if (map.INTENT_SERIES == json.seriesList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						intentSeries.options[selIndex].selected = "selected";
+					}
+				} else {
+					_loadSeries("intentSeries");
+				}
+				
+				if (map.INTENT_MODEL != null && json.modelList != null && json.modelList.length > 0) {
+					var intentModel = document.getElementById("intentModel");
+					var selIndex = -1;
+					for ( var i = 0; i < json.modelList.length; i++) {
+						intentModel.add(new Option(json.modelList[i].GROUP_NAME,json.modelList[i].GROUP_CODE));
+						if (map.INTENT_MODEL == json.modelList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						intentModel.options[selIndex].selected = "selected";
+					}
+				} else {
+					var code = document.getElementById("intentSeries").value;
+					if(code != null && code != "") {
+						_changeSMPC(code,1);						
+					}
+				}
+				
+				if (map.INTENT_PACKAGE != null && json.packageList != null && json.packageList.length > 0) {
+					var intentPackage = document.getElementById("intentPackage");
+					var selIndex = -1;
+					for ( var i = 0; i < json.packageList.length; i++) {
+						intentPackage.add(new Option(json.packageList[i].GROUP_NAME,json.packageList[i].GROUP_CODE));
+						if (map.INTENT_PACKAGE == json.packageList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						intentPackage.options[selIndex].selected = "selected";
+					}
+				} else {
+					var code = document.getElementById("intentModel").value;
+					if(code != null && code != "") {
+						_changeSMPC(code,2);						
+					}
+				}
+				
+				if (map.COLOR != null && json.colorList != null && json.colorList.length > 0) {
+					var color = document.getElementById("color");
+					var selIndex = -1;
+					for ( var i = 0; i < json.colorList.length; i++) {
+						color.add(new Option(json.colorList[i].GROUP_NAME,json.colorList[i].GROUP_CODE));
+						if (map.COLOR == json.colorList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						color.options[selIndex].selected = "selected";
+					}
+				} else {
+					var code = document.getElementById("intentPackage").value;
+					if(code != null && code != "") {
+						_changeSMPC(code,3);						
+					}
+				}
+				
+				if(map.IS_PERSON_DRIVER_CAR == "10041001") {
+					document.getElementById("isPersonDriveCar").add(new Option("是","10041001"));
+				} else {
+					document.getElementById("isPersonDriveCar").add(new Option("否","10041002"));
+				}
+				
+				if(map.MEDIA_TYPE_DESC != null) {
+					document.getElementById("mediaType").add(new Option(map.MEDIA_TYPE_DESC,map.MEDIA_TYPE));					
+				}
+				if (map.MEDIA_DETAIL_DESC != null) {
+					document.getElementById("mediaDetail").add(new Option(map.MEDIA_DETAIL_DESC,map.MEDIA_DETAIL));
+				}
+				document.getElementById("CAMPAIGN_CODE").value = map.CAMPAIGN_CODE;
+				document.getElementById("CAMPAIGN_NAME").value = map.CAMPAIGN_NAME;
+				if (map.EXPECTED_DATE != null) {
+					$("#expectedDate").val(map.EXPECTED_DATE);
+					$("#liExpectedDate").show();
+				}
+				var oSelect_isOem = document.getElementById("isOem");
+				for(var i = 0; i < oSelect_isOem.options.length; i++) {
+			    	if(oSelect_isOem.options[i].value == tabType) {
+			    		oSelect_isOem.selectedIndex = i;
+			    		break;
+			    	}
+			    }
+				
+				if(tabType == "1") {
+					if(map.CLUE_SOURCE_DESC != null) {
+						document.getElementById("CLUE_SOURCE").add(new Option(map.CLUE_SOURCE_DESC,map.CLUE_SOURCE));
+					} else {
+						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
+					}
+				} else {
+					$("#CLUE_SOURCE_NAME").html("客户来源");
+					if(map.CUS_SOURCE_DESC != null) {
+						document.getElementById("CLUE_SOURCE").add(new Option(map.CUS_SOURCE_DESC,map.CUS_SOURCE));
+					} else {
+						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
+					}
+				}
+				
+				document.getElementById("num").value = map.ARRIVE_TIMES;
+				if(json.refereeFlag == "是"){
+					document.getElementById("refereeTimeId").style.display = "";
+					document.getElementById("refereeFlag").value = "是";
+					if (!IsNull(json.refereeTime)) {
+						document.getElementById("refereeTime").value = json.refereeTime;
+					}
+				} else {
+					document.getElementById("refereeFlag").value = "否";
+				}
+				document.getElementById("isCloudStore").value = json.isCloudStore;
+				if(map.INTENT_LEVEL == "13101006" || map.INTENT_LEVEL == "13101007") {
+					$("#zhanbai").show();
+					if(chana == "80081001"){
+						if (map.FAILBRAN_NAME != null) {
+							$("#zhanbaiSeries").show();
+							document.getElementById("failBran").add(new Option(map.FAILBRAN_NAME,map.FAIL_SERIES_ID));
+						}
+						if(map.FAILSER_NAME != null) {
+							document.getElementById("failSeries").add(new Option(map.FAILSER_NAME,map.FAIL_SERIES_ID));					
+						}
+					} else {
+						if(map.FAIL_MODEL != null) {
+							$("#zhanbaiSeries").show();
+							document.getElementById("failModel").add(new Option(map.FAIL_MODEL_DESC,map.FAIL_MODEL));					
+						}
+					}
+					if (map.FAIL_REASON_DESC != null) {
+						document.getElementById("failReason").add(new Option(map.FAIL_REASON_DESC,map.FAIL_REASON));
+					}
+					if (map.FAIL_DESCRIPTION != null) {
+						$("#failReasonDesc").html(map.FAIL_DESCRIPTION);
+					}
+				}
+				
+				//加载首次展厅记录
+				if(json.visitings != null && json.visitings.length > 0) {
+					var visiting = json.visitings[0];
+					var scene = "-";
+					if(!IsNull(visiting.SCENE)){
+						scene = visiting.SCENE;
+						rLen = getStringRealLen(scene);
+					}
+					var sceneRow = parseInt(rLen / 26);
+					if( sceneRow != 0){
+						sceneRow++;
+					}
+					
+					var appendHtml = ''+
+					'<tr style="background-color: #e5f8ff;">'+
+					'<td align="center">-</td>'+
+					'<td align="center">'+visiting.VISIT_TIME_STR+'</td>'+
+					'<td align="center">'+visiting.INTENT_LEVEL_STR+'</td>'+
+					'<td align="right" style="vertical-align:top"><div class="addSeach" onclick="ToUrl(\'hallReceptionDetail.html?id='+visiting.ITEM_ID+'\');"></div></td>'+
+					'</tr>'+
+					'<tr>'+
+						'<td colspan="4">'+
+							'<textarea style="width:95%;height:100%;" rows="'+sceneRow+'" readonly="readonly">'+scene+'</textarea>'+
+						'</td>'+
+					'</tr>';
+					$("#gjls").append(appendHtml);
+				}
+				
+				//加载跟进历史数据
+				if(json.details != null && json.details.length > 0) {
+					for(var i = 0; i < json.details.length;i++) {
+						var detail = json.details[i];
+						var scene = "-";
+						var rLen = 0;
+						if(!IsNull(detail.SCENE)){
+							scene = detail.SCENE;
+							rLen = getStringRealLen(scene);
+						}
+						var sceneRow = parseInt(rLen / 26);
+						if( sceneRow != 0){
+							sceneRow++;
+						}
+						if(IsNull(detail.SCHEDULE_DATE_STR)){
+							detail.SCHEDULE_DATE_STR = detail.ACTION_DATE_STR;
+						}
+						var appendHtml = ''+
+						'<tr style="background-color: #e5f8ff;">'+
+						'<td align="center">'+detail.SCHEDULE_DATE_STR+'</td>'+
+						'<td align="center">'+detail.ACTION_DATE_STR+'</td>'+
+						'<td align="center">'+detail.NEXT_GRADE_DESC+'</td>'+
+						'<td align="right" style="vertical-align:top"><div class="addSeach" onclick="showFollowDetail('+detail.ID+','+tabType+')"></div></td>'+
+						'</tr>'+
+						'<tr>'+
+							'<td colspan="4">'+
+								'<textarea style="width:95%;height:100%;" rows="'+sceneRow+'" readonly="readonly">'+scene+'</textarea>'+
+							'</td>'+
+						'</tr>';
+						$("#gjls").append(appendHtml);
+					}
+				}
+				//加载销售顾问
+				var logonUser = JSON.parse(getLocalStorage("logonUser"));
+				var salesConsultant = logonUser.salesConsultant.split(",");
+				if(salesConsultant != null && salesConsultant.length > 0) {
+					for(var i = 0;i < salesConsultant.length;i++) {
+						var name = salesConsultant[i].replace(/\'/g,"");
+						document.getElementById("salesConsultantSel").add(new Option(name,name));
+					}
+					document.getElementById("salesConsultantSel").value = map.SALES_CONSULTANT;
+				}
+			}
+		},"fm",false,true);
+	}
+    
+    function showFollowDetail(id,tabType){
+    	ToUrl("potcusFollowDetail.html?id="+id+"&tabType="+tabType);
+    }
+    
+    function checkZb(checkStatus){
+		var salesConsultantSel = document.getElementById("salesConsultantSel").value; 
+		if(checkStatus == 2 && salesConsultantSel == "") {
+			MuiAlert("请选择驳回到哪个销售顾问");
+			return;
+		}
+		var queryUrl = httpUrlHead+"PotcusAchieveService/queryDmsOrderStatus.json?"+httpUrlEnd;
+		makeFormCall(queryUrl, function(json){
+	        		var orderStatus = json.orderStatus;
+	        		if( orderStatus == "1"){
+	        			MuiAlert("请先到店面系统取消订单，并于2小时后再操作");
+	        			return;
+	        		}else{
+	        			MuiConfirm("确定审核?",function(e){
+				    		if(e.index == 0 ){
+				    			var url = httpUrlHead+"PotcusAchieveService/potentialCustomerFailCheck.json?checkStatus="+checkStatus+"&"+httpUrlEnd;;
+								makeFormCall(url, function(json){
+									MuiAlert("操作成功!",function(){
+										_toBack("zbsp_list.html")
+									});
+								}, "fm",true);
+						    }
+						});
+	        		}
+	        	}, "fm",true);
+	}
+    
+    function showTabs(val){
+    	if(val == "1"){
+    		$("#tabs1").show();
+    		$("#tabs2").hide();
+    		$("#tabs3").hide();
+    		$("#tabs4").hide();
+    		$("#hg1").attr("bgcolor","#FFFF00");
+    		$("#hg2").attr("bgcolor","");
+    		$("#hg3").attr("bgcolor","");
+    		$("#hg4").attr("bgcolor","");
+    	} else if(val == "2") {
+    		$("#tabs1").hide();
+    		$("#tabs2").show();
+    		$("#tabs3").hide();
+    		$("#tabs4").hide();
+    		$("#hg1").attr("bgcolor","");
+    		$("#hg2").attr("bgcolor","#FFFF00");
+    		$("#hg3").attr("bgcolor","");
+    		$("#hg4").attr("bgcolor","");
+    	} else if(val == "3") {
+    		$("#tabs1").hide();
+    		$("#tabs2").hide();
+    		$("#tabs3").show();
+    		$("#tabs4").hide();
+    		$("#hg1").attr("bgcolor","");
+    		$("#hg2").attr("bgcolor","");
+    		$("#hg3").attr("bgcolor","#FFFF00");
+    		$("#hg4").attr("bgcolor","");
+    	} else if(val == "4"){
+    		$("#tabs1").hide();
+    		$("#tabs2").hide();
+    		$("#tabs3").hide();
+    		$("#tabs4").show();
+    		$("#hg1").attr("bgcolor","");
+    		$("#hg2").attr("bgcolor","");
+    		$("#hg3").attr("bgcolor","");
+    		$("#hg4").attr("bgcolor","#FFFF00");
+    	}
+    }
+    function getStringRealLen(str){
+    		var rLen = 0;
+    		for (var i=0;i<str.length;i++){
+    			if((str.charCodeAt(i) & 0xff00) != 0){
+    				rLen++;
+    			}
+    			rLen++;
+    		}
+    		return rLen;
+    }
+    function queryMoreGj(){
+    	var id = document.getElementById("id").value;
+    	var tabType = document.getElementById("tabType").value;
+    	var mobilePhone = document.getElementById("contactorMobile").value;
+		_toPage("moreGjDetail.html?id="+id+"&tabType="+tabType+"&mobilePhone="+mobilePhone);
+    }
+</script>
+</html>

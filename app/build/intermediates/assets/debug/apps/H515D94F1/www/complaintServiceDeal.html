@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<script type="text/javascript" src="js/clpage.js"></script>
+<title>投诉单处理</title>
+<style type="text/css">
+	.weimob-list-item-line_60 {
+		display: table-cell;
+		height: inherit;
+		background-position: center;
+		background-repeat: no-repeat;
+		padding-left: 60px;
+		vertical-align: middle;
+		padding-right: 32px;
+	}
+	.weimob-list-item-line_60 {
+		display: block;
+		height: 60px;
+		margin-top: 1px;
+		overflow: hidden;
+	}
+	.weimob-list-itemgreen_60 {
+		position: relative;
+		display: block;
+		height: 68px;
+		width: 100%;
+		background-image: -webkit-gradient(linear, left top, left bottom, from( #fff ), to( #CEFFCE ));
+		background-image: -webkit-linear-gradient( #fff , #CEFFCE );
+		background-image: -moz-linear-gradient( #fff , #CEFFCE );
+		background-image: -ms-linear-gradient( #fff , #CEFFCE );
+		background-image: -o-linear-gradient( #fff , #CEFFCE );
+		background-image: linear-gradient( #fff , #CEFFCE );
+		overflow: hidden;
+		border-bottom: 1px solid #ccc;
+	}
+	.weimob-list-itemgreen_60 {
+		height: 60px;
+	}
+</style>
+</head>
+<body onLoad="_loadData();" onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=投诉单处理" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		<div class="cardexplain">
+			<ul class="round">
+				<table id="tb_query">
+					<tr class="biaoge">
+						<td>服务请求号</td>
+						<td>
+							<li class="nob">
+								<input type="text" id="SR_NUM" name="SR_NUM" value="" placeholder="服务请求号" class="px" />
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge">
+						<td>服务请求级别</td>
+						<td>
+							<li class="nob">
+								<select id="SR_SEV_CD" name="SR_SEV_CD" class="download dropdown-select"  search="show" >
+									<option value="">请选择</option>
+								</select>
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge">
+						<td>服务请求类型</td>
+						<td>
+							<li class="nob">
+								<select id="SR_SUBTYPE_CD" name="SR_SUBTYPE_CD" class="download dropdown-select"  search="show" >
+									<option value="">请选择</option>
+								</select>
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge">
+						<td>工单编号</td>
+						<td>
+							<li class="nob">
+								<input type="text" id="WS_NUM" name="WS_NUM" value="" placeholder="工单编号" class="px" />
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge">
+						<td>工单状态</td>
+						<td>
+							<li class="nob">
+								<select id="WS_STATUS" name="WS_STATUS" class="download dropdown-select"  defaultValue="30231001" search="show" >
+									<option value="">请选择</option>
+								</select>
+							</li>
+						</td>
+					</tr>
+					<tr>
+					<tr class="biaoge">
+						<td>客户姓名</td>
+						<td>
+							<li class="nob">
+									<input type="text" id="LAST_NAME" name="LAST_NAME" value="" placeholder="客户姓名" class="px" />
+							</li>
+						</td>
+					</tr>
+					<tr>
+					<tr class="biaoge">
+						<td>客户电话</td>
+						<td>
+							<li class="nob">
+									<input type="text" id="CELL_PH_NUM" name="CELL_PH_NUM" value="" placeholder="客户电话" class="px" />
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge">
+					<td>派发时间起</td>
+					<td>
+						<li class="nob">
+							<input name="ASSIGNED_DT1" id="ASSIGNED_DT1" value="" type="date" class="px"  placeholder="派发时间起" />
+																<input type="hidden" id="OU_NAME" name="OU_NAME" value="" />
+                        </li>
+					</td>
+				</tr>
+				<tr class="biaoge">
+					<td>派发时间止</td>
+					<td>
+						<li class="nob">
+							<input name="ASSIGNED_DT2" id="ASSIGNED_DT2" value="" type="date" class="px"  placeholder="派发时间止" />
+                        </li>
+					</td>
+				</tr>
+					<tr>
+						<td colspan="2" align="center" height="60">
+							<li class="nob">
+								<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="queryComSer();">
+								<input id="returnStatus"   type="hidden" >
+								<input id=indexStatus   type="hidden" >
+								<input id=dueDt   type="hidden" >
+							</li>
+						</td>
+					</tr>
+				</table>
+				<li class="shouqu"  id="txt_query" onClick="_showQuery();">收起</li>
+			</ul>
+			<!-- <ul class="round">
+				<table class="bordered">
+					<thead>
+					<tr class="biaoge">
+						<th width="13%">服务请求编号</th>
+						<th width="12%">服务请求级别</th>
+						<th width="12%">服务请求状态</th>
+						<th width="12%">服务请求类型</th>
+						<th width="12%">工单状态</th>
+						<th width="13%">派发时间</th>
+						<th width="13%">到期时间</th>
+						<th width="13%">操作</th>
+					</tr>
+					</thead>
+					<tr>
+						<th width="13%">2-141118006</th>
+						<th width="12%">一般</th>
+						<th width="12%">处理中</th>
+						<th width="12%">服务</th>
+						<th width="12%">已处理</th>
+						<th width="13%">2016-04-01 16:10:04</th>
+						<th width="13%">2016-04-04 16:10:02</th>
+						<th width="13%"><a href="complaintServiceModify.html">处理</a></th>
+					</tr>
+				</table>
+			</ul> -->
+		</div>
+		<div id="tabList">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	_loadTcCode("3020", "3022", "3023","SR_SEV_CD", "SR_SUBTYPE_CD", "WS_STATUS");
+	
+	function _loadData() {
+		var wsStatus = UrlParm.parm("WS_STATUS");
+		var indexStatus = UrlParm.parm("index_status");
+		if (wsStatus) {
+			document.getElementById("returnStatus").value  = 1;
+			if (indexStatus) {
+				document.getElementById("indexStatus").value  = 1;
+			} else {
+				document.getElementById("indexStatus").value  = 0;
+			}
+
+			var dueDt = UrlParm.parm("DUE_DT");
+			document.getElementById("dueDt").value  = dueDt;
+			_showQuery(1);
+			var url = httpUrlHead + "ComplaintServiceApp/queryComplaintDealList.json?WS_STATUS="+wsStatus+"&DUE_DT="+dueDt+"&"+ httpUrlEnd;
+			_complaint_query(url, "fm", false, '处理', false, "_toUpdateOrDetailPage", "_toUpdateOrDetailPage","WS_NUM","SR_SEV_CD","LAST_NAME","WS_STATUS","ASSIGNED_DT","DUE_DT","CELL_PH_NUM");
+		
+		}
+	}
+	
+	function queryComSer() {
+		_showQuery(1);
+		var url = httpUrlHead + "ComplaintServiceApp/queryComplaintDealList.json?" + httpUrlEnd;
+		_complaint_query(url, "fm", false, '处理', false, "_toUpdateOrDetailPage", "_toUpdateOrDetailPage","WS_NUM","SR_SEV_CD","LAST_NAME","WS_STATUS","ASSIGNED_DT","DUE_DT","CELL_PH_NUM");
+	}
+	function _toUpdateOrDetailPage(wsNum,opType) {
+		var returnStatus = document.getElementById("returnStatus").value;
+		var indexStatus = document.getElementById("indexStatus").value;
+		var  dueDt =document.getElementById("dueDt").value;
+		if(opType == "处理") {
+			_toPage("complaintServiceModify.html?wsNum="+wsNum +"&returnStatus="+returnStatus+"&indexStatus="+indexStatus+"&DUE_DT="+dueDt);
+		} else if(opType == "明细") {
+			_toPage("complaintServiceDetail.html?wsNum="+wsNum);
+		}
+	}
+</script>
+</html>

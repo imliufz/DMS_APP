@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.3"
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/jniLibs']
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.yy.jc"
+        minSdkVersion 14
+        targetSdkVersion 21 //建议此属性值设为21 io.dcloud.PandoraEntry 作为apk入口时   必须设置 targetSDKVersion>=21 沉浸式才生效
+
+        versionCode 49
+        versionName "4.9"
+        multiDexEnabled true
+
+        ndk {
+            //选择要添加的对应 CPU 类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "2e7da480d4df88f7a38e9cae",
+                JPUSH_CHANNEL: "developer-default", // 暂时填写默认值即可
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile(name: 'lib.5plus.base-release', ext: 'aar')
+    compile files('libs/alipaySingle-20161222.jar')
+    compile files('libs/alipayutdid.jar')
+    compile files('libs/aps-igexin.jar')
+    compile files('libs/aps.jar')
+    compile files('libs/geolocation-amap.jar')
+    compile files('libs/geolocation-baidu.jar')
+    compile files('libs/GetuiSDK2.10.3.5.jar')
+    compile files('libs/map-baidu.jar')
+    compile files('libs/messaging.jar')
+    compile files('libs/MiPush_SDK_Client_3_1_2.jar')
+    compile files('libs/oauth-miui.jar')
+    compile files('libs/oauth-qq.jar')
+    compile files('libs/oauth-sina.jar')
+    compile files('libs/oauth-weixin.jar')
+    compile files('libs/payment-alipay.jar')
+    compile files('libs/payment-weixin.jar')
+    compile files('libs/share-qq.jar')
+    compile files('libs/share-sina.jar')
+    compile files('libs/share-tencent.jar')
+    compile files('libs/share-weixin.jar')
+    compile files('libs/sinaweibo4.1.jar')
+    compile files('libs/speech.jar')
+    compile files('libs/speech_ifly.jar')
+    compile files('libs/statistics-umeng.jar')
+    compile files('libs/tx_weibo_sdk-httpclient-3.0.1.jar')
+    compile files('libs/tx_weibo_sdk.jar')
+    compile files('libs/tx_weibo_sdk_component.jar')
+    compile files('libs/tx_wx.jar')
+    compile files('libs/umeng-analytics-v6.0.1.jar')
+    compile 'cn.jiguang.sdk:jcore:1.2.3'
+    compile 'cn.jiguang.sdk:jpush:3.1.5'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+}

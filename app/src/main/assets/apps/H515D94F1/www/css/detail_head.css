@@ -1,0 +1,64 @@
+.topBar{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:1000;
+	width:100%;
+	height: 55px;
+	overflow:hidden;
+	zoom:1;
+	color: #fff;
+	text-align: center;
+	background-color: #10a6e2;
+}
+.topBar .l{float:left;width:50px;}
+.topBar h1{font-size: 16px;line-height: 55px;margin:  0 60px 0 60px;}
+.topBar .arrow{
+	height: 55px;
+	width: 45px;
+	display: block;
+	font-size: 20px;
+	color: #fff;
+	background-color: #10a6e2;
+	background-image: url(../images/icon.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:23px 23px;
+}
+.topBar .rightArr{position:absolute;right:2px;top:50%; width:0px;height:0px;border-bottom:5px solid transparent;border-top:5px solid transparent;border-left:5px solid #ffd792;font-size:0px;line-height:0px;vertical-align: middle;margin: -3px 0 0 3px;display: inline-block;}
+.topBar .l{
+	color: #fff;
+	height: 45px;
+	background-color: #10a6e2;
+}
+.topBar .logo{background:#fff url(../iicon.png) 1px -1px;display: inline-block;width: 34px;height: 34px;border-radius: 34px;margin: 6px 9px 0 6px;}
+
+.topBar .r{position:relative;float:right;width:50px;margin-top:-45px;height: 50px;}
+.topBar .r a{font-weight: bold;color: #fff;display: inline-block;padding: 15;line-height:40px;line-height: 40px;
+	height: 35px;
+	width: 45px;
+	display: block;
+	font-size: 20px;
+	color: #fff;
+	background-color: #10a6e2;
+	background-image: url(../images/ok.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left:5px;
+	background-size: 23px 23px;}
+.topBar .r input{font-weight: bold;color: #fff;display: inline-block;padding: 15;line-height:40px;line-height: 40px;
+	height: 35px;
+	width: 45px;
+	display: block;
+	font-size: 20px;
+	color: #fff;
+	background-color: #10a6e2;
+	background-image: url(../images/ok.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left:5px;
+	background-size: 23px 23px;}
+.topBar .search{border: 0;line-height: 30px;border-radius: 20px;width: 100%;overflow: hidden;outline:none;background: #fff3e9;text-indent: 2em;color:#666;}
+.topBar .sIcon{background:#fff3e9 url(icon.png) -190px -6px no-repeat;}
+.topBar .search:focus{background: #fff;}
+.topBar .se{border-right: 1px solid #ff8f33;}

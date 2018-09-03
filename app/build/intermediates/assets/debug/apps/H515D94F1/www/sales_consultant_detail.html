@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>顾问信息</title>
+</head>
+<body onLoad="_loadData();" onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=顾问信息" id="detail_head_js"></script>
+	<form method="post" id="fm">
+		<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+			<script>
+				var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+				document.write(isAndroid > -1 ? "<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>"
+								: "<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+			</script>
+		</div>
+
+		<div class="cardexplain">
+			<!--普通用户登录时显示-->
+			<ul class="round">
+				<form action="javascript:;" method="post">
+					<li class="title mb">
+						<span class="none">基本信息</span>
+					</li>
+					<li class="nob">
+						<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">姓名</td>
+								<td width="36%">
+									<input name="NAME" class="px" id="NAME" type="text" readonly="readonly" style="border: none;">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">性别</td>
+								<td width="36%">
+									<select name="SEX" id="SEX" class="dropdown-select-nosel" readonly="readonly" style="border: none;">
+									</select>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">身份证号</td>
+								<td width="36%">
+									<input name="IDENTITY_NUMBER" class="px" id="IDENTITY_NUMBER" type="text" readonly="readonly" style="border: none;">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">手机号码</td>
+								<td width="36%">
+									<input name="TEL" class="px" id="TEL" type="tel" readonly="readonly" style="border: none;">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">学历</td>
+								<td width="36%">
+									<select name="ACADEMIC_RECORDS" id="ACADEMIC_RECORDS" class="dropdown-select-nosel" readonly="readonly" style="border: none;">
+									</select>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">顾问类型</td>
+								<td width="36%">
+									<select name="SALES_ADVISOR_TYPE" id="SALES_ADVISOR_TYPE" class="dropdown-select-nosel" readonly="readonly" style="border: none;">
+									</select>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">出生日期</td>
+								<td width="36%">
+									<input name="BORN_YEAR" id="BORN_YEAR" type="date" class="px" placeholder="出生日期" readonly="readonly" style="border: none;" />
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">从事汽车行业日期</td>
+								<td width="36%">
+									<input name="TRADE_YEAR" id="TRADE_YEAR" type="date" class="px" readonly="readonly" style="border: none;" />
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">从事长安汽车行业日期</td>
+								<td width="36%">
+									<input name="CHANA_TRADE_YEAR" id="CHANA_TRADE_YEAR" type="date" class="px" readonly="readonly" style="border: none;" />
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">在岗状态</td>
+								<td width="36%">
+									<select name="WORKING_STATE" id="WORKING_STATE" class="dropdown-select-nosel" readonly="readonly" style="border: none;">
+									</select>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>申请原因</td>
+								<td>
+									<textarea name="REASON" class="pxtextarea" style="height: 99px; overflow-y: visible" id="REASON" readonly="readonly"></textarea>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<div class="footReturn">
+						<input type="hidden" name="ID" id="ID" />
+						<div class="window" id="windowcenter">
+							<div id="title" class="wtitle">
+								操作提示<span class="close" id="alertclose"></span>
+							</div>
+							<div class="content">
+								<div id="txt"></div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</ul>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	
+	function _loadData() {
+		var id = UrlParm.parm("id");
+		var url = httpUrlHead + "SalesConsultantService/loadSalesConsultantInfo.json?id=" + id + "&" + httpUrlEnd;
+		makeFormCall(
+			url,
+			function(json) {
+				if (json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+					var map = json.RESULT.maps[0];
+					document.getElementById("ID").value = map.ID;
+					document.getElementById("NAME").value = map.NAME;
+					document.getElementById("IDENTITY_NUMBER").value = map.IDENTITY_NUMBER;
+					document.getElementById("TEL").value = map.TEL;
+					document.getElementById("REASON").value = map.REASON;
+					
+					document.getElementById('BORN_YEAR').value = map.BORN_YEAR;
+					document.getElementById('TRADE_YEAR').value = map.TRADE_YEAR;
+					document.getElementById('CHANA_TRADE_YEAR').value = map.CHANA_TRADE_YEAR;
+					
+					document.getElementById("SALES_ADVISOR_TYPE").setAttribute("defaultValue", map.SALES_ADVISOR_TYPE);
+					document.getElementById("SEX").setAttribute("defaultValue", map.SEX);
+					document.getElementById("ACADEMIC_RECORDS").setAttribute("defaultValue", map.ACADEMIC_RECORDS);
+					document.getElementById("WORKING_STATE").setAttribute("defaultValue", map.WORKING_STATE);
+					
+					//加载tc_code
+					_loadTcCode("1003", "8057", "2101", "7016", "SEX", "ACADEMIC_RECORDS", "SALES_ADVISOR_TYPE", "WORKING_STATE");
+				}
+			}, "fm", true);
+	}
+
+	//表单验证
+    function validateForm(){
+    	if(!_validForm("IDENTITY_NUMBER", "身份证号格式不正确。", "^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$")) {return;}
+    	if(!_validForm("TEL", "手机号码格式不正确。", "^1[3|5|7|8|][0-9]{9}$")) {return;}
+    }
+	
+    $("#fm").html5Validate(function() {
+    		MuiConfirm("确定提交吗?”,function(e){
+	    		if(e.index == 0 ){
+	    			var url = httpUrlHead + "SalesConsultantService/updateSalesConsultant.json?" + httpUrlEnd;
+			makeFormCall(url, _submitCallBack, 'fm');
+	    		}
+    		});
+	});
+
+	function _submitCallBack(json) {
+		if (json.RESULT.funcStatus == '1') {
+			MuiAlert("提交成功！",toGoBack());
+		} else {
+			MuiAlert("提交失败，请联系系统管理员！");
+		}
+	}
+
+	function toGoBack() {
+		window.location.href = "sales_consultant_list.html";
+	}
+</script>
+</html>

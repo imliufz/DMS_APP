@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<script type="text/javascript" src="js/clpage.js"></script>
+<link href="css/index.css" rel="stylesheet" type="text/css"/>
+<title>二期到店报表</title>
+<style type="text/css">
+	.bordered td{
+		text-align: center;
+		font-size: 15px;
+		text-indent:2px;
+	}
+	.bordered th{
+		background: #10a6e2;
+		color: #fff;
+		text-shadow:none;
+		font-size: 16px;
+		text-indent:2px;
+	}
+</style>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=到店&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		<div class="cardexplain">
+			<ul class="round" style="border:none">
+			<table id="tb_query">
+                <tr class="biaoge" id="oemCusSource_Tr" >
+                	<td>日期						                </td>
+                    <td>
+						 <li class="nob">
+							<input name="startDate" id="startDate"   type="date"  onchange="insertData()" clearBtn="true" class="px" />
+                        </li>                    
+                    </td>
+                </tr>
+				</table>
+			</ul>
+		<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
+				<form action="javascript:;" method="post">
+					<div class="tab-pane active" id="panel-1">
+			 <ul class="round">
+        <table class="bordered" style="background-color: white;">
+            <thead>
+            <tr class="biaoge" >
+                <th width="20%" nowrap="nowrap"  style="text-align: center;">来源</th>
+                <th width="15%" nowrap="nowrap"  style="text-align: center;">今日</th>
+                <th width="15%" nowrap="nowrap"  style="text-align: center;">明日</th>
+                <th width="15%" nowrap="nowrap"  style="text-align: center;">后日</th>
+                <th width="15%" nowrap="nowrap"  style="text-align: center;">本月</th>
+                
+            </tr>
+            </thead>
+            <tbody id="complaintReport"  >
+            </tbody>
+        </table>
+		</ul>
+		</div>
+		<br>
+		</br>
+	</form>
+	</div>
+	<!-- 菜单 -->
+    
+    <!-- 菜单 -->
+</body>
+<script type="text/javascript">
+$(document).ready(function () {
+			document.getElementById('startDate').value = praseDate2(new Date(),2);
+			insertData();
+});
+
+function praseDate2(date,num){
+	     var year = date.getFullYear();
+	     var month = date.getMonth()+1;    //js从0开始取 
+	     var date1 = date.getDate(); 
+	     if (num == 1) {
+		     return year+"-"+(month<=9?"0":"")+month+"-01";
+	     }
+	     return year+"-"+(month<=9?"0":"")+month+"-"+(date1<=9?"0":"")+date1;
+	}
+	function insertData() {
+		var complaintReport = document.getElementById("complaintReport");
+		complaintReport.innerHTML ="";
+				var startDate = document.getElementById("startDate").value;
+				var url1 = httpUrlHead + "ReportServiceApp/query2ddgwReportList.json?startDate="+startDate+"&" + httpUrlEnd;
+				makeFormCall(url1,function(json){
+					if (json.details.length == 0) {
+						complaintReport.innerHTML = "<tr><td colspan=5><a style=color:red>无数据</a></td></tr>";
+						return;
+					}
+					for(var i = 0; i < json.details.length;i++) {
+						var detail = json.details[i];
+						var newRow = complaintReport.insertRow(i);
+						if (i == 1) {
+							newRow.style = "color:red";
+						}
+						var newCell = newRow.insertCell(0);
+						newCell.align = "center";
+						newCell.innerHTML = detail.CUS_SOURCE;
+						
+					newCell = newRow.insertCell(1);
+					newCell.align = "center";
+					if (detail.COUNT1 != 0) {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(1,\''+detail.CUS_SOURCE+'\')">'+detail.COUNT1+'';
+					} else {
+						newCell.innerHTML = detail.COUNT1;
+					}						
+					    newCell = newRow.insertCell(2);
+						newCell.align = "center";
+					if (detail.COUNT2 != 0) {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(2,\''+detail.CUS_SOURCE+'\')">'+detail.COUNT2+'';
+					} else {
+						newCell.innerHTML = detail.COUNT2;
+					}							newCell = newRow.insertCell(3);
+							newCell.align = "center";
+					if (detail.COUNT3 != 0) {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(3,\''+detail.CUS_SOURCE+'\')">'+detail.COUNT3+'';
+					} else {
+						newCell.innerHTML = detail.COUNT3;
+					}							newCell = newRow.insertCell(4);
+							newCell.align = "center";
+					if (detail.COUNT4 != 0) {
+							newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(4,\''+detail.CUS_SOURCE+'\')">'+detail.COUNT4+'';
+					} else {
+						newCell.innerHTML = detail.COUNT4;
+					}					
+					}
+				},"fm",true,true);
+	}
+	
+	function detailData(index,name){
+	var INTENT_SERIES = "";
+	var dayDate = $("#startDate").val();
+	var monthDate = "";
+	var reportFrom ="2ddgwReport";
+	var title = "";
+		title = name;
+	var headTitle = ["客户","意向","车系","顾问"];//表头
+	var headWidth = ["25%","25%","25%","25%"];//表头
+	var showCol = ["CUSTOMER_NAME","INTENT_LEVEL","INTENT_SERIES","SOLD_BY"];//显示字段
+	var paramName = ["CUS_SOURCE","INTENT_SERIES","dayDate","monthDate","cellIndex","reportFrom"];//查询参数
+	var paramValue = [name,INTENT_SERIES,dayDate,monthDate,index,reportFrom];//参数值
+	//组装url
+	var url = "report_detail.html?headTitle="+headTitle+"&paramName="+paramName+"&paramValue="+paramValue+"&showCol="+showCol+"&headWidth="+headWidth+"&title="+title;
+	ToUrl(url);
+}
+	
+	function showHelp(){
+		var alertMsg = ""+
+		"<div style='text-align:left;'>"+
+			"<div>今日：今日到店量</div>"+
+			"<div>明日：明日邀约到店量</div>"+
+			"<div>后日：后日邀约到店量</div>"+
+			"<div>本月：本月到店量</div>"+
+		"</div>";
+		MuiAlert(alertMsg);
+	}
+</script>
+</html>

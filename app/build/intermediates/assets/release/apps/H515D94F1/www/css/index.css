@@ -1,0 +1,234 @@
+@charset "utf-8";
+/* CSS Document */
+
+html,
+body{
+	padding: 0 0;
+	margin: 0 0;	
+	width: 100%;
+	height: 100%;
+	/*overflow: hidden;*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	outline: none;
+}
+
+.nav {
+	background: #10a6e1;
+	height: 55px;
+	line-height: 45px;
+	padding: 0 0;
+	width: 100%;
+	text-align: center;
+	border: none;
+}
+
+.nav .left,
+.nav .right,
+.nav .center {
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+}
+
+
+.nav .left {
+	display: inline-block; 
+	padding: 0 0;
+	float: left	;
+	margin: 0px 10px;
+}
+
+.nav .left font[menu]{
+	display: inline-block;
+	background-image: url(../images/menu.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 24px 19px;
+	width: 24px;
+	height: 19px;
+	margin-bottom: -10px;
+}
+
+.nav .left img {
+	width: 30px;
+}
+
+.nav .center {
+	margin: 0 0;
+	padding: 0 0;
+	display: inline-block;
+	height: auto;
+	width: auto;	
+	text-align: center;
+}
+
+.nav .center img {
+	width: 28px;
+	vertical-align: middle;
+	margin-left: 0;
+}
+
+.nav .center h5,
+.nav .center h4,
+.nav .center h3,
+.nav .center h2{
+	margin: 0 0;
+	padding: 0 0;
+	display: inline-block;
+	height: auto;
+	width: auto;	
+	color: #fff;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif, "微软雅黑", "黑体", "幼圆", "宋体";
+	margin-top:15px;
+}
+
+
+.nav .right {
+	display: inline-block; 
+	padding: 0 0;
+	float: right;
+	margin: 0px 10px 0px 10px;
+}
+
+.nav .right font[add]{
+	display: inline-block;
+	background-image: url(../images/add.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25px 25px;
+	width: 25px;
+	height: 25px;
+	margin-bottom: -12px;
+}
+
+.nav .right img {
+}
+
+
+.content {
+	
+	display: inline-block;
+	width: 100%;
+	padding: 0 0px;
+	margin: 0 0;
+	border: none;
+	overflow-x: ;
+}
+
+/* ul li以横排显示 */
+div.menu {
+	
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width: 100%;
+}
+
+/* 所有class为menu的div中的ul样式 */
+div.menu ul
+{
+    list-style:none; /* 去掉ul前面的符号 */
+    margin: 0px; /* 与外界元素的距离为0 */
+    width: auto; /* 宽度根据元素内容调整 */
+	border-top: #bdbdbd solid 1px;
+	background-color: #f8f8f8;
+	height: 62px;
+	padding: 0 0;
+}
+/* 所有class为menu的div中的ul中的li样式 */
+div.menu ul li
+{
+	display: inline-block;
+	padding: 0 0;
+	margin: 0 0;
+	text-align: center;
+}
+/* 所有class为menu的div中的ul中的a样式(包括尚未点击的和点击过的样式) */
+div.menu ul li a, div.menu ul li a:visited
+{
+    color: #dde4ec; /* 文字颜色 */
+    display: block; /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+    line-height: 1.35em; /* 行高 */
+    padding: 4px 20px; /* 内部填充的距离 */
+    text-decoration: none; /* 不显示超链接下划线 */
+    white-space: nowrap; /* 对于文本内的空白处，不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。 */
+	
+}
+/* 所有class为menu的div中的ul中的a样式(鼠标移动到元素中的样式) */
+div.menu ul li a:hover
+{
+    color: #465c71; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+/* 所有class为menu的div中的ul中的a样式(鼠标点击元素时的样式) */
+div.menu ul li a:active
+{
+    color: #cfdbe6; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+
+div.menu ul li a{
+	display: inline-block;
+	margin: auto auto;
+	width: 100%;
+	height: 36px;
+	background-repeat: no-repeat;
+	background-size: 38px 38px;
+	background-position: center;
+	text-align: center;
+	padding: 0 0;
+	margin-bottom: -4px;
+	margin-top: 2px;
+}
+
+div.menu ul li span
+{
+	display: inline-block;
+	padding: 0 0;
+	margin: 0 0;
+	height: 20px;
+	overflow: hidden;
+	width: 100%;
+	color: #555555;
+}
+
+.home{	
+	background-image: url(../images/t1_.png);
+	}
+	
+.report{	
+	background-image: url(../images/t2_.png);
+	}
+	
+.alert{	
+	background-image: url(../images/t3_.png);
+	}
+	
+.mine{	
+	background-image: url(../images/t4_.png);
+	}
+.zxapp{	
+	background-image: url(../images/tz_.png);
+	}	
+	
+	
+.home_active{	
+	background-image: url(../images/t1.png);
+	}
+	
+.report_active{	
+	background-image: url(../images/t2.png);
+	}
+	
+.alert_active{	
+	background-image: url(../images/t3.png);
+	}
+	
+.mine_active{	
+	background-image: url(../images/t4.png);
+	}
+.zxapp_active{	
+	background-image: url(../images/tz.png);
+	}

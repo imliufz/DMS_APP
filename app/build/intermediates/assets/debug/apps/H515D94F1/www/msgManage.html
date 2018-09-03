@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<style>
+.msgTd {
+	height: 45px;
+	border: none;
+	width: 100%;
+	font-size: 16px;
+}
+</style>
+<title>短信模板</title>
+</head>
+<body onselectstart="return true;" ondragstart="return false;" >
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=短信模板&_back_url=mine.html&_show_save=1&_btn_type=1&_save_func=addMsg" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		
+		<div class="cardexplain">
+			<ul class="round">
+				<table id="tb_query">
+				</table>
+				</ul>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	var totalNum = 0;
+	$(document).ready(function() {
+		//页面数据加载
+		var url = httpUrlHead+"PotcusAchieveService/queryMsgList.json?"+httpUrlEnd;
+    	makeFormCall(url,function(json){
+    		if(json.RESULT.funcStatus == '1'){
+	    		if (json.msgList != null && json.msgList.length > 0) {
+	    			totalNum = json.msgList.length;
+	    			var appendHtml = "";
+					for(var i = 0;i < json.msgList.length;i++) {
+						appendHtml += '<tr class="biaoge"><td class="msgTd" id="'+json.msgList[i].ID+'"><li class="nob" >'+json.msgList[i].TITLE+'</li></td></tr>';
+					}
+					$("#tb_query").append(appendHtml);
+					$(".msgTd").click(function(){
+						ToUrl("msgAdd.html?id="+$(this).attr("id"));
+					});
+				}
+    		} else {
+    			MuiAlert("查询失败!请联系管理员");
+    		}
+    	},"fm",true);
+	});
+	
+	function addMsg(){
+		if(totalNum >= 10){
+			MuiAlert("最多只能新增10条短信模板");
+			return false;
+		}
+		ToUrl("msgAdd.html");
+	}
+</script>
+</html>

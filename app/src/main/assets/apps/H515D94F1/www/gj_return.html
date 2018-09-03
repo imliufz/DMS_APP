@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<title>跟进邀约</title>
+    </head>
+    <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=跟进邀约" id="detail_head_js"></script>
+    <form id="fm" method="post">
+    <input type="hidden" name="tabType" id="tabType" value="" />
+    <input type="hidden" name="id" id="id" value="" />
+	<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+		<script>
+			var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+			document.write(isAndroid>-1?"<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>":"<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+		</script>
+	</div>
+
+	<div id="_showLoading"></div>
+	<div class="cardexplain" id="_showContent">
+	<!--普通用户登录时显示-->
+	<ul class="round">
+		<li>
+			<a href="#"> <span>线索退回</span></a>
+		</li>
+	</ul>
+	<ul class="round">
+		<li class="title mb"><span class="none">退回信息</span></li>
+        <li class="nob">
+            <table  border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>退回原因<font color="red">*</font></td>
+                    <td>
+                        <select name="returnReason" id="returnReason" class="download dropdown-select" required="required">
+                            <option value="">-请选择-</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		
+        <li class="nob">
+            <table  border="0" cellpadding="0" cellspacing="0" width="100%" required="required">
+                <tr class="biaoge">
+                    <td class="thtop" valign="top">备注&nbsp;</td>
+                    <td>
+                        <textarea name="remark" id="remark" class="pxtextarea" style=" height:99px;overflow-y:visible" id="info" placeholder="请输入原因备注"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+	<div class="footReturn"  style="height: 30px;">
+		<input id="showcard" class="submit" value="提   交" type="submit" style="width:100%;"> 
+		<br/><br/><br/><br/>
+		<div class="window" id="windowcenter">
+			<div id="title" class="wtitle">操作提示<span class="close" id="alertclose"></span></div>
+			<div class="content">
+				<div id="txt"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>
+</body>
+<script type="text/javascript">
+
+	//加载tc_code
+	_loadTcCode("3034","returnReason");
+	
+	//表单验证
+	$("#fm").html5Validate(function(){
+		save();
+	});
+	
+    function loadData(){
+    	var id = UrlParm.parm("id");
+		var tabType = UrlParm.parm("tabType");
+		document.getElementById("id").value = id;
+		document.getElementById("tabType").value = tabType;
+    }
+    
+    //保存方法
+    function save(){
+    	MuiConfirm("是否退回?",function(e){
+			if(e.index == 0){
+				var url = httpUrlHead+"PotcusAchieveService/potcusAchieveReturn.json?"+httpUrlEnd;
+				makeFormCall(url,function(json){
+					MuiAlert("操作成功!",function(){
+						ToUrl("gj_list.html",2);
+					});
+				},"fm",true);
+			}
+		});
+	}
+</script>
+</html>

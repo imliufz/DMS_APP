@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<script type="text/javascript" src="js/clpage.js"></script>
+<link href="css/index.css" rel="stylesheet" type="text/css"/>
+<title>客户意向报表</title>
+<style type="text/css">
+	.bordered td{
+		text-align: center;
+		font-size: 15px;
+		text-indent:2px;
+	}
+	.bordered th{
+		background: #10a6e2;
+		color: #fff;
+		text-shadow:none;
+		font-size: 16px;
+		text-indent:2px;
+	}
+</style>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=客户意向&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		<div class="cardexplain">
+			<ul class="round"  style="border:none">
+			<table width="100%">
+			<tr style="height: 3px;">
+		</table>
+			<table id="tb_query">
+                <tr class="biaoge" id="oemCusSource_Tr" >
+                	<td>车系						                </td>
+                    <td>
+						 <li class="nob">
+                             <select id="oemCusSource" name="oemCusSource" class="download dropdown-select"   search="show" onchange="queryPt();">
+                                <option value="">-请选择-</option>
+                            </select>
+                            <input name="oemCusSource_h" id="oemCusSource_h" value=""  type="hidden"  />
+                        </li>                    </td>
+                </tr>
+				</table>
+			</ul>
+		<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
+				<form action="javascript:;" method="post">
+					<div class="tab-pane active" id="panel-1">
+			 <ul class="round">
+        <table class="bordered" style="background-color: white;">
+            <thead>
+            <tr class="biaoge" >
+                <th width="85px" nowrap="nowrap"  style="text-align: center;">顾问</th>
+                <th width="14%" nowrap="nowrap"  style="text-align: center;">H</th>
+                <th width="14%" nowrap="nowrap"  style="text-align: center;">A</th>
+                <th width="14%" nowrap="nowrap"  style="text-align: center;">B</th>
+                <th width="14%" nowrap="nowrap"  style="text-align: center;">C</th>
+                <th width="14%" nowrap="nowrap"  style="text-align: center;">F0</th>
+                <th width="14%" nowrap="nowrap"  style="text-align: center;">O</th>
+                
+            </tr>
+            </thead>
+            <tbody id="complaintReport"  >
+            </tbody>
+        </table>
+		</ul>
+		</div>
+	</form>
+	<!-- 菜单 -->
+    <!-- 菜单 -->
+</body>
+<script type="text/javascript">
+$(document).ready(function () {
+	
+});
+_loadSeries("oemCusSource");
+
+function Bdate(vl)
+{
+	if(vl==1)
+	{
+		 document.getElementById("date").type = 'date';
+		 var nextDate = _addDate(new Date(), 1);
+		 var bigin = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		 document.getElementById("date").value = bigin;
+		 
+		 $("#B_TD").attr("bgcolor","#FFFF00");
+         $("#E_TD").attr("bgcolor","");
+	}else
+	{
+		 document.getElementById("date").type = 'month';
+		 var nextDate = _addDate(new Date(), 1);
+		 var bigin = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1);
+		 document.getElementById("date").value = bigin;
+		 
+		 $("#B_TD").attr("bgcolor","");
+         $("#E_TD").attr("bgcolor","#FFFF00");
+	}
+	queryPt();
+}
+	
+
+function queryPt()
+	{
+	          
+	           var oemCusSource = document.getElementById('oemCusSource').value;
+	          
+				var url1 = httpUrlHead + "ReportServiceApp/khyxCus.json?oemCusSource="+oemCusSource+"&"+ httpUrlEnd;
+				makeFormCall(url1,function(json){
+				  $("#complaintReport").html("");
+				  for(var i = 0; i < json.tsList.length;i++) {
+					 var detail = json.tsList[i];
+					 var newRow = complaintReport.insertRow(i);
+					var H = parseInt(detail.H);
+					var A = parseInt(detail.A);
+					var B = parseInt(detail.B );
+					var C =   parseInt(detail.C);
+					var F0 =   parseInt(detail.F0);
+					var O =   parseInt(detail.O);
+					var SALES_CONSULTANT = 	detail.SALES_CONSULTANT;
+				    var newCell = newRow.insertCell(0);
+				    newCell.innerHTML =SALES_CONSULTANT ;
+				     
+				     newCell = newRow.insertCell(1);
+				     if( H > 0 && i!=0 )
+				     {
+						newCell.innerHTML = '<a  style="text-decoration: underline;"  onclick="detailData(13101001,\''+SALES_CONSULTANT+'\')">'+H+'';
+					}else{
+				        newCell.innerHTML =H ;
+					}
+		
+				     newCell = newRow.insertCell(2);
+				     
+				      if( A > 0  && i!=0 )
+				     {
+						newCell.innerHTML = '<a style="text-decoration: underline;" onclick="detailData(13101002,\''+SALES_CONSULTANT+'\')">'+A+'';
+					 }else{
+				        newCell.innerHTML =A ;
+					 }
+					 newCell = newRow.insertCell(3);
+				     
+				      if( B > 0  && i!=0 )
+				     {
+						newCell.innerHTML = '<a style="text-decoration: underline;" onclick="detailData(13101003,\''+SALES_CONSULTANT+'\')">'+B+'';
+					 }else{
+				        newCell.innerHTML =B ;
+					 }
+				     newCell = newRow.insertCell(4);
+				     if( C > 0  && i!=0 )
+				     {
+						newCell.innerHTML = '<a style="text-decoration: underline;" onclick="detailData(13101004,\''+SALES_CONSULTANT+'\')">'+C+'';
+					 }else{
+				        newCell.innerHTML =C ;
+					 }
+				     
+				     newCell = newRow.insertCell(5);
+				      if( F0 > 0 && i!=0 )
+				     { 
+						newCell.innerHTML = '<a style="text-decoration: underline;" onclick="detailData(13101006,\''+SALES_CONSULTANT+'\')">'+F0+'';
+					 }else{
+				        newCell.innerHTML =F0 ;
+					 }
+					  newCell = newRow.insertCell(6);
+				      if( O > 0 && i!=0 )
+				     { 
+						newCell.innerHTML = '<a style="text-decoration: underline;" onclick="detailData(13101008,\''+SALES_CONSULTANT+'\')">'+O+'';
+					 }else{
+				        newCell.innerHTML =O ;
+					 }
+					 
+				  }   
+				},"fm",true,true);
+	}
+	queryPt();
+	
+	function detailData(index,name)
+	{
+		var oemCusSource = $("#oemCusSource").val();
+		var reportFrom ="ldReport";
+		var title = "";
+		if(index == 13101001){
+			title = name + ":H级";
+		}else if(index == 13101002){
+			title = name + ":A级";
+		}else if(index == 13101003){
+			title = name + ":B级";
+		}else if(index == 13101004){
+			title = name + ":C级";
+		}else if(index == 13101006){
+			title = name + ":F0级";
+		}else if(index == 13101008){
+			title = name + ":O级";
+		}
+		var headTitle = ["客户名字","电话号码","来源","顾问"];//表头
+		var headWidth = ["25%","25%","25%","25%"];//表头
+		var showCol = ["CUSTOMER_NAME","CONTACTOR_MOBILE","CLUE_SOURCE","SALES_CONSULTANT"];//显示字段
+		var paramName = ["sales_consultant","INTENT_SERIES","cellIndex"];//查询参数
+		var paramValue = [name,oemCusSource,index];//参数值
+		//组装url
+		var url = "khyxDel.html?headTitle="+headTitle+"&paramName="+paramName+"&paramValue="+paramValue+"&showCol="+showCol+"&headWidth="+headWidth+"&title="+title;
+		ToUrl(url);
+	}
+	
+
+	
+	function showHelp(){
+		var alertMsg = ""+
+		"<div style='text-align:left;'>"+
+			"<div>查询当前未成交和未战败的所有数据</div>"+
+		"</div>";
+		MuiAlert(alertMsg);
+	}
+
+</script>
+</html>

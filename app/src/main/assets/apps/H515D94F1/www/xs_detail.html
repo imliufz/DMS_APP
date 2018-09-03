@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="js/html_head.js"></script>
+		<title>线索查询</title>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;" id="onlinebooking" onLoad="loadData();">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=线索查询&_is_loading=1" id="detail_head_js"></script>
+		<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+			<script>
+				var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+				document.write(isAndroid>-1?"<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>":"<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+			</script>
+		</div>
+	<div id="_showLoading"></div>
+	<div class="cardexplain" id="_showContent">
+	<!--普通用户登录时显示-->
+	<ul class="round">
+		<form id="fm" method="post">
+		<li class="title mb"><span class="none">基本信息</span></li>
+				<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<td>客户姓名</td>
+					<td><input name="customerName" class="px" id="customerName" value="" placeholder="请输入客户姓名" type="text" readonly="readonly"></td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<td>手机号码</td>
+					<td><input name="contactorMobile" class="px" id="contactorMobile" value="" placeholder="请输入手机号码" type="tel" readonly="readonly"></td>
+				</tr>
+			</table>
+		</li>
+		<li class="title mb"><span class="none">意向信息</span></li>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>意向级别</td>
+				<td>
+					<select name="intentLevel" id="intentLevel" class="download dropdown-select-nosel" disabled></select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>意向车系</td>
+				<td>
+					<select name="intentSeries" id="intentSeries" class="download dropdown-select-nosel" disabled="disabled">
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>意向车型</td>
+				<td>
+					<select name="intentModel" id="intentModel" class="download dropdown-select-nosel" disabled>
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>意向配置</td>
+				<td>
+					<select name="intentPackage" id="intentPackage" class="download dropdown-select-nosel" disabled>
+						
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%" >
+                
+                    <td>意向颜色</td>
+                    <td>
+                        <select name="color" id="color" class="download dropdown-select-nosel" disabled>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<li class="title mb"><span class="none">其它信息</span></li>
+		<li class="nob">
+            <input name="formhash" id="formhash" value="2be3071a" type="hidden">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                
+                    <td>销售顾问</td>
+                    <td><input name="soldBy" class="px" id="soldBy" value="" type="text" readonly></td>
+                </tr>
+            </table>
+        </li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>客户来源</td>
+				<td>
+					<select name="cusSource" id="cusSource" class="download dropdown-select-nosel" disabled="disabled">
+						
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>了解途径</td>
+				<td>
+					<select name="mediaType" id="mediaType" class="download dropdown-select-nosel" disabled>
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>渠道细分</td>
+				<td>
+					<select name="mediaDetail" id="mediaDetail" class="download dropdown-select-nosel" disabled>
+						
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<td>活动代码</td>
+					<td>
+						<input name="CAMPAIGN_CODE" class="px" id="CAMPAIGN_CODE" type="text" disabled="disabled">
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<td>活动名称</td>
+					<td>
+						<input name="CAMPAIGN_NAME" class="px" id="CAMPAIGN_NAME" type="text" disabled="disabled">
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			
+				<td>是否试乘试驾</td>
+				<td>
+                    <select name="isPersonDriveCar" id="isPersonDriveCar" class="download dropdown-select-nosel" disabled>
+                    </select>
+                </td>
+				</tr>
+			</table>
+		</li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                
+                    <td>到店次数</td>
+                    <td><input name="num" class="px" id="num" value="" placeholder="" type="text" readonly="readonly"></td>
+                </tr>
+            </table>
+        </li>
+		<li class="title mb"><span class="none">战败信息</span></li>
+		<li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    
+                        <td>战败品牌</td>
+                        <td>
+                            <select name="failbranName" id="failbranName" class="download dropdown-select-nosel" disabled>
+                               
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    
+                        <td>战败车系</td>
+                        <td>
+                            <select name="failSeriesId" id="failSeriesId" class="download dropdown-select-nosel" disabled>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+			<li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    
+                        <td>战败车型</td>
+                        <td>
+                            <select name="failModel" id="failModel" class="download dropdown-select-nosel" disabled>
+							</select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+			<li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    
+                        <td>战败原因</td>
+                        <td>
+                            <select name="failReason" id="failReason" class="download dropdown-select-nosel" disabled>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+      </form>
+	</ul>
+	<div class="footReturn">
+	</div>
+	<ul class="round">
+			<li class="title mb"><span class="none">展厅记录</span></li>
+			<table class="bordered">
+				<thead>
+				<tr >
+					<th width="25%">接待时间</td>
+					<th width="25%">接待人</td>
+					<th width="50%">经过情形</td>
+				</tr>
+				</thead>
+				<tbody id="ztjl">
+            	</tbody>
+			</table>
+		</ul>
+    <ul class="round">
+		<li class="title mb"><span class="none">跟进历史</span></li>
+        <table class="bordered">
+            <thead>
+                <th width="25%" nowrap="nowrap">跟进时间</th>
+                <th width="25%" nowrap="nowrap">促进级别</th>
+                <th width="50%" nowrap="nowrap">经过情形</th>
+            </tr>
+            </thead>
+            <tbody id="gjls">
+            </tbody>
+        </table>
+    </ul>
+	</div>
+<script type="text/javascript">
+
+	function loadData(){
+		var id = UrlParm.parm("id");
+		var tabType = UrlParm.parm("tabType");
+		var url = httpUrlHead+"PotcusAchieveService/queryPotentialCustomerDetail.json?id="+id+"&tabType="+tabType+"&"+httpUrlEnd;
+		makeFormCall(url,function(json){
+			if(json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+				var map = json.RESULT.maps[0];
+				document.getElementById("customerName").value = map.CUSTOMER_NAME;
+				document.getElementById("contactorMobile").value = map.CONTACTOR_MOBILE;
+				document.getElementById("intentLevel").add(new Option(map.INTENT_LEVEL_DESC,map.INTENT_LEVEL));
+				document.getElementById("intentSeries").add(new Option(map.INTENT_SERIES_DESC,map.INTENT_SERIES));
+				
+				if(map.INTENT_MODEL_DESC != null) {
+					document.getElementById("intentModel").add(new Option(map.INTENT_MODEL_DESC,map.INTENT_MODEL));					
+				}
+				if(map.INTENT_PACKAGE_DESC != null) {
+					document.getElementById("intentPackage").add(new Option(map.INTENT_PACKAGE_DESC,map.INTENT_PACKAGE));					
+				}
+				if (map.COLOR != null) {
+					document.getElementById("color").add(new Option(map.COLOR,map.COLOR));					
+				}
+				document.getElementById("soldBy").value = map.SALES_CONSULTANT;
+				var sourceType = "1311";
+				if (map.CUS_SOURCE != null && map.CUS_SOURCE != "13111016") {//客户来源不为空,并且不为车厂下发	
+					document.getElementById("cusSource").setAttribute("defaultValue", map.CUS_SOURCE);
+				} else {
+					sourceType = "3031"
+					$("#cusSourceName").html("OEM客户来源");
+					document.getElementById("cusSource").setAttribute("defaultValue", map.CLUE_SOURCE);
+				}
+				if(map.MEDIA_TYPE_DESC != null) {
+					document.getElementById("mediaType").add(new Option(map.MEDIA_TYPE_DESC,map.MEDIA_TYPE));					
+				}
+				if (map.MEDIA_DETAIL_DESC != null) {
+					document.getElementById("mediaDetail").add(new Option(map.MEDIA_DETAIL_DESC,map.MEDIA_DETAIL));
+				}
+				document.getElementById("CAMPAIGN_CODE").value = map.CAMPAIGN_CODE;
+				document.getElementById("CAMPAIGN_NAME").value = map.CAMPAIGN_NAME;
+				if(map.IS_PERSON_DRIVER_CAR == "10041001") {
+					document.getElementById("isPersonDriveCar").add(new Option("是","10041001"));
+				} else {
+					document.getElementById("isPersonDriveCar").add(new Option("否","10041002"));
+				}
+				document.getElementById("num").value = map.ARRIVE_TIMES;
+				if (map.FAILBRAN_NAME != null) {
+					document.getElementById("failbranName").add(new Option(map.FAILBRAN_NAME,map.FAIL_SERIES_ID));
+				}
+				if(map.FAILSER_NAME != null) {
+					document.getElementById("failSeriesId").add(new Option(map.FAILSER_NAME,map.FAIL_SERIES_ID));					
+				}
+				if (map.FAIL_MODEL_DESC != null) {
+					document.getElementById("failModel").add(new Option(map.FAIL_MODEL_DESC,map.FAIL_MODEL));
+				}
+				if (map.FAIL_REASON_DESC != null) {
+					document.getElementById("failReason").add(new Option(map.FAIL_REASON_DESC,map.FAIL_REASON));
+				}
+				//加载跟进历史数据
+				if(json.details != null && json.details.length > 0) {
+					var gjls = document.getElementById("gjls");
+					for(var i = 0; i < json.details.length;i++) {
+						var detail = json.details[i];
+						var newRow = gjls.insertRow(i);
+						var newCell = newRow.insertCell(0);
+						newCell.align = "center";
+						newCell.innerHTML = detail.ACTION_DATE_STR;
+						
+						newCell = newRow.insertCell(1);
+						newCell.align = "center";
+						newCell.innerHTML = detail.NEXT_GRADE_DESC;
+						
+						newCell = newRow.insertCell(2);
+						newCell.align = "center";
+						newCell.innerHTML = detail.SCENE;
+					}
+				}
+				//加载展厅记录
+				if(json.visitings != null && json.visitings.length > 0) {
+					var gjls = document.getElementById("ztjl");
+					for(var i = 0; i < json.visitings.length;i++) {
+						var visiting = json.visitings[i];
+						var newRow = gjls.insertRow(i);
+						var newCell = newRow.insertCell(0);
+						newCell.align = "center";
+						newCell.innerHTML = visiting.VISIT_TIME_STR;
+						
+						newCell = newRow.insertCell(1);
+						newCell.align = "center";
+						newCell.innerHTML = visiting.SOLD_BY;
+						
+						newCell = newRow.insertCell(2);
+						newCell.align = "center";
+						newCell.innerHTML = visiting.SCENE;
+					}
+				}
+				//加载tc_code
+				_loadTcCode(sourceType,"cusSource");
+			}
+		},"fm",false,true);
+	}
+</script>
+</body>
+</html>

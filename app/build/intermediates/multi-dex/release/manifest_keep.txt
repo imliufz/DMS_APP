@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:671
+-keep class io.dcloud.multiprocess.activity.WebAppActivity1 { <init>(...); }
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<title>生日提醒</title>
+	</head>
+	<style type="text/css">
+	.bordered td{
+		text-align: center;
+		font-size: 12px;
+		text-indent:2px;
+	}
+	.bordered th{
+		background: #10a6e2;
+		color: #fff;
+		text-shadow:none;
+		font-size: 14px;
+		text-indent:2px;
+	}
+</style>
+	<body>
+		<script type="text/javascript" src="js/detail_head.js?_menu_name=生日提醒&_back_url=remind.html" id="detail_head_js"></script>
+		<form id="fm" method="post">
+			<div class="cardexplain">
+				<ul class="round">
+					<table class="bordered" style="background-color: white;">
+			            <thead>
+				            <tr class="biaoge" >
+				                <th width="20%" nowrap="nowrap"  style="text-align: center;">姓名</th>
+				                <th width="10%" nowrap="nowrap"  style="text-align: center;">性别</th>
+				                <th width="35%" nowrap="nowrap"  style="text-align: center;">手机</th>
+				                <th width="35%" nowrap="nowrap"  style="text-align: center;">生日</th>
+				            </tr>
+			            </thead>
+			            <tbody id="birthRemind"  >
+			            </tbody>
+			        </table>
+				</ul>
+			</div>
+		</form>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			queryData();
+		});
+		
+		function queryData(){
+			var birthRemind = document.getElementById("birthRemind");
+			birthRemind.innerHTML ="";
+			var url1 = httpUrlHead + "RemindService/birthRemindInfo.json?"+"&"+ httpUrlEnd;				
+			makeFormCall(url1,function(json){
+				if (json.tsList.length == 0) {
+						birthRemind.innerHTML = "<tr><td colspan=5><a style=color:red>无数据</a></td></tr>";
+						return;
+				}
+				var GENDER='未知';
+				for(var i = 0; i < json.tsList.length;i++) {
+					var detail = json.tsList[i];
+					if(detail.GENDER=='10031001'){
+						GENDER='男';
+					}else if(detail.GENDER=='10031002'){
+						GENDER='女';
+					}else{
+						GENDER='未知';
+					}
+					var cusName=detail.CUSTOMER_NAME;
+					if(cusName != null && cusName != undefined && cusName.length > 3) {
+						cusName = detail.CUSTOMER_NAME.substring(0,3);
+					}
+					var newRow = birthRemind.insertRow(i);
+					newRow.setAttribute("pars",detail.ID+","+detail.TABTYPE);
+					newRow.onclick = function(){
+						var pars = this.getAttribute("pars");
+						ToUrl("potcusDetail.html?id="+pars.split(",")[0]+"&tabType="+pars.split(",")[1]);
+					};
+					var newCell = newRow.insertCell(0);
+					newCell.align = "center";
+					newCell.innerHTML = cusName;
+					newCell = newRow.insertCell(1);
+					newCell.align = "center";
+					newCell.innerHTML = GENDER;
+					newCell = newRow.insertCell(2);
+					newCell.align = "center";
+					newCell.innerHTML = '<div>'+detail.CONTACTOR_MOBILE+'</div>'+
+										'<div><a href="javascript:;"><img ico onClick="window.location.href=\'tel:'+detail.CONTACTOR_MOBILE+'\';" style="margin-left:5px;width:18px;height:19px;" src="images/bohao.png"></a>'+
+										'<a href="javascript:;"><img ico phone="'+detail.CONTACTOR_MOBILE+'" name="callMsg" style="margin-left:5px;width:18px;height:19px;" src="images/duanxing.png"></a></div>';
+					newCell = newRow.insertCell(3);
+					newCell.align = "center";
+					newCell.innerHTML = detail.BIRTHDAY;
+				}
+				
+				//短信按钮模板调用加载
+				$("img[name='callMsg']").click(function(){
+					var phone = $(this).attr("phone");
+					//短信数据加载
+					var url = httpUrlHead+"PotcusAchieveService/queryMsgList.json?"+httpUrlEnd;
+			    	makeFormCall(url,function(json){
+			    		if(json.RESULT.funcStatus == '1'){
+				    		if (json.msgList != null && json.msgList.length > 0) {
+				    			var appendHtml = '<ul class="round"><table id="tb_query">';
+								for(var i = 0;i < json.msgList.length;i++) {
+									appendHtml += '<tr class="biaoge"><td class="msgTd" style="height: 35px;border: none;width: 100%;font-size: 16px;" id="'+json.msgList[i].ID+'"><li class="nob" >'+json.msgList[i].TITLE;
+									appendHtml += '</li></td><td style="display:none">'+json.msgList[i].CONTENT+'</td></tr>';
+								}
+								appendHtml += "</table></ul>";
+								layer.open({
+								    title: '短信模板',
+								    content: appendHtml,
+								    cancel: function(){
+								    	window.location.href="sms:"+phone;
+								    }      
+								});
+								$(".msgTd").click(function(){
+									var content = $(this).next().text();
+									var u = navigator.userAgent;
+									var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+									if( isAndroid ){//安卓
+										window.location.href="sms:"+phone+"?body="+content;
+									} else{//ios
+										window.location.href="sms:"+phone+"&body="+content;
+									}
+									layer.closeAll();
+								});
+							}else{
+								window.location.href="sms:"+phone;
+							}
+			    		} else {
+			    			MuiAlert("查询失败!请联系管理员");
+			    		}
+			    	},"fm");	
+				});
+			},"fm",true,true);
+		}
+		
+		
+	</script>
+</html>

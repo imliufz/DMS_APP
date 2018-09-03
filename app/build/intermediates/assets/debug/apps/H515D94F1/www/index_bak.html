@@ -1,0 +1,158 @@
+<!-- HTML5 DOCUMENT -->
+
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="content-security-policy">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script type="text/javascript" src="js/html_head.js"></script>
+        <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <link href="css/one.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+			
+		</script>
+		<style type="text/css">
+			
+		</style>
+    </head>
+    <body>
+    	<script type="text/javascript" src="js/index_head.js"></script>
+    
+    	<div class="line">
+            <img src="images/db.png" width="24"><span>待办</span>
+        </div>
+        
+        <ul class="icos">
+        	<li>
+            	<a href="javascript:void(0);" onclick="test('hallReceptionManage.html');" >
+                	<img src="images/ico1.png">
+                	<span>未留档</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="javascript:void(0);" id="dgj"><!--dgjReport.html-->
+                	<img src="images/ico2.png">
+                	<span>待跟进</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="dsp.html" >
+                	<img src="images/ico3.png">
+               		<span>待审批</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="dfp.html" >
+                    <img src="images/ico4.png">
+                    <span>待分配</span>
+                </a>
+            </li>
+        </ul>
+    
+    	<div class="line 2">
+            <img src="images/cx.png" width="20px"><span>查询</span>
+        </div>
+        
+        <ul class="ico">
+        	<li>
+            	<a href="ydwj_list.html" >
+                    <img src="images/app1.png">
+                    <span>已订未交</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="zbReport.html" >
+                    <img src="images/app2.png">
+                    <span>战败</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="tdtc_list.html" >
+                    <img src="images/app3.png">
+                    <span>退订/退车</span>
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="ico lin">
+        	<li>
+            	<a href="bykh_list.html" >
+                    <img src="images/app4.png">
+                    <span>保有客户</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="qbkh_list.html" >
+                    <img src="images/app5.png">
+                    <span>全部客户</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="javascript:;" >
+                    <img src="images/app.gif">
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    
+    	<div class="line">
+            <img src="images/jr.png" width="30px"><span>今日</span>
+        </div>
+        
+        
+         <ul class="tex">
+        	<li>
+            	<a href="ldReport.html" style="text-decoration: none;">
+                    <font>留档：</font>
+                    <span>11</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="ddReport.html" style="text-decoration: none;">
+                    <font>到店：</font>
+                    <span>6</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="gjReport.html" style="text-decoration: none;">
+                    <font>跟进：</font>
+                    <span>32</span>
+                </a>
+            </li>
+        	<li>
+            	<a href="dd2Report.html" style="text-decoration: none;">
+                    <font>订单：</font>
+                    <span>6</span>
+                </a>
+            </li>
+        </ul>
+        <script type="text/javascript" src="js/index_bottom.js?_active_url=index.html" id="index_buttom_js"></script>
+	</body>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+});
+
+function test(v){
+	var url="http://dms.changan.com.cn/jc-app/dcsApp/PotcusAchieveService/userLogin.json?rpcFlag=2&LOGIN_CODE=10000&LOGIN_PWD=dms2015!";
+	makeFormCall(url,function(data){
+		MuiAlert(data);
+	},null,true);
+	/*var w = MuiLoading();
+	setTimeout(function(){
+		w.close();
+	},2000);*/
+}
+
+// 监听plusready事件  
+document.getElementById("dgj").addEventListener( "tap", function(){
+	GetContact(function(str1,str2){
+		MuiAlert(str1+"--"+str2);
+	});
+}, false );
+</script>
+</html>	

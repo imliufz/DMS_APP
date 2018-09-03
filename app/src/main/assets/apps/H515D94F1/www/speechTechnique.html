@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<title>话术锦囊</title>
+    </head>
+    <style type="text/css">
+    	.addImg{
+			background-image: url(images/add.gif);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 23px 23px;
+			height: 25px;
+			width: 45px;
+    	}
+    	
+    	.addSeach{
+		    color: #fff;
+		    border-radius: 15px;
+			background-color: #10a6e2;
+		    background-image: url(images/seach.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 15px 15px;
+			height: 25px;
+			width: 25px;
+			margin-right:10px;
+			margin-top:3px;
+    	}
+    	.cusname{
+    		height: 50px;
+    		font-size: 20px;
+    		font-weight: bold;
+    	}
+    	.gczs{
+    		height: 30px;
+    		font-weight: bold;
+    	}
+    	.tdContent{
+    		height: 35px;
+    		text-indent: 0px;
+    		padding-left: 10px;
+    	}
+    	body{font-family:Microsoft YaHei,宋体;}
+    	input[type=text],input[type=tel],input[type=number]{border:none;}
+    </style>
+    <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" onLoad="">
+    <form id="fm" method="post">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=话术锦囊" id="detail_head_js"></script>
+	<div style="height: 55px;display: none;" id="blankDiv"></div>
+    <input type="hidden" name="tabType" id="tabType" value="" />
+    <input type="hidden" name="id" id="id" value="" />
+	<!--普通用户登录时显示-->
+	<div class="cardexplain" id="_showContentDiv1">
+	<div id="tabs1">
+		<ul class="round">
+		<li>
+			<div style="height: 10px;background-color: #F0F0F0;"></div>
+		</li>
+		<li class="nob">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td style="height: 35px;" width="6%"><hr style="height: 15px;width: 1px;margin-left: 12px;" color="#46A3FF" ></td>
+					<td style="font-size: large;font-weight: bold;">开场白</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent"><font color="#005AB5">沟通要点：确认客户姓名，要买车型，在哪个城市用车。</font></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent">
+						<font style="font-size: larger;font-weight:bold ;float: left;">·&nbsp;</font>
+						话术参考：<font id="OPENINGREMARKS"></font>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li>
+			<div style="height: 10px;background-color: #F0F0F0;"></div>
+		</li>
+		<li class="nob">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td style="height: 35px;" width="6%"><hr style="height: 15px;width: 1px;margin-left: 12px;" color="#46A3FF" ></td>
+					<td style="font-size: large;font-weight: bold;">车型介绍</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent"><font color="#005AB5">沟通要点：准确把握用户购车需求，凸显本品特点，吸引客户购买。</font></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent">
+						<font style="font-size: larger;font-weight:bold ;float: left;">·&nbsp;</font>
+						话术参考：<font id="SPECINTRODUCTION"></font>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li>
+			<div style="height: 10px;background-color: #F0F0F0;"></div>
+		</li>
+		<li class="nob" id="speechTechnique">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td style="height: 35px;" width="6%"><hr style="height: 15px;width: 1px;margin-left: 12px;" color="#46A3FF" ></td>
+					<td style="font-size: large;font-weight: bold;">购买方式及活动</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent"><font color="#005AB5" id="ACTIVITYRECOMMEND"></font></td>
+				</tr>
+			</table>
+		</li>
+		<li>
+			<div style="height: 10px;background-color: #F0F0F0;"></div>
+		</li>
+		<li class="nob">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td style="height: 35px;" width="6%"><hr style="height: 15px;width: 1px;margin-left: 12px;" color="#46A3FF" ></td>
+					<td style="font-size: large;font-weight: bold;">报价策略</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent"><font color="#005AB5">沟通要点：确定客户是否询过本品价格，竞品价格。给客户不同的报价策略。</font></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent">
+						<font style="font-size: larger;font-weight:bold ;float: left;">·&nbsp;</font>
+						话术参考：<font id="PRICINGSTRATEGY"></font>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li>
+			<div style="height: 10px;background-color: #F0F0F0;"></div>
+		</li>
+		<li class="nob">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td style="height: 35px;" width="6%"><hr style="height: 15px;width: 1px;margin-left: 12px;" color="#46A3FF" ></td>
+					<td style="font-size: large;font-weight: bold;">邀约到店</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent"><font color="#005AB5">沟通要点：获取用户地址，确定到店时间，发送邀约短信、微信。</font></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="tdContent">
+						<font style="font-size: larger;font-weight:bold ;float: left;">·&nbsp;</font>
+						话术参考：<font id="INVITETOSHOP"></font>
+					</td>
+				</tr>
+			</table>
+		</li>
+	</ul>
+	</div>
+	</div>
+</form>
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		loadData();
+	});
+    
+    function loadData(){
+		var wsId = UrlParm.parm("wsId");
+		var url = httpUrlHead+"PotcusAchieveService/queryWisdomsalesInfo.json?wsId="+wsId+"&"+httpUrlEnd;
+		makeFormCall(url,function(json){
+			if(json.wsInfo != null) {
+				var map = json.wsInfo;
+				$("#OPENINGREMARKS").html(map.OPENINGREMARKS);
+				$("#SPECINTRODUCTION").html(map.SPECINTRODUCTION);
+				$("#ACTIVITYRECOMMEND").html("沟通要点："+map.ACTIVITYRECOMMEND);
+				$("#PRICINGSTRATEGY").html(map.PRICINGSTRATEGY);
+				$("#INVITETOSHOP").html(map.INVITETOSHOP);
+			}
+		},"fm",false,true);
+	}
+</script>
+</html>

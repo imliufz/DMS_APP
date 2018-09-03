@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<title>跟进邀约</title>
+    </head>
+    <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" onLoad="loadData();">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=跟进邀约&_is_loading=1" id="detail_head_js"></script>
+	<div id="_showLoading"></div>
+	<div id="_showContent">
+	<form id="fm" method="post">
+    <input type="hidden" name="tabType" id="tabType" value="" />
+    <input type="hidden" name="id" id="id" value="" />
+	<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+		<script>
+			var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+			document.write(isAndroid>-1?"<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>":"<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+		</script>
+	</div>
+	<!--普通用户登录时显示-->
+	<div class="cardexplain" id="_showContentDiv1">
+	<ul class="round">
+		<li class="title mb"><span class="none">基本信息</span></li>
+				<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>客户姓名<font color="red">*</font></td>
+					<td><input name="customerName" id="customerName" class="px" value="" placeholder="请输入客户姓名" type="text" required="required"></td>
+				</tr>
+			</table>
+		</li>
+        <li >
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>客户性别<font color="red">*</font></td>
+                    <td>
+                        <select name="gender" id="gender" class="download dropdown-select" required="required">
+                        	<option value="">-请选择-</option>
+                            <option value="10031001">男</option>
+                            <option value="10031002">女</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>手机号码<font color="red">*</font></td>
+					<td>
+					<input name="contactorMobile" class="px"  style="width: 65%;display: inline;" id="contactorMobile" value="" placeholder="请输入手机号码" type="tel" required="required" />
+					<img  height="21px;" src="static/img/bohao.png" id="callTel" ></img>&nbsp;&nbsp;<img  height="21px;" src="static/img/duanxing.png" name="callMsg"></img>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>跟进过程<font color="red">*</font></td>
+                    <td>
+                        <select name="promResult" id="promResult" class="download dropdown-select" onChange="isShow(this.value)" required="required">
+                            <option value="">-请选择-</option>
+                            <option value="13341001">客户资料维护</option>
+                            <option value="13341009">持续跟进</option>
+							<option value="13341011">客户邀约</option>
+							<option value="13341010">战败申请</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<li class="title mb"><span class="none">意向信息</span></li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="biaoge">
+				<td>意向车系</td>
+				<td>
+					<select name="intentSeries" id="intentSeries" class="download dropdown-select" onChange="_changeSMPC(this.value,1);">
+							<option value="">-请选择-</option>
+					</select>
+				</td>
+				</tr>
+			</table>
+		
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="biaoge">
+				<td>意向车型</td>
+				<td>
+					<select name="intentModel" id="intentModel" class="download dropdown-select" onChange="_changeSMPC(this.value,2);">
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>意向配置</td>
+                    <td>
+                        <select name="intentPackage" id="intentPackage" class="download dropdown-select" onChange="_changeSMPC(this.value,3);">
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%" >
+                <tr class="biaoge">
+                    <td>意向颜色</td>
+                    <td>
+                        <select name="color" id="color" class="download dropdown-select">
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<li class="title mb"><span class="none">其它信息</span></li>
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td>销售顾问</td>
+                    <td><input name="soldBy" class="px" id="soldBy" value="" type="text" readonly></td>
+                </tr>
+            </table>
+        </li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="">
+				<td>促进前级别</td>
+				<td>
+					<select name="intentLevel" id="intentLevel" class="download dropdown-select-nosel" disabled style="border:none;">
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="">
+				<td>是否OEM来源</td>
+				<td>
+					<select name="isOem" id="isOem" class="download dropdown-select-nosel" disabled style="border:none;">
+						<option value="1">是</option>
+						<option value="2">否</option>
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="">
+				<td id="CLUE_SOURCE_NAME">OEM客户来源</td>
+				<td>
+					<select name="CLUE_SOURCE" id="CLUE_SOURCE" class="download dropdown-select-nosel" disabled style="border:none;">
+					</select>
+				</td>
+			  </tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="">
+				<td>了解途径</td>
+				<td>
+					<select name="mediaType" id="mediaType" class="download dropdown-select-nosel" disabled style="border:none;">
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr class="">
+				<td>渠道细分</td>
+				<td>
+					<select name="mediaDetail" id="mediaDetail" class="download dropdown-select-nosel" disabled style="border:none;">
+					</select>
+				</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>活动代码</td>
+					<td>
+						<input name="CAMPAIGN_CODE" class="px" id="CAMPAIGN_CODE" type="text" readonly="readonly" style="border:none;">
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>活动名称</td>
+					<td>
+						<input name="CAMPAIGN_NAME" class="px" id="CAMPAIGN_NAME" type="text" readonly="readonly" style="display: inline; width: 70%;border:none;">
+						<input id="activityChooseBtn" type="button" value="选择" style="display: inline; width: 20%;" />
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="">
+					<td>到店次数</td>
+					<td><input name="num" class="px" id="num" value="0" placeholder="请输入到店次数" type="text" readonly="readonly" style="border:none;"></td>
+				</tr>
+			</table>
+		</li>
+        <div id="genjin" style="display: none">
+				<li class="nob">
+					<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr class="biaoge">
+							<td>是否到店</td>
+							<td>
+								<input class="px" id="whetherShopDesc" type="text" readonly="readonly" style="border:none;">
+								<input class="px" id="whetherShop" name="whetherShop" type="hidden">
+							</td>
+						</tr>
+					</table>
+				</li>
+        </div>
+        <li class="nob" id="yaoyue" style="display:none;">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>邀约到店时间<font color="red">*</font></td>
+                    <td>
+                    	<input type="hidden" name="bookingDate" id="bookingDate" value="" />
+                        <input name="nextBookingDate" id="nextBookingDate" value="" type="date" class="px" required="required"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<div id="gy" style="display: none">
+				 <li class="nob">
+		            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+		                <tr class="biaoge">
+		                    <td>跟进方式<font color="red">*</font></td>
+		                    <td>
+		                        <select name="promWay" id="promWay" class="download dropdown-select" required="required" defaultValue="13251003">
+		                        </select>
+		                    </td>
+		                </tr>
+		            </table>
+		        </li>
+                <li class="nob">
+                    <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr class="biaoge">
+                            <td>经过情形<font color="red">*</font></td>
+                            <td>
+                                <textarea name="scene" id="scene" class="pxtextarea" style=" height:99px;overflow-y:visible" id="info1" placeholder="请输入跟进经过情形" required="required"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li class="nob">
+                    <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr class="biaoge">
+                            <td>促进后级别<font color="red">*</font></td>
+                            <td>
+                                <select name="nextGrade" id="nextGrade" class="download dropdown-select" required="required" onChange="changeLevel(this.value);">
+                                    <option value="">-请选择-</option>
+                                    <option value="13101001">H级</option>
+                                    <option value="13101002">A级</option>
+                                    <option value="13101003">B级</option>
+                                    <option value="13101004">C级</option>
+                                    <option value="13101005">N级</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li class="nob">
+                    <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr class="biaoge">
+                            <td>下次跟进时间<font color="red">*</font></td>
+                            <td>
+                            	<input name="cxDay" id="cxDay" value="" type="hidden"/>
+                            	<input name="nextLastTime" id="nextLastTime" value="" type="hidden"/>
+                                <input name="nextTime" id="nextTime" value="" type="datetime-local" class="px" required="required"/>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+        </div>
+        <div id="zhanbai"  style="display: none">
+            <li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="biaoge">
+                        <td>战败类型<font color="red">*</font></td>
+                        <td>
+                            <select name="failType" id="failType" class="download dropdown-select" required="required" onChange="changeFailType(this.value);">
+                                <option value="">-请选择-</option>
+                                <option value="1">购其他品牌车</option>
+                                <option value="2">购其他店本品牌车</option>
+                                <option value="3">集团内战败</option>
+                                <option value="4">咨询电话</option>
+                                <option value="5">电话问题</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div id="zhanbaiSeries" style="display:none">
+	            <li class="nob">
+	                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr class="biaoge">
+	                        <td>战败品牌<font color="red" id="failBranTip">*</font></td>
+	                        <td>
+	                            <select name="failBran" id="failBran" class="download dropdown-select" onChange="_changeFailBran(this.value,'failSeries');">
+	                            </select>
+	                        </td>
+	                    </tr>
+	                </table>
+	            </li>
+	            <li class="nob">
+	                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr class="biaoge">
+	                        <td>战败车系<font color="red" id="failSeriesTip">*</font></td>
+	                        <td>
+	                            <select name="failSeries" id="failSeries" class="download dropdown-select">
+	                            </select>
+	                        </td>
+	                    </tr>
+	                </table>
+	            </li>
+            </div>
+            <div>
+            <li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="biaoge">
+                        <td>战败原因<font color="red">*</font></td>
+                        <td>
+                            <select name="failReason" id="failReason" class="download dropdown-select" required="required" onChange="_changeFailReason();">
+                            	<option value="">-请选择-</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="biaoge">
+                        <td>
+                        	原因备注<font color="red" id="failReasonDesc_MUST" style="display: none;">*</font>
+                        	<br/>
+                        	<label id="failReasonDesc_LABEL" style="display: none;">(10个字以上)</label>
+                        </td>
+                        <td>
+                            <textarea name="failReasonDesc" id="failReasonDesc" class="pxtextarea" style=" height:99px;overflow-y:visible" id="info" placeholder="请输入战败原因备注"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </div>
+
+	</ul>
+	<ul class="round">
+			<li class="title mb"><span class="none">展厅记录</span></li>
+			<table class="bordered">
+				<thead>
+				<tr >
+					<th width="25%">接待时间</td>
+					<th width="25%">接待人</td>
+					<th width="50%">经过情形</td>
+				</tr>
+				</thead>
+				<tbody id="ztjl">
+            	</tbody>
+			</table>
+		</ul>
+	<ul class="round">
+			<li class="title mb"><span class="none">跟进历史</span></li>
+			<table class="bordered">
+				<thead>
+				<tr >
+					<th width="25%">跟进时间</td>
+					<th width="25%">促进级别</td>
+					<th width="50%">经过情形</td>
+				</tr>
+				</thead>
+				<tbody id="gjls">
+            	</tbody>
+			</table>
+		</ul>
+		<div class="footReturn"  style="height: 30px;">
+			<input id="showcard" class="submit" value="提   交" type="submit" style="width:100%;">
+			<br/><br/> 
+			<input id="showcard" class="submit2" value="退   回" type="button" onClick="backFunc();" style="width:100%;">
+			<br/><br/><br/><br/>
+			<div class="window" id="windowcenter">
+				<div id="title" class="wtitle">操作提示<span class="close" id="alertclose"></span></div>
+				<div class="content">
+					<div id="txt"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+</div>
+<div class="cardexplain" id="_showContentDiv4" style="display: none;">
+		<ul class="round">
+			<li>跟进邀约&nbsp;&nbsp;>>&nbsp;&nbsp;选择活动</li>
+		</ul>
+		<ul class="round">
+			<li class="title mb">
+				<span class="none">查询条件栏</span>
+			</li>
+			<li class="nob">
+				<form id="_showContentDiv4_form" method="post">
+					<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr class="biaoge">
+							<td>活动代码</td>
+							<td>
+								<li class="nob">
+									<input type="text" id="activityCode" name="activityCode" placeholder="活动代码" class="px" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>活动名称</td>
+							<td>
+								<li class="nob">
+									<input type="text" id="activityName" name="activityName" placeholder="活动名称" class="px" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>活动分类<font color="red">*</font></td>
+							<td>
+								<li class="nob">
+									<select id="ACTIVE_TYPE" name="ACTIVE_TYPE" class="download dropdown-select" style="width: 90%" required="required">
+										<option value="">活动分类</option>
+									</select>
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td></td>
+							<td align="left">
+								<li class="nob">
+									<input value="查 询" type="submit" class="submit" style="display: inline; width: 30%;">
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<input value="返 回" type="button" class="submit" style="display: inline; width: 30%;" onClick="backLastLevel();">
+								</li>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</li>
+		</ul>
+
+		<div class="footReturn"></div>
+		<ul class="round">
+			<li class="title mb">
+				<span class="none">活动信息</span>
+			</li>
+			<table class="bordered">
+				<thead id="activityTableHead">
+				</thead>
+				<tbody id="activityTableBody">
+				</tbody>
+			</table>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+
+	var changeFlag = false;
+	
+	$(document).ready(function() {
+		$(":input").change(function(){
+			changeFlag=true;     
+		});
+		$("select").change(function(){
+			changeFlag=true;     
+		});
+		$("textarea").change(function(){
+			changeFlag=true;     
+		});
+		$("#callTel").click(function(){
+			var id = UrlParm.parm("id");
+			var phone = $("#contactorMobile").val();
+			var isClick = $(this).attr("isClick");
+			if(isClick == "1"){
+				//已经拨号，无需二次拨号
+			} else {
+				var url = httpUrlHead+"PotcusAchieveService/saveCallLog.json?id="+id+"&cusPhone="+phone+"&"+httpUrlEnd;
+				makeFormCall(url, function(json){}, "fm");
+				$(this).attr("isClick","1");
+			}
+			window.location.href="tel:"+phone;
+		});
+		//营销活动按钮事件绑定
+		$("#activityChooseBtn").click(function() {
+			$('#_showContentDiv1').hide();
+			//$('#blankDiv').show();
+			$('#_showContentDiv4').show();
+			$('#_showContentDiv4').removeClass().addClass('fadeInRightBig animated infinite');
+			setTimeout(removeClass4, 1000);
+		});
+		/* 选择活动 */
+		$("#_showContentDiv4_form").html5Validate(function() {
+			if (!_validForm("ACTIVE_TYPE")) {return;}
+			var ACTIVE_TYPE = document.getElementById('ACTIVE_TYPE').value;
+			if(ACTIVE_TYPE=='13051001') {
+				var tableHead = document.getElementById("activityTableHead");
+				tableHead.innerHTML = "<tr class='biaoge'><th align='center' width='25%' nowrap>活动计划</td><th align='center' width='25%' nowrap>营销活动</td><th align='center' width='50%' nowrap>营销活动名称</td></tr>";
+				
+				var url = httpUrlHead + "HallReceptionService/showDealerActivity.json?" + httpUrlEnd + "&ACTIVE_TYPE="+ACTIVE_TYPE + "&activityCode=" + encodeURIComponent(encodeURIComponent(document.getElementById('activityCode').value)) + "&activityName=" + encodeURIComponent(encodeURIComponent(document.getElementById('activityName').value));
+				makeFormCall(url, function(json) {
+					var tableBody = document.getElementById("activityTableBody");
+					tableBody.innerHTML = '';
+					if (json.activityList != null && json.activityList.length > 0) {
+						for (var i = 0; i < json.activityList.length; i++) {
+							var newRow = tableBody.insertRow(i);
+							newRow.title = '单击进行确认';
+							newRow.onclick=function() {
+								$('#_showContentDiv1').show();
+								$('#_showContentDiv4').hide();
+								$('#CAMPAIGN_CODE').val($('#uActivityCode'+(this.rowIndex-1)).val());
+								$('#CAMPAIGN_NAME').val($('#uActivityName'+(this.rowIndex-1)).val());
+								$('#CAMPAIGN_TYPE').val($('#uActivityType'+(this.rowIndex-1)).val());
+								
+								$('#MK_CAMPAIGN_TYPE_L1_LI').show();
+								$('#MK_CAMPAIGN_TYPE_NAME_LI').show();
+								$('#MK_CAMPAIGN_TYPE_L1').attr("required", true);
+								$('#MK_CAMPAIGN_TYPE_NAME').attr("required", true);
+							};
+							
+							var newCell = newRow.insertCell(0);
+							newCell.align = "center";
+							newCell.innerHTML = "<input type='hidden' id='uActivityCode"+i+"' value='"+json.activityList[i].ACTIVITY_NUM+"'/><input type='hidden' id='uActivityName"+i+"' value='"+json.activityList[i].ACTIVITY_NAME+"'/><input type='hidden' id='uActivityType"+i+"' value='"+13051001+"'/>"+json.activityList[i].PLAN_NUM;
+
+							newCell = newRow.insertCell(1);
+							newCell.align = "center";
+							newCell.innerHTML = json.activityList[i].ACTIVITY_NUM;
+
+							newCell = newRow.insertCell(2);
+							newCell.align = "center";
+							newCell.innerHTML = json.activityList[i].ACTIVITY_NAME;
+						}
+					}
+				}, "fm", true);
+			} else if(ACTIVE_TYPE=='13051002') {
+				var tableHead = document.getElementById("activityTableHead");
+				tableHead.innerHTML = "<tr class='biaoge'><th align='center' width='25%' nowrap>活动代码</td><th align='center' width='50%' nowrap>活动名称</td><th align='center' width='25%' nowrap>活动类型</td></tr>";
+				
+				var url = httpUrlHead + "HallReceptionService/showDealerActivity.json?" + httpUrlEnd + "&ACTIVE_TYPE="+ACTIVE_TYPE + "&activityCode="+encodeURIComponent(encodeURIComponent(document.getElementById('activityCode').value)) + "&activityName="+encodeURIComponent(encodeURIComponent(document.getElementById('activityName').value));
+				makeFormCall(url, function(json) {
+					var tableBody = document.getElementById("activityTableBody");
+					tableBody.innerHTML = '';
+					if (json.activityList != null && json.activityList.length > 0) {
+						for (var i = 0; i < json.activityList.length; i++) {
+							var newRow = tableBody.insertRow(i);
+							newRow.title = '单击进行确认';
+							newRow.onclick=function() {
+								$('#_showContentDiv1').show();
+								$('#_showContentDiv4').hide();
+								$('#CAMPAIGN_CODE').val($('#uActivityCode'+(this.rowIndex-1)).val());
+								$('#CAMPAIGN_NAME').val($('#uActivityName'+(this.rowIndex-1)).val());
+								$('#CAMPAIGN_TYPE').val($('#uActivityType'+(this.rowIndex-1)).val());
+								
+								$('#MK_CAMPAIGN_TYPE_L1').val('');
+								$('#MK_CAMPAIGN_TYPE_NAME').val('');
+								$('#MK_CAMPAIGN_TYPE_L1').attr("required", false);
+								$('#MK_CAMPAIGN_TYPE_NAME').attr("required", false);
+								$('#MK_CAMPAIGN_TYPE_L1_LI').hide();
+								$('#MK_CAMPAIGN_TYPE_NAME_LI').hide();
+							};
+							
+							var newCell = newRow.insertCell(0);
+							newCell.align = "center";
+							newCell.innerHTML = "<input type='hidden' id='uActivityCode"+i+"' value='"+json.activityList[i].MAINTEN_NO+"'/><input type='hidden' id='uActivityName"+i+"' value='"+json.activityList[i].MAINTEN_NAME+"'/><input type='hidden' id='uActivityType"+i+"' value='"+13051002+"'/>"+json.activityList[i].MAINTEN_NO;
+
+							newCell = newRow.insertCell(1);
+							newCell.align = "center";
+							newCell.innerHTML = json.activityList[i].MAINTEN_NAME;
+
+							newCell = newRow.insertCell(2);
+							newCell.align = "center";
+							newCell.innerHTML = json.activityList[i].MAINTEN_TYPE_DESC;
+						}
+					}
+				}, "fm", true);
+			}
+		});
+	});
+	function removeClass4() {
+		$('#_showContentDiv4').removeClass();
+	}
+	 function backLastLevel() {
+		$('#_showContentDiv1').show();
+		$('#_showContentDiv4').hide();
+		$('#_showContentDiv1').removeClass().addClass('fadeInLeftBig animated infinite');
+		setTimeout(removeAnimated, 1000);
+	}
+	function removeAnimated() {
+		$('#_showContentDiv1').removeClass();
+	}
+    function isShow(val){
+    	var intentLevel = $("#intentLevel").val();
+        var genjin=document.getElementById("genjin");
+		var yaoyue = document.getElementById("yaoyue");
+		var gy = document.getElementById("gy");
+        var zhanbai=document.getElementById("zhanbai");
+        genjin.style.display="none";
+		yaoyue.style.display="none";
+		gy.style.display="none";
+        zhanbai.style.display="none";
+        setGenjinValid(false);
+        setYaoyueValid(false);
+        setGyValid(false);
+        setZhanbaiValid(false);
+        if (intentLevel == "13101008") {//如果本身就是O级，则级别只能选O级
+        	$("#nextGrade").append("<option value=\"13101008\">O级</option>");
+        	$("#nextGrade").val("13101008");
+        	changeLevel("13101008");
+        	$("#nextGrade").attr("disabled","disabled");
+        }
+        
+        document.getElementById("intentSeries").required = true;
+        if (val == 13341009){
+            genjin.style.display="block";
+            gy.style.display="block";
+            setGenjinValid(true);
+            setGyValid(true);
+        } else if (val == 13341011){
+			yaoyue.style.display="block";
+			gy.style.display="block";
+			setYaoyueValid(true);
+		    setGyValid(true);
+        } else if(val == 13341010){
+			zhanbai.style.display="block";
+			setZhanbaiValid(true);
+			document.getElementById("intentSeries").required = false;
+			//设置下次跟进时间为当前时间+5天
+			var nextDate = _getNowFormatDate(_addDate(null,CON_FO_DAY));
+    		var nextLastDate = _getNowFormatDate(_addDate(null,CON_FO_DAY));
+    		document.getElementById("nextTime").value = nextDate.substr(0,10)+"T23:59";
+        	document.getElementById("nextLastTime").value = nextLastDate;
+		}
+    }
+
+    function setGenjinValid(flag){
+    	document.getElementById("promWay").required = flag;
+    }
+    
+    function setYaoyueValid(flag){
+    	document.getElementById("nextBookingDate").required = flag;
+    }
+    
+    function setGyValid(flag){
+    	document.getElementById("scene").required = flag;
+    	document.getElementById("nextGrade").required = flag;
+    	document.getElementById("nextTime").required = flag;
+    }
+    
+    function setZhanbaiValid(flag){
+    	document.getElementById("failType").required = flag;
+    	document.getElementById("failReason").required = flag;
+    }
+    
+    function changeLevel(val){
+    	var nextDate = "";
+    	var nextLastDate = "";
+    	if(val == "13101001"){
+    		nextDate = _getNowFormatDate(_addDate(null,CON_H_DAY));
+    		nextLastDate = _getNowFormatDate(_addDate(null,CON_H_DAY));
+    	} else if(val == "13101002") {
+    		nextDate = _getNowFormatDate(_addDate(null,CON_A_DAY));
+    		nextLastDate = _getNowFormatDate(_addDate(null,CON_A_DAY));
+    	} else if(val == "13101003") {
+    		nextDate = _getNowFormatDate(_addDate(null,CON_B_DAY));
+    		nextLastDate = _getNowFormatDate(_addDate(null,CON_B_DAY));
+    	} else if(val == "13101004") {
+    		nextDate = _getNowFormatDate(_addDate(null,CON_C_DAY));
+    		nextLastDate = _getNowFormatDate(_addDate(null,CON_C_DAY));
+    	} else if(val == "13101005") {
+    		nextDate = _getNowFormatDate(_addDate(null,CON_N_DAY));
+    		nextLastDate = _getNowFormatDate(_addDate(null,CON_N_DAY));
+    	} else if(val == "13101006") {
+    		nextDate = _getNowFormatDate(_addDate(null,CON_FO_DAY));
+    		nextLastDate = _getNowFormatDate(_addDate(null,CON_FO_DAY));
+    	} else if(val == "13101008") {
+    		nextDate = _getNowFormatDate(_addDate(null,CON_O_DAY));
+    		nextLastDate = _getNowFormatDate(_addDate(null,CON_O_DAY));
+    	}
+    	document.getElementById("nextTime").value = nextDate.substr(0,10)+"T23:59";
+    	document.getElementById("nextLastTime").value = nextLastDate;
+    }
+    
+    function changeFailType(val){
+    	var failReason = document.getElementById("failReason");
+    	failReason.options.length = 0;
+    	if(val == "1" || val == "2" || val == "3") {
+    		$("#zhanbaiSeries").css("display","");
+    		failReason.add(new Option("-请选择-",""));
+    		failReason.add(new Option("他销","13331001"));
+    		failReason.add(new Option("品牌","13331002"));
+    		failReason.add(new Option("价格","13331003"));
+    		failReason.add(new Option("配置","13331004"));
+    		failReason.add(new Option("服务","13331005"));
+    		failReason.add(new Option("家人","13331006"));
+    		failReason.add(new Option("其他","13331007"));
+    		failReason.add(new Option("外观","13331008"));
+    		failReason.add(new Option("油耗","13331009"));
+    		failReason.add(new Option("质量","13331010"));
+    		failReason.add(new Option("空间","13331011"));
+    		failReason.add(new Option("拒绝联系","13331012"));
+    		failReason.add(new Option("信息不实","13331013"));
+    		failReason.add(new Option("暂无购车意愿","13331014"));
+    		failReason.add(new Option("动力","13331015"));
+    		failReason.add(new Option("安全","13331016"));
+    		failReason.add(new Option("舒适性","13331017"));
+    		failReason.add(new Option("内饰","13331018"));
+			if(val == "1") {
+    			$("#failBran").attr("required", true);
+    			$("#failSeries").attr("required", true);
+    			$("#failBranTip").css("display","");
+    			$("#failSeriesTip").css("display","");
+    		} else {
+    			$("#failBran").attr("required", false);
+    			$("#failSeries").attr("required", false);
+    			$("#failBranTip").css("display","none");
+    			$("#failSeriesTip").css("display","none");
+    		}
+    		if(val == "2") {
+    			var oSelect = document.getElementById('failBran');
+    			for(var i = 0; i < oSelect.options.length; i++) {
+					if(oSelect.options[i].text == '长安汽车') {
+						oSelect.selectedIndex = i;
+						_changeFailBran(oSelect.options[oSelect.selectedIndex].value,'failSeries');
+					}    				
+    			}
+    		}
+    	} else if(val == "4" ) {
+    		$("#zhanbaiSeries").css("display","none");
+    		failReason.add(new Option("老客户价格咨询","13331019"));
+    		failReason.add(new Option("异地客户价格咨询","13331020"));
+    		failReason.add(new Option("服务信息咨询","13331021"));
+    		failReason.add(new Option("活动参与咨询","13331022"));
+    		failReason.add(new Option("其它咨询","13331023"));
+    	} else if(val == "5") {
+    		$("#zhanbaiSeries").css("display","none");
+    		failReason.add(new Option("其它号码已成交","13331024"));
+    		failReason.add(new Option("多次回访未接通","13331025"));
+    		failReason.add(new Option("拒绝回访","13331026"));
+    		failReason.add(new Option("电话错误","13331027"));
+    	}
+    }
+    
+    function _changeFailReason() {
+    	var oSelect = document.getElementById('failReason');
+		if(oSelect.options[oSelect.selectedIndex].text == '其他') {
+			document.getElementById('failReasonDesc_MUST').style.display = '';
+			document.getElementById('failReasonDesc_LABEL').style.display = '';
+			document.getElementById('failReasonDesc').setAttribute('data-min', "10");
+		} else {
+			document.getElementById('failReasonDesc_MUST').style.display = 'none';
+			document.getElementById('failReasonDesc_LABEL').style.display = 'none';
+			document.getElementById('failReasonDesc').removeAttribute('data-min');
+		}
+    }
+    
+    
+    var oldIntentLevel = "";
+    
+    function loadData(){
+		var id = UrlParm.parm("id");
+		var tabType = UrlParm.parm("tabType");
+		document.getElementById("id").value = id;
+		document.getElementById("tabType").value = tabType;
+		var url = httpUrlHead+"PotcusAchieveService/queryPotentialFollowDetail.json?id="+id+"&tabType="+tabType+"&"+httpUrlEnd;
+		makeFormCall(url,function(json){
+			if(json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+				var map = json.RESULT.maps[0];
+				document.getElementById("customerName").value = map.CUSTOMER_NAME;
+				document.getElementById("gender").value = map.GENDER;
+				document.getElementById("contactorMobile").value = map.CONTACTOR_MOBILE;
+				if(map.STATUS == "30331004" || map.CUS_SOURCE == "13111016"){
+					document.getElementById("contactorMobile").style.border = "none";
+					document.getElementById("contactorMobile").readOnly = true;
+				}
+				if (map.INTENT_SERIES != null && json.seriesList != null && json.seriesList.length > 0) {
+					var intentSeries = document.getElementById("intentSeries")
+					var selIndex = -1;
+					for ( var i = 0; i < json.seriesList.length; i++) {
+						intentSeries.add(new Option(json.seriesList[i].GROUP_NAME,json.seriesList[i].GROUP_CODE));
+						if (map.INTENT_SERIES == json.seriesList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						intentSeries.options[selIndex+1].selected = "selected";
+					}
+				} else {
+					_loadSeries("intentSeries");
+				}
+				
+				if (map.INTENT_MODEL != null && json.modelList != null && json.modelList.length > 0) {
+					var intentModel = document.getElementById("intentModel");
+					var selIndex = -1;
+					for ( var i = 0; i < json.modelList.length; i++) {
+						intentModel.add(new Option(json.modelList[i].GROUP_NAME,json.modelList[i].GROUP_CODE));
+						if (map.INTENT_MODEL == json.modelList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						intentModel.options[selIndex].selected = "selected";
+					}
+				} else {
+					var code = document.getElementById("intentSeries").value;
+					if(code != null && code != "") {
+						_changeSMPC(code,1);						
+					}
+				}
+				
+				if (map.INTENT_PACKAGE != null && json.packageList != null && json.packageList.length > 0) {
+					var intentPackage = document.getElementById("intentPackage");
+					var selIndex = -1;
+					for ( var i = 0; i < json.packageList.length; i++) {
+						intentPackage.add(new Option(json.packageList[i].GROUP_NAME,json.packageList[i].GROUP_CODE));
+						if (map.INTENT_PACKAGE == json.packageList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						intentPackage.options[selIndex].selected = "selected";
+					}
+				} else {
+					var code = document.getElementById("intentModel").value;
+					if(code != null && code != "") {
+						_changeSMPC(code,2);						
+					}
+				}
+				
+				if (map.COLOR != null && json.colorList != null && json.colorList.length > 0) {
+					var color = document.getElementById("color");
+					var selIndex = -1;
+					for ( var i = 0; i < json.colorList.length; i++) {
+						color.add(new Option(json.colorList[i].GROUP_NAME,json.colorList[i].GROUP_CODE));
+						if (map.COLOR == json.colorList[i].GROUP_CODE) {
+							selIndex = i;
+						}
+					}
+					if (selIndex != -1) {
+						color.options[selIndex].selected = "selected";
+					}
+				} else {
+					var code = document.getElementById("intentPackage").value;
+					if(code != null && code != "") {
+						_changeSMPC(code,3);						
+					}
+				}
+				
+				document.getElementById("soldBy").value = map.SALES_CONSULTANT;
+				
+				document.getElementById("intentLevel").add(new Option(map.INTENT_LEVEL_DESC,map.INTENT_LEVEL));
+				oldIntentLevel = map.INTENT_LEVEL;
+				if(map.MEDIA_TYPE_DESC != null) {
+					document.getElementById("mediaType").add(new Option(map.MEDIA_TYPE_DESC,map.MEDIA_TYPE));					
+				}
+				if (map.MEDIA_DETAIL_DESC != null) {
+					document.getElementById("mediaDetail").add(new Option(map.MEDIA_DETAIL_DESC,map.MEDIA_DETAIL));
+				}
+				document.getElementById("CAMPAIGN_CODE").value = map.CAMPAIGN_CODE;
+				document.getElementById("CAMPAIGN_NAME").value = map.CAMPAIGN_NAME;
+				if(map.CAMPAIGN_NAME != null){
+					$("#activityChooseBtn").remove();
+				}
+				
+				if (map.NEXT_TIME != null) {
+					document.getElementById("nextTime").value = map.NEXT_TIME.substr(0,10)+"T23:59";
+				}
+				if (map.NEXT_LAST_TIME != null) {
+					document.getElementById("nextLastTime").value = map.NEXT_LAST_TIME;
+				}
+				var oSelect_isOem = document.getElementById("isOem");
+				for(var i = 0; i < oSelect_isOem.options.length; i++) {
+			    	if(oSelect_isOem.options[i].value == tabType) {
+			    		oSelect_isOem.selectedIndex = i;
+			    		break;
+			    	}
+			    }
+				var sourceType = "1311";
+				if(tabType == "1") {
+					sourceType = "3031";
+					if(map.CLUE_SOURCE != null) {
+						document.getElementById("CLUE_SOURCE").setAttribute("defaultValue", map.CLUE_SOURCE);
+					} else {
+						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
+					}
+				} else {
+					$("#CLUE_SOURCE_NAME").html("客户来源");
+					if(map.CUS_SOURCE != null) {
+						document.getElementById("CLUE_SOURCE").setAttribute("defaultValue", map.CUS_SOURCE);
+					} else {
+						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
+					}
+				}
+				/* if (map.STATUS == "30331003") {
+					document.getElementById("nextTime").readOnly = true;
+				} */
+				document.getElementById("num").value = map.ARRIVE_TIMES;
+				if(map.WHETHER_SHOP == '10041001') {
+					document.getElementById("whetherShop").value = '10041001';
+					document.getElementById("whetherShopDesc").value = '是';
+				} else {
+					document.getElementById("whetherShop").value = '10041002';
+					document.getElementById("whetherShopDesc").value = '否';
+				}
+				document.getElementById("bookingDate").value = map.NEXT_BOOKING_DATE;
+				//加载跟进历史数据
+				if(json.details != null && json.details.length > 0) {
+					var gjls = document.getElementById("gjls");
+					for(var i = 0; i < json.details.length;i++) {
+						var detail = json.details[i];
+						var newRow = gjls.insertRow(i);
+						var newCell = newRow.insertCell(0);
+						newCell.align = "center";
+						newCell.innerHTML = detail.ACTION_DATE_STR;
+						
+						newCell = newRow.insertCell(1);
+						newCell.align = "center";
+						newCell.innerHTML = detail.NEXT_GRADE_DESC;
+						
+						newCell = newRow.insertCell(2);
+						newCell.align = "center";
+						newCell.innerHTML = detail.SCENE;
+					}
+				}
+				//加载展厅记录
+				if(json.visitings != null && json.visitings.length > 0) {
+					var gjls = document.getElementById("ztjl");
+					for(var i = 0; i < json.visitings.length;i++) {
+						var visiting = json.visitings[i];
+						var newRow = gjls.insertRow(i);
+						var newCell = newRow.insertCell(0);
+						newCell.align = "center";
+						newCell.innerHTML = visiting.VISIT_TIME_STR;
+						
+						newCell = newRow.insertCell(1);
+						newCell.align = "center";
+						newCell.innerHTML = visiting.SOLD_BY;
+						
+						newCell = newRow.insertCell(2);
+						newCell.align = "center";
+						newCell.innerHTML = visiting.SCENE;
+					}
+				}
+				//重新加载跟进任务定义
+				setPotcusLevel(json.potcusLevels);
+				//加载tc_code
+				_loadTcCode("1325",sourceType,"1305","promWay","CLUE_SOURCE","ACTIVE_TYPE");
+			}
+		},"fm",false,true);
+	}
+    
+    _loadFailSeries("failBran");
+    
+    $("#fm").html5Validate(function(){
+    	save();
+	});
+    
+    function setCxDay(){
+    	var nextGrade = document.getElementById("nextGrade").value;
+    	var cxDay = 0;
+    	if(nextGrade == "13101008"){
+    		cxDay = CON_O_CX_DAY;
+    	} else if(nextGrade == "13101001"){
+    		cxDay = CON_H_CX_DAY;
+    	} else if(nextGrade == "13101002"){
+    		cxDay = CON_A_CX_DAY;
+    	} else if(nextGrade == "13101003"){
+    		cxDay = CON_B_CX_DAY;
+    	} else if(nextGrade == "13101004"){
+    		cxDay = CON_C_CX_DAY;
+    	} else if(nextGrade == "13101005"){
+    		cxDay = CON_N_CX_DAY;
+    	} else if(nextGrade == "13101006"){
+    		cxDay = CON_FO_CX_DAY;
+    	}
+    	document.getElementById("cxDay").value = cxDay;
+    }
+    
+    //保存方法
+    function save(){
+    	var promResult = document.getElementById("promResult").value;
+    	if(promResult == 13341009 || promResult == 13341011) {
+    		var day=_GetDateDiff(_getNowFormatDate(null), document.getElementById("nextTime").value.replace("T"," "), "day");
+    		if(day < 0) {
+    			MuiAlert("时间不能小于当前时间");
+    			return;
+    		}
+    		if(document.getElementById("nextGrade").value=="13101008"){
+    			if(day>(CON_O_DAY)){
+    				MuiAlert("O级跟进不能超过"+(CON_O_DAY)+"天");
+    				return;
+    			}
+    		} else if(document.getElementById("nextGrade").value=="13101001"){
+    			if(day>(CON_H_DAY)){
+    				MuiAlert("H级跟进不能超过"+(CON_H_DAY)+"天");
+    				return;
+    			}
+    		} else if(document.getElementById("nextGrade").value=="13101002"){
+    			if(day>(CON_A_DAY)){
+    				MuiAlert("A级跟进不能超过"+(CON_A_DAY)+"天");
+    				return;
+    			}
+    		} else if(document.getElementById("nextGrade").value=="13101003"){
+    			if(day>((CON_B_DAY))){
+    				MuiAlert("B级跟进不能超过"+(CON_B_DAY)+"天");
+    				return;
+    			}
+    		} else if(document.getElementById("nextGrade").value=="13101004"){
+    			if(day>(CON_C_DAY)){
+    				MuiAlert("C级跟进不能超过"+(CON_C_DAY)+"天");
+    				return;
+    			}
+    		} else if(document.getElementById("nextGrade").value=="13101005" && oldIntentLevel != "13101005"){
+    			if(day>((CON_N_DAY))){
+    				MuiAlert("首次改为N级不能超过"+(CON_N_DAY)+"天跟进");
+    				return;
+    			}
+    		} else if(document.getElementById("nextGrade").value=="13101006"){
+    			if(day>(CON_FO_DAY)){
+    				MuiAlert("FO级跟进不能超过"+(CON_FO_DAY)+"天");
+    				return;
+    			}
+    		}
+    	}
+    	setCxDay();
+    MuiConfirm("确定提交?",function(e){
+    		if(e.index == 0){
+	    		$("#nextGrade").removeAttr("disabled");
+	    		var url = httpUrlHead+"PotcusAchieveService/potentialFollowSave.json?"+httpUrlEnd;
+	        	makeFormCall(url, function(json){
+	        		MuiAlert("操作成功!",function(){
+	        			_toBack("gj_list.html")
+	        		});
+	        	}, "fm",true);
+        	}
+    	});
+    }
+    
+    //退回
+    function backFunc(){
+    	var id = document.getElementById("id").value;
+    	var tabType = document.getElementById("tabType").value;
+		_toPage("gj_return.html?id="+id+"&tabType="+tabType);
+	}
+    
+  //设置自定义级别
+	function setPotcusLevel(maps){
+		if(maps != null && maps.length > 0) {
+			setLocalStorage("H_DAY",maps[0].H_DAY);
+			setLocalStorage("H_CX_DAY",maps[0].H_CX_DAY);
+			setLocalStorage("A_DAY",maps[0].A_DAY);
+			setLocalStorage("A_CX_DAY",maps[0].A_CX_DAY);
+			setLocalStorage("B_DAY",maps[0].B_DAY);
+			setLocalStorage("B_CX_DAY",maps[0].B_CX_DAY);
+			setLocalStorage("C_DAY",maps[0].C_DAY);
+			setLocalStorage("C_CX_DAY",maps[0].C_CX_DAY);
+			setLocalStorage("N_DAY",maps[0].N_DAY);
+			setLocalStorage("N_CX_DAY",maps[0].N_CX_DAY);
+			setLocalStorage("FO_DAY",maps[0].FO_DAY);
+			setLocalStorage("FO_CX_DAY",maps[0].FO_CX_DAY);
+			setLocalStorage("O_DAY",maps[0].O_DAY);
+			setLocalStorage("O_CX_DAY",maps[0].O_CX_DAY);
+		}
+		_loadPotcusLevel();
+	}
+</script>
+</html>

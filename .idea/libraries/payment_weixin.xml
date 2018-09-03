@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="payment-weixin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/payment-weixin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

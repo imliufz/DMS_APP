@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<script type="text/javascript" src="js/clpage.js"></script>
+<script src="js/echarts-all.js"></script>
+<link href="css/index.css" rel="stylesheet" type="text/css"/>
+<title>库存查询</title>
+<style type="text/css">
+	.chart {
+		height: 300px;
+		margin: 0px;
+		padding: 0px;
+	}
+	.bordered td{
+		text-align: center;
+		font-size: 15px;
+		text-indent:2px;
+	}
+	.bordered th{
+		background: #10a6e2;
+		color: #fff;
+		text-shadow:none;
+		font-size: 16px;
+		text-indent:2px;
+	}
+</style>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=库存查询&_is_loading=1&_show_save=2&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		<div class="cardexplain">
+			<ul class="round" style="border:none;margin-bottom: 0px;">
+			<table id="tb_query">
+                <tr class="biaoge" id="oemCusSource_Tr" >
+                	<td>库存状态 </td>
+                    <td>
+						 <li class="nob">
+                             <select id="vehicle_life" name="vehicle_life" class="download dropdown-select">
+                                <option value="">-请选择-</option>
+                                <option value="10321003">经销商库存</option>
+                                <option value="10321005">经销商在途</option>
+                            </select>
+                        </li>                   
+                    </td>
+                </tr>
+                 <tr class="biaoge">
+                	<td>车辆所有者						                </td>
+                    <td>
+						 <li class="nob">
+                             <select id="vehicleOwn" name="vehicleOwn" class="download dropdown-select">
+                                <option value="">-请选择-</option>
+                                <option value="01">自有车</option>
+								<option value="03">代销车</option>
+								<option value="02">代管车</option>
+                            </select>
+                </tr>
+                <tr class="biaoge">
+                	<td>锁定状态						                </td>
+                    <td>
+						 <li class="nob">
+                             <select id="lockStatus" name="lockStatus" class="download dropdown-select">
+                                <option value="">-请选择-</option>
+                                <option value="10241001">正常状态</option>
+                                <option value="10241002">发运锁定</option>
+                                <option value="10241003">预留锁定</option>
+                                <option value="10241004">质损锁定</option>
+                                <option value="10241005">退车锁定</option>
+                                <option value="10241006">批发锁定</option>
+                                <option value="10241007">二手车置换锁定</option>
+                            </select>
+                        </li>                    
+                    </td>
+                </tr>
+                <tr class="biaoge">
+						<td>库存超过</td>
+						<td>
+							<li class="nob">
+								<input type="text" id="days" name="days" value="" placeholder="(天)" class="px" />
+							</li>
+						</td>
+				</tr>
+				<tr class="biaoge">
+						<td>VIN</td>
+						<td>
+							<li class="nob">
+								<input type="text" id="vin" name="vin" value="" class="px" />
+							</li>
+						</td>
+				</tr>
+                <tr>
+						<td colspan="2" align="center" height="60">
+							<li class="nob">
+								<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="loadData();">
+							</li>
+						</td>
+					</tr>
+				</table>
+			</ul>
+		<div class="cardexplain" id="_showContent" style="padding-top:0px;width: 100%;overflow-x: auto;">
+				<form action="javascript:;" method="post">
+					<div class="tab-pane active" id="panel-1">
+			 <ul class="round">
+        <table class="bordered" style="background-color: white;">
+            <thead>
+            <tr class="biaoge" >
+            	<th nowrap="nowrap"  style="text-align: center;">车系</th>
+                <th nowrap="nowrap"  style="text-align: center;">车型</th>
+                <th nowrap="nowrap"  style="text-align: center;">配置</th>
+                <th nowrap="nowrap"  style="text-align: center;">物料代码</th>
+                <th nowrap="nowrap"  style="text-align: center;">物料名称</th>
+                <th nowrap="nowrap"  style="text-align: center;">在库数量</th>
+                <th nowrap="nowrap"  style="text-align: center;">在途数量</th>
+                <th nowrap="nowrap"  style="text-align: center;">已订未销</th>
+                <th nowrap="nowrap"  style="text-align: center;">可用数</th>
+                
+            </tr>
+            </thead>
+            <tbody id="dataReport"  >
+            </tbody>
+        </table>
+		</ul>
+		</div>
+	</form>
+	</div>
+	<div style="padding-top:5px;width: 100%;overflow-x: auto;">
+		<div id="viewReport" class="chart"></div>
+	</div>
+	
+	<br>
+	</br>
+	<!-- 菜单 -->
+    
+    <!-- 菜单 -->
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		loadData();
+	});
+	function loadData() {
+		var url1 = httpUrlHead + "ReportServiceApp/StorageQueryDLR_Detail.json?" + httpUrlEnd;
+		var appendHtml = "";
+		makeFormCall(url1,function(json){
+			if ( json.list == undefined || json.list == null || json.list.length == 0) {
+				pageNum = 0;
+				appendHtml += "<tr><td colspan='9'><a style=color:red>无数据</a></td></tr>";
+				$("#dataReport").html(appendHtml);
+				return;
+			}
+			var ON_WAY = 0;
+			var NO_WAY = 0;
+			var SUM_NO = 0;
+			var orderNum = 0;
+			var sumHtml = "";
+			for(var i = 0; i < json.list.length;i++) {
+				var detail = json.list[i];
+				appendHtml += "<tr class='clickTr' code='"+detail.MATERIAL_CODE+"'>";
+				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.SERIES_NAME+"</td>";
+				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.MODEL_NAME+"</td>";
+				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.PACKAGE_NAME+"</td>";
+				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.MATERIAL_CODE+"</td>";
+				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.MATERIAL_NAME+"</td>";
+				if( parseInt(changeNullvalue(detail.NO_WAY)) > 0 ){
+					appendHtml += "<td nowrap='nowrap' algin='center'><a type='2'>"+changeNullvalue(detail.NO_WAY)+"</a></td>";
+				}else{
+					appendHtml += "<td nowrap='nowrap' algin='center'>"+changeNullvalue(detail.NO_WAY)+"</td>";
+				}
+				if( parseInt(changeNullvalue(detail.ON_WAY)) > 0 ){
+					appendHtml += "<td nowrap='nowrap' algin='center'><a type='1'>"+changeNullvalue(detail.ON_WAY)+"</a></td>";
+				}else{
+					appendHtml += "<td nowrap='nowrap' algin='center'>"+changeNullvalue(detail.ON_WAY)+"</td>";
+				}
+				if( parseInt(changeNullvalue(detail.ORDERNUM)) > 0 ){
+					appendHtml += "<td nowrap='nowrap' algin='center'><a type='0'>"+changeNullvalue(detail.ORDERNUM)+"</a></td>";
+				}else{
+					appendHtml += "<td nowrap='nowrap' algin='center'>"+changeNullvalue(detail.ORDERNUM)+"</td>";
+				}
+				var sumNo = changeNullvalue(detail.SUM_NO) + changeNullvalue(detail.ORDERNUM);
+				if( parseInt(changeNullvalue(detail.SUM_NO)) > 0 ){
+					appendHtml += "<td nowrap='nowrap' algin='center'><a type='3'>"+changeNullvalue(detail.SUM_NO)+"</a></td>";
+				}else{
+					appendHtml += "<td nowrap='nowrap' algin='center'>"+changeNullvalue(detail.SUM_NO)+"</td>";
+				}
+				appendHtml += "</tr>";
+				ON_WAY += parseInt(changeNullvalue(detail.ON_WAY));
+				NO_WAY += parseInt(changeNullvalue(detail.NO_WAY));
+				SUM_NO += parseInt(changeNullvalue(detail.SUM_NO));
+				orderNum += parseInt(changeNullvalue(detail.ORDERNUM));
+			}
+			sumHtml += "<tr>";
+			sumHtml += "<td nowrap='nowrap' style='text-align:left;' colspan='5'>小计:</td>";
+			sumHtml += "<td nowrap='nowrap' algin='center'>"+NO_WAY+"</td>";
+			sumHtml += "<td nowrap='nowrap' algin='center'>"+ON_WAY+"</td>";
+			sumHtml += "<td nowrap='nowrap' algin='center'>"+orderNum+"</td>";
+			sumHtml += "<td nowrap='nowrap' algin='center'>"+SUM_NO+"</td>";
+			sumHtml += "</tr>";
+			$("#dataReport").html(sumHtml+appendHtml);
+			$(".clickTr a").click(function(){
+				var code = $(this).parent().parent().attr("code");
+				var type = $(this).attr("type");
+				detailData(code,type);
+			});
+		},"fm",true,true);
+	}
+	function detailData(code,type){
+		var vehicle_life = $("#vehicle_life").val();
+		if( vehicle_life == ""){
+			if(type == "1"){
+				vehicle_life = "10321005"; 
+			}else if(type == "2"){
+				vehicle_life = "10321003"; 
+			}
+		}
+		
+		var vehicleOwn = $("#vehicleOwn").val();
+		var lockStatus = $("#lockStatus").val();
+		var days = $("#days").val();
+		var vin = $("#vin").val();
+		var reportFrom ="storeReport";
+		var title = "库存查询";
+		var headTitle = ["车型名称","配置","物料代码","物料名称","VIN","库存状态","锁定状态","入库日期","库存天数","已订未销"];//表头
+		var headWidth = ["220px","200px","100px","300px","100px","100px","100px","100px","100px","100px"];//表头
+		var showCol = ["MODEL_NAME","PACKAGE_NAME","MATERIAL_CODE","MATERIAL_NAME","VIN","LIFE_CYCLE","LOCK_STATUS","STORAGE_TIME","DAY_COUNT","DMS_STATUS"];//显示字段
+		var paramName = ["vehicle_life","vehicleOwn","lockStatus","days","vin","material_code","reportFrom","type"];//查询参数
+		var paramValue = [vehicle_life,vehicleOwn,lockStatus,days,vin,code,reportFrom,type];//参数值
+		//组装url
+		var url = "report_detail.html?headTitle="+headTitle+"&paramName="+paramName+"&paramValue="+paramValue+"&showCol="+showCol+"&headWidth="+headWidth+"&title="+title;
+		ToUrl(url);
+	}
+	function changeNullvalue(obj){
+		try{
+			if(obj == undefined || obj == null || obj == "" || obj == "undefined" || obj == "NULL" || obj == "null"){
+				return "0";
+			} else {
+				return obj;
+			}
+		}catch(e){
+			return "";
+		}
+	}
+</script>
+</html>

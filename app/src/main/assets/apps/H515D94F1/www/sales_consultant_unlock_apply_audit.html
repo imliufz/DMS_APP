@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>用户账号解锁申请审核页面</title>
+</head>
+<body onLoad="_loadData();" style="width:100%;height:100%;margin:0;padding:0;text-align:center;">
+<form name='fm' id='fm'>
+<input type="hidden" name="id" id="id" value=""/><!-- 营销宝用户ID -->
+<input type="hidden" name="salesUnlockApplyId" id="salesUnlockApplyId" value=""/><!-- 营销宝用户僵尸账号解锁申请ID -->
+<input type="hidden" name="unlockApplyAuditStatus" id="unlockApplyAuditStatus" value=""/><!-- 用户僵尸账号解锁申请审核状态 -->
+<div style="width:100%;border:0px solid #000;background-color: #3F80E2;position:absolute;height: 40%;">
+  <table id="unlockApplyTable" border="0" style="width:100%;height:100%;overflow:hidden;position:relative;margin-top:60px;display: none;">
+    <tr>
+      <td>
+  		<table style="width:98%;height:100%;border: 1px solid #FFFFFF;border-radius:10px;overflow:hidden;background-color: #FFFFFF;margin:auto;">
+    		<tr>
+      		<td style="text-align:center;font-size:20px;color: #003D99;">
+        		<div style="width:100%;height:40px;line-height:40px;">
+          		<strong><span id="companyShortname"></span></strong>
+        		</div>
+      		</td>
+    		</tr>
+    		<tr>
+      		<td style="text-align:center;font-size:20px;color: #2B91D5;">
+        		<div style="width:100%;height:40px;line-height:40px;">
+          		登录用户:<span id="tel"></span>
+        		</div>
+      		</td>
+    		</tr>
+    		<tr>
+      		<td style="text-align:center;font-size:20px;color: green;">
+        		<div style="width:100%;height:40px;line-height:40px;">
+          		申请解锁营销宝账号
+        		</div>
+      		</td>
+    		</tr>
+    		<tr style="height:20px;">
+      		<td style="text-align:center;font-size:20px;color: green;">
+          
+      		</td>
+    		</tr>
+    		<tr style="height:5px;">
+      		<td style="text-align:center;font-size:20px;background-color: #003D99;border-radius:5px;">
+        
+      		</td>
+    		</tr>
+   		</table>
+   		</td>
+  	</tr>
+  </table>
+  <table id="operationTab" border="0" style="width:100%;overflow:hidden;position:relative;margin-top:60px;display: none;">
+  	<tr>
+      <td style="height:120px;text-align:center;">
+      	<span style="width:90%;height:40px;line-height:40px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;display:inline-block;text-align:center;font-size:20px;color:white;background-color:#5599FF;" onclick="salesUnLockApplyAuditSave(62021002)";>审核通过</span>
+      </td>
+      <td style="height:120px;text-align:center;">
+      	<span style="width:90%;height:40px;line-height:40px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;display:inline-block;text-align:center;font-size:20px;color:white;background-color:#5599FF;" onclick="salesUnLockApplyAuditSave(62021003)";>审核驳回</span>
+      </td>
+    </tr>
+  </table>
+  <table id="messageTab" border="0" style="width:100%;overflow:hidden;position:relative;margin-top:0px;display: none;">
+  	<tr>
+      <td id="messageTd" style="width:100%;height:120px;text-align:center;font-size:20px;">
+      	&nbsp;
+      </td>
+    </tr>
+  </table>
+</div>
+<div style="height: 50px;width: 100%;background-color: #3F80E2;position: fixed;bottom: 0;">&nbsp;</div>
+</form>
+  <!--分页 begin 
+	<jsp:include page="${contextPath}/queryPage/orderHidden.html" />
+	<jsp:include page="${contextPath}/queryPage/pageDiv.html" />
+  <!--分页 end -->
+<script type="text/javascript" >
+	function _loadData(){
+		var id = UrlParm.parm("id");
+		var salesUnlockApplyId = UrlParm.parm("salesUnlockApplyId");
+		document.getElementById("id").value = id;
+		document.getElementById("salesUnlockApplyId").value = salesUnlockApplyId;
+		
+		var url = httpUrlHead + "SalesConsultantLockService/salesUnLockApplyAudit.json?" + httpUrlEnd;
+		makeFormCall(
+			url,
+			function(json) {
+				if (json.RESULT.funcStatus == 1) {//成功
+					//设置审核信息
+					var salesUnlockApplyMap = json.salesUnlockApplyMap;
+					if(salesUnlockApplyMap!=null){
+						document.getElementById("companyShortname").innerHTML = salesUnlockApplyMap.COMPANY_SHORTNAME;
+						document.getElementById("tel").innerHTML = salesUnlockApplyMap.TEL;
+						document.getElementById("unlockApplyTable").style.display = "table";
+						//显示信息
+						if(salesUnlockApplyMap.UNLOCK_APPLY_STATUS=="62011001"){//申请中
+							document.getElementById("operationTab").style.display = "table";
+						  document.getElementById("messageTab").style.display = "none";
+						}
+						if(salesUnlockApplyMap.UNLOCK_APPLY_STATUS=="62011003"){//申请已失效
+							document.getElementById("operationTab").style.display = "none";
+						  document.getElementById("messageTd").innerHTML = "<span style='color:red'>&nbsp;该申请已失效,请选择其他申请.</span>";
+						  document.getElementById("messageTab").style.display = "table";
+						}
+						if(salesUnlockApplyMap.UNLOCK_APPLY_STATUS=="62011002"){//申请已处理
+							if(salesUnlockApplyMap.UNLOCK_APPLY_AUDIT_STATUS=="62021002"){//申请已通过
+								document.getElementById("operationTab").style.display = "none";
+						  	document.getElementById("messageTd").innerHTML = "<div style='width:100%;'>&nbsp;该申请已于"+salesUnlockApplyMap.UNLOCK_APPLY_AUDIT_DATE+"<span style='color:green'>审核通过</span>.</div>";
+						  	document.getElementById("messageTab").style.display = "table";
+							}
+							if(salesUnlockApplyMap.UNLOCK_APPLY_AUDIT_STATUS=="62021003"){//申请不通过
+								document.getElementById("operationTab").style.display = "none";
+						  	document.getElementById("messageTd").innerHTML = "<div style='width:100%;'>&nbsp;该申请已于"+salesUnlockApplyMap.UNLOCK_APPLY_AUDIT_DATE+"<span style='color:red'>审核驳回</span>.</div>";
+						  	document.getElementById("messageTab").style.display = "table";
+							}
+						}
+					}
+				}else{//失败
+					document.getElementById("operationTab").style.display = "none";
+					document.getElementById("messageTd").innerHTML = "系统异常.";
+					document.getElementById("messageTab").style.display = "table";
+					MuiAlert(json.RESULT.funcMessage);
+				}
+			}, "fm", true);
+	}
+  //用户解锁审核保存
+  function salesUnLockApplyAuditSave(unlockApplyAuditStatus){
+		document.getElementById("unlockApplyAuditStatus").value = unlockApplyAuditStatus;
+    var url = httpUrlHead + "SalesConsultantLockService/salesUnLockApplyAuditSave.json?" + httpUrlEnd;
+    makeFormCall(url,saveSalesUnLockApplyAuditResult,'fm');
+    
+    document.getElementById("operationTab").style.display = "none";
+    document.getElementById("messageTab").style.display = "table";
+    document.getElementById("messageTd").innerHTML = "&nbsp;处理中,请稍候...";
+  }
+  //用户解锁审核保存结果
+  function saveSalesUnLockApplyAuditResult(json){
+    if (json.RESULT.funcStatus == 1) {//成功
+      salesUnLockApplyNotifySave();
+		}
+    document.getElementById("operationTab").style.display = "none";
+    document.getElementById("messageTab").style.display = "table";
+    document.getElementById("messageTd").innerHTML = "&nbsp;"+json.RESULT.funcMessage;
+  }
+  //发送解锁结果通知
+  function salesUnLockApplyNotifySave(){
+    var url = httpUrlHead + "SalesConsultantLockService/salesUnLockApplyNotifySave.json?" + httpUrlEnd;
+    makeFormCall(url,saveSalesUnLockApplyNotifyResult,'fm');
+  }
+  //发送解锁结果通知结果
+  function saveSalesUnLockApplyNotifyResult(json){
+    //暂时不做任何处理
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="oauth-sina">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/oauth-sina.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

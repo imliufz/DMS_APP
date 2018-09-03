@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<title>线索分配</title>
+    </head>
+    
+    <style type="text/css">
+    	.addImg{
+			background-image: url(images/add.gif);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 23px 23px;
+			height: 45px;
+			width: 45px;
+    	}
+    	
+    	.addSeach{
+		    color: #fff;
+		    border-radius: 15px;
+			background-color: #10a6e2;
+		    background-image: url(images/seach.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 15px 15px;
+			height: 25px;
+			width: 25px;
+			margin-right:10px;
+			margin-top:5px;
+    	}
+    	body{font-family:Microsoft YaHei,宋体;}
+    	input[type=text],input[type=tel],input[type=number]{border:none;}
+    </style>
+    
+    <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" onLoad="queryDetailData();">
+    	<script type="text/javascript" src="js/detail_head.js?_menu_name=线索明细&_back_url=xs_allot_list.html" id="detail_head_js"></script>	
+		<div id="_showLoading"></div>
+		<div id="_showContent" class="mui-scroll-wrapper">
+			<form id="fm" method="post">
+			    <input type="hidden" name="tabType" id="tabType" value="" />
+			    <input type="hidden" name="id" id="id" value="" />
+				<!--普通用户登录时显示-->
+				<div class="cardexplain" id="_showContentDiv1">
+				<!--<div>-->
+					<div id="rp">
+						<table width="100%" id="reportTable">
+							<tr>
+								<td style="width:25%;">
+									<input   name="topBtn" id="mu1" width="100%" class="button" onclick="showTabs(1);" style=" background-color:#edf0f8; width:100% ;height: 30px;border: 0px;" value="  客户资料  " type="button">
+								</td>
+								<td style="width:25%;">
+									<input   name="topBtn" id="mu2" width="100%" class="button" onclick="showTabs(2);" style=" background-color:#edf0f8; width:100% ;height: 30px;border: 0px;" value="  意向车辆  " type="button">
+								</td>
+								<td style="width:25%;">
+									<input  name="topBtn" id="mu3" width="100%" class="button" onclick="showTabs(3);"  style=" background-color:#edf0f8; width: 100% ;height: 30px;border: 0px;" value="  其它信息  " type="button" >
+								</td>
+								<td style="width:25%;">
+									<input  name="topBtn" id="mu4" width="100%" class="button" onclick="showTabs(4);"  style=" background-color:#edf0f8; width: 100% ;height: 30px;border: 0px;" value="  客户跟进  " type="button" >
+								</td>
+							</tr>
+							<tr style="height: 3px;">
+								<td id="hg1" bgcolor="#FFFF00">
+									
+								</td>
+								<td id="hg2">
+									
+								</td>
+								<td id="hg3">
+									
+								</td>
+								<td id="hg4">
+									
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div id="tabs1">
+						<ul class="round">
+							<li class="nob">
+								<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>客户姓名</td>
+										<td><input name="customerName" id="customerName" class="px" value="" placeholder="请输入客户姓名" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+					        <li >
+					            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					                <tr class="biaoge">
+					                    <td>客户性别</td>
+					                    <td><input name="gender" id="gender" class="px" value="" type="text" readonly="readonly"></td>
+					                </tr>
+					            </table>
+					        </li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>手机号码</td>
+					                    <td>
+					                    	<input name="contactorMobile" id="contactorMobile" class="px" style="width: 65%;display: inline;" value="" type="tel" readonly="readonly">
+					                    	<img  height="21px;" src="static/img/bohao.png" id="callTel" ></img>&nbsp;&nbsp;<img  height="21px;" src="static/img/duanxing.png" name="callMsg"></img>
+										</td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr class="biaoge">
+									<td>意向级别</td>
+					                <td><input name="intentLevel" id="intentLevel" class="px" value="" type="text" readonly="readonly"></td>
+								</tr>
+								</table>
+							</li>
+							<li class="nob">
+					            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					                <tr>
+					                	<td>销售顾问</td>
+					                	<td><input name="soldBy" id="soldBy" class="px" value="" type="text" readonly="readonly"></td>
+					                </tr>
+					            </table>
+					        </li>
+						</ul>
+					</div>
+					<div id="tabs2" style="display:none;">
+						<ul class="round">
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>意向车系</td>
+						            	<td><input name="intentSeries" id="intentSeries" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>意向车型</td>
+						            	<td><input name="intentModel" id="intentModel" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+					            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+					            	<tr class="biaoge">
+										<td>意向配置</td>
+						            	<td><input name="intentPackage" id="intentPackage" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+					            </table>
+					        </li>
+					        <li class="nob">
+					            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%" >
+					            	<tr class="biaoge">
+										<td>意向颜色</td>
+						            	<td><input name="color" id="color" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+					            </table>
+					        </li>
+					        <li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>初次报价</td>
+						            	<td><input name="QUOTED_AMOUNT" id="QUOTED_AMOUNT" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" id="IS_TEST_DRIVE_LI">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否试乘试驾</td>
+						            	<td><input name="IS_TEST_DRIVE" id="IS_TEST_DRIVE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>	
+								</table>
+							</li>
+							<li class="nob" name="scsj" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>试乘试驾时间</td>
+						            	<td><input name="TEST_DRIVE_TIME" id="TEST_DRIVE_TIME" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>	
+								</table>
+							</li>
+							<li class="title mb" name="scsj"  style=";">
+								<span class="none">试乘试驾信息</span>
+							</li>
+							<li class="nob" name="scsj"  style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否试乘</td>
+						            	<td><input name="IS_TEST" id="IS_TEST" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" name="scsj"  style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否试驾</td>
+						            	<td><input name="IS_DRIVE" id="IS_DRIVE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" name="scsj" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>身份证号</td>
+						            	<td><input name="IDENTITY_NUMBER" id="IDENTITY_NUMBER" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" name="scsj" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>驾驶证号</td>
+						            	<td><input name="DRIVER_LICENSE" id="DRIVER_LICENSE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" name="scsj" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否满意</td>
+						            	<td><input name="IS_SATISFIED" id="IS_SATISFIED" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+						</ul>
+					</div>
+					<div id="tabs3" style="display:none;">
+						<ul class="round">
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否OEM来源</td>
+						            	<td><input name="isOem" id="isOem" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>来访方式</td>
+						            	<td><input name="VISIT_TYPE" id="VISIT_TYPE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>来访日期</td>
+						            	<td><input name="VISIT_DATE" id="VISIT_DATE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>来访时间</td>
+						            	<td><input name="VISIT_TIME1" id="VISIT_TIME1" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" id="LEAVE_TIME_LI" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>离店时间</td>
+						            	<td><input name="LEAVE_TIME1" id="LEAVE_TIME1" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" id="VISITOR_LI" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>来访人数</td>
+						            	<td><input name="VISITOR" id="VISITOR" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>专业爱好</td>
+						            	<td><input name="HOBBY" id="HOBBY" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>客户来源</td>
+						            	<td><input name="CUS_SOURCE" id="CUS_SOURCE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>了解途径</td>
+						            	<td><input name="MEDIA_TYPE" id="MEDIA_TYPE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" id="MEDIA_DETAIL_LI" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>渠道细分</td>
+						            	<td><input name="MEDIA_DETAIL" id="MEDIA_DETAIL" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" name="tjr" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>推荐人</td>
+						            	<td><input name="REFEREE_NAME" id="REFEREE_NAME" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" name="tjr" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>推荐人电话</td>
+						            	<td><input name="REFEREE_MOBILE" id="REFEREE_MOBILE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>活动选择</td>
+						            	<td><input name="CAMPAIGN_NAME" id="CAMPAIGN_NAME" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" id="MK_CAMPAIGN_TYPE_L1_LI" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>投放渠道类型</td>
+						            	<td><input name="MK_CAMPAIGN_TYPE_L1" id="MK_CAMPAIGN_TYPE_L1" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob" id="MK_CAMPAIGN_TYPE_NAME_LI" style=";">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>投放渠道名称</td>
+						            	<td><input name="MK_CAMPAIGN_TYPE_NAME" id="MK_CAMPAIGN_TYPE_NAME" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否二网客流</td>
+						            	<td><input name="IS_SECOND_LEVEL" id="IS_SECOND_LEVEL" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否按揭</td>
+						            	<td><input name="IS_MORTAGE" id="IS_MORTAGE" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>是否二手车置换</td>
+						            	<td><input name="IS_SWAPCAR" id="IS_SWAPCAR" class="px" value="" type="text" readonly="readonly"></td>
+									</tr>
+								</table>
+							</li>
+							<li class="nob">
+								<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tr class="biaoge">
+										<td>经过情形</td>
+						            	<td>
+						            		<li class="nob">
+												<textarea name="SCENE" id="SCENE" class="pxtextarea" style="height:99px;overflow-y:visible" placeholder="请输入经过情形<字数限制500>" readonly="readonly"></textarea>
+											</li>
+						            	</td>
+									</tr>
+								</table>
+							</li>
+							<div id="genjin" style="">
+								<li class="nob">
+									<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr class="biaoge">
+											<td>是否到店</td>
+							            	<td><input name="whetherShopDesc" id="whetherShopDesc" class="px" value="" type="text" readonly="readonly"></td>
+										</tr>
+									</table>
+								</li>
+					        </div>
+						</ul>
+					</div>
+					<div id="tabs4" style="display:none;">
+						<div id="gj_gj" style="">
+							<ul class="round">
+								<li class="nob">
+						            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						            	<tr class="biaoge">
+											<td>跟进过程</td>
+							            	<td><input name="promResult" id="promResult" class="px" value="" type="text" readonly="readonly"></td>
+										</tr>
+						            </table>
+						        </li>
+								<li class="nob" id="yaoyue" style="">
+						            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						            	<tr class="biaoge">
+											<td>邀约到店时间</td>
+							            	<td><input name="promResult" id="promResult" class="px" value="" type="text" readonly="readonly"></td>
+										</tr>
+						            </table>
+						        </li>
+								<div id="gy" style="">
+								 	<li class="nob">
+						            	<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							            	<tr class="biaoge">
+												<td>跟进方式</td>
+								            	<td><input name="promWay" id="promWay" class="px" value="" type="text" readonly="readonly"></td>
+											</tr>
+							            </table>
+							        </li>
+						            <li class="nob">
+						                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						                    <tr class="biaoge">
+						                        <td>经过情形</td>
+						                        <td>
+						                            <textarea name="scene" id="scene" class="pxtextarea" style=" height:99px;overflow-y:visible" placeholder="请输入跟进经过情形" required="required" readonly="readonly"></textarea>
+						                        </td>
+						                    </tr>
+						                </table>
+						            </li>
+						            <li class="nob">
+						                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						                	<tr class="biaoge">
+												<td>促进后级别</td>
+								            	<td><input name="nextGrade" id="nextGrade" class="px" value="" type="text" readonly="readonly"></td>
+											</tr>
+						                </table>
+						            </li>
+						            <li class="nob">
+						                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						                	<tr class="biaoge">
+												<td>下次跟进时间</td>
+								            	<td><input name="nextLastTime" id="nextLastTime" class="px" value="" type="text" readonly="readonly"></td>
+											</tr>
+						                </table>
+						            </li>
+			        			</div>
+				        		<div id="zhanbai"  style="">
+						            <li class="nob">
+						                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						                	<tr class="biaoge">
+												<td>战败类型</td>
+								            	<td><input name="failType" id="failType" class="px" value="" type="text" readonly="readonly"></td>
+											</tr>
+						                </table>
+						            </li>
+						            <div id="zhanbaiSeries" style="display:none">
+							            <li class="nob">
+							                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							                	<tr class="biaoge">
+													<td>战败品牌</td>
+									            	<td><input name="failBran" id="failBran" class="px" value="" type="text" readonly="readonly"></td>
+												</tr>
+							                </table>
+							            </li>
+							            <li class="nob">
+							                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							                	<tr class="biaoge">
+													<td>战败车系</td>
+									            	<td><input name="failSeries" id="failSeries" class="px" value="" type="text" readonly="readonly"></td>
+												</tr>
+							                </table>
+							            </li>
+						            </div>
+					            	<div>
+							            <li class="nob">
+							                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						                		<tr class="biaoge">
+													<td>战败原因</td>
+									            	<td><input name="failReason" id="failReason" class="px" value="" type="text" readonly="readonly"></td>
+												</tr>
+							                </table>
+							            </li>
+							            <li class="nob">
+							                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							                	<tr class="biaoge">
+													<td>原因备注</td>
+													<td>
+							                            <textarea name="failReasonDesc" id="failReasonDesc" class="pxtextarea" style=" height:99px;overflow-y:visible" placeholder="请输入跟进经过情形" required="required" readonly="readonly"></textarea>
+							                        </td>
+									            </tr>
+							                </table>
+							            </li>
+							        </div>
+					       		</div>
+							</ul>
+						</div>
+						<div style="width:100%;height:10px;background-color:white;">&nbsp;</div>
+						<div id="gj_ls">
+							<ul class="round">
+								<table id="gjt">
+									<thead>
+										<tr style="background-color:#edf0f8;">
+											<th width="30%" style="font-size:14px;">计划日期</td>
+											<th width="30%" style="font-size:14px;">实际日期</td>
+											<th width="20%" style="font-size:14px;">促进级别</td>
+											<th width="20%" style="font-size:14px;">操作</td>
+										</tr>
+									</thead>
+									<tbody id="gjls">
+										<tr style="bordr-bottom:1px solid gray;">
+										  <td align="right" style="border-bottom:1px solid gray;" colspan="4"><!--<div class="addImg" onclick="showzg(1);"></div>--></td>
+										</tr>
+										<tr>
+											<td colspan="4"></td>
+										</tr>
+					            	</tbody>
+								</table>
+							</ul>
+						</div>
+						<div class="footReturn"  style="height: 30px;">
+							<input id="showcard" class="submit" value="提   交" type="submit" style="width:100%;">
+							<br/><br/> 
+							<input id="showcard" class="submit2" value="退   回" type="button" onClick="backFunc();" style="width:100%;">
+							<br/><br/><br/><br/>
+							<div class="window" id="windowcenter">
+								<div id="title" class="wtitle">操作提示<span class="close" id="alertclose"></span></div>
+								<div class="content">
+									<div id="txt"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript">
+	    function showTabs(val){
+	    	if(val == "1"){
+	    		$("#tabs1").show();
+	    		$("#tabs2").hide();
+	    		$("#tabs3").hide();
+	    		$("#tabs4").hide();
+	    		$("#hg1").attr("bgcolor","#FFFF00");
+	    		$("#hg2").attr("bgcolor","");
+	    		$("#hg3").attr("bgcolor","");
+	    		$("#hg4").attr("bgcolor","");
+	    	} else if(val == "2") {
+	    		$("#tabs1").hide();
+	    		$("#tabs2").show();
+	    		$("#tabs3").hide();
+	    		$("#tabs4").hide();
+	    		$("#hg1").attr("bgcolor","");
+	    		$("#hg2").attr("bgcolor","#FFFF00");
+	    		$("#hg3").attr("bgcolor","");
+	    		$("#hg4").attr("bgcolor","");
+	    	} else if(val == "3") {
+	    		$("#tabs1").hide();
+	    		$("#tabs2").hide();
+	    		$("#tabs3").show();
+	    		$("#tabs4").hide();
+	    		$("#hg1").attr("bgcolor","");
+	    		$("#hg2").attr("bgcolor","");
+	    		$("#hg3").attr("bgcolor","#FFFF00");
+	    		$("#hg4").attr("bgcolor","");
+	    	} else if(val == "4"){
+	    		$("#tabs1").hide();
+	    		$("#tabs2").hide();
+	    		$("#tabs3").hide();
+	    		$("#tabs4").show();
+	    		$("#hg1").attr("bgcolor","");
+	    		$("#hg2").attr("bgcolor","");
+	    		$("#hg3").attr("bgcolor","");
+	    		$("#hg4").attr("bgcolor","#FFFF00");
+	    	}
+	    }
+	    
+	    //初始化单页的区域滚动
+		mui('.mui-scroll-wrapper').scroll();
+		
+		function queryDetailData() {
+		var _id = UrlParm.parm("_id");
+		var _tabType = UrlParm.parm("_tabType");
+    	var url = httpUrlHead+"PotcusAchieveService/queryPotentialCustomerDetail.json?id="+_id+"&tabType="+_tabType+"&"+httpUrlEnd;
+		makeFormCall(url,function(json){
+			if(json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+				var map = json.RESULT.maps[0];
+				document.getElementById("customerName").value = map.CUSTOMER_NAME;
+				document.getElementById("contactorMobile").value = map.CONTACTOR_MOBILE;
+				document.getElementById("intentLevel").value=map.INTENT_LEVEL_DESC;
+				document.getElementById("intentSeries").value=map.INTENT_SERIES;
+				document.getElementById("intentModel").value=map.INTENT_MODEL_DESC;
+				document.getElementById("intentPackage").value=map.INTENT_PACKAGE_DESC;
+				document.getElementById("color").value=map.COLOR;
+				document.getElementById("soldBy").value = map.SOLD_NAME;
+//				document.getElementById("cusSourceDetail").value = map.CUS_SOURCE;
+				document.getElementById("remark").value = map.REMARK;
+				document.getElementById("mediaType").value=map.MEDIA_TYPE_DESC
+				document.getElementById("mediaDetail").value=map.MEDIA_DETAIL_DESC
+				document.getElementById("CAMPAIGN_CODE").value = map.CAMPAIGN_CODE;
+				document.getElementById("CAMPAIGN_NAME").value = map.CAMPAIGN_NAME;
+				if(map.IS_PERSON_DRIVER_CAR == "10041001") {
+					document.getElementById("isPersonDriveCar").value = "是";
+				} else {
+					document.getElementById("isPersonDriveCar").value = "否";
+				}
+				document.getElementById("num").value = map.ARRIVE_TIMES;
+				document.getElementById("failbranName").value = map.FAILBRAN_NAME;
+				document.getElementById("failSeriesId").value = map.FAILSER_NAME;
+				document.getElementById("failModel").value = map.FAIL_MODEL_DESC;
+				document.getElementById("failReason").value = map.FAIL_REASON_DESC;
+				//加载跟进历史数据
+				if(json.details != null && json.details.length > 0) {
+					var gjls = document.getElementById("gjls");
+					for(var i = 0; i < json.details.length;i++) {
+						var detail = json.details[i];
+						var newRow = gjls.insertRow(i);
+						var newCell = newRow.insertCell(0);
+						newCell.align = "center";
+						newCell.innerHTML = detail.ACTION_DATE_STR;
+						
+						newCell = newRow.insertCell(1);
+						newCell.align = "center";
+						newCell.innerHTML = detail.NEXT_GRADE_DESC;
+						
+						newCell = newRow.insertCell(2);
+						newCell.align = "center";
+						newCell.innerHTML = detail.SCENE;
+					}
+				}
+				_loadTcCode(sourceType,"cusSourceDetail");
+				$('#_showContentDiv2').show();
+				//$('#showprocess').hide();
+				$("._nextLoad").remove();
+			}
+		},"fm",true);
+    }
+	</script>
+</html>

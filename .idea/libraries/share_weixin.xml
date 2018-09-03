@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="share-weixin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/share-weixin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

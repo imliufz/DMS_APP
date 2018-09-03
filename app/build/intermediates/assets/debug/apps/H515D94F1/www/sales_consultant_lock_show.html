@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>账号锁定</title>
+</head>
+<body onLoad="_loadData();" onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=账号锁定" id="detail_head_js"></script>
+	<form method="post" id="fm">
+		<input type="hidden" name="id" id="id" value=""/>
+		<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+			<script>
+				var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+				document.write(isAndroid > -1 ? "<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>"
+								: "<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+			</script>
+		</div>
+		<div class="cardexplain">
+			<ul class="round">
+				<form action="javascript:;" method="post">
+					<li class="title mb">
+						<span id="salesConsultantLockInfo" class="none">&nbsp;</span>
+					</li>
+					<li class="title mb">
+						<span id="weChatMail" class="none" style="display:none;">&nbsp;</span>
+					</li>
+					<li class="title mb" style="min-height: 10px;height: 4px;">
+						<span class="none" style="min-height: 10px;height: 4px;">&nbsp;</span>
+					</li>
+					<li id="tipsInfo" class="nob" style="display:none;">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						    <tr>
+						        <td style="text-align: left;">注册企业微信操作方法:&nbsp;</td>
+						    </tr>
+						    <tr>
+						        <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;1、联系服务SDU协助发起流程（适用场景：维修站所有人员均无企业微信账户）&nbsp;</td>
+							</tr>
+							<tr>
+						        <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;2、直接通过企业微信申请：依次进入企业微信工作台-轿车流程中心-发起“企业微信账户申请注销流程”（适用场景：维修站其他人员有企业微信账户）&nbsp;</td>
+							</tr>
+							<tr class="biaoge">
+						        <td style="text-align: left;"><font color="red">&nbsp;&nbsp;&nbsp;&nbsp;注：企业微信人员变更，或首次加入的人员，需在加入企业微信2小时后发起重置密码或查找用户名申请。&nbsp;</font></td>
+						    </tr>
+						</table>
+					</li>
+					<li id="unlockApplyAuditDiv" class="nob" style="display:none">
+						<ul class="round">
+						<table  border="0">
+							<tr style="background-color:#edf0f8;">
+								<th align="center" width="33%" style="font-size:14px;">申请时间</th>
+								<th align="center" width="33%" style="font-size:14px;">审核状态</th>
+								<th align="center" width="33%" style="font-size:14px;">审核人</th>
+							</tr>
+						<tbody id="unlockApplyAuditTbody">
+							<tr style="display:none" >
+       							<td style="text-align: center;">&nbsp;</td>
+        						<td style="text-align: center;">&nbsp;</td>
+        						<td style="text-align: center;">&nbsp;</td>
+      						</tr>
+            			</tbody>
+						</table>
+						</ul>
+					</li>
+					<div id="operation" class="footReturn" style="display:none;">
+						<input id="submitBtn" class="submit" value="申请解锁" type="button" style="width: 93%;" onClick="salesUnlockApplySave()">
+						<div class="window" id="windowcenter">
+							<div id="title" class="wtitle">
+								操作提示<span class="close" id="alertclose"></span>
+							</div>
+							<div class="content">
+								<div id="txt"></div>
+							</div>
+						</div>
+					</div>
+					<div id="operationWait" class="footReturn" style="display:none;text-align: center;font-size: 16px;color: green;" >
+						正在提交,请等待...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+				</form>
+			</ul>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	function _loadData() {
+		var id = UrlParm.parm("id");
+		document.getElementById("id").value = id;
+		var url = httpUrlHead + "SalesConsultantLockService/salesConsultantLockShow.json?" + httpUrlEnd;
+		makeFormCall(
+			url,
+			function(json) {
+				if (json.RESULT.funcStatus == 1) {//成功
+					//设置审核人及通知人隐藏域
+					var ttWeChatMailAuditByList = json.ttWeChatMailAuditByList;
+					var ttWeChatMailNotifyByList = json.ttWeChatMailNotifyByList;
+					//alert(ttWeChatMailAuditByList);
+					if(ttWeChatMailAuditByList!=null){
+						for(var i=0;i<ttWeChatMailAuditByList.length;i++){
+							var input = document.createElement("input");
+							input.type = "hidden";
+							input.id = "unlockApplyAuditByWechat";
+							input.name = "unlockApplyAuditByWechat";
+							input.value = ttWeChatMailAuditByList[i].USER_ID;
+							document.getElementById("fm").appendChild(input);
+						}
+					}
+					if(ttWeChatMailNotifyByList!=null){
+						for(var i=0;i<ttWeChatMailNotifyByList.length;i++){
+							var input = document.createElement("input");
+							input.type = "hidden";
+							input.id = "unlockApplyNotifyBy";
+							input.name = "unlockApplyNotifyBy";
+							input.value = ttWeChatMailNotifyByList[i].USER_ID;
+							document.getElementById("fm").appendChild(input);
+						}
+					}
+					//显示信息
+					document.getElementById("salesConsultantLockInfo").innerHTML = "由于超过"+json.salesConsultantLockDay+"天未登陆,您的账号已被系统锁定。";
+					if(json.noWeChatMail!=""){
+						document.getElementById("weChatMail").innerHTML = "解锁需"+json.noWeChatMail+"注册企业微信。";
+						document.getElementById("tipsInfo").style.display = "block";
+						document.getElementById("submitBtn").style.backgroundColor = "gray";
+						document.getElementById("submitBtn").onclick = "#";
+						//隐藏解锁申请表格
+	    				var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
+    					unlockApplyAuditDiv.style.display = "none";
+					}else{
+						document.getElementById("weChatMail").style.display = "block";
+						document.getElementById("weChatMail").innerHTML = "企业微信已注册,可以申请解锁。";
+						//document.getElementById("weChatMail").innerHTML = json.hasWeChatMail+"已注册企业微信,可以申请解锁。";
+						document.getElementById("tipsInfo").style.display = "none";
+						//加载解锁申请信息
+				  		var salesUnlockApplyList = json.salesUnlockApplyList;
+				  		if(salesUnlockApplyList!=null&&salesUnlockApplyList.length>0){
+				  			loadSalesUnlockApplyList(salesUnlockApplyList);
+				  		}
+						//显示解锁申请表格
+	    				var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
+    					unlockApplyAuditDiv.style.display = "block";
+					}
+			  		//显示
+			  		document.getElementById("weChatMail").style.display = "block";
+					document.getElementById("operation").style.display = "block";
+				}else{//失败
+					document.getElementById("salesConsultantLockInfo").innerHTML = "系统异常.";
+					MuiAlert(json.RESULT.funcMessage);
+				}
+			}, "fm", true);
+	}
+	//营销宝用户僵尸账号解锁申请保存
+    function salesUnlockApplySave(){
+        //控制解锁申请时间,每天一次
+		/**
+		var rows = document.getElementById("unlockApplyAuditTbody").rows;
+		if(rows.length>=2){
+		  //alert(rows[1].cells[0].innerHTML.substr(0,10).replace(/-/g,"/"));
+		  var applyDate = rows[1].cells[0].innerHTML;
+		  var currDate = "";
+		  var date = new Date();
+		  var month = date.getMonth()+1;
+		  if(month<10){
+		  	currDate = date.getFullYear()+"年0"+month+"月"+date.getDate()+"日";
+		  }else{
+		  	currDate = date.getFullYear()+"年"+month+"月"+date.getDate()+"日";
+		  }
+	      //alert(currDate);
+	      if(currDate==applyDate){
+	        alert("每天只能申请解锁一次,请明天再试!");
+	        return;
+	      }
+		}
+		**/
+    	var operation = document.getElementById("operation");//操作
+    	var operationWait = document.getElementById("operationWait");//操作等待
+    	operation.style.display = "none";//隐藏操作
+    	operationWait.style.display = "block";//显示操作等待
+    	var url = httpUrlHead + "SalesConsultantLockService/salesUnlockApplySave.json?" + httpUrlEnd;
+    	makeFormCall(url,saveSalesUnlockApplyResult,'fm',true);
+  	}
+  	//营销宝用户僵尸账号解锁申请保存结果
+  	function saveSalesUnlockApplyResult(json){
+    	var operation = document.getElementById("operation");//操作
+    	var operationWait = document.getElementById("operationWait");//操作等待
+    	operation.style.display = "block";//显示操作
+    	operationWait.style.display = "none";//隐藏操作等待
+		if(json.RESULT.funcStatus == 1){
+	  		//加载解锁申请信息
+	  		var salesUnlockApplyList = json.salesUnlockApplyList;
+	  		loadSalesUnlockApplyList(salesUnlockApplyList);
+	  		//打印提示信息
+	  		MuiAlert("解锁申请发送成功,请等待审核,审核结果会通过企业微信告知,请注意查收.");
+      		/**
+	  		//调试用,PC端显示企业微信审核页面
+	  		var id = json.salesUnlockApplyList[0].ID;
+	  		var salesUnlockApplyId = json.salesUnlockApplyList[0].SALES_UNLOCK_APPLY_ID;
+	  		//alert(salesUnlockApplyId);
+      		var indexUrl = "sales_consultant_unlock_apply_audit.html?id="+id+"&salesUnlockApplyId="+salesUnlockApplyId;
+			ToUrl(indexUrl);
+			**/
+	  		//window.location.href = "<%=request.getContextPath()%>/common/UserLockAction/userUnLockApplyAudit.do?userUnlockApplyId="+userUnlockApplyId;
+		}else{
+	  		MuiAlert(json.msg);
+		}
+  	}
+  	//加载营销宝用户僵尸账号解锁申请信息
+  	function loadSalesUnlockApplyList(salesUnlockApplyList){
+		//先清空历史解锁申请
+    	var unlockApplyAuditTbody = document.getElementById("unlockApplyAuditTbody");
+    	for(var i=unlockApplyAuditTbody.rows.length-1;i>0;i--){
+    		unlockApplyAuditTbody.removeChild(unlockApplyAuditTbody.rows[i]);
+    	}
+    	if(salesUnlockApplyList!=null&&salesUnlockApplyList.length>0){
+			for(var i=0;i<salesUnlockApplyList.length;i++){
+				//加载最新解锁申请
+				var pos = tableRowAdd("unlockApplyAuditTbody");
+				var row = document.getElementById("unlockApplyAuditTbody").rows[pos];
+				row.cells[0].innerHTML = salesUnlockApplyList[i].CREATE_DATE;
+				row.cells[1].innerHTML = salesUnlockApplyList[i].UNLOCK_APPLY_AUDIT_STATUS_NAME;
+				//row.cells[2].innerHTML = salesUnlockApplyList[i].UNLOCK_APPLY_AUDIT_DATE;
+				row.cells[2].innerHTML = salesUnlockApplyList[i].NAME;
+			}
+	    	//显示解锁申请表格
+	    	var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
+	    	unlockApplyAuditDiv.style.display = "block";
+    	}
+  	}
+  	//公用方法
+  	//采用复制行的方式新增行,返回当前表最后行的序号
+  	function tableRowAdd(tableId){
+    	try{
+      		var curTable = document.getElementById(tableId);
+      		var curRow = curTable.rows[0];
+      		var newRow = curRow.cloneNode(true);
+      		newRow.style.display = "";
+      		curTable.appendChild(newRow);
+    	}catch(err){
+	  		alert(err.description);
+    	}
+    	//返回当前表最后行的序号
+    	return curTable.rows.length-1;
+  	}
+  	//删除行
+  	function tableRowDel(tableId,obj){
+    	try{
+      		var curTable = document.getElementById(tableId);
+      		var curRow = obj.parentNode.parentNode;
+    
+     	 	curTable.removeChild(curRow);
+    	}catch(err){
+	  		alert(err.description);
+    	}
+  	}
+</script>
+</html>

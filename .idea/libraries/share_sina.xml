@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="share-sina">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/share-sina.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				preloadPages: [{
+					id: 'detail.html',
+					url: 'detail.html'
+				}],
+			});
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">底部选项卡-div模式</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar" id="sy">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">提醒</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon mui-icon-list"></span>
+				<span class="mui-tab-label">报表</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</body>
+	<script>
+		var detailPage = null;
+		//添加列表项的点击事件
+		mui('.mui-bar').on('tap', '.mui-tab-item', function(e) {
+			mui.openWindow({
+				url: "detail.html",
+				id: "detail.html",
+				show: {
+					autoShow: true, //页面loaded事件发生后自动显示，默认为true  
+					aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；  
+					duration: "200" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；  
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true  
+					title: '正在加载...', //等待对话框上显示的提示内容  
+					options: {
+						width: "100px", //等待框背景区域宽度，默认根据内容自动计算合适宽度  
+						height: "30px", //等待框背景区域高度，默认根据内容自动计算合适高度  
+					}
+				}
+			})
+		});
+	</script>
+
+</html>

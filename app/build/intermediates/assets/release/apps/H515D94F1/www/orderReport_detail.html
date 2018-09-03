@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<script type="text/javascript" src="js/clpage.js"></script>
+<link href="css/index.css" rel="stylesheet" type="text/css"/>
+<title id="titleStr"></title>
+<style type="text/css">
+	.bordered td{
+		text-align: center;
+		font-size: 15px;
+		text-indent:2px;
+	}
+	.bordered th{
+		background: #10a6e2;
+		color: #fff;
+		text-shadow:none;
+		font-size: 16px;
+		text-indent:2px;
+	}
+</style>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=留档&_is_loading=1" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		<div class="cardexplain">
+		<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
+				<form action="javascript:;" method="post">
+					<div class="tab-pane active" id="panel-1">
+			 <ul class="round">
+        <table class="bordered" style="background-color: white;">
+            <thead>
+            <tr class="biaoge" id="reportHead"  >
+                
+            </tr>
+            </thead>
+            <tbody id="reportBody"  >
+            </tbody>
+        </table>
+		</ul>
+		</div>
+		<br>
+		<div id="footerDiv">
+		</div>
+		<br>
+		<br>
+	</form>
+	</div>
+	<!-- 菜单 -->
+    <!--<script type="text/javascript" src="js/index_bottom.js?_active_url=index.html" id="index_buttom_js"></script>-->
+    <!-- 菜单 -->
+</body>
+<script type="text/javascript">
+var pageNum = 1;
+var reportIsLoading = false;
+$(window).scroll(function(){
+	if (!reportIsLoading && pageNum > 0) {
+		var scrollTop = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		var height = $(document).height();
+		if (height-(scrollTop+windowHeight) <= 0) {
+			queryData();
+		}
+	}
+});
+$(document).ready(function () {
+	//添加表头
+	loadHead();
+	//把参数放到隐藏域里去
+	setParmToHideInput();
+	//查询数据
+	queryData();
+});
+
+function loadHead() {
+	var headTitle = UrlParm.parm("headTitle").split(",");
+	var headWidth = UrlParm.parm("headWidth").split(",");
+	var titleStr = UrlParm.parm("title");
+	$("#_menu_name").html(titleStr);
+	var thHtml = "";
+	for (var i=0;i<headTitle.length;i++){
+		thHtml += '<th width="'+headWidth[i]+'" nowrap="nowrap"  style="text-align: center;">'+headTitle[i]+'</th>';
+	}
+	$("#reportHead").html(thHtml);
+}
+
+function setParmToHideInput() {
+	var paramName = UrlParm.parm("paramName");
+	var paramValue = UrlParm.parm("paramValue");
+	var appendHtml = "";
+	appendHtml += '<input type="hidden" name="paramName" value="'+paramName+'" />';
+	appendHtml += '<input type="hidden" name="paramValue" value="'+paramValue+'" />';
+	$("#fm").append(appendHtml);
+}
+
+function queryData () {
+	$("#footerDiv").append("<div style='text-align:center;' class='_nextLoad'><img src='static/img/wait.jpg' width='64' height='64'/></div>");
+	reportIsLoading = true;
+	var url = httpUrlHead + "ReportServiceApp/queryorderReportList.json?"+httpUrlEnd+"&CUR_PAGE="+pageNum;
+	makeFormCall(url,function(json){
+		if( json.RESULT.maps.length > 0) {
+			var showCol = UrlParm.parm("showCol").split(",");
+			var colLen = showCol.length;
+			var appendHtml = '';
+			for (var i=0;i<json.RESULT.maps.length;i++){
+				var dataMap = json.RESULT.maps[i];
+				appendHtml += '<tr onclick="goDetail('+dataMap["ID"]+','+dataMap["TABTYPE"]+')">';
+				for (var j=0;j<showCol.length;j++){
+					appendHtml += '<td>'+dataMap[showCol[j]]+'</td>';
+				}
+				appendHtml += '</tr>';
+			}
+			$("#reportBody").append(appendHtml);
+			pageNum++;
+			reportIsLoading = false;
+		}else{//无更多数据
+			$("#footerDiv").html("<div style='text-align:center;'><font color='red'>没有更多数据</font></div>");
+			pageNum = 0;
+		}
+		$("._nextLoad").remove();
+	},'fm',true,true);
+}
+
+function goDetail(id,tabType) {
+	var url = "potcusDetail.html?id="+id+"&tabType="+tabType;
+	ToUrl(url);
+}
+</script>
+</html>

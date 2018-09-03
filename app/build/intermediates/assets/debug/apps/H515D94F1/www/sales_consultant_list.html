@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>顾问管理</title>
+</head>
+<body onselectstart="return true;" ondragstart="return false;" onLoad="queryPt();">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=顾问管理" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		<div class="cardexplain">
+			<ul class="round">
+					<table id="tb_query">
+						<tr class="biaoge">
+						<td>销售顾问姓名/手机</td>
+							<td colspan="2">
+								<li class="nob">
+									<input type="text" id="scNamePhone" name="scNamePhone" value="" placeholder="销售顾问姓名/手机号码" class="px" />
+								</li>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" align="center" height="60">
+								<li class="nob">
+									<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="queryPt();">
+								</li>
+							</td>
+						</tr>
+					</table>
+					<li class="shouqu" id="txt_query" onClick="_showQuery();changeSel();">收起</li>
+				</ul>
+		</div>
+		<div id="checkAllDiv">
+	        <ul class="round">
+	            <table>
+	                <tr >
+	                    <td align="left">
+	                        <li class="nob">
+	                            <input type="checkbox"  id="allcheck" name="allcheck" onChange="sleAllBox(1)" />&nbsp;
+	                            <a onClick="sleAllBox(2)" id="allchecka">全选/取消</a>
+	                        </li>
+	                    </td>
+	                    <td align="right">
+	                        <li class="nob">
+	                            <input value="设置在岗"  type="button"  class="submit" style="width: 40%;" onclick="setWork(70161001)"/>
+	                            <input value="设置离岗"  type="button"  class="submit" style="width: 40%;" onclick="setWork(70161002)"/>
+	                        </li>
+	                    </td>
+	                </tr>
+	            </table>
+	        </ul>
+	    </div>
+		<div id="tabList"></div>
+	</form>
+</body>
+<script type="text/javascript">
+	function setWork(status) {
+		var checkedLen = $("input[name=userCheckBox]:checked").size();
+		if (checkedLen == 0){
+			MuiAlert("请选择要设置在岗/离岗的顾问");
+			return false;
+		}
+		var alertStr = "确定设置勾选顾问在岗?";
+		if(status == "70161002"){
+			alertStr = "确定设置勾选顾问离岗?";
+		}
+		MuiConfirm(alertStr,function(e){
+	    		if(e.index == 0 ){
+	    			var url = httpUrlHead+"SalesConsultantService/setSalesConsultantWorkState.json?status="+status+"&tabType_id_str="+_getSelectStrs()+"&"+httpUrlEnd;
+			makeFormCall(url, function(json){
+				MuiAlert("设置成功!",function(){
+					queryPt();
+				});
+			}, "fm");
+	    		}
+    		});
+	}
+	function queryPt() {
+		_showQuery(1);
+		changeSel();
+		var url = httpUrlHead + "SalesConsultantService/querySalesConsultantList.json?" + httpUrlEnd;
+		_exe_query(url, "fm", false, 'OPERATION_TYPE', true, "", "_toUpdateOrDetailPage", "SEX_DESC", "AGE", "ACADEMIC_RECORDS_DESC", "TRADEYEAR", "CHANATRADEYEAR");
+	}
+
+	function _toUpdateOrDetailPage(id,tabType) {
+		_toPage("sales_consultant_update.html?id="+id);
+	}
+
+	function del(id) {
+		MuiConfirm("确认删除吗？",function(e){
+	    		if(e.index == 0 ){
+	    			var url = httpUrlHead + "SalesConsultantService/deleteSalesConsultant.json?" + httpUrlEnd;
+			url += "&DATA_ID="+id;
+			makeFormCall(url,_callback,'fm',true);
+	    		}
+    		});
+	}
+	
+	function _callback(json) {
+		if (json.RESULT.funcStatus == '1') {
+			MuiAlert("删除成功！",function(){
+				queryPt();
+			});
+		} else {
+			MuiAlert("删除失败，请联系系统管理员！");
+		}
+	}
+	
+	function sleAllBox(clickType) {
+		if(clickType == "1"){
+			$("#allcheck").attr("checked",$("#allcheck").is(':checked'));
+		}else{
+			$("#allcheck").attr("checked",!$("#allcheck").is(':checked'));
+		}
+		$("input[name=userCheckBox]").attr("checked",$("#allcheck").is(':checked'));
+	}
+	
+	function changeSel(){
+		var txtQuery = document.getElementById("txt_query").innerHTML;
+		if(txtQuery == "展开") {
+			$("#checkAllDiv").css({"position":"fixed" ,"width":"100%","zIndex":"1","marginTop":"30px"});
+			$("#tabList").css({"marginTop":"80px"});
+		} else {
+			$("#checkAllDiv").css({"position":"static" ,"width":"100%","zIndex":"1","marginTop":"0px"});
+			$("#tabList").css({"marginTop":"0px"});
+		}
+	}
+</script>
+</html>

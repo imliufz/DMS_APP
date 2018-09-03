@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="geolocation-amap">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/geolocation-amap.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

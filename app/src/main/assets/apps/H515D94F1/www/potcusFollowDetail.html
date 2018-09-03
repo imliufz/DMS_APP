@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<title>跟进邀约明细</title>
+    </head>
+    <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=跟进明细" id="detail_head_js"></script>
+	<div id="_showLoading"></div>
+	<div id="_showContent">
+	<form id="fm" method="post">
+    <input type="hidden" name="tabType" id="tabType" value="" />
+    <input type="hidden" name="id" id="id" value="" />
+	<div class="cardexplain" id="_showContentDiv1">
+	<ul class="round">
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>跟进方式</td>
+                    <td>
+                    	<input name="promWay" id="promWay" value="-" type="text" class="px" readonly="readonly"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob" id="yaoyue" style="display:none;">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>邀约到店时间</td>
+                    <td>
+                        <input name="nextBookingDate" id="nextBookingDate" value="-" type="text" class="px" readonly="readonly"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+		<li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>计划时间</td>
+                    <td>
+                        <input name="scheduleDate" id="scheduleDate" value="-" type="text" class="px" readonly="readonly"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>执行时间</td>
+                    <td>
+                        <input name="actionDate" id="actionDate" value="-" type="text" class="px" readonly="readonly"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>促进前级别</td>
+                    <td>
+                        <input name="priorGrade" id="priorGrade" value="-" type="text" class="px" readonly="readonly"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>促进后级别</td>
+                    <td>
+                        <input name="nextGrade" id="nextGrade" value="-" type="text" class="px" readonly="readonly"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="nob">
+            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="biaoge">
+                    <td>经过情形</td>
+                    <td>
+                        <textarea name="scene" id="scene" class="pxtextarea" style=" height:99px;overflow-y:visible" readonly="readonly">-</textarea>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <div id="zhanbai"  style="display: none">
+            <li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="biaoge">
+                        <td>战败类型</td>
+                        <td>
+                        	<input name="failType" id="failType" value="-" type="text" class="px" readonly="readonly"/>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div id="zhanbaiSeriesJc" style="display:none">
+	            <li class="nob">
+	                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr class="biaoge">
+	                        <td>战败品牌</td>
+	                        <td>
+	                        	<input name="failBran" id="failBran" value="-" type="text" class="px" readonly="readonly"/>
+	                        </td>
+	                    </tr>
+	                </table>
+	            </li>
+	            <li class="nob">
+	                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr class="biaoge">
+	                        <td>战败车系</td>
+	                        <td>
+	                        	<input name="failSeries" id="failSeries" value="-" type="text" class="px" readonly="readonly"/>
+	                        </td>
+	                    </tr>
+	                </table>
+	            </li>
+            </div>
+            <div id="zhanbaiSeriesSy" style="display:none">
+	            <li class="nob">
+	                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr class="biaoge">
+	                        <td>战败车型</td>
+	                        <td>
+	                        	<input name="failModel" id="failModel" value="-" type="text" class="px" readonly="readonly"/>
+	                        </td>
+	                    </tr>
+	                </table>
+	            </li>
+            </div>
+            <li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="biaoge">
+                        <td>战败原因</td>
+                        <td>
+                        	<input name="failReason" id="failReason" value="-" type="text" class="px" readonly="readonly"/>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="nob">
+                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="biaoge">
+                        <td>
+                        	原因备注
+                        </td>
+                        <td>
+                            <textarea name="failReasonDesc" id="failReasonDesc" class="pxtextarea" style=" height:99px;overflow-y:visible" readonly="readonly">-</textarea>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </div>
+	</ul>
+	</div>
+</form>
+</div>
+</body>
+<script type="text/javascript">
+	var chana = "";
+	$(document).ready(function() {
+		var logonUser = JSON.parse(getLocalStorage("logonUser"));
+		chana = logonUser.chana;
+		
+		var id = UrlParm.parm("id");
+		var tabType = UrlParm.parm("tabType");
+		document.getElementById("id").value = id;
+		document.getElementById("tabType").value = tabType;
+		var url = httpUrlHead+"PotcusAchieveService/queryFollowDetailById.json?id="+id+"&tabType="+tabType+"&"+httpUrlEnd;
+		makeFormCall(url,function(json){
+			if(json.followDetails != null && json.followDetails.length > 0) {
+				var dt = json.followDetails[0];
+				document.getElementById("promWay").value = dt.PROM_WAY_DESC;
+				if(!IsNull(dt.NEXT_BOOKING_DATE)){
+					$("#yaoyue").show();
+					document.getElementById("nextBookingDate").value = dt.NEXT_BOOKING_DATE;
+				}
+				if(!IsNull(dt.SCHEDULE_DATE)){
+					document.getElementById("scheduleDate").value = dt.SCHEDULE_DATE;
+				}
+				if(!IsNull(dt.ACTION_DATE)){
+					document.getElementById("actionDate").value = dt.ACTION_DATE;
+				}
+				if(!IsNull(dt.PRIOR_GRADE_DESC)){
+					document.getElementById("priorGrade").value = dt.PRIOR_GRADE_DESC;
+				}
+				if(!IsNull(dt.NEXT_GRADE_DESC)){
+					document.getElementById("nextGrade").value = dt.NEXT_GRADE_DESC;
+				}
+				if(!IsNull(dt.SCENE)){
+					document.getElementById("scene").value = dt.SCENE;
+				}
+				if(!IsNull(dt.FAIL_TYPE)) {
+					$("#zhanbai").show();
+					document.getElementById("failType").value = dt.FAIL_TYPE_DESC;
+					if(chana == "80081001"){
+						$("#zhanbaiSeriesJc").show();
+						if(!IsNull(dt.FAILBRAN_NAME)){
+							document.getElementById("failBran").value = dt.FAILBRAN_NAME;
+						}
+						if(!IsNull(dt.FAILSER_NAME)){
+							document.getElementById("failSeries").value = dt.FAILSER_NAME;
+						}
+					} else {
+						$("#zhanbaiSeriesSy").show();
+						document.getElementById("failModel").value = dt.FAIL_MODEL_DESC;
+					}
+					if(!IsNull(dt.FAIL_REASON_DESC)){
+						document.getElementById("failReason").value = dt.FAIL_REASON_DESC;
+					}
+					if(!IsNull(dt.FAIL_DESCRIPTION)){
+						document.getElementById("failReasonDesc").value = dt.FAIL_DESCRIPTION;
+					}
+				}
+			}
+		},"fm",false,true);
+	});
+</script>
+</html>

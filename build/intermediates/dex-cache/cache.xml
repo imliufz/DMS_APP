@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\geolocation-baidu.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45d1304b8ab6f314e9ee710e5262c79157c7653d">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\geolocation-baidu_ab77a8ff4d383f00a8ea55966bd94c9854c270d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\messaging.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0bfd4958c3a0bf677549ac78d44d9452fd5af101">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\messaging_b376c1218be89b3c6b5751ac301cb869088b7024\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\share-qq.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="072fd11b5ccc155d8bb5d5d6238b40afd60b2195">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-qq_3c8ed054a82ca08d9db581702587cb38963d06e7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-26.0.0-alpha1_1d15683f2abd5dba25478344a72adc2c12e06977\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\aps.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a3ee69bbdcf13f8ae21a85400b3198d7621361ba">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\aps_8c39d8933ff486f2e4926a22758219357f064f44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9e0204c747fa21cbb8051de50d103b5e7d657d63">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_832de380f7806de197d970455d1c39dff4400613\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\share-weixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="241254c6186b5acad020f4d73a84ed95454fd559">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-weixin_63c137251f173d67ca8ff6a39fb3d3a4697fa979\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\tx_weibo_sdk-httpclient-3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d6364bcc1b2b2aa69d008602d36a700453648560">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_weibo_sdk-httpclient-3.0.1_39594546b16f8d829fba6fb09c152593a80081a5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-v4\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-26.0.0-alpha1_fecce1fa9e69f1b4381d117bc151495f03941140\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\oauth-qq.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2f2df273698d89659d2b9698337a411c6cb7d0a4">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth-qq_2e6c1814198af4d77e8dd8d6d5e035c0e6676364\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-26.0.0-alpha1_bacca66a5d58ef3311f4968d92f43f79f189eacb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\aps-igexin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c479a6f4a2991ed06449b74afe8fea15dc4a5749">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\aps-igexin_d352218fed59876759dd224f9eec1fd292871997\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\tx_weibo_sdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="33921321a220f3927929217aeed32befede21502">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_weibo_sdk_1b5615ca775af0f0fcefb4cf9cf0a159ee5363c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\MiPush_SDK_Client_3_1_2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="be4a7a20473c8e53375e59bef1af1bccaf1a7276">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\MiPush_SDK_Client_3_1_2_ca630b6b1273a7d441c0a2a210e944b1d4c103e1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\sdk2\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.0.0-alpha1_3b335ba5f7668ec8f9cdd3f373f2ad95c81d1acd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\share-tencent.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f476b6d310b4d1ca9ad4b19be82542f3bb220635">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-tencent_202a3d0d87aeb973165358fed72672bf2f1f2528\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\alipaySingle-20161222.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="795c38473dc8c277a8a07694592e13d7e7601108">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\alipaySingle-20161222_0597c4904c5606aa6a39c5684d32f800bad25f19\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jcore\1.2.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c1c730569ca32f42f37383cbb7bb001f322d8b1">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\cn.jiguang.sdk-jcore-1.2.3_2f34ede454058f4e3bbdeab131e550511c9ff0f7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\oauth-weixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d73f82c38e91388570e62b0e2a59088acc850af7">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth-weixin_647fb121289ee36eea0c8b1b3bbd427e5f05e793\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\tx_wx.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="11b09244aedaa51bfd09269637be7c32c60da314">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_wx_77aececaaedaeb62004ce75cfd6647009977a23b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-multidex-1.0.1_7211226cecb2e58a734ad7b3bd4b46bdb0f3272d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\speech.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0ba459b886cb69f896701d961dc55e5518869db5">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\speech_c13241b9f6864e0956d161c91b5cab5d8f915346\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\tx_weibo_sdk_component.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="17d672bf657b4d848d1b33782496fc0dd972072c">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_weibo_sdk_component_b9644d46c813828574b08afa4f318bc410912028\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-26.0.0-alpha1_abfc2a21653dd7a7ca0db0aaaa6fc719e8dd90a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\statistics-umeng.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d6c13aa866ff06ecffe3bb4b37e5a6887187ae6b">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\statistics-umeng_43074d15a1df8eb96ac93da600a1c6981b6582fa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jcore\1.2.3\jars\libs\jcore-android-1.2.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="feaea81b130ecf3508fc17bd100dde610f6c35b4">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\jcore-android-1.2.3_11d4702e30e957381bc4dd2d18719ed35246f00e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c4ad3f9558259221eaae3e464b3499dee96c9f3e">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\cn.jiguang.sdk-jpush-3.1.5_f09f12693a54f27b03887bc9adc89bdfd94aed0f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\oauth-miui.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="af8a236934add1a3ea0f2e6a0358832a42ed92b5">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth-miui_5638442fb5cd6bc698799539c202ccf53f9b4222\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-26.0.0-alpha1_ccab09da1b76f8420cb038708fb2bed8066ec4af\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\payment-alipay.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a392fbac20a47b38db43e53539d1062e6253456d">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\payment-alipay_ef38b50f316f25aafae19c283dd972d44d32f7f8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\share-sina.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e99f71ffb83780719087071be61cfebb421186ed">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-sina_1a4da6e17cb7c7d40b82f644cb89a9ad0198b4b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\GetuiSDK2.10.3.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d70dcea02114e0414060311e3733db5c40498b58">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\GetuiSDK2.10.3.5_03c34c59e8567418b9cfe456086c7c6046d619c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="28e653407c23dbb7fa69d7be49b05b9f320f1593">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\intermediates-exploded-aar-lib.5plus.base-release_2f6d9b6b02592542651ddf6d197ce8d0f09f18c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\payment-weixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f92cf6fbcba3b7a5ca69935df38dc37ce63f5d1f">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\payment-weixin_636bd046908ab3b37b297aa33a48da2f5e902987\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\map-baidu.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="894209db32c15bacda540a69b5818423931d299c">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\map-baidu_d91b46aee4c867fefe9eef283656b3d8473ab38e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-26.0.0-alpha1_7c4d3fa37c5fe6bb78056ffbe84d8d18fdacc5f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4f68f12e87ccda66981ef2df8ac7af3836deb461">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_31e3e5589598db331859d5bddb9920ca4a11a1a8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\sinaweibo4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150db4f7f50eeca5cd95b87b0bb0337dbc2bdffb">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\sinaweibo4.1_baec5c88fb5c21340d4493246cfe6584e009ee81\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\alipayutdid.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\alipayutdid_627ab211a57ee47d425d8a173d8205082a6363e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\jars\libs\jpush-android-3.1.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b7b2560bf3b60796802cb8ceb82f52d08af5d76e">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\jpush-android-3.1.5_243e28e79eb8de88c0299607088a1c76f805eb98\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\oauth-sina.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3f88eca7ce7761a4d56ec55cde1499b802a1e47b">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth-sina_847b052b67b3150296f60eef6f99895f027bd591\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-26.0.0-alpha1_9d0048d0d54a28eba3cdc8d31e0ff6b2be7c05a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\speech_ifly.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9b000553404786c625318e87970dfe9c12a06760">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\speech_ifly_591af7806ebc53dc3ecb27b501d6b59f25774495\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-26.0.0-alpha1_076d42147a6683a8b3da920ff1e6d0baf312004e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\umeng-analytics-v6.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aab9085bca0c26dcb9cb11837a5f5e22cc102a5e">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng-analytics-v6.0.1_c2041300191ba11f70ca6764f5bc05456b8e03bc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-26.0.0-alpha1_61670b7d6b87107458ac4b68f73af161559fc40c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidProjects\DMS_APP\app\libs\geolocation-amap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4063f47d2c43cc85043b91f0c5d622e14e648b84">
+        <dex dex="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\geolocation-amap_50bb868431d233b17ef5920d0bb384542a87e305\classes.dex" />
+    </item>
+
+</items>

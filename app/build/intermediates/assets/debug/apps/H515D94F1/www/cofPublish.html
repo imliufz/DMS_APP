@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" class="feedback">
+	<head>
+		<meta charset="utf-8">
+		<title>发表圈子</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+		<script type="text/javascript" src="js/xlAjax.js"></script>
+		<script type="text/javascript" src="js/xlTools.js"></script>
+		<script type="text/javascript" src="js/xlMui.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/jquery.qqFace.js"></script>
+		<!--标准mui.css-->
+		<link rel="stylesheet" type="text/css" href="css/detail_head.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/feedback.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/detail_head.js?_menu_name=发表圈子&_show_save=1&_btn_type=2&_save_func=saveCof" id="detail_head_js"></script>
+		</br>
+		</br>
+		</br>
+		<form id="fm" method="post">
+		<div class="mui-content">
+			<p><span>发表内容</span><img ico src="images/biaoqing.png" style="margin-right: 5px;float: right;" id="emotion" name="emotion"></p>
+			<div class="mui-input-row">
+					<textarea rows="5" placeholder="" name="content" id="content" style="height: 120px;"></textarea>
+			</div>
+			<div class="mui-input-row" id="faceTr" style="display: none;">
+					<textarea name="faceContent" id="faceContent"></textarea>
+			</div>
+			<p>谁可以看</p>
+			<button id='showRole' class="mui-btn mui-btn-block" type='button'>本店(本店经销商所有用户可见)</button>
+			<input type="hidden" name="role" id="role" value="2">
+		</div>
+		</form>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			autoTextarea(document.getElementById("content"),"");
+			$('#emotion').qqFace({
+				id : 'facebox', 
+				assign:'content', 
+				parAssign:'faceTr',
+				faceAssign:'faceContent',
+				path:'images/qqFace/',	//表情存放的路径
+				topOffset:12
+
+			});
+		});
+			(function($, doc) {
+			mui.init();
+			$.ready(function() {
+				//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '2',
+						text: '本店(本经销商所有用户可见)'
+					}, {
+						value: '3',
+						text: '私密(仅自己可见)'
+					}, {
+						value: '1',
+						text: '公开(全国经销商用户可见)'
+					}]);
+					var showUserPickerButton = doc.getElementById('showRole');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							var showRole = doc.getElementById('showRole');
+							var role = doc.getElementById('role'); 
+							showRole.innerText = items[0].text;
+							role.value = items[0].value;
+						});
+					}, false);
+			});
+			})(mui, document);
+			function saveCof(){
+				var content = $("#content").val();
+				if(content == ""){
+					MuiAlert("发布内容不能为空");
+					return;
+				}
+				var url = httpUrlHead + "PotcusAchieveService/saveCof.json?" + httpUrlEnd;
+				makeFormCall(url,function(json){
+					if ( json.RESULT.funcStatus == 1 ){
+						MuiAlert("发布成功",function(){
+							_toBack("cof.html");
+						});
+					}else{
+						MuiAlert("发布失败");
+					}
+				},'fm',true,true);
+			}
+		</script>
+	</body>
+
+</html>

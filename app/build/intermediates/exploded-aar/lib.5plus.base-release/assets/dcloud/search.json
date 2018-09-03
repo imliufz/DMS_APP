@@ -1,0 +1,41 @@
+﻿{
+    "version":  "1510202138",
+    "data":  [
+                 {
+                     "id":  "baidu",
+                     "caption":  "百度",
+                     "action":  "browser",
+                     "url":  "https://www.baidu.com/s?wd=$0"
+                 },
+                 {
+                     "id":  "weibo",
+                     "caption":  "微博",
+                     "action":  "app",
+                     "appid":  "__W2A__m.weibo.cn",
+                     "parameters":  {
+                                        "type":  "richurl",
+                                        "richurl":  "https://m.weibo.cn/searchs/result?type=all\u0026queryVal=$0\u0026__html5plusWebviewParameter=%7b%22appid%22%3a%22__W2A__m.weibo.cn%22%2c%22webviewid%22%3a%22search%22%2c%22titleNView%22%3a%7b%22backgroundColor%22%3a%22%23FFFFFF%22%2c%22titleColor%22%3a%22%23444444%22%2c%22borderColor%22%3a%22%23F5F5F5%22%7d%2c%22subNViews%22%3a%5b%5d%2c%22extras%22%3a%7b%22__wap2app_type%22%3a%22direct%22%7d%2c%22backbuttonaction%22%3a%22followcode%22%2c%22preloadcss%22%3a%22header.module-topbar%7bdisplay%3anone%3b%7d%22%2c%22preloadjs%22%3a%22%22%7d"
+                                    }
+                 },
+                 {
+                     "id":  "jd",
+                     "caption":  "京东",
+                     "action":  "app",
+                     "appid":  "__W2A__m.sjjd.com",
+                     "parameters":  {
+                                        "type":  "richurl",
+                                        "richurl":  "https://so.m.jd.com/ware/search.action?keyword=$0\u0026__html5plusWebviewParameter=%7B%20%22appid%22%3A%22__W2A__m.sjjd.com%22%2C%20%22webviewid%22%3A%22search%22%2C%20%22statusbar%22%3A%20%7B%20%22background%22%3A%20%22%23efefef%22%20%7D%2C%20%22extras%22%3A%20%7B%20%22__wap2app_type%22%3A%20%22direct%22%20%7D%2C%20%22preloadcss%22%3A%22%22%2C%20%22preloadjs%22%3A%22%22%20%7D"
+                                    }
+                 },
+                 {
+                     "id":  "taobao",
+                     "caption":  "淘宝",
+                     "action":  "app",
+                     "appid":  "__W2A__m.taobao.com",
+                     "parameters":  {
+                                        "type":  "richurl",
+                                        "richurl":  "https://ai.m.taobao.com/search.html?q=$0\u0026__html5plusWebviewParameter=%7B%20%22appid%22%3A%22__W2A__m.sjjd.com%22%2C%20%22webviewid%22%3A%22search%22%2C%20%22statusbar%22%3A%20%7B%20%22background%22%3A%20%22%23efefef%22%20%7D%2C%20%22extras%22%3A%20%7B%20%22__wap2app_type%22%3A%20%22direct%22%20%7D%2C%20%22preloadcss%22%3A%22%22%2C%20%22preloadjs%22%3A%22%22%20%7D"
+                                    }
+                 }
+             ]
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>潜客查询</title>
+</head>
+<body onselectstart="return true;" ondragstart="return false;" >
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=潜客查询" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		<div class="cardexplain">
+			<ul class="round">
+				<table id="tb_query">
+					<tr class="biaoge">
+						<td>姓名/手机</td>
+						<td>
+							<li class="nob">
+								<input type="text" id="namePhone" name="namePhone" value="" placeholder="客户姓名/手机号码" class="px" />
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge">
+						<td>是否OEM下发</td>
+						<td>
+							<li class="nob">
+								<select id="isOem" name="isOem" class="download dropdown-select">
+									<option value="">请选择</option>
+									<option value="10041001">是</option>
+									<option value="10041002">否</option>
+								</select>
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge">
+						<td>时间类型</td>
+						<td>
+							<li class="nob">
+								<select name="dataType" id="dataType" class="download dropdown-select" onchange="dateTypeChange(this.value)">
+									<option value="">-请选择-</option>
+									<option value="0" selected="selected">创建时间</option>
+								</select>
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge" name="dateTr">
+						<td>开始日期</td>
+						<td>
+							<li class="nob">
+								<input name="startDate" id="startDate" value="" type="date" class="px" placeholder="开始日期"   search="show"/>
+								<input name="startDate_h" id="startDate_h" value="" type="hidden" />
+							</li>
+						</td>
+					</tr>
+					<tr class="biaoge" name="dateTr">
+						<td>结束日期</td>
+						<td>
+							<li class="nob">
+								<input name="endDate" id="endDate" value="" type="date" class="px" placeholder="结束日期" search="show" />
+								<input name="endDate_h" id="endDate_h" value=""  type="hidden"/>
+							</li>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center" height="60">
+							<li class="nob">
+								<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="queryPt();">
+							</li>
+						</td>
+					</tr>
+				</table>
+				<li class="shouqu" id="txt_query" onClick="_showQuery();">收起</li>
+			</ul>
+
+		</div>
+		<div id="tabList"></div>
+	</form>
+</body>
+<script type="text/javascript">
+
+	function queryPt() {
+		_showQuery(1);
+		var url = httpUrlHead + "HallReceptionService/queryPotentialCustomerFollowList.json?" + httpUrlEnd;
+		_exe_query(url,"fm",true,true,false,"showDetail","showDetail","IS_SC","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE");
+	}
+
+	function showDetail(id,tabType){
+		_toPage("potential_customer_detail.html?id="+id+"&tabType="+tabType);
+	}
+
+	function setDate() {
+		document.getElementById('startDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		initSearch();
+	}
+	setDate();
+	function dateTypeChange(val){
+		if(val == ''){
+			$("tr[name='dateTr']").hide()
+			$("#startDate").val("");
+			$("#endDate").val("");
+		} else {
+			$("tr[name='dateTr']").show()
+			document.getElementById('startDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+			document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		}
+	}
+</script>
+</html>

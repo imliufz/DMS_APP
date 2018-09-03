@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="js/html_head.js"></script>
+        <script type="text/javascript" src="js/jquery.contip.js"></script>
+		<title>跟进邀约</title>
+
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;" id="nurse">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=跟进邀约&_back_url=index.html" id="detail_head_js"></script>
+    <form id="fm" method="post">
+    <input type="hidden" id="status" name="status" value="30331003,30331004"/>
+    <input type="hidden" id="busiIntentLevel" name="busiIntentLevel" value="13101001,13101002,13101003,13101004,13101005,13101006,13101008"/>
+	<div class="cardexplain">
+	<ul class="round">
+        
+            <table width="100%" id="tb_query">
+            	<tr class="biaoge">
+                    <td width="30%">姓名/手机</td>
+                    <td width="70%"> <li class="nob">
+                            <input type="text" id="customerNamePhone" name="customerNamePhone" value="" placeholder="客户姓名/手机号码" class="px" />
+                        </li> 
+                        <input type="hidden" id="CUS_SOURCE01" name="CUS_SOURCE01" value="" />
+                        <input type="hidden" id="OEM_SOURCE01" name="OEM_SOURCE01" value="" />
+                        <input type="hidden" id="INTENT_LEVEL01" name="INTENT_LEVEL01" value="" />
+                        <input type="hidden" id="INTENT_SERIES01" name="INTENT_SERIES01" value="" />
+                        <input type="hidden" id="IS_STA01" name="IS_STA01" value="" />  
+                        <input type="hidden" id="failDateBegin01" name="failDateBegin01" value="" />
+                        <input type="hidden" id="failDateEnd01" name="failDateEnd01" value="" />
+                        <input type="hidden" id="CLUE_SOURCE01" name="CLUE_SOURCE01" value="" />
+                        <input type="hidden" id="IS_JS01" name="IS_JS01" value="" />   
+                        <input type="hidden" id="SALES_CONSULTANT01" name="SALES_CONSULTANT01" value="" />   
+                                                           
+                        
+                          </td>
+                </tr >
+                <tr class="biaoge" id="salesConsultantTr"  style="display: none;">
+				<td>选择顾问 </td>
+                 <td>
+	                    <li class="nob">
+	                        <input type="text" id="salesConsultant_show" name="salesConsultant_show"  placeholder="选择顾问"  value="" class="px"   readonly="readonly"/>
+	                        <input type="hidden" id="salesConsultant" name="salesConsultant" value="" />
+	                    </li>	    
+	                           
+	            </td>
+			</tr>
+                <tr class="biaoge" >
+                	<td>意向级别</td>
+                    <td>
+						 <li class="nob">
+						 	 <input type="text" id="intentLevel_show" name="intentLevel_show"  placeholder="意向级别"  value="" class="px"  readonly="readonly"/>
+						 	 <input type="hidden" id="intentLevel" name="intentLevel" value="" />
+                        </li>                    </td>
+                </tr>
+                <tr class="biaoge">
+				<td>意向车系</td>
+				<td>
+				 <li class="nob">
+					<select name="intentSeries" id="intentSeries" class="download dropdown-select"  search="show">
+					</select>
+					<input name="intentSeries_h" id="intentSeries_h" value=""  type="hidden"  />
+					</li>
+				</td>
+			</tr>
+             <tr class="biaoge">
+             	<td>是否OEM来源</td><td><li class="nob">
+				<select name="isOem" id="isOem" class="download dropdown-select" >
+					<option value="">-请选择-</option>
+					<option value="10041001">是</option>
+					<option value="10041002">否</option>
+				</select>
+			</li></td>
+			</tr>  
+                <tr class="biaoge" id="cusSource_Tr" style="display: none;">
+						<td>客户来源</td>
+						<td>
+							<li class="nob">
+								<select name="cusSource" id="cusSource" class="download dropdown-select"  search="show">
+									<option value="">-请选择-</option>
+								</select>
+								<input name="cusSource_h" id="cusSource_h" value=""  type="hidden"  />
+							</li>
+						</td>
+					</tr>
+                <tr class="biaoge" id="oemCusSource_Tr" style="display: none;">
+                	<td>OEM客户来源						                </td>
+                    <td>
+						 <li class="nob">
+                             <select id="oemCusSource" name="oemCusSource" class="download dropdown-select"   search="show">
+                                <option value="">-请选择-</option>
+                            </select>
+                            <input name="oemCusSource_h" id="oemCusSource_h" value=""  type="hidden"  />
+                        </li>                    </td>
+                </tr>
+                <tr class="biaoge">
+                  <td>是否云店线索</td>
+                  <td><li class="nob">
+                             <select id="isCloudStore" name="isCloudStore" class="download dropdown-select">
+                                <option value="">-请选择-</option>
+								<option value="10041001">是</option>
+								<option value="10041002">否</option>
+                            </select>
+                        </li>      </td>
+                </tr>
+                <tr class="biaoge">
+                  <td>是否待首次跟进</td>
+                  <td><li class="nob">
+                             <select id="isFirstGj" name="isFirstGj" class="download dropdown-select" onchange="changeFirst(this.value)">
+                                <option value="">-请选择-</option>
+								<option value="10041001">是</option>
+								<option value="10041002">否</option>
+                            </select>
+                        </li>      </td>
+                </tr>
+                <tr class="biaoge">
+					<td>时间类型</td>
+	                <td><li class="nob">
+                            <select name="dataType" id="dataType" class="download dropdown-select"  onchange="dateTypeChange(this.value)">
+                                <option value="">-请选择-</option>
+                                <option value="0" selected="selected">计划时间</option>
+                                <option value="1">创建时间</option>
+                                <option value="2">下发时间</option>
+                                <option value="3">执行时间</option>
+                                <option value="4">邀约到店时间</option>
+                  </select>
+                        </li>   </td>
+                </tr>
+				<tr class="biaoge" name="dateTr">
+					<td >开始日期</td>
+					<td>
+						<li class="nob">
+							<input name="startDate" id="startDate" value="" type="date" class="px"  placeholder="请选择开始日期" />
+                        </li>					</td>
+				</tr>
+				<tr class="biaoge" name="dateTr">
+					<td >结束日期</td>
+					<td>
+						<li class="nob">
+							<input name="endDate" id="endDate" value="" type="date" class="px"  placeholder="请选择结束日期"    search="show"/>
+							<input name="endDate_h" id="endDate_h" value=""  type="hidden"  />
+                        </li>					</td>
+				</tr>
+				<tr class="biaoge">
+             	<td>是否超期</td><td>
+             	<li class="nob">
+				<select name="isCQ" id="isCQ" class="download dropdown-select" >
+					<option value="">-请选择-</option>
+					<option value="10041001">是</option>
+					<option value="10041002">否</option>
+				</select>
+			</li></td>
+			</tr>
+				<tr>
+					<td colspan="2" align="center" height="60">
+						<li class="nob">
+							<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="queryPt();">
+						</li>
+					</td>
+				</tr>
+      </table>
+			<li class="shouqu" id="txt_query" onClick="_showQuery();changeHeight();">收起</li>
+      </ul>
+	</div>
+	<div id="queryLevelHtml" style="display: none;">
+		<table width="100%"  style="margin-top: 30%;">
+            	<tr class="biaoge">
+                    <td width="10%" align="center">H级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101001">
+                     </td>
+                     <td width="10%"  align="center">A级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101002">
+                     </td>
+                     <td width="10%"  align="center">B级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101003">
+                     </td>
+                </tr >
+                <tr class="biaoge">
+                    <td width="10%" align="center">C级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101004">
+                     </td>
+                     <td width="10%"  align="center">N级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101005">
+                     </td>
+                     <td width="10%"  align="center">F0级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101006">
+                     </td>
+                </tr >
+                <tr class="biaoge">
+                    <td width="10%" align="center">F级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101007">
+                     </td>
+                     <td width="10%"  align="center">O级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101008">
+                     </td>
+                     <td width="10%"  align="center">D级</td>
+                    <td width="20%"  align="center">
+                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101009">
+                     </td>
+                </tr >
+                <tr>
+					<td colspan="6" align="center" height="60">
+						<li class="nob">
+							<input value="确认选择" type="button" class="submit" style="width: 90%" onclick="closeQueryLevel()">
+						</li>
+					</td>
+				</tr>
+          </table>
+	</div>
+	<div style="margin-top: 40px;" id="rp">
+		<table width="100%" id="reportTable">
+			<tr>
+				<td style="width:50%;">
+					<input   name="topBtn" id="tsNoDealNum" class="button" onclick="BEDate('followToday.html?menuType=4&isGjList=1')" style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="  今日待跟进报表  " type="button">
+				</td>
+				<td style="width:50%;">
+					<input  name="topBtn" id="tsNoDealNum" class="button" style=" background-color:#edf0f8; width: 90% ;height: 30px;border: 0px;" value="   跟进邀约    " type="button" >
+				</td>
+			</tr>
+			<tr style="height: 3px;">
+				<td style="width:50%;">
+					
+				</td>
+				<td style="width:50%;" bgcolor="#FFFF00">
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="tabList"></div>
+</form>
+<div id="querySalesConsultantHtml"  style="display: none;">
+		<table width="100%"  style="margin-top: 10%;">
+                <tr>
+					<td colspan="6" align="center" height="60">
+						<li class="nob">
+							<input value="确认选择" type="button" class="submit" style="width: 90%" onclick="closeQuerySalesConsultant()">
+						</li>
+					</td>
+				</tr>
+          </table>
+	</div>
+</body>
+<script type="text/javascript">
+	//加载tc_code   intentSeries需要放在第一个
+	_loadTcCodeAndCallBack("4","3031","1311","intentSeries","oemCusSource","cusSource");
+	 document.getElementById("CUS_SOURCE01").value = UrlParm.parm("CUS_SOURCE");
+	 document.getElementById("OEM_SOURCE01").value = UrlParm.parm("OEM_SOURCE");
+     document.getElementById("INTENT_LEVEL01").value = UrlParm.parm("INTENT_LEVEL");
+     document.getElementById("INTENT_SERIES01").value = UrlParm.parm("INTENT_SERIES");
+     document.getElementById("IS_STA01").value = UrlParm.parm("IS_STA");
+      document.getElementById("failDateBegin01").value = UrlParm.parm("failDateBegin");
+     document.getElementById("failDateEnd01").value = UrlParm.parm("failDateEnd");
+     document.getElementById("CLUE_SOURCE01").value = UrlParm.parm("CLUE_SOURCE");
+     document.getElementById("IS_JS01").value = UrlParm.parm("IS_JS");
+     document.getElementById("SALES_CONSULTANT01").value = UrlParm.parm("SALES_CONSULTANT");
+     
+     var menuType = null;
+	$(document).ready(function () {
+		_showQuery(1);
+		changeHeight();
+		$("#tabList").html("<div style='text-align:center;'><img src='static/img/wait.jpg' width='64' height='64'/></div>");
+		var IS_MANAGER = getLocalStorage("IS_MANAGER");
+		 if ( IS_MANAGER == 10041001 ) {//销售经理
+			$('#salesConsultantTr').show();
+			var logonUser = JSON.parse(getLocalStorage("logonUser"));
+			var salesConsultant = logonUser.salesConsultant.split(",");
+			if(salesConsultant != null && salesConsultant.length > 0) {
+			var appendHtml = "";
+			for(var i = 0;i < salesConsultant.length;i++) {
+				var name = salesConsultant[i].replace(/\'/g,"");
+				if(i%3 == 0){
+					appendHtml += '<tr class="biaoge"><td width="20%" align="center">'+name+'</td><td width="10%"  align="center"><input type="checkbox" name="salesConsultantCB"  style="width: 20px;height: 20px;vertical-align:middle;" value="'+name+'"></td>';
+				} else {
+					appendHtml += '<td width="20%" align="center">'+name+'</td><td width="10%"  align="center"><input type="checkbox" name="salesConsultantCB"  style="width: 20px;height: 20px;vertical-align:middle;" value="'+name+'"></td>';
+				}
+			}
+			$("#querySalesConsultantHtml").find("table").prepend(appendHtml);
+			} else {
+				MuiAlert("该分组下无销售顾问!");
+			}
+		}
+		var dataType = UrlParm.parm("dataType");
+		if(dataType != null && dataType != undefined){
+			$("#dataType").val(dataType);
+			var dd = new Date(); 
+			dd.setDate(dd.getDate()+1);//获取AddDayCount天后的日期 
+			var tomorow = document.getElementById('endDate').value = dd.getFullYear()+"-"+(dd.getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(dd.getDate()<10?"0":"")+dd.getDate();
+			$("#startDate").val(tomorow);
+			$("#endDate").val(tomorow);
+		}
+		menuType = UrlParm.parm("menuType");
+		if(menuType == "3" || menuType == "4" || menuType == "5"){
+			$(".round").hide();
+			$("#reportTable").hide();
+		}
+		if(menuType == "3"){
+			_back_url = "";
+		} else if(menuType == "4"){
+			_back_func = "_toBack('followToday.html')";
+		} else if(menuType == "5"){
+			_back_func = "_toBack('First_followUp.html')";
+		}
+		var backUrl = UrlParm.parm("backUrl");
+		if(!IsNull(backUrl)){
+			_back_url = backUrl;
+		}
+		
+		var isOem = $("#isOem").val();
+    	if(isOem == '10041001') {
+    		$("#cusSource_Tr").hide();
+    		$("#oemCusSource_Tr").show();
+    	} else if(isOem == "10041002") {
+    		$("#cusSource_Tr").show();
+    		$("#oemCusSource_Tr").hide();
+    	} else {
+    		$("#cusSource_Tr").hide();
+    		$("#oemCusSource_Tr").hide();
+    	}
+    	$("#isOem").change(function() {
+    		if($("#isOem").val() == '10041001') {
+    			$("#cusSource").val("");
+    			$("#cusSource_Tr").hide();
+        		$("#oemCusSource_Tr").show();
+    		} else if($("#isOem").val() == "10041002") {
+    			$("#oemCusSource").val("");
+    			$("#cusSource_Tr").show();
+        		$("#oemCusSource_Tr").hide();
+    		} else {
+    			$("#cusSource").val("");
+    			$("#oemCusSource").val("");
+    			$("#cusSource_Tr").hide();
+        		$("#oemCusSource_Tr").hide();
+    		}
+    	});
+    	$("#intentLevel_show").click(function(){
+    		$("input[name='level']").attr("name","level_copy");
+    		var queryLevelHtmlCopy = $("#queryLevelHtml").html();
+    		$("input[name='level_copy']").attr("name","level");
+    		var pageii = layer.open({
+        	    type: 1,
+        	    content: queryLevelHtmlCopy,
+        	    style: 'position:fixed; left:0; top:0; width:100%; height:100%; border:none;'
+        	});
+    	});
+    	$("#salesConsultant_show").click(function(){
+    		$("input[name='salesConsultantCB']").attr("name","salesConsultantCB_copy");
+    		var querySalesConsultantHtmlCopy = $("#querySalesConsultantHtml").html();
+    		$("input[name='salesConsultantCB_copy']").attr("name","salesConsultantCB");
+    		$('#fm').hide();
+    		var pageii = layer.open({
+        	    type: 1,
+        	    content: querySalesConsultantHtmlCopy,
+        	    style: 'position:fixed; left:0; top:0; width:100%; height:100%; border:none;overflow-y: scroll;'
+        	});
+    	});
+    	
+	});
+	
+	function closeQueryLevel() {
+		var text = "";
+		var values = "";
+		$("input[name='level_copy']:checked").each(function(){
+			text += $(this).parent().prev().text()+",";
+			values += $(this).val()+",";
+		});
+		if(text != ""){
+			text = text.substring(0, text.length-1);
+			values = values.substring(0, values.length-1);
+		}
+		$("#intentLevel_show").val(text);
+		$("#intentLevel").val(values);
+		layer.closeAll();
+		var array = values.split(",");
+		$("input[name='level']").attr("checked",false);
+		for (var i=0 ; i< array.length ; i++){
+			$("input[name='level']").each(function(){
+				var value = $(this).val();
+				if(value == array[i]){
+					$(this).attr("checked",true);
+				}
+			});
+		}
+	}
+	
+	function closeQuerySalesConsultant() {
+		$('#fm').show();
+		var values = "";
+		var queryValues = "";
+		$("input[name='salesConsultantCB_copy']:checked").each(function(){
+			values += $(this).val()+",";
+			queryValues += "'"+$(this).val()+"',";
+		});
+		if(values != ""){
+			values = values.substring(0, values.length-1);
+			queryValues = queryValues.substring(0, queryValues.length-1);
+		}
+		$("#salesConsultant_show").val(values);
+		$("#salesConsultant").val(queryValues);
+		layer.closeAll();
+		var array = values.split(",");
+		$("input[name='salesConsultantCB']").attr("checked",false);
+		for (var i=0 ; i< array.length ; i++){
+			$("input[name='salesConsultantCB']").each(function(){
+				var value = $(this).val();
+				if(value == array[i]){
+					$(this).attr("checked",true);
+				}
+			});
+		}
+	}
+	
+	function setDate(){
+		var failDateBegin = UrlParm.parm("failDateBegin");
+		if(failDateBegin == undefined){
+			document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		}
+	}
+	setDate();
+
+	function changeFirst(val){
+		if(val == "10041001") {
+			document.getElementById("status").value = "30331003";
+		} else if(val == "10041002") {
+			document.getElementById("status").value = "30331004";
+		} else {
+			document.getElementById("status").value = "30331003,30331004";
+		}
+	}
+	
+	function queryPt(){
+		_showQuery(1);
+		changeHeight();
+		var url = httpUrlHead+"PotcusAchieveService/queryPotcusFollowList.json?"+httpUrlEnd;
+		_exe_query(url,"fm",true,"跟进",false,"showDetail","showDetail","IS_SC","INTENT_SERIES_PAGE","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE","NEXT_TIME_PAGE","","WSID");
+	}
+	
+	var isSc = false;
+	var scTop = 0;
+	var _pageSize = null;
+	//自定义回调刷新方法
+	window.addEventListener("backFunction",function(event){
+		isSc = true;
+		_pageSize = _curPage * 10;
+		queryPt();
+	})
+	
+	function _load_page_end(json){
+		if(isSc){
+			$("#nurse").animate({ scrollTop: scTop }, 500);
+			if(json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+				_curPage = Math.ceil(json.RESULT.maps.length/10) + 1;
+			}
+		}
+		isSc = false;
+		_pageSize = null;
+	}
+	
+	function showDetail(id,tabType){
+		if(tabType == "2") {
+			_toPage("potcusFollow.html?id="+id+"&tabType="+tabType);
+			scTop = document.body.scrollTop;
+		} else {
+			var isClick = $("#_plh"+tabType+"_"+id).attr("isClick");
+			if(isClick == "1") {
+				_toPage("potcusFollow.html?id="+id+"&tabType="+tabType);
+				scTop = document.body.scrollTop;
+			} else {
+				//验证是否已经拨号
+				var url = httpUrlHead+"PotcusAchieveService/validateIsCall.json?id="+id+"&tabType="+tabType+"&"+httpUrlEnd;
+				makeFormCall(url,function(json){
+					if(json.isCall == "1") {
+						_toPage("potcusFollow.html?id="+id+"&tabType="+tabType);
+						scTop = document.body.scrollTop;
+					} else {
+						MuiAlert("请先拨号后才能进行跟进!");
+					}
+				},"fm");
+			}
+		}
+	}
+	
+	function backFunc(id,tabType){
+		_toPage("gj_return.html?id="+id+"&tabType="+tabType);
+	}
+	function BEDate(val)
+	{
+	 _toPage(val);
+	}
+	
+	function dateTypeChange(val){
+		if(val == ''){
+			$("tr[name='dateTr']").hide()
+			$("#startDate").val("");
+			$("#endDate").val("");
+		} else {
+			$("tr[name='dateTr']").show()
+			document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		}
+	}
+	
+	function changeHeight(){
+		if(menuType == "3" || menuType == "4" || menuType == "5"){
+			$("#rp").css("margin-top","0px");
+			$("#tabList").css("margin-top","0px");
+		} else {
+			var txtQuery = document.getElementById("txt_query").innerHTML;
+			if(txtQuery == "展开") {
+				$("#rp").css("margin-top","40px");
+				$("#tabList").css("margin-top","0px");
+			} else {
+				$("#rp").css("margin-top","0px");
+			}
+		}
+	}
+</script>
+</html>
+
+

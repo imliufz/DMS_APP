@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="js/html_head.js"></script>
+        <link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<title>保有客户</title>
+    </head>
+    <style>
+	</style>
+    <body onselectstart="return true;" ondragstart="return false;" >
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=保有客户" id="detail_head_js"></script>
+    <form id="fm" method="post">
+	<div class="cardexplain">
+	<ul class="round">
+            <table width="100%" id="tb_query">
+            	<tr class="biaoge">
+                    <td width="30%">姓名/手机</td>
+                    <td width="70%"> <li class="nob">
+                            <input type="text" id="customerNamePhone" name="customerNamePhone" value="" placeholder="客户姓名/手机号码" class="px" />
+                        </li> 
+                          </td>
+                </tr >
+                <tr class="biaoge">
+				<td>意向车系</td>
+				<td>
+				 <li class="nob">
+					<select name="intentSeries" id="intentSeries"
+								class="download dropdown-select" search="show">
+								<option value="">-请选择-</option>
+							</select> 
+					</li>
+				</td>
+			</tr>
+             <tr class="biaoge">
+             	<td>是否OEM来源</td><td><li class="nob">
+				<select name="isOem" id="isOem" class="download dropdown-select">
+					<option value="">-请选择-</option>
+					<option value="10041001">是</option>
+					<option value="10041002">否</option>
+				</select>
+			</li></td>
+			</tr>  
+                <tr class="biaoge" id="cusSource_Tr" style="display: none;">
+						<td>客户来源</td>
+						<td>
+							<li class="nob">
+								<select name="cusSource" id="cusSource"
+								class="download dropdown-select" search="show">
+								<option value="">-请选择-</option>
+							</select>
+							</li>
+						</td>
+					</tr>
+                <tr class="biaoge" id="oemCusSource_Tr" style="display: none;">
+                	<td>OEM客户来源						                </td>
+                    <td>
+						 <li class="nob">
+                            <select id="oemCusSource"
+								name="oemCusSource" class="download dropdown-select"
+								search="show">
+								<option value="">-请选择-</option>
+							</select> 
+                        </li>                    </td>
+                </tr>
+                <tr class="biaoge">
+					<td>时间类型</td>
+	                <td><li class="nob">
+                            <select name="dataType" id="dataType" class="download dropdown-select"  >
+                                <option value="1">创建时间</option>
+                                <option value="2">成交时间</option>
+                  </select>
+                        </li>   </td>
+                </tr>
+				<tr class="biaoge" name="dateTr">
+					<td >开始日期</td>
+					<td>
+						<li class="nob">
+							<input name="startDate" id="startDate" value="" type="date" class="px"  placeholder="请选择开始日期" />
+                        </li>					</td>
+				</tr>
+				<tr class="biaoge" name="dateTr">
+					<td >结束日期</td>
+					<td>
+						<li class="nob">
+							<input name="endDate" id="endDate" value="" type="date" class="px"  placeholder="请选择结束日期"/>
+                        </li>					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" height="60">
+						<li class="nob">
+							<button id="queryBtn" value="" type="button" class="submit" style="width: 90%" onClick="queryPt();"><img src="images/seach.png">查   询</button>
+						</li>
+					</td>
+				</tr>
+      </table>
+			<li class="shouqu" id="txt_query" onClick="_showQuery();">收起</li>
+      </ul>
+	</div>
+	<div id="tabList"></div> 
+</form>
+</body>
+<script type="text/javascript">
+
+	_loadTcCode("3031","1311","oemCusSource","cusSource");
+	_loadSeries("intentSeries");
+	
+	function queryPt()
+	{
+		_showQuery(1);
+		var url = httpUrlHead+"ReportServiceApp/bykh.json?"+httpUrlEnd;
+		_exe_query(url,"fm",true,"明细",false,"showDetail","showDetail","SALES_CONSULTANT","INTENT_SERIES","REPEAT_NUM","CUS_SOURCE","DEAL_DATE");
+	}
+	function showDetail(id,tabType){
+		ToUrl("potcusDetail.html?id="+id+"&tabType="+tabType);
+	}
+	
+	$(document).ready(function () {
+		var isOem = $("#isOem").val();
+    	if(isOem == '10041001') {
+    		$("#cusSource_Tr").hide();
+    		$("#oemCusSource_Tr").show();
+    	} else if(isOem == "10041002") {
+    		$("#cusSource_Tr").show();
+    		$("#oemCusSource_Tr").hide();
+    	} else {
+    		$("#cusSource_Tr").hide();
+    		$("#oemCusSource_Tr").hide();
+    	}
+    	$("#isOem").change(function() {
+    		if($("#isOem").val() == '10041001') {
+    			$("#cusSource").val("");
+    			$("#cusSource_Tr").hide();
+        		$("#oemCusSource_Tr").show();
+    		} else if($("#isOem").val() == "10041002") {
+    			$("#oemCusSource").val("");
+    			$("#cusSource_Tr").show();
+        		$("#oemCusSource_Tr").hide();
+    		} else {
+    			$("#cusSource").val("");
+    			$("#oemCusSource").val("");
+    			$("#cusSource_Tr").hide();
+        		$("#oemCusSource_Tr").hide();
+    		}
+    	});
+    	document.getElementById('startDate').value=_getNowFormatDate(null,1);
+		document.getElementById('endDate').value=_getNowFormatDate(null,1);
+    	queryPt();
+	});
+</script>
+</html>
+
+

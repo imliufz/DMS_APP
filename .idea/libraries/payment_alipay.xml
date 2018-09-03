@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="payment-alipay">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/payment-alipay.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

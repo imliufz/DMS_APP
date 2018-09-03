@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>问题上报</title>
+</head>
+<body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" ovalidate="true">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=问题上报&_back_url=mine.html" id="detail_head_js"></script>
+	<div style="height: 45px;display: none;" id="blankDiv"></div>
+	<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+		<script>
+				var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+				document.write(isAndroid > -1 ? "<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>" : "<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+			</script>
+	</div>
+	<form method="post" id="fm">
+		<div class="cardexplain" id="_showContentDiv1">
+			<!--普通用户登录时显示-->
+
+			<ul class="round">
+				<li class="title mb">
+					<span class="none">基本信息</span>
+				</li>
+				<li class="nob">
+					<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr class="biaoge">
+						<td>业务类型</td>
+							<td width="50%">
+							<li class="nob">
+								<select id="type" name="type" class="download dropdown-select">
+									<option value="1">业务咨询</option>
+									<option value="2">系统问题</option>
+									<option value="3">需求优化</option>
+									<option value="4">其它</option>
+								</select>
+							</li>
+						</td>
+						</tr>
+						<tr class="biaoge">
+							<td>
+								问题描述<font color="red">*</font>
+							</td>
+							<td>
+								<textarea rows="10" cols="4" name="problemDesc" class="px" id="problemDesc"  class="px" required="required" placeholder="请输入问题描述<字数限制500>" ></textarea>
+							</td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+			<div class="footReturn">
+				<input id="submitBtn" value="提   交"  type="submit" class="submit" style="width: 100%">
+				<br /> <br /> <br /> <br />
+			</div>
+			</div>
+	</form>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var toPage = UrlParm.parm("toPage");
+		if(toPage == "index"){
+			_back_url = "index.html";
+		}
+		//提交按钮事件绑定
+		$("#fm").html5Validate(function(){
+			MuiConfirm("确定提交?",function(e){
+				if(e.index == 0){
+					var url = httpUrlHead+"PotcusAchieveService/problemSave.json?"+httpUrlEnd;
+		        	makeFormCall(url, function(json){
+		        		if(json.RESULT.funcStatus == '1'){
+			        		MuiAlert("操作成功!",function(){
+			        			if(toPage == "index"){
+			        				ToUrl("index.html",2)
+			        			} else {
+				        			ToUrl("mine.html",2);	
+			        			}
+			        		});
+		        		} else {
+		        			MuiAlert("上报失败!请联系管理员");
+		        		}
+		        	}, "fm",true);
+				}
+			});
+		});
+	});
+</script>
+</html>

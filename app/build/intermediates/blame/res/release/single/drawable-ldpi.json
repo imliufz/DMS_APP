@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi\\icon.png",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-ldpi\\icon.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi\\splash.png",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-ldpi\\splash.png"
+    }
+]

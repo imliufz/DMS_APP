@@ -1,0 +1,136 @@
+﻿{
+    "version":  "1507791611",
+    "data":  [
+                 {
+                     "match":  [
+                                   "wxp:\\/\\/.*"
+                               ],
+                     "action":  "scheme",
+                     "scheme":  "weixin://",
+                     "url":  "$0",
+                     "toast":  "请使用微信扫描此码"
+                 },
+                 {
+                     "match":  [
+                                   "http:\\/\\/ofo\\.so\\/plate\\/([^/?]+)"
+                               ],
+                     "action":  "app",
+                     "appid":  "__W2A__common.ofo.so",
+                     "parameters":  {
+                                        "type":  "richurl",
+                                        "richurl":  "https://common.ofo.so/newdist/?~pressed=true\u0026code=$1\u0026__html5plusWebviewParameter=%7B%22appid%22%3A%22__W2A__common.ofo.so%22%2C%22webviewid%22%3A%22ride%22%2C%22statusbar%22%3A%7B%22immersed%22%3Afalse%7D%2C%22titleNView%22%3A%7B%22autoBackButton%22%3A%22true%22%2C%22backgroundColor%22%3A%22%23262930%22%2C%22titleColor%22%3A%22%23ffffff%22%2C%22titleSize%22%3A%2216px%22%2C%22borderColor%22%3A%22%23262930%22%2C%22titleText%22%3A%22ofo%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6%22%7D%2C%22preloadcss%22%3A%22.qrcode-scan-entry%7Bdisplay%3Anone!important%7D%22%2C%22preloadjs%22%3A%22_www%2Fjs%2Fride.js%22%7D"
+                                    }
+                 },
+                 {
+                     "match":  [
+                                   "http:\\/\\/www\\.mobike\\.com\\/download\\/app\\.html\\?b=([0-9]+_[0-9])"
+                               ],
+                     "action":  "app",
+                     "appid":  "__WEAPP__1168866021",
+                     "parameters":  {
+                                        "type":  "arguments",
+                                        "arguments":  "code=$1"
+                                    }
+                 },
+                 {
+                     "match":  [
+                                   "https:\\/\\/www\\.bluegogo\\.com\\/qrcode\\.html\\?no=([0-9]+)"
+                               ],
+                     "action":  "app",
+                     "appid":  "__WEAPP__wxa0d2096d2de0daaf",
+                     "parameters":  {
+                                        "type":  "arguments",
+                                        "arguments":  "code=$1"
+                                    }
+                 },
+                 {
+                     "match":  [
+                                   "https:\\/\\/bike\\.baojia\\.com\\/([^/?]+)",
+                                   "http:\\/\\/www\\.tiantianqidanche\\.com\\/down\\.html\\?id=([0-9]+)",
+                                   "http:\\/\\/www\\.7sebike\\.com\\/download\\.html\\?bicycleNo=([0-9]+)",
+                                   "http:\\/\\/www\\.99bicycle\\.com\\/download\\/\\?b=([0-9]+)",
+                                   "http:\\/\\/r\\.tempoon\\.com\\/\\?c=([^\u0026]*)"
+                               ],
+                     "action":  "toast",
+                     "toast":  "暂不支持该单车直接扫码解锁，请下载App解锁。"
+                 },
+                 {
+                     "match":  [
+                                   "http:\\/\\/weixin\\.qq\\.com\\/r\\/OD_BmbrEvufBrf7692oq\\/([0-9]+)"
+                               ],
+                     "action":  "scheme",
+                     "url":  "$0",
+                     "scheme":  "weixin://",
+                     "toast":  "暂不支持该单车直接解锁，请使用微信扫此码解锁。"
+                 },
+                 {
+                     "match":  [
+                                   "ss:\\/\\/bicycle\\?id=([^\u0026]*)"
+                               ],
+                     "action":  "toast",
+                     "toast":  "暂不支持该单车直接解锁，请使用智享出行扫此码解锁。"
+                 },
+                 {
+                     "match":  [
+                                   "https:\\/\\/bike\\.coolqi\\.com\\/open\\?type=[0-9]+\u0026sn=([0-9]+)",
+                                   "http:\\/\\/qr\\.youonbike\\.com\\/index\\.html\\?QrCode=([^\u0026]*)",
+                                   "http:\\/\\/weixin\\.qq\\.com\\/r\\/oD9tdabEJvtZreIW92qy\\?id=([0-9]+)",
+                                   "https:\\/\\/ubike\\.cn\\/v1\\/static\\/redirectlock\\.html\\?number=([^\u0026]*)"
+                               ],
+                     "action":  "scheme",
+                     "scheme":  "alipays://platformapi/startapp?appId=10000007",
+                     "url":  "$0",
+                     "toast":  "暂不支持该单车直接扫码解锁，请使用支付宝扫描此码或下载App"
+                 },
+                 {
+                     "match":  [
+                                   "^\\d{13}$",
+                                   "^\\d{9}$"
+                               ],
+                     "action":  "list",
+                     "list":  {
+                                  "title":  "扫描结果: $0",
+                                  "items":  [
+                                                {
+                                                    "action":  "clipboard",
+                                                    "clipboard":  "$0",
+                                                    "caption":  "复制到剪切板",
+                                                    "toast":  "拷贝到剪切板:$0"
+                                                },
+                                                {
+                                                    "caption":  "搜京东",
+                                                    "action":  "app",
+                                                    "appid":  "__W2A__m.sjjd.com",
+                                                    "parameters":  {
+                                                                       "type":  "richurl",
+                                                                       "richurl":  "https://www.dcloud.io/shoujijingdong/scan.html?code=$0\u0026__html5plusWebviewParameter=%7B%20%22appid%22%3A%22__W2A__m.sjjd.com%22%2C%20%22webviewid%22%3A%22product%22%2C%20%22titleNView%22%3A%7B%20%22autoBackButton%22%3A%22true%22%2C%20%22backgroundColor%22%3A%22%23efefef%22%2C%20%22titleColor%22%3A%22%23222%22%2C%20%22titleText%22%3A%22%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85%22%2C%20%22titleSize%22%3A%2215px%22%20%7D%2C%20%22extras%22%3A%20%7B%20%22__wap2app_type%22%3A%20%22direct%22%20%7D%2C%20%22preloadcss%22%3A%22.hold-div-top%7Bheight%3A0px!important%7D%23m_common_header%7Bdisplay%3Anone!important%7D%22%2C%20%22preloadjs%22%3A%22%22%20%7D"
+                                                                   }
+                                                },
+                                                {
+                                                    "caption":  "搜淘宝",
+                                                    "action":  "app",
+                                                    "appid":  "__W2A__m.taobao.com",
+                                                    "parameters":  {
+                                                                       "type":  "richurl",
+                                                                       "richurl":  "http://h5.m.taobao.com/qrbuy/sdk.html?barcode=$0\u0026type=1\u0026__html5plusWebviewParameter=%7B%20%22appid%22%3A%20%22__W2A__m.taobao.com%22%2C%20%22webviewid%22%3A%20%22saomagou%22%2C%22statusbar%22%3A%20%7B%20%22background%22%3A%20%22%22%20%7D%2C%22shareable%22%3Afalse%2C%22titleNView%22%3A%20%7B%20%22backgroundColor%22%3A%20%22%23ffffff%22%2C%20%22titleText%22%3A%20%22%E7%A0%81%E4%B8%8A%E8%B4%AD%22%2C%20%22titleColor%22%3A%20%22%23222%22%2C%20%22titleSize%22%3A%20%2217px%22%2C%20%22borderColor%22%3A%22%23f7f7f7%22%20%7D%2C%20%22extras%22%3A%20%7B%20%22__wap2app_type%22%3A%20%22direct%22%20%7D%2C%20%22preloadcss%22%3A%20%22%22%2C%20%22preloadjs%22%3A%20%22%22%20%7D"
+                                                                   }
+                                                },
+                                                {
+                                                    "caption":  "搜亚马逊",
+                                                    "action":  "app",
+                                                    "appid":  "__W2A__amazon.cn",
+                                                    "parameters":  {
+                                                                       "type":  "richurl",
+                                                                       "richurl":  "https://www.amazon.cn/gp/aw/s/ref=nb_sb_noss?k=$0\u0026__html5plusWebviewParameter=%7B%22appid%22%3A%22__W2A__amazon.cn%22%2C%22webviewid%22%3A%22search%22%2C%22statusbar%22%3A%7B%22immersed%22%3Afalse%7D%2C%22titleNView%22%3A%7B%22titleText%22%3A%22%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%22%2C%22backgroundColor%22%3A%22%23eee%22%2C%22titleColor%22%3A%22%23000%22%2C%22titleSize%22%3A%2216px%22%2C%22splitLine%22%3A%7B%22color%22%3A%22%23eee%22%7D%7D%2C%22backbuttonaction%22%3A%22followcode%22%2C%22preloadcss%22%3A%22%23suggestions%7Btop%3A40px%3Bmargin-top%3A0!important%3B%7D%20%23s-backout-link%20.a-subheader%2C%23nav-gwbar%2C%23nav%20.a-row%3Anth-child(1)%2C%23navbar%2C.askSubHeader%20i%2Cnav%20.a-global-nav-wrapper%7Bdisplay%3Anone%3B%7D%20%20body.a-touch%7Bposition%3Aabsolute%3Bwidth%3A100%25%3Bz-index%3A201%3Btop%3A0%3B%7D%23s-backout-link%20.a-subheader%2C%23tellAFriendBox_feature_div%2C%5Bdata-hook%3D\u0027breadcrumb\u0027%5D%2C%23gc-subheader-YA-breadcrumb%2C.a-container.a-footer%2C%23WrapperDivToHideFooter%2C.mobile-shop-by-department-footer%3Ediv%3Ea%3Alast-child%7Bdisplay%3A%20none!important%7D%23footer%2Cfooter.nav-mobile%7Bdisplay%3Anone%3B%7D%23nav-ftr-links%20li%3Anth-child(3)%7Bdisplay%3A%20none%7D.a-footer%20ul%20li%3Anth-child(3)%7Bdisplay%3A%20none%7D.a-footer%20.a-box-group%20a%3Anth-child(3)%7Bdisplay%3A%20none%7D%23nav-ftr-links%20li%3Alast-child%7Bdisplay%3A%20none%7D.a-footer%20ul%20li%3Alast-child%7Bdisplay%3A%20none%7D.a-footer%20.a-box-group%20a%3Alast-child%7Bdisplay%3A%20none%7D%23gc-feedback-body%20.gc-show%7Bmargin-top%3A50px%3B%7Ddiv%23search-content%20%3E%20div.a-container%7Boverflow-x%3A%20hidden%3B%7D.a-popover-header-secondary%2C%23menu_container%20.a-subheader%7Bdisplay%3Anone!important%3B%7D%22%7D"
+                                                                   }
+                                                },
+                                                {
+                                                    "caption":  "搜百度",
+                                                    "action":  "browser",
+                                                    "url":  "https://www.baidu.com/s?wd=$0"
+                                                }
+                                            ]
+                              }
+                 }
+             ]
+}

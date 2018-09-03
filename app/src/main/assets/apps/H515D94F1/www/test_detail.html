@@ -1,0 +1,51 @@
+<!-- HTML5 DOCUMENT -->
+
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				preloadPages: [{
+					id: 'index.html',
+					url: 'index.html'
+				}],
+			});
+		</script>
+        
+    </head>
+    
+    
+  
+    
+    <body>
+    
+    	<input type="button" name="btn1" id="btn1" value="返回" />
+ 
+	</body>
+<script type="text/javascript">
+	document.getElementById("btn1").addEventListener("tap",function(){
+		mui.openWindow({
+				url: "index.html",
+				id: "index.html",
+				show: {
+					autoShow: true, //页面loaded事件发生后自动显示，默认为true  
+					aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；  
+					duration: "200" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；  
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true  
+					title: '正在加载...', //等待对话框上显示的提示内容  
+					options: {
+						width: "100px", //等待框背景区域宽度，默认根据内容自动计算合适宽度  
+						height: "30px", //等待框背景区域高度，默认根据内容自动计算合适高度  
+					}
+				}
+		});
+	})
+</script>
+</html>	

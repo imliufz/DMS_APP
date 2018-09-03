@@ -1,0 +1,23 @@
+body{
+	background-color: #edf0f8;
+}
+.weimob-list-item-title{padding-left:5px; overflow:hidden; line-height:30px;font-size:0.8rem;color:#666;}
+.weimob-list-item{ height:90px;}
+.weimob-list-item-image{top:50%;}
+.weimob-list-item-line{ display:block; /*height:50px;*/margin-top:1px;overflow:hidden;}
+.weimob-list-item-summary{ max-height:20px; line-height:20px; font-size:0.8rem; color:#666;}
+
+.weimob-list-itemred-title{padding-left:5px; overflow:hidden; line-height:30px;}
+.weimob-list-itemred{ height:90px;}
+.weimob-list-itemred-image{top:60%;}
+.weimob-list-itemred-line{ display:block; height:50px;margin-top:1px;overflow:hidden;}
+.weimob-list-itemred-summary{ max-height:20px; line-height:20px; font-size:0.8rem; color:#666;}
+
+.weimob-list-itemgreen-title{padding-left:5px; overflow:hidden; line-height:30px;}
+.weimob-list-itemgreen{ height:90px;}
+.weimob-list-itemgreen-image{top:60%;}
+.weimob-list-itemgreen-line{ display:block; height:50px;margin-top:1px;overflow:hidden;}
+.weimob-list-itemgreen-summary{ max-height:20px; line-height:20px; font-size:0.8rem; color:#666;}
+
+.weimob-list-itemreddish{ height:90px;}
+.weimob-list-item-all{ height:90px;}

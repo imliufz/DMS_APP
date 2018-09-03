@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<title>战败审批</title>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;" onLoad="queryPt();">
+    <form id="fm" method="post">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=战败审批&_back_url=index.html" id="detail_head_js"></script>
+	<div class="cardexplain">
+	<ul class="round">
+            <table id="tb_query">
+           		<tr class="biaoge">
+					<td>姓名/手机</td>
+					<td>
+						<li class="nob">
+							<input type="text" id="customerNamePhone" name="customerNamePhone" placeholder="客户姓名/手机号码" class="px" />
+						</li>
+					</td>
+				</tr>
+				<tr class="biaoge" id="salesConsultantTr" >
+				<td>选择顾问 </td>
+                 <td>
+	                    <li class="nob">
+	                        <input type="text" id="salesConsultant_show" name="salesConsultant_show"  placeholder="选择顾问"  value="" class="px"  readonly="readonly"/>
+	                        <input type="hidden" id="salesConsultant" name="salesConsultant" value="" />
+	                    </li>	    
+	                           
+	            </td>
+			</tr>
+				<tr class="biaoge">
+					<td>开始日期</td>
+					<td>
+						<li class="nob">
+							<input name="failDateBegin" id="failDateBegin" value="" type="date" class="px"  placeholder="开始日期" />
+                        </li>
+					</td>
+				</tr>
+				<tr class="biaoge">
+					<td>结束日期</td>
+					<td>
+						<li class="nob">
+							<input name="failDateEnd" id="failDateEnd" value="" type="date" class="px"  placeholder="结束日期" />
+                        </li>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" height="60">
+						<li class="nob">
+							<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="queryPt();">
+						</li>
+					</td>
+				</tr>
+            </table>
+			<li class="shouqu" id="txt_query" onClick="_showQuery();">收起</li>
+        </ul>
+	</div>
+	<div id="tabList"></div>
+</form>
+<div id="querySalesConsultantHtml"  style="display: none;">
+		<table width="100%"  style="margin-top: 10%;">
+                <tr>
+					<td colspan="6" align="center" height="60">
+						<li class="nob">
+							<input value="确认选择" type="button" class="submit" style="width: 90%" onclick="closeQuerySalesConsultant()">
+						</li>
+					</td>
+				</tr>
+          </table>
+	</div>
+</body>
+<script type="text/javascript">
+	var IS_MANAGER = "10041002";
+	$(document).ready(function () {
+		$('#salesConsultantTr').show();
+		var logonUser = JSON.parse(getLocalStorage("logonUser"));
+		IS_MANAGER = logonUser.IS_MANAGER;
+		var salesConsultant = logonUser.salesConsultant.split(",");
+		if(salesConsultant != null && salesConsultant.length > 0) {
+			var appendHtml = "";
+			for(var i = 0;i < salesConsultant.length;i++) {
+				var name = salesConsultant[i].replace(/\'/g,"");
+				if(i%3 == 0){
+					appendHtml += '<tr class="biaoge"><td width="20%" align="center">'+name+'</td><td width="10%"  align="center"><input type="checkbox" name="salesConsultantCB"  style="width: 20px;height: 20px;vertical-align:middle;" value="'+name+'"></td>';
+				} else {
+					appendHtml += '<td width="20%" align="center">'+name+'</td><td width="10%"  align="center"><input type="checkbox" name="salesConsultantCB"  style="width: 20px;height: 20px;vertical-align:middle;" value="'+name+'"></td>';
+				}
+			}
+			$("#querySalesConsultantHtml").find("table").prepend(appendHtml);
+		} else {
+			MuiAlert("该分组下无销售顾问!");
+		}
+		$("#salesConsultant_show").click(function(){
+			$("input[name='salesConsultantCB']").attr("name","salesConsultantCB_copy");
+			var querySalesConsultantHtmlCopy = $("#querySalesConsultantHtml").html();
+			$("input[name='salesConsultantCB_copy']").attr("name","salesConsultantCB");
+			$('#fm').hide();
+			var pageii = layer.open({
+	    	    type: 1,
+	    	    content: querySalesConsultantHtmlCopy,
+	    	    style: 'position:fixed; left:0; top:0; width:100%; height:100%; border:none;overflow-y: scroll;'
+	    	});
+		});
+		
+		var backUrl = UrlParm.parm("backUrl");
+		if(!IsNull(backUrl)){
+			_back_url = backUrl;
+		}
+	});
+    function setDate(){
+        document.getElementById('failDateBegin').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		document.getElementById('failDateEnd').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+    }
+    //setDate();
+	
+    function queryPt(){
+    	_showQuery(1);
+		var url = httpUrlHead+"PotcusAchieveService/queryPotCusFailList.json?"+httpUrlEnd;
+		if(IS_MANAGER == "10041001"){
+			_exe_query(url,"fm",true,"审核",false,"zbChk","zbChk","SALES_CONSULTANT","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE");
+		} else {
+			_exe_query(url,"fm",true,"明细",false,"zbChk","zbChk","SALES_CONSULTANT","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE");
+		}
+	}
+    
+    //自定义回调刷新方法
+	window.addEventListener("backFunction",function(event){
+		queryPt();
+	})
+    
+	function zbChk(id,tabType){
+		if(IS_MANAGER == "10041001"){
+			_toPage("potcusDetail.html?id="+id+"&tabType="+tabType+"&flag=2");
+		} else {
+			_toPage("potcusDetail.html?id="+id+"&tabType="+tabType);
+		}
+	}
+
+
+	function closeQuerySalesConsultant() {
+		$('#fm').show();
+		var values = "";
+		var queryValues = "";
+		$("input[name='salesConsultantCB_copy']:checked").each(function(){
+			values += $(this).val()+",";
+			queryValues += "'"+$(this).val()+"',";
+		});
+		if(values != ""){
+			values = values.substring(0, values.length-1);
+			queryValues = queryValues.substring(0, queryValues.length-1);
+		}
+		$("#salesConsultant_show").val(values);
+		$("#salesConsultant").val(queryValues);
+		layer.closeAll();
+		var array = values.split(",");
+		$("input[name='salesConsultantCB']").attr("checked",false);
+		for (var i=0 ; i< array.length ; i++){
+			$("input[name='salesConsultantCB']").each(function(){
+				var value = $(this).val();
+				if(value == array[i]){
+					$(this).attr("checked",true);
+				}
+			});
+		}
+	}
+</script>
+</html>
+
+

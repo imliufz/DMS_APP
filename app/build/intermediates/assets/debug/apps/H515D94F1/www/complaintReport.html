@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>投诉单报表</title>
+<style type="text/css">
+	.tarea {
+		font-size: 14px/1.5 Microsoft YaHei, Helvitica, Verdana, Arial, san-serif;
+		color: #676767;
+		width: 95%;
+	}
+</style>
+</head>
+<body onLoad="_loadData();" onselectstart="return true;" ondragstart="return false;">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=投诉单报表&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
+	<form method="post" id="fm">
+		<div class="masklayer" ontouchmove="return true;" onClick="$(this).toggleClass('on');">
+			<script>
+				var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+				document.write(isAndroid > -1 ? "<img src='static/img/instruction_android.png' alt='' style='width: auto!important;'>"
+								: "<img src='static/img/instruction_iphone.png' alt='' style='width: auto!important;'>");
+			</script>
+		</div>
+		<div id="_showLoading"></div>
+		<div class="cardexplain" id="_showContent">
+				<form action="javascript:;" method="post">
+					<div class="tab-pane active" id="panel-1">
+						<ul class="round">
+        <table class="bordered">
+            <thead>
+            <tr class="biaoge">
+                <th width="25%" nowrap="nowrap"></th>
+                <th width="25%" nowrap="nowrap">未处理</th>
+                <th width="25%" nowrap="nowrap">将到期</th>
+                <th width="25%" nowrap="nowrap">已到期</th>
+            </tr>
+            </thead>
+            <tbody id="complaintReport">
+            </tbody>
+        </table>
+    </ul>
+					</div>
+				</form>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	
+	function _toUpdateOrDetailPage(id,tabType) {
+		if(tabType == "0") {
+			_toPage("communiRecordDetail.html?id="+id);
+		} else if(tabType == "1") {
+			_toPage("communiRecordDetail.html?id="+id);
+		}
+	}
+	
+	function _loadData() {
+		var dealerName = UrlParm.parm("dealerName");
+		
+		insertData(dealerName);
+	}
+	
+	function insertData(dealerName) {
+		var complaintReport = document.getElementById("complaintReport");
+			
+				var url1 = httpUrlHead + "ComplaintServiceApp/queryComplaintReportList.json?" + httpUrlEnd;
+				makeFormCall(url1,function(json){
+					for(var i = 0; i < json.details.length;i++) {
+						var detail = json.details[i];
+						var newRow = complaintReport.insertRow(i);
+						var newCell = newRow.insertCell(0);
+						newCell.align = "center";
+						newCell.innerHTML = dealerName;
+						
+					newCell = newRow.insertCell(1);
+					newCell.align = "center";
+					newCell.onclick= function () {
+						window.location.href = "complaintServiceDeal.html?WS_STATUS=30231001";
+						};
+					newCell.innerHTML ='<p style="color:blue">'+detail.COUNT1+'</p>';
+						newCell = newRow.insertCell(2);
+						newCell.align = "center";
+						newCell.onclick= function () {
+							window.location.href = "complaintServiceDeal.html?WS_STATUS=30231001&DUE_DT=1";
+							};
+						newCell.innerHTML = '<p style="color:blue">'+detail.COUNT2+'</p>';
+							newCell = newRow.insertCell(3);
+							newCell.align = "center";
+							newCell.onclick= function () {
+								window.location.href = "complaintServiceDeal.html?WS_STATUS=30231001&DUE_DT=2";
+								};
+							newCell.innerHTML ='<p style="color:blue">'+detail.COUNT3+'</p>';
+					}
+				},"fm");
+	}
+	
+	function showHelp(){
+		var alertMsg = ""+
+		"<div style='text-align:left;'>"+
+			"<div>未处理：未处理的投诉</div>"+
+			"<div>将到期：24小时内将到期的投诉</div>"+
+			"<div>已到期：已到期的投诉</div>"+
+		"</div>";
+		MuiAlert(alertMsg);
+	}
+	
+</script>
+</html>

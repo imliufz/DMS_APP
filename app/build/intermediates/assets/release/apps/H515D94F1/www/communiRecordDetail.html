@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/html_head.js"></script>
+<title>投诉单沟通记录</title>
+<style type="text/css">
+	.weimob-list-item-line_120 {
+		display: block;
+		height: 120px;
+		margin-top: 1px;
+		overflow: hidden;
+	}
+	.weimob-list-itemgreen_120 {
+		height: 120px;
+	}
+</style>
+</head>
+<body onLoad="_loadData();" onselectstart="return true;" ondragstart="return false;">
+	<div class="topBar">
+		<div class="l"><a class="arrow" href="javascript:void(0)" onClick="_back();"></a></div>
+		<h1>投诉单沟通记录</h1>
+		<div class="r"><a href="javascript:void(0)" onClick="_mainPage(2);"><img src="images/hom-icon.png" width="27"></a></div>
+	</div>
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=投诉单沟通记录&_is_loading=1" id="detail_head_js"></script>
+	<form id="fm" method="post">
+		 <div id="_showLoading"></div>
+		<div class="cardexplain" id="_showContent">
+			<ul class="round">
+				<form action="javascript:;" method="post">
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>处理方式</td>
+								<td>
+									<input type="text" class="px"  readonly="readonly" id="TODO_CD" name="TODO_CD">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>处理状态</td>
+								<td>
+									<input type="text" class="px"  readonly="readonly" id="EVT_STAT_CD" name="EVT_STAT_CD">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>处理日期</td>
+								<td>
+									<input type="text" class="px"  readonly="readonly" id="CREATE_DT" name="CREATE_DT">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>主叫号码</td>
+								<td>
+									<input type="text" class="px"  readonly="readonly" id="CALLED_FROM_NUM" name="CALLED_FROM_NUM">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>被叫号码</td>
+								<td>
+									<input type="text" class="px"  readonly="readonly" id="CALLED_NUM" name="CALLED_NUM">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>联系人姓名</td>
+								<td>
+									<input type="text" class="px"  readonly="readonly" id="LAST_NAME" name="LAST_NAME">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>开始时间</td>
+								<td>
+									<input type="text" class="px" readonly="readonly" id="TODO_PLAN_START_DT" name="TODO_PLAN_START_DT">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>结束时间</td>
+								<td>
+									<input type="text" class="px" readonly="readonly" id="TODO_PLAN_END_DT" name="TODO_PLAN_END_DT">
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>说明</td>
+								<td>
+									<textarea class="pxtextarea" style=" height:99px;overflow-y:visible"  readonly="readonly" id="DESC_TEXT" name="DESC_TEXT"></textarea>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td>备注</td>
+								<td>
+									<textarea class="pxtextarea" style=" height:99px;overflow-y:visible"  readonly="readonly" id="COMMENTS_LONG" name="COMMENTS_LONG"></textarea>
+								</td>
+							</tr>
+						</table>
+					</li>
+				</form>
+			</ul>
+		</div> 
+	</form>
+<script type="text/javascript">
+function _loadData() {
+var seId = UrlParm.parm("seId");
+var url = httpUrlHead + "ComplaintServiceApp/queryCommouncationDetailInfo.json?seId=" + seId + "&" + httpUrlEnd;
+makeFormCall(
+		url,
+		function(json) {
+			if (json.RESULT.maps != null && json.RESULT.maps.length > 0) {
+				var map = json.RESULT.maps[0];
+				document.getElementById("TODO_CD").value = map.TODO_CD;
+				document.getElementById("EVT_STAT_CD").value = map.EVT_STAT_CD;
+				document.getElementById("CREATE_DT").value = map.CREATE_DT;
+				document.getElementById("CALLED_FROM_NUM").value = map.CALLED_FROM_NUM;
+				document.getElementById("CALLED_NUM").value = map.CALLED_NUM;
+				document.getElementById("LAST_NAME").value = map.LAST_NAME;
+				document.getElementById("TODO_PLAN_START_DT").value = map.TODO_PLAN_START_DT;
+				document.getElementById("TODO_PLAN_END_DT").value = map.TODO_PLAN_END_DT;
+				document.getElementById("DESC_TEXT").value = map.DESC_TEXT;
+				document.getElementById("COMMENTS_LONG").value = map.COMMENTS_LONG;
+
+			}
+		}, "fm", false,true);
+}
+
+</script>
+</body>
+</html>
