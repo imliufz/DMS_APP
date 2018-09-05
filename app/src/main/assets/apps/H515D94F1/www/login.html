@@ -149,7 +149,7 @@
 
 			    //设置极光推送注册ID
 			    userId = json.logonUser.ID;
-				setUserRegistration(json.logonUser.ID);
+			    try{setUserRegistration(json.logonUser.ID);}catch(e){}
 			    //加载首页菜单权限
 			    loadMenuToStorage(userCode,userPwdJM);
 			}
