@@ -358,6 +358,8 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">乘用车营销宝</string>
     <string name="dcloud_gallery_app_name">@string/app_name</string>
+    <string name="growingio_project_id" translatable="false">9666d5bacc0ca947</string>
+    <string name="growingio_url_scheme" translatable="false">growing.8bc60be0bc7ca4c7</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="stream_my">Recent StreamApp</string>

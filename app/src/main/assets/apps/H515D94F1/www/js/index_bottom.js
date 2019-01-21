@@ -4,6 +4,8 @@
 var jsId = "index_buttom_js";
 var _active_url = JSParm(jsId,"_active_url");
 var isHaveFwgwRole = getLocalStorage("HAVE_FWGW_ROLE");
+var isHaveZxRole = getLocalStorage("HAVE_ZX_ROLE");
+
 var writeHtml = ''+
 '<br/><br/><br/><br/>'+
 '<div class="menu">'+
@@ -23,7 +25,7 @@ var writeHtml = ''+
 '					 <a href="javascript:void(0);" toPage="report_list.html" id="m3" class="report" dat="报表" ></a>'+
 '                    <span>报表</span>'+
 '                </li>';
-if(!IsNull(isHaveFwgwRole) && isHaveFwgwRole == '1'){
+if(!IsNull(isHaveZxRole) && isHaveZxRole == '1'){
 	writeHtml += '                <li menuNum="4" id="menu_zxapp">'+
 '					 <a href="javascript:void(0);" toPage="" id="m4" class="zxapp" dat="尊享" ></a>'+
 '                    <span>尊享</span>'+
@@ -79,6 +81,12 @@ mui('.menu').on('tap', 'li', function(e) {
 			}
 		}
 	})
+	setTimeout(function(){
+		try{
+			plus.nativeUI.closeWaiting();
+		}catch(e){
+		}
+	},2000);
 });
 
 function rsiz(){

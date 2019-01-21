@@ -55,6 +55,15 @@
 							</tr>
 						</table>
 					</li>
+					<li class="nob">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr class="biaoge">
+								<td width="64%">顾问标签<font color="red">*</font></td>
+								<td width="36%" id="tagContent">
+								</td>
+							</tr>
+						</table>
+					</li>
 					<div class="footReturn">
 						<input type="hidden" name="ID" id="ID" />
 						<input id="submitBtn" class="submit" value="提   交" type="button" style="width: 100%" onClick="submitForm();">
@@ -88,6 +97,20 @@
 					//加载tc_code
 					_loadTcCode("7016", "WORKING_STATE");
 				}
+				if(json.allTagList != null && json.allTagList.length > 0 ){
+    				var appendHtml = "";
+    				for(var i=0;i<json.allTagList.length;i++){
+    					appendHtml += '<div class="mui-input-row mui-checkbox mui-left" style="float: left;clear:none">';
+    					appendHtml += '<label>'+json.allTagList[i].CODE_DESC+'</label>';
+    					appendHtml += '<input id="'+json.allTagList[i].CODE_ID+'" name="consultantTag" value="'+json.allTagList[i].CODE_ID+'" type="checkbox" ></div>';
+    				}
+    				$("#tagContent").html(appendHtml);
+    			}
+	    		if(json.tagList != null && json.tagList.length > 0 ){
+	    			for(var i=0;i<json.tagList.length;i++){
+	    				$("#"+json.tagList[i].TAG_TYPE).attr("checked",true);
+	    			}
+				}
 			}, "fm", false,true);
 	}
     
@@ -96,6 +119,10 @@
     		MuiAlert("在岗状态必填");
     		return false;
     	}
+    	if($("input[name='consultantTag']:checked").length == 0 ){
+			MuiAlert("至少选择一个标签");
+			return false;
+		}
     		MuiConfirm("确定提交吗?",function(e){
 	    		if(e.index == 0 ){
 	    			var url = httpUrlHead + "SalesConsultantService/updateSalesConsultant.json?" + httpUrlEnd;

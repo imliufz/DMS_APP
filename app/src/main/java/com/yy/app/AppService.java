@@ -29,6 +29,7 @@ public class AppService extends PandoraEntry {
         JPushInterface.init(this.getApplicationContext());
         String registrationId = JPushInterface.getRegistrationID(this.getApplicationContext());
         Log.e("1099", "run:--------->registrationId： "+registrationId );
+
         /*Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {

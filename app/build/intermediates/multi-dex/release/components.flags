@@ -13,7 +13,7 @@
 -printconfiguration 'D:\AndroidProjects\DMS_APP\app\build\intermediates\multi-dex\release\components.flags'
 
 
-# view AndroidManifest.xml #generated:671
+# view AndroidManifest.xml #generated:681
 -keep class io.dcloud.multiprocess.activity.WebAppActivity1 {
     <init>(...);
 }

@@ -1,4 +1,4 @@
-#Mon Sep 03 15:45:53 CST 2018
+#Thu Jan 10 15:26:23 CST 2019
 base.0=D\:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=D\:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex

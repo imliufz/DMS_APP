@@ -19,30 +19,54 @@
 		<div class="cardexplain">
 			<ul class="round">
 				<form action="javascript:;" method="post">
+					<!--锁定提示-->
 					<li class="title mb">
 						<span id="salesConsultantLockInfo" class="none">&nbsp;</span>
 					</li>
+					<!--企业微信提示-->
 					<li class="title mb">
-						<span id="weChatMail" class="none" style="display:none;">&nbsp;</span>
+						<span id="hasWeChatMail" class="none" style="display:none;">&nbsp;</span>
 					</li>
-					<li class="title mb" style="min-height: 10px;height: 4px;">
-						<span class="none" style="min-height: 10px;height: 4px;">&nbsp;</span>
+					<li class="title mb">
+						<span id="noWeChatMailAuditInfo" class="none" style="display:none;">&nbsp;</span>
 					</li>
-					<li id="tipsInfo" class="nob" style="display:none;">
+					<li class="title mb">
+						<span id="noWeChatMailNotifyInfo" class="none" style="display:none;">&nbsp;</span>
+					</li>
+					<li id="registerInfo" class="nob" style="display:none;">
 						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 						    <tr>
 						        <td style="text-align: left;">注册企业微信操作方法:&nbsp;</td>
 						    </tr>
 						    <tr>
-						        <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;1、联系服务SDU协助发起流程（适用场景：维修站所有人员均无企业微信账户）&nbsp;</td>
+						        <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;1、联系SDU协助发起流程（适用场景：所有人员均无企业微信账户）&nbsp;</td>
 							</tr>
 							<tr>
-						        <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;2、直接通过企业微信申请：依次进入企业微信工作台-轿车流程中心-发起“企业微信账户申请注销流程”（适用场景：维修站其他人员有企业微信账户）&nbsp;</td>
+						        <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;2、直接通过企业微信申请：依次进入企业微信工作台-轿车流程中心-发起“企业微信账户申请注销流程”（适用场景：其他人员有企业微信账户）&nbsp;</td>
 							</tr>
 							<tr class="biaoge">
-						        <td style="text-align: left;"><font color="red">&nbsp;&nbsp;&nbsp;&nbsp;注：企业微信人员变更，或首次加入的人员，需在加入企业微信2小时后发起重置密码或查找用户名申请。&nbsp;</font></td>
+						        <td style="text-align: left;"><font color="red">&nbsp;&nbsp;&nbsp;&nbsp;注：企业微信人员变更，或首次加入的人员，需在加入企业微信2小时后才能申请解锁。&nbsp;</font></td>
 						    </tr>
 						</table>
+					</li>
+					<li class="title mb">
+						<span id="noWeChatMailAuditActivationInfo" class="none" style="display:none;">&nbsp;</span>
+					</li>
+					<li class="title mb">
+						<span id="noWeChatMailNotifyActivationInfo" class="none" style="display:none;">&nbsp;</span>
+					</li>
+					<li id="activateInfo" class="nob" style="display:none;">
+						<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+						    <tr>
+						        <td style="text-align: left;">激活企业微信操作方法:&nbsp;</td>
+						    </tr>
+						    <tr>
+						        <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;在手机中下载企业微信客户端,通过企业微信手机客户端登录后自动激活。&nbsp;</td>
+							</tr>
+						</table>
+					</li>
+					<li class="title mb" style="min-height: 10px;height: 4px;">
+						<span class="none" style="min-height: 10px;height: 4px;">&nbsp;</span>
 					</li>
 					<li id="unlockApplyAuditDiv" class="nob" style="display:none">
 						<ul class="round">
@@ -92,43 +116,77 @@
 				if (json.RESULT.funcStatus == 1) {//成功
 					//设置审核人及通知人隐藏域
 					var ttWeChatMailAuditByList = json.ttWeChatMailAuditByList;
-					var ttWeChatMailNotifyByList = json.ttWeChatMailNotifyByList;
+					var ttWeChatMailNotifyByMap = json.ttWeChatMailNotifyByMap;
+					var flag = true;//是否符合条件标志,true表示符合,false表示不符合
+					//alert(ttWeChatMailAuditByList.length);
+					//alert(ttWeChatMailNotifyByMap);
 					//alert(ttWeChatMailAuditByList);
-					if(ttWeChatMailAuditByList!=null){
+					if(ttWeChatMailAuditByList.length!=0){
 						for(var i=0;i<ttWeChatMailAuditByList.length;i++){
-							var input = document.createElement("input");
-							input.type = "hidden";
-							input.id = "unlockApplyAuditByWechat";
-							input.name = "unlockApplyAuditByWechat";
-							input.value = ttWeChatMailAuditByList[i].USER_ID;
-							document.getElementById("fm").appendChild(input);
+							if(ttWeChatMailAuditByList[i].STATUS==1){//已激活的
+								var input = document.createElement("input");
+								input.type = "hidden";
+								input.id = "unlockApplyAuditByWechat";
+								input.name = "unlockApplyAuditByWechat";
+								input.value = ttWeChatMailAuditByList[i].USER_ID;
+								document.getElementById("fm").appendChild(input);
+							}
 						}
 					}
-					if(ttWeChatMailNotifyByList!=null){
-						for(var i=0;i<ttWeChatMailNotifyByList.length;i++){
-							var input = document.createElement("input");
-							input.type = "hidden";
-							input.id = "unlockApplyNotifyBy";
-							input.name = "unlockApplyNotifyBy";
-							input.value = ttWeChatMailNotifyByList[i].USER_ID;
-							document.getElementById("fm").appendChild(input);
-						}
+					if(ttWeChatMailNotifyByMap!=null){
+						var input = document.createElement("input");
+						input.type = "hidden";
+						input.id = "unlockApplyNotifyBy";
+						input.name = "unlockApplyNotifyBy";
+						input.value = ttWeChatMailNotifyByMap.USER_ID;
+						document.getElementById("fm").appendChild(input);
 					}
 					//显示信息
 					document.getElementById("salesConsultantLockInfo").innerHTML = "由于超过"+json.salesConsultantLockDay+"天未登陆,您的账号已被系统锁定。";
-					if(json.noWeChatMail!=""){
-						document.getElementById("weChatMail").innerHTML = "解锁需"+json.noWeChatMail+"注册企业微信。";
-						document.getElementById("tipsInfo").style.display = "block";
+					
+					//审核人信息
+					if(ttWeChatMailAuditByList.length==0){
+						document.getElementById("noWeChatMailAuditInfo").innerHTML = "解锁需"+json.position+"注册企业微信<font color=\"red\">（必须）</font>。";
+						document.getElementById("noWeChatMailAuditInfo").style.display = "block";
+						document.getElementById("registerInfo").style.display = "block";
 						document.getElementById("submitBtn").style.backgroundColor = "gray";
 						document.getElementById("submitBtn").onclick = "#";
 						//隐藏解锁申请表格
 	    				var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
     					unlockApplyAuditDiv.style.display = "none";
+    					flag = false;
 					}else{
-						document.getElementById("weChatMail").style.display = "block";
-						document.getElementById("weChatMail").innerHTML = "企业微信已注册,可以申请解锁。";
-						//document.getElementById("weChatMail").innerHTML = json.hasWeChatMail+"已注册企业微信,可以申请解锁。";
-						document.getElementById("tipsInfo").style.display = "none";
+						//审核人列表按照status排序,已激活STATUS=1的排前面,也就是说只有有一个为激活就可以认为可以申请，第一个为未激活则所有都未激活，就认为不能申请
+						if(ttWeChatMailAuditByList[0].STATUS!=1){
+							document.getElementById("noWeChatMailAuditActivationInfo").innerHTML = "解锁需"+json.position+"激活企业微信<font color=\"red\">（必须）</font>。";
+							document.getElementById("noWeChatMailAuditActivationInfo").style.display = "block";
+							document.getElementById("activateInfo").style.display = "block";
+							document.getElementById("submitBtn").style.backgroundColor = "gray";
+							document.getElementById("submitBtn").onclick = "#";
+							//隐藏解锁申请表格
+		    				var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
+	    					unlockApplyAuditDiv.style.display = "none";
+	    					flag = false;
+						}
+					}
+					//通知人信息
+					if(ttWeChatMailNotifyByMap==null){
+						document.getElementById("noWeChatMailNotifyInfo").innerHTML = "当前账号未注册企业微信,无法收到解锁通知。<div>(请确认营销宝电话与企业微信手机号一致)</div>";
+						document.getElementById("noWeChatMailNotifyInfo").style.display = "block";
+						//document.getElementById("registerInfo").style.display = "block";
+					}else{
+						if(ttWeChatMailNotifyByMap.STATUS!=1){
+							document.getElementById("noWeChatMailNotifyActivationInfo").innerHTML = "当前账号未激活企业微信,无法收到解锁通知。<div>(请先登录企业微信激活)</div>";
+							document.getElementById("noWeChatMailNotifyActivationInfo").style.display = "block";
+							//document.getElementById("activateInfo").style.display = "block";
+						}
+					}
+					
+					if(flag){
+						document.getElementById("hasWeChatMail").style.display = "block";
+						document.getElementById("hasWeChatMail").innerHTML = "请提交申请后,联系审核人解锁。";
+						//document.getElementById("registerInfo").style.display = "none";
+						//document.getElementById("activateInfo").style.display = "none";
 						//加载解锁申请信息
 				  		var salesUnlockApplyList = json.salesUnlockApplyList;
 				  		if(salesUnlockApplyList!=null&&salesUnlockApplyList.length>0){
@@ -136,10 +194,10 @@
 				  		}
 						//显示解锁申请表格
 	    				var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
-    					unlockApplyAuditDiv.style.display = "block";
+						unlockApplyAuditDiv.style.display = "block";
 					}
-			  		//显示
-			  		document.getElementById("weChatMail").style.display = "block";
+					
+			  		//显示操作
 					document.getElementById("operation").style.display = "block";
 				}else{//失败
 					document.getElementById("salesConsultantLockInfo").innerHTML = "系统异常.";

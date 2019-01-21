@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yy.jc"
-    android:versionCode="49"
-    android:versionName="4.9" >
+    android:versionCode="53"
+    android:versionName="5.05" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -15,6 +15,8 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
+    <!-- GROWING IO -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- Barcode(二维码)  begin -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -35,7 +37,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_LOGS" />
@@ -178,15 +179,14 @@
     <permission
         android:name="com.yy.jc.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" /> <!-- Required  一些系统要求的权限，如访问网络等 -->
-    <uses-permission android:name="com.yy.jc.permission.JPUSH_MESSAGE" /> <!-- Optional for location -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.yy.jc.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <meta-data
         android:name="android.support.VERSION"
         android:value="26.0.0-alpha1" /> <!-- 小米分享 end -->
     <application
-        android:name="io.dcloud.application.DCloudApplication"
+        android:name="com.yy.app.DmsApplication"
         android:allowBackup="true"
         android:allowClearUserData="true"
         android:icon="@drawable/icon"
@@ -533,6 +533,16 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- GROWING IO -->
+            <intent-filter>
+                <data android:scheme="growing.8bc60be0bc7ca4c7" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
         <!-- 开发者须自行配置该字段对应value值，替换appid和adid为自己应用的appid和广告联盟会员id，否则可能影响统计结算 -->

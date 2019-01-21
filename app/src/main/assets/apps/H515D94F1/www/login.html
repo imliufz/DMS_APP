@@ -131,6 +131,12 @@
 				ToUrl(indexUrl);
 				return;
 			}
+			if ( !IsNull(json.isValidTel) && json.isValidTel == '10041002'){//手机号是否验证
+				var id = json.id;
+				var indexUrl = "tel_valid.html?id="+id;
+				ToUrl(indexUrl);
+				return;
+			}
 			if (json.RESULT.funcStatus == 1) {
 				//写入cookie
 				setLocalStorage("LOGIN_CODE",userCode);
@@ -144,12 +150,14 @@
 			    }
 			    setLocalStorage("IS_MANAGER",json.IS_MANAGER);
 			    setLocalStorage("HAVE_FWGW_ROLE",json.HAVE_FWGW_ROLE);
+			    setLocalStorage("HAVE_ZX_ROLE",json.HAVE_ZX_ROLE);
 			    setLocalStorage("IS_HAVE_JUMP","0");//是否跳转尊享APP
 			    setPotcusLevel(json.RESULT.maps);
-
 			    //设置极光推送注册ID
 			    userId = json.logonUser.ID;
 			    try{setUserRegistration(json.logonUser.ID);}catch(e){}
+			    //gio
+			    try{gio('hybridSetUserId', json.logonUser.ID);}catch(e){}
 			    //加载首页菜单权限
 			    loadMenuToStorage(userCode,userPwdJM);
 			}
@@ -160,6 +168,10 @@
 		//获取菜单权限
 		var menuUrl = httpUrlHead+"PotcusAchieveService/menuQuery.json?rpcFlag=2&LOGIN_CODE="+userCode+"&LOGIN_PWD="+userPwd;
 		makeFormCall(menuUrl,function(json){
+			var tagFlag = json.tagFlag;
+			if(!IsNull(tagFlag) && tagFlag == '0'){
+				ToUrl("myTagLogin.html");
+			}
 			delete json["logonUser"];
 			setLocalStorage("LOGIN_MENU",JSON.stringify(json));
 			var indexUrl = "";

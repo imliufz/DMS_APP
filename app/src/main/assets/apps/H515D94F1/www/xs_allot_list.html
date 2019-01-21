@@ -20,6 +20,7 @@
 <div id="_showContentDiv1">
     <form id="fm" method="post">
     <input type="hidden" id="status" name="status" value="30331001,30331003,30331004"/>
+    <input type="hidden" id="noStay" name="noStay" value="1"/>
 	<div class="cardexplain">
 	<ul class="round">
         <table id="tb_query">
@@ -160,6 +161,16 @@
             </table>
         </ul>
     </div>
+    <div style="margin-top: 80px;" id="rp">
+		<div class="mui-content">
+			<div style="padding: 2px 0px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#tabs1" id="xsFp">待分配线索(<span id="xsFpNum">...</span>)</a>
+					<a class="mui-control-item" href="#tabs2" id="wldFp">未留档待分配(<span id="wldFpNum">...</span>)</a>
+				</div>
+			</div>
+		</div>
+	</div>
     <div id="showprocess" style="width: 100%;height: 100%;display: none;margin-top: 50%;"></div>
     <div class="cardexplain" id="_showContentDiv2" style="display: none;">
     	<!--<IFRAME id="content" name="content" class="content" width=100%  height="100%" SRC="cluesDetail.html" ></IFRAME>-->
@@ -492,15 +503,15 @@
 		});
 		
 		$("#intentLevel_show").click(function(){
-    			$("input[name='level']").attr("name","level_copy");
-    			var queryLevelHtmlCopy = $("#queryLevelHtml").html();
-    			$("input[name='level_copy']").attr("name","level");
-    			var pageii = layer.open({
-        	    		type: 1,
-        	    		content: queryLevelHtmlCopy,
-        	    		style: 'position:fixed; left:0; top:0; width:100%; height:100%; border:none;'
-        		});
+			$("input[name='level']").attr("name","level_copy");
+			var queryLevelHtmlCopy = $("#queryLevelHtml").html();
+			$("input[name='level_copy']").attr("name","level");
+			var pageii = layer.open({
+    	    		type: 1,
+    	    		content: queryLevelHtmlCopy,
+    	    		style: 'position:fixed; left:0; top:0; width:100%; height:100%; border:none;'
     		});
+    	});
 	});
 
 	
@@ -564,13 +575,35 @@
     	},"fm");
     	
     	queryPt();
+    	loadFpNum();//加载数量
+    }
+    
+    function loadFpNum(){
+    	//TODO 加载数量
+    	makeFormCall(httpUrlHead+"PotcusAchieveService/queryAllocatePendNum.json?"+httpUrlEnd,function(json){
+    		$("#xsFpNum").text(json.xsFpNum);
+    		$("#wldFpNum").text(json.wldFpNum);
+    	},"fm");
     }
     
     function queryPt(){
     	_showQuery(1);
     	changeSel();
-		var url = httpUrlHead+"PotcusAchieveService/queryAllocatePendList.json?"+httpUrlEnd;
-		_exe_query(url,"fm",true,"明细",true,"","_toUpdateOrDetailPage","SALES_CONSULTANT","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE","NEXT_TIME_PAGE","","REMARK");
+    	
+    	var activeId = "";
+    	$(".mui-control-item").each(function(){
+    		if($(this).attr("class")=="mui-control-item mui-active"){
+    			activeId = $(this).attr("id");
+    			return false;
+    		}
+    	});
+    	if(activeId == "xsFp"){
+    		var url = httpUrlHead+"PotcusAchieveService/queryAllocatePendList.json?"+httpUrlEnd;
+			_exe_query(url,"fm",true,"明细",true,"","_toUpdateOrDetailPage","SALES_CONSULTANT","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE","NEXT_TIME_PAGE","","REMARK");
+    	} else {
+    		var url = httpUrlHead+"HallReceptionService/queryHallReceptionQuery.json?"+httpUrlEnd;
+			_exe_query(url,"fm",true,"明细",true,"","_toUpdateOrDetailPageWld","SALES_CONSULTANT","INTENT_SERIES_PAGE","VISIT_TYPE_DESC","CUS_SOURCE_DESC");
+    	}
 	}
     
 	var a='';
@@ -708,7 +741,7 @@
 		//验证是否已经选择
 		var tabType_id_str = _getSelectStrs();
 		if (tabType_id_str == null || tabType_id_str == "") {
-			MuiAlert("请选择要分配的线索!");
+			MuiAlert("请选择要分配的数据!");
 			return;
 		}
 		var salesConsultantSel = document.getElementById("salesConsultantSel").value;
@@ -716,12 +749,22 @@
 			MuiAlert("请选择销售顾问!");
 			return;
 		}
+		
+		var activeId = "";
+    	$(".mui-control-item").each(function(){
+    		if($(this).attr("class")=="mui-control-item mui-active"){
+    			activeId = $(this).attr("id");
+    			return false;
+    		}
+    	});
+		
 		MuiConfirm("确定分配?",function(e){
 			if(e.index == 0){
-				var url = httpUrlHead+"PotcusAchieveService/distributionSalesLeadsDo.json?tabType_id_str="+tabType_id_str+"&"+httpUrlEnd;
+				var url = httpUrlHead+"PotcusAchieveService/distributionSalesLeadsDo.json?tabType_id_str="+tabType_id_str+"&fpType="+activeId+"&"+httpUrlEnd;
 				makeFormCall(url, function(json){
 					MuiAlert("客户分配成功!",function(){
 						queryPt();
+						loadFpNum();
 					});
 				}, "fm");
 			}
@@ -743,10 +786,12 @@
 		var txtQuery = document.getElementById("txt_query").innerHTML;
 		if(txtQuery == "展开") {
 			$("#_showContentDiv3").css({"position":"fixed" ,"width":"100%","zIndex":"1","marginTop":"30px"});
-			$("#tabList").css({"marginTop":"90px"});
+			$("#tabList").css({"marginTop":"10px"});
+			$("#rp").css({"marginTop":"80px"});
 		} else {
 			$("#_showContentDiv3").css({"position":"static" ,"width":"100%","zIndex":"1","marginTop":"0px"});
 			$("#tabList").css({"marginTop":"0px"});
+			$("#rp").css({"marginTop":"0px"});
 		}
 	}
 	
@@ -779,6 +824,24 @@
 				}
 			});
 		}
+	}
+	
+	document.querySelectorAll(".mui-control-item").forEach(function(item){
+		//TODO 
+		item.addEventListener('tap', function () {
+			if($(this).attr("id")=="xsFp"){
+				var url = httpUrlHead+"PotcusAchieveService/queryAllocatePendList.json?"+httpUrlEnd;
+				_exe_query(url,"fm",true,"明细",true,"","_toUpdateOrDetailPage","SALES_CONSULTANT","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE","NEXT_TIME_PAGE","","REMARK");
+			} else {
+				var url = httpUrlHead+"HallReceptionService/queryHallReceptionQuery.json?"+httpUrlEnd;
+				_exe_query(url,"fm",true,"明细",true,"","_toUpdateOrDetailPageWld","SALES_CONSULTANT","INTENT_SERIES_PAGE","VISIT_TYPE_DESC","CUS_SOURCE_DESC");
+			}
+		})
+	});
+	
+	//未留档明细
+	function _toUpdateOrDetailPageWld(id,tabType) {
+		_toPage("hallReceptionDetail.html?id="+id);
 	}
 </script>
 </html>

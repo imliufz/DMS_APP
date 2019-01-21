@@ -428,11 +428,25 @@
 			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr class="biaoge">
 					<td>
-						客户来源
+						一级客户来源
 					</td>
 					<td>
 						<li class="nob">
 							<select id="CUS_SOURCE" name="CUS_SOURCE" class="download dropdown-select-nosel" readonly="readonly" style="border: none;" disabled="disabled"></select>
+						</li>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>
+						二级客户来源
+					</td>
+					<td>
+						<li class="nob">
+							<select id="CUS_SOURCE_SMALL" name="CUS_SOURCE_SMALL" class="download dropdown-select-nosel" readonly="readonly" style="border: none;" disabled="disabled"></select>
 						</li>
 					</td>
 				</tr>
@@ -1024,6 +1038,11 @@
 				document.getElementById("INTENT_LEVEL").setAttribute("defaultValue", map.INTENT_LEVEL);
 				document.getElementById("VISIT_TYPE").setAttribute("defaultValue", map.VISIT_TYPE);
 				document.getElementById("CUS_SOURCE").setAttribute("defaultValue", map.CUS_SOURCE);
+				if(!IsNull(map.FIELD_C)){
+					document.getElementById("CUS_SOURCE_SMALL").setAttribute("defaultValue", map.FIELD_C);
+				} else {
+					document.getElementById("CUS_SOURCE_SMALL").add(new Option("无",""));
+				}
 				if(!IsNull(map.DEPOSIT)){
 					$("#dj1").show();
 					document.getElementById("DEPOSIT").value = map.DEPOSIT;
@@ -1095,7 +1114,7 @@
 				isDriveChange(map.IS_DRIVE);
 				
 				//加载tc_code
-				_loadTcCode("1003", "1310", "1309", "1311", "1004", "1004", "1004", "1004", "1004", "6690", "6691", "GENDER", "INTENT_LEVEL", "VISIT_TYPE", "CUS_SOURCE", "IS_TEST_DRIVE", "IS_SECOND_LEVEL", "IS_TEST", "IS_DRIVE", "IS_SATISFIED", "MK_CAMPAIGN_TYPE_L1", "MK_CAMPAIGN_TYPE_NAME");
+				_loadTcCode("1003", "1310", "1309", "1311", "1004", "1004", "1004", "1004", "1004", "6690", "6691","1317", "GENDER", "INTENT_LEVEL", "VISIT_TYPE", "CUS_SOURCE", "IS_TEST_DRIVE", "IS_SECOND_LEVEL", "IS_TEST", "IS_DRIVE", "IS_SATISFIED", "MK_CAMPAIGN_TYPE_L1", "MK_CAMPAIGN_TYPE_NAME","CUS_SOURCE_SMALL");
 				_loadSeries('intentSeries');
 			}
 		}, "fm", false,true);

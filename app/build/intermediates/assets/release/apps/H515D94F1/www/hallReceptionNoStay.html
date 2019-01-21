@@ -64,8 +64,8 @@
 							<li class="nob">
 								<select name="dataType" id="dataType" class="download dropdown-select"  onchange="dateTypeChange(this.value)">
 									<option value="">-请选择-</option>
-									<option value="0" selected="selected">来访时间</option>
-									<option value="1">创建时间</option>
+									<option value="0">来访时间</option>
+									<option value="1" selected="selected">创建时间</option>
 								</select>
 							</li>
 						</td>
@@ -129,7 +129,7 @@
 	//加载tc_code
 	_loadTcCodeAndCallBack("1309", "1311", "visitType", "cusSource");
 	$(document).ready(function() {
-		document.getElementById('startDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+		$("#startDate").val(_getNowFormatDate(_addDate(null,-2),1));
 		document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
 	});
 	function queryPt(){
@@ -159,7 +159,7 @@
 			$("#endDate").val("");
 		} else {
 			$("tr[name='dateTr']").show()
-			document.getElementById('startDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+			$("#startDate").val(_getNowFormatDate(_addDate(null,-2),1));
 			document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
 		}
 	}

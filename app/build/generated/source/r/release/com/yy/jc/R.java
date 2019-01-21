@@ -2375,6 +2375,8 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f050012;
         public static final int app_name=0x7f050023;
         public static final int dcloud_gallery_app_name=0x7f050015;
+        public static final int growingio_project_id=0x7f050024;
+        public static final int growingio_url_scheme=0x7f050025;
         public static final int search_menu_title=0x7f050013;
         public static final int status_bar_notification_info_overflow=0x7f050014;
         public static final int stream_my=0x7f050016;

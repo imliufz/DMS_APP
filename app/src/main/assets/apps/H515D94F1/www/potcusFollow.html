@@ -228,6 +228,17 @@
 				  </tr>
 				</table>
 			</li>
+			<li class="nob" id="CUS_SOURCE_SMALL_LI" style="display: none;">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="">
+					<td>二级客户来源</td>
+					<td>
+						<select name="CUS_SOURCE_SMALL" id="CUS_SOURCE_SMALL" class="download dropdown-select-nosel" disabled style="border:none;">
+						</select>
+					</td>
+				  </tr>
+				</table>
+			</li>
 			<li class="nob">
 				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr class="">
@@ -1173,11 +1184,19 @@
 						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
 					}
 				} else {
-					$("#CLUE_SOURCE_NAME").html("客户来源");
+					$("#CLUE_SOURCE_NAME").html("一级客户来源");
 					if(map.CUS_SOURCE != null) {
 						document.getElementById("CLUE_SOURCE").setAttribute("defaultValue", map.CUS_SOURCE);
 					} else {
 						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
+					}
+					
+					//二级客户来源
+					$("#CUS_SOURCE_SMALL_LI").show();
+					if(!IsNull(json.FIELD_J)){
+						document.getElementById("CUS_SOURCE_SMALL").setAttribute("defaultValue", json.FIELD_J);
+					} else {
+						document.getElementById("CUS_SOURCE_SMALL").add(new Option("无",""));
 					}
 				}
 				/* if (map.STATUS == "30331003") {
@@ -1202,6 +1221,38 @@
 				}
 				document.getElementById("isCloudStore").value = json.isCloudStore;
 				document.getElementById("bookingDate").value = map.NEXT_BOOKING_DATE;
+				
+				//加载审核结果
+				if(map.IS_AUDITING == "10041001" && map.INTENT_LEVEL == "13101006"){
+					var dtAudtingRemark = map.AUDITING_REMARK;
+					var scene = "-";
+					var rLen = 0;
+					if(!IsNull(dtAudtingRemark)){
+						scene = dtAudtingRemark;
+						rLen = getStringRealLen(scene);
+					}
+					var sceneRow = parseInt(rLen / 26);
+					if( sceneRow != 0){
+						sceneRow++;
+					}
+					var failDate = "-";
+					if(!IsNull(map.FAIL_DATE)){
+						failDate = map.FAIL_DATE.substring(0,10).replace(new RegExp("-",'gm'),"");
+					}
+					var bhHtml = ''+
+						'<tr style="background-color: #e5f8ff;">'+
+							'<td align="center">-</td>'+
+							'<td align="center">'+failDate+'</td>'+
+							'<td align="center">战败驳回</td>'+
+							'<td align="right" style="vertical-align:top"><div class="addSeach" style="background-color: gray;"></div></td>'+
+						'</tr>'+
+						'<tr>'+
+							'<td colspan="4">'+
+								'<textarea style="width:95%;height:100%;" rows="'+sceneRow+'" readonly="readonly">'+scene+'</textarea>'+
+							'</td>'+
+						'</tr>';
+					$("#gjls").append(bhHtml);
+				}
 				//加载首次展厅记录
 				if(json.visitings != null && json.visitings.length > 0) {
 					var visiting = json.visitings[0];
@@ -1264,7 +1315,7 @@
 				//重新加载跟进任务定义
 				setPotcusLevel(json.potcusLevels);
 				//加载tc_code
-				_loadTcCode("1325",sourceType,"1305","promWay","CLUE_SOURCE","ACTIVE_TYPE");
+				_loadTcCode("1325",sourceType,"1305","1317","promWay","CLUE_SOURCE","ACTIVE_TYPE","CUS_SOURCE_SMALL");
 			}
 		},"fm",false,true);
 	}
@@ -1361,7 +1412,7 @@
 	        	makeFormCall(url, function(json){
 	        		var orderStatus = json.orderStatus;
 	        		if( orderStatus == "1"){
-	        			MuiAlert("请先到店面系统取消订单，并于2小时后再操作");
+	        			MuiAlert("<div style='text-align:left;'>1.该客户为订单(O级)客户，请联系店内销售内勤或信息员在DMS店面系统中取消订单（操作不熟悉请咨询02161131633），取消2小时后客户将自动转N级新客，之后可以再做战败申请。</div><div style='text-align:left;'>2.已做了实销上报的车辆，对应客户手机号需与销售订单手机号保持一致，手机号不一致的订单与实销车辆无法对应，必须做订单取消操作。</div><div style='text-align:left;color:red;font-weight:bold;'>(由于O级客户与实销上报手机号不一致导致的订单取消，业务问题可咨询战区SDU作战管理人员)</div>");
 	        			return;
 	        		}else{
 	        			setCxDay();

@@ -17,8 +17,7 @@ function checkError(inputVal){
 	/*var errorMap = ["select", "and", "or", "update", "delete", "insert", "script", "sleep", "iframe", 
 "union", "all", "null", "char", "from", "where", "sleep", "chr","(", ")", "<", ">", ";", "=", "'", "\"", "*", "/", "#", "+", "|" ];*/
 
-var errorMap = ["select", "and", "or", "update", "delete", "insert", "script", "sleep", "iframe", 
-"union", "all", "char", "from", "where", "sleep", "chr", "<", ">"];
+var errorMap = ["script", "iframe", "<", ">"];
 	for (var i=0;i<errorMap.length;i++) {
 		if(inputVal.indexOf(errorMap[i]) !=-1){
 			return errorMap[i];

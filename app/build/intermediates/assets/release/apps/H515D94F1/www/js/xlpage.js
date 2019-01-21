@@ -45,6 +45,11 @@ function _loadPageData(loadType){
 	try {
 		$("#queryBtn").css("background-color","gray");
 		$("#queryBtn").attr("disabled",true);
+		if (loadType == "1") {
+			$(".contip").remove();//清除原先的智慧营销标签
+		}else{
+			setOnWisdomsalesType();
+		}
 	} catch (e) {
 		
 	}
@@ -262,29 +267,34 @@ $(window).scroll(function(){
 	}
 });
 
+function setOnWisdomsalesType(){
+	$("td[wisdomsalesType='new']").attr("wisdomsalesType",'old');
+}
 function onWisdomsales(){
-		$("td[name='wisdomsalesTd']").each(function(){
+		$("td[wisdomsalesType='new']").each(function(){
 			var wsId = $(this).attr("wsId");
 			var buyCarIndex = $(this).attr("buyCarIndex");
 			var ptId = $(this).attr("ptId");
 			var tabType = $(this).attr("tabType");
 			var toUrl = "wisdomSales.html?wsId="+wsId+"&ptId="+ptId+"&tabType="+tabType;
-			$(this).contip({
-			    fade: 0,
-			    rise: 0,
-			    opacity:0.5,
-			    v_size:-28,
-			    v_px:-25,
-			    font_size: '10px', // 正文字体
-			    rise: 0,
-			    padding: 1,
-			    radius: 9, // 气泡圆角大小 px
-			    align: 'bottom',
-			    show: true,
-			    live: true,
-			    bg: '#04a7e0',
-			    html: '<a href="#" onclick="javascript:ToUrl(\''+toUrl+'\');">购车指数'+buyCarIndex+'</a>'
-  			});
+			try{
+				$(this).contip({
+				    fade: 0,
+				    rise: 0,
+				    opacity:0.5,
+				    v_size:-28,
+				    v_px:-25,
+				    font_size: '10px', // 正文字体
+				    rise: 0,
+				    padding: 1,
+				    radius: 9, // 气泡圆角大小 px
+				    align: 'bottom',
+				    show: true,
+				    live: true,
+				    bg: '#04a7e0',
+				    html: '<a href="javascript:void(0);" onclick="javascript:ToUrl(\''+toUrl+'\');">购车指数'+buyCarIndex+'</a>'
+	  			});
+  			}catch(e){}
 		});
 	}
 
@@ -366,7 +376,7 @@ function _tabCol(colorType,tabType,id,cusName,cusPhone,intentLevel,sex,isCheckbo
 		
 		colBody += '		<td width="10%">'+numStr+'</td>';
 		if (wsId != null && wsId != "") {
-			colBody += '		<td width="25%" name = "wisdomsalesTd" wsId="'+wsId+'" buyCarIndex="'+buyCarIndex+'" ptId="'+id+'" tabType="'+tabType+'">'+cusName+'</td>';
+			colBody += '		<td width="25%" name = "wisdomsalesTd" wisdomsalesType="new" wsId="'+wsId+'" buyCarIndex="'+buyCarIndex+'" ptId="'+id+'" tabType="'+tabType+'">'+cusName+'</td>';
 		}else{
 			colBody += '		<td width="25%">'+cusName+'</td>';
 		}
@@ -385,8 +395,12 @@ function _tabCol(colorType,tabType,id,cusName,cusPhone,intentLevel,sex,isCheckbo
 	        if(!IsNull(openId)){
 	        	colBody += '		<a href="javascript:;"><img ico onClick="_setWeChat(\''+openId+'\');" style="margin-left:5px;width:25px;height:25px;" src="images/weChat.png"></a>';
 	        }
+	    } else {
+	    	if(!IsNull(openId)){
+	        	colBody += '		<a href="javascript:;"><img ico onClick="_setWeChat(\''+openId+'\');" style="margin-left:5px;width:25px;height:25px;" src="images/weChat.png"></a>';
+	        }
 	    }
-	        colBody += 	'		</td>';
+	    colBody += 	'		</td>';
 	}
 	colBody += '<td  align="right">'+intentLevel+'&nbsp;&nbsp;&nbsp;</td>'+
 	'	</tr>'+

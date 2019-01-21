@@ -26,11 +26,11 @@ background-size:100% 100%;
 }
 .login-form-wrap:before {
 	background: url(../images/0vLxyVB.png);
-	background-size:82px 80px;
+	background-size:80px 70px;
 	display: block;
 	content: '';
-	width: 82px;
-	height: 80px;
+	width: 80px;
+	height: 70px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 15px;

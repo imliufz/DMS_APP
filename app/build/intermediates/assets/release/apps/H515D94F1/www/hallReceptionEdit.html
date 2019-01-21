@@ -244,8 +244,12 @@
 		<li class="nob">
             <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                    <td>销售顾问</td>
-                    <td><input name="soldBy" class="px" id="soldBy" value="" type="text" readonly></td>
+                    <td>销售顾问<font color="red">*</font></td>
+                    <td>
+                    	<select name="soldBy" id="soldBy" class="download dropdown-select" required="required">
+						</select>
+                    	<!--<input name="soldBy" class="px" id="soldBy" value="" type="text" readonly>-->
+                    </td>
                 </tr>
             </table>
         </li>
@@ -427,11 +431,27 @@
 			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr class="biaoge">
 					<td>
-						客户来源<font color="red" id="CUS_SOURCE_MUST" style="display: none;">*</font>
+						一级客户来源<font color="red" id="CUS_SOURCE_MUST" style="display: none;">*</font>
 					</td>
 					<td>
 						<li class="nob">
-							<select id="CUS_SOURCE" name="CUS_SOURCE" class="download dropdown-select" onChange="knowWayChange(this.value, document.getElementById('MEDIA_TYPE').value);" exceptValue="13111016">
+							<select id="CUS_SOURCE" name="CUS_SOURCE" class="download dropdown-select" onChange="knowWayChange(this.value, document.getElementById('MEDIA_TYPE').value);cusSourceChange(this.value,null);" exceptValue="13111016">
+								<option value="">-请选择-</option>
+							</select>
+						</li>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>
+						二级客户来源<font color="red">*</font>
+					</td>
+					<td>
+						<li class="nob">
+							<select id="CUS_SOURCE_SMALL" name="CUS_SOURCE_SMALL" class="download dropdown-select">
 								<option value="">-请选择-</option>
 							</select>
 						</li>
@@ -513,7 +533,7 @@
 		<li class="nob">
 			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr class="biaoge">
-					<td>活动选择</td>
+					<td>活动选择<font color="red" id="CAMPAIGN_NAME_MUST" style="display: none;">*</font></td>
 					<td>
 						<input name="CAMPAIGN_CODE" class="px" id="CAMPAIGN_CODE" type="hidden">
 						<input name="CAMPAIGN_NAME" class="px" id="CAMPAIGN_NAME" type="text" readonly="readonly" style="display: inline; width: 70%;" placeholder="请选择活动">
@@ -799,7 +819,7 @@
 						<td>活动分类<font color="red">*</font></td>
 						<td>
 							<li class="nob">
-								<select id="ACTIVE_TYPE" name="ACTIVE_TYPE" class="download dropdown-select" style="width: 90%" required="required">
+								<select id="ACTIVE_TYPE" name="ACTIVE_TYPE" class="download dropdown-select" style="width: 90%" required="required" defaultValue="13051002">
 									<option value="">活动分类</option>
 								</select>
 							</li>
@@ -951,7 +971,25 @@
 			}
 			$("#salesConsultant").val(currentSalesConsultant);
 		}
-		$("#soldBy").val(currentSalesConsultant);
+		var sbSelect = document.getElementById("soldBy");
+		if (!IsNull(logonUser.roleIds)) {
+			var reg = new RegExp("1000000008");//前台接待
+			if(logonUser.roleIds.match(reg) && !IsNull(logonUser.groupSalesConsultant)){
+				sbSelect.add(new Option("-请选择-", ""));
+				//含前台接待职位
+				var groupSalesConsultant = logonUser.groupSalesConsultant.split(",");
+				for(var i = 0;i < groupSalesConsultant.length;i++){
+					var name = groupSalesConsultant[i].replace(/\'/g,"");
+					sbSelect.add(new Option(name, name));
+				}
+			} else {
+				sbSelect.add(new Option(currentSalesConsultant, currentSalesConsultant));
+				//$("#soldBy").val(currentSalesConsultant);
+			}
+		} else {
+			sbSelect.add(new Option(currentSalesConsultant, currentSalesConsultant));
+			//$("#soldBy").val(currentSalesConsultant);
+		}
 		chana = logonUser.chana;
 		if(IsNull(chana)){
 			MuiAlert("部分信息获取失败,请重新登录!",function(){
@@ -1074,6 +1112,7 @@
 			changeFlag=true;     
 		});
 		if(!IsNull(UrlParm.parm("id"))){
+			$("#soldBy").val(currentSalesConsultant);
 			document.addEventListener('plusready',function () {
 				try{initLoading = MuiLoading();}catch(e){}
 			});
@@ -1117,6 +1156,9 @@
 				document.getElementById("EXPECTED_DELIVERY_DATE").value = map.EXPECTED_DELIVERY_DATE;
 				document.getElementById("VISIT_TYPE").value = map.VISIT_TYPE;
 				document.getElementById("CUS_SOURCE").setAttribute("defaultValue", map.CUS_SOURCE);
+				if(!IsNull(map.FIELD_C)){
+					cusSourceChange(map.CUS_SOURCE,map.FIELD_C);
+				}
 				document.getElementById("MEDIA_TYPE").value = map.MEDIA_TYPE;
 				document.getElementById("MEDIA_DETAIL").value = map.MEDIA_DETAIL;
 				document.getElementById("REFEREE_NAME").value = map.REFEREE_NAME;
@@ -1534,6 +1576,42 @@
 		}
 	}
 	
+	//一级客户来源改变事件
+	function cusSourceChange(val1,defaultValue){
+		if(!IsNull(val1)){
+			//根据一级来源获取二级来源
+			var cusSourceSmall = document.getElementById('CUS_SOURCE_SMALL');
+			cusSourceSmall.length=0;
+			cusSourceSmall.add(new Option("二级来源获取中...", ""));
+			document.getElementById('CUS_SOURCE_SMALL').required = true;//未加载完成限制提交
+			var url = httpUrlHead + "HallReceptionService/codeAssociated.json?" + httpUrlEnd + "&parCodeId="+val1;
+			makeFormCall(url, function(json){
+				cusSourceSmall.length=0;
+				if(json.codeList != null && json.codeList.length > 0){
+					//活动必选
+					document.getElementById('CAMPAIGN_NAME').required = true;
+					$("#CAMPAIGN_NAME_MUST").show();
+					// 建立Option对象
+					cusSourceSmall.add(new Option("-请选择-", ""));
+					for(var i=0;i<json.codeList.length;i++) {
+						var objOption = new Option(json.codeList[i].CODE_DESC, json.codeList[i].CHILD_ID);
+						cusSourceSmall.add(objOption);
+					}
+					if(!IsNull(defaultValue)){
+						$("#CUS_SOURCE_SMALL").val(defaultValue);
+					}
+				} else {
+					//改为不必填
+					cusSourceSmall.add(new Option("无", ""));
+					document.getElementById('CUS_SOURCE_SMALL').required = false;
+					document.getElementById('CAMPAIGN_NAME').required = false;
+					$("#CAMPAIGN_NAME_MUST").hide();
+				}
+				
+			}, 'fm', false);
+		}
+	}
+	
 	function backLastLevel() {
 		$('#_showContentDiv1').show();
 		$('#_dt_left_menu').show();
@@ -1699,7 +1777,7 @@
 				visitTypeChange($("#VISIT_TYPE").val());
 				if(json.noAdd){
 					if(json.followName != undefined && json.followName != null && json.followName != "null" && json.followName != "") {
-						MuiAlert("此客户已由销售顾问"+json.followName+"在跟进,不能录入展厅!");							
+						MuiAlert("此客户已由销售顾问"+json.followName+"在跟进!");							
 					} else {
 						MuiAlert("此客户还未分配销售顾问,不能录入展厅,请在线索分配功能中进行分配!");
 					}
@@ -1719,6 +1797,7 @@
 					$("#CUS_SOURCE").find("option").remove();
 					_loadTcCode("1311","CUS_SOURCE");
 				}
+				cusSourceChange($("#CUS_SOURCE").val(),null);
 				if(json.potcusObj != null){
 					if(document.getElementById('CUSTOMER_NAME').value.trim() == "" && json.potcusObj.CUSTOMER_NAME != null){
 						$("#CUSTOMER_NAME").val(json.potcusObj.CUSTOMER_NAME);

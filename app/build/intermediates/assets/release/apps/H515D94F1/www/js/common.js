@@ -544,7 +544,7 @@ function _changeSMPC(code,codeType) {
 			if(list != null && list.length > 0) {
 				var selIndex = -1;
 				for(var i = 0;i < list.length;i++) {
-					smpc.add(new Option(list[i].GROUP_NAME,list[i].GROUP_CODE));
+					smpc.add(new Option(list[i].GROUP_CODE+" "+list[i].GROUP_NAME,list[i].GROUP_CODE));
 					if (defaultValue != undefined && defaultValue != null && defaultValue != "" && defaultValue == list[i].GROUP_CODE) {
 						selIndex = i;
 					}

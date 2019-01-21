@@ -938,6 +938,8 @@ int string abc_shareactionprovider_share_with_application 0x7f050011
 int string abc_toolbar_collapse_description 0x7f050012
 int string app_name 0x7f050023
 int string dcloud_gallery_app_name 0x7f050015
+int string growingio_project_id 0x7f050024
+int string growingio_url_scheme 0x7f050025
 int string search_menu_title 0x7f050013
 int string status_bar_notification_info_overflow 0x7f050014
 int string stream_my 0x7f050016

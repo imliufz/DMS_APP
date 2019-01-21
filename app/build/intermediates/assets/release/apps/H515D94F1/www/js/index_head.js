@@ -16,7 +16,7 @@ var writeHtml = ''+
 '            	<font menu></font>'+
 '            </div>'+
 '        	<div class="center">'+
-'            	<h4><img src="images/logo.png">&nbsp;<span id="dealerName"></span></h4>'+
+'            	<h4><span id="dealerName"></span></h4>'+
 '            </div>'+
 '        	<div class="right" id="addZt">'+
 '            	<font add></font>'+
