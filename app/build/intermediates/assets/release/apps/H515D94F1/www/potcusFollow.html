@@ -19,7 +19,7 @@
     	.addSeach{
 		    color: #fff;
 		    border-radius: 15px;
-			background-color: #10a6e2;
+			background-color: #1790E4;
 		    background-image: url(images/seach.png);
 			background-repeat: no-repeat;
 			background-position: center;
@@ -144,7 +144,7 @@
 		</li>
 		<li class="nob">
             <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
+                <tr class="biaoge">
                     <td>销售顾问</td>
                     <td><input name="soldBy" class="px" id="soldBy" value="" type="text" readonly></td>
                 </tr>
@@ -1316,6 +1316,19 @@
 				setPotcusLevel(json.potcusLevels);
 				//加载tc_code
 				_loadTcCode("1325",sourceType,"1305","1317","promWay","CLUE_SOURCE","ACTIVE_TYPE","CUS_SOURCE_SMALL");
+				//加载360试图数据
+				var view360Map = json.view360Map;
+				if( view360Map != null ){
+					var view360AppendHtml = '<li style="background-color: #4cb4d9b0;">客户360视图</li>';
+					for(var key in view360Map){
+						view360AppendHtml += '<li class="nob">';
+						view360AppendHtml += '<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">';
+						view360AppendHtml += '<tr class="biaoge">';
+						view360AppendHtml += '<td>'+key+'</td>';
+						view360AppendHtml += '<td><input name="weixin" class="px"  id="weixin" value="'+view360Map[key]+'" type="text" readonly="readonly"/></td></tr></table></li>';
+					}
+					$("#tabs1 ul").append(view360AppendHtml);
+				}
 			}
 		},"fm",false,true);
 	}

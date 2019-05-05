@@ -341,7 +341,7 @@ ul.round li.pad { padding-right:15px;}
 }
 .kuang tr td:first-child
 {
-	width: 30%;
+	width: 40%;
 	padding-left: 2px;
 	margin-left: 2px;
 }
@@ -718,7 +718,7 @@ ul.roundyellow {
     vertical-align: middle;
 }
 .submit {
-	background-color:#10a6e2;
+	background-color:#1790E4;
 	padding:6px 20px;
 	font-size:16px;
 	text-decoration:none;

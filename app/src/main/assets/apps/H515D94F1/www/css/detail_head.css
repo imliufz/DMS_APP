@@ -9,7 +9,7 @@
 	zoom:1;
 	color: #fff;
 	text-align: center;
-	background-color: #10a6e2;
+	background-color: #1790E4;
 }
 .topBar .l{float:left;width:50px;}
 .topBar h1{font-size: 16px;line-height: 55px;margin:  0 60px 0 60px;}
@@ -19,7 +19,7 @@
 	display: block;
 	font-size: 20px;
 	color: #fff;
-	background-color: #10a6e2;
+	background-color: #1790E4;
 	background-image: url(../images/icon.png);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -29,7 +29,7 @@
 .topBar .l{
 	color: #fff;
 	height: 45px;
-	background-color: #10a6e2;
+	background-color: #1790E4;
 }
 .topBar .logo{background:#fff url(../iicon.png) 1px -1px;display: inline-block;width: 34px;height: 34px;border-radius: 34px;margin: 6px 9px 0 6px;}
 
@@ -40,7 +40,7 @@
 	display: block;
 	font-size: 20px;
 	color: #fff;
-	background-color: #10a6e2;
+	background-color: #1790E4;
 	background-image: url(../images/ok.png);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -52,7 +52,7 @@
 	display: block;
 	font-size: 20px;
 	color: #fff;
-	background-color: #10a6e2;
+	background-color: #1790E4;
 	background-image: url(../images/ok.png);
 	background-repeat: no-repeat;
 	background-position: center;

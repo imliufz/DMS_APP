@@ -8,6 +8,12 @@
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <link href="css/one.css" rel="stylesheet" type="text/css"/>
         <link href="static/css/template/index.css" rel="stylesheet" type="text/css" media="all" />
+		<!-- 样式修改新增css -->
+		<!-- 共用弹性布局文件 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/common_flex.css" />
+		<!-- 当前页重写样式 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_remind.css" />
+		<!-- 样式修改新增css-end -->
         <style>
 .settingTr {
 	height: 45px;
@@ -49,48 +55,49 @@
     
     	<form id="fm" method="post">
 		<div style="height:5px;width:100%;background-color:#f6f5fa;">&nbsp;</div>
-		<div class="cardexplain" >
+		<div class="cardexplain xf-res-cardexplain" >
 			<ul class="round" style="margin-top:-55px;border:none;">
 				<table id="tb_query">
 					<tr class="settingTr" url="gj_list.html?backUrl=remind.html" id="10573001" style="display: none;">
 						<td>
-							<div><img src="images/tx01.png" style="width: 30px;height: 30px;"></img></div>
+							<div><img src="images/remind-01.png" style="width: 40px;height: 40px;"></img></div>
 							<div><i class="remNum" id="gj" style="display: none;"></i></div>
 						</td>
 						<td width="85%">
 							<li class="nob">
-								待跟进
+								待跟进<i class="mui-icon mui-icon-arrowright mui-pull-right"></i>
+								<p></p>
 							</li>
 						</td>
 					</tr>
 					<tr class="settingTr"  url="ddgwreport.html" id="10573002" style="display: none;">
 						<td>
-							<div><img src="images/tx02.png" style="width: 30px;height: 30px;"></img></div>
+							<div><img src="images/remind-02.png" style="width: 40px;height: 40px;"></img></div>
 							<div><i class="remNum" id="yy" style="display: none;"></i></div>
 						</td>
-	                 <td>
-		                    <li class="nob">
-		                        	到店提醒
-		                    </li>	    
-		            </td>
+						 <td>
+								<li class="nob">
+									到店提醒<i class="mui-icon mui-icon-arrowright mui-pull-right"></i>
+								</li>	    
+						</td>
 					</tr>
 					<tr class="settingTr"  url="zbsp_list.html?backUrl=remind.html" id="10573003" style="display: none;">
 						<td>
-							<div><img src="images/tx03.png" style="width: 30px;height: 30px;"></img></div>
+							<div><img src="images/remind-03.png" style="width: 40px;height: 40px;"></img></div>
 							<div><i class="remNum" id="zb" style="display: none;"></i></div>
 						</td>
 						<td>
 							<li class="nob">
-								战败待审批
+								战败待审批<i class="mui-icon mui-icon-arrowright mui-pull-right"></i>
 							</li>
 						</td>
 					</tr>
 					<tr class="settingTr"  url="birthRemind.html" id="10573004" style="display: none;">
 						<td>
-			                	<div><img src="images/tx04.png" style="width: 30px;height: 30px;"></div>
+			                	<div><img src="images/remind-04.png" style="width: 40px;height: 40px;"></div>
 			                	<div><i class="remNum" id="bd" style="display: none;"></i></div>
 						<td>
-							<li class="nob">生日提醒</li>
+							<li class="nob">生日提醒<i class="mui-icon mui-icon-arrowright mui-pull-right"></i></li>
 						</td>
 					</tr>
 				</table>

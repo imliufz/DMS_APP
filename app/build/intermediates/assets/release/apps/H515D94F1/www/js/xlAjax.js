@@ -3,8 +3,9 @@
  * ajax
  */
 //var httpUrlHead = "http://192.168.43.82:8085/app/dcsApp/";//本地
-//var httpUrlHead = "http://222.177.26.242:9080/yxbapp/dcsApp/";//测试环境
-var httpUrlHead = "http://cvsses.changan.com.cn/jcx-app-two/dcsApp/";//正式环境
+//var httpUrlHead = "http://58.17.185.171:9080/jc_app/dcsApp/";//测试环境
+//var httpUrlHead = "http://cvsses.changan.com.cn/jcx-app-two/dcsApp/";//正式环境
+var httpUrlHead = "http://scrmtest.changan.com.cn/jc_app/dcsApp/";
 var httpUrlEnd = "rpcFlag=2";
 
 var _data_type = _myBrowser();

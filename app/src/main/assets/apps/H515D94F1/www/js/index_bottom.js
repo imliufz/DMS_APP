@@ -7,33 +7,33 @@ var isHaveFwgwRole = getLocalStorage("HAVE_FWGW_ROLE");
 var isHaveZxRole = getLocalStorage("HAVE_ZX_ROLE");
 
 var writeHtml = ''+
-'<br/><br/><br/><br/>'+
-'<div class="menu">'+
+//'<br/><br/><br/><br/>'+
+'<div  class="menu xf-res-menu">'+
 '            <ul>'+
 '                <li toPage="index.html" menuNum="1" id="menu_clue" style="display:none;">'+
-'                	 <a href="javascript:void(0);" toPage="index.html" id="m1" class="home" dat="长安风尚轿车销售" ></a>'+
+'                	 <a style="background-size:30%" href="javascript:void(0);" toPage="index.html" id="m1" class="home" dat="长安风尚轿车销售" ></a>'+
 '                    <span>线索</span>'+
 '                </li>'+
 '                <li toPage="remind.html" menuNum="2" id="menu_remind" style="display:none;">'+
-'                	 <a href="javascript:void(0);" toPage="remind.html" id="m2" class="alert" dat="提醒" ></a>'+
+'                	 <a style="background-size:30%" href="javascript:void(0);" toPage="remind.html" id="m2" class="alert" dat="提醒" ></a>'+
 '                    <span>提醒</span>'+
 /*'                <li toPage="complaint.html" menuNum="2" id="menu_complaint" style="display:none;">'+
 '                	 <a href="javascript:void(0);" toPage="complaint.html" id="m2" class="alert" dat="投诉" ></a>'+
 '                    <span>投诉</span>'+*/
 '                </li>'+
 '                <li toPage="report_list.html" menuNum="3" id="menu_report" style="display:none;">'+
-'					 <a href="javascript:void(0);" toPage="report_list.html" id="m3" class="report" dat="报表" ></a>'+
+'					 <a style="background-size:30%" href="javascript:void(0);" toPage="report_list.html" id="m3" class="report" dat="报表" ></a>'+
 '                    <span>报表</span>'+
 '                </li>';
 if(!IsNull(isHaveZxRole) && isHaveZxRole == '1'){
 	writeHtml += '                <li menuNum="4" id="menu_zxapp">'+
-'					 <a href="javascript:void(0);" toPage="" id="m4" class="zxapp" dat="尊享" ></a>'+
+'					 <a style="background-size:30%" href="javascript:void(0);" toPage="" id="m4" class="zxapp" dat="尊享" ></a>'+
 '                    <span>尊享</span>'+
 '                </li>';
 }
 writeHtml +=
 '                <li toPage="mine.html"  menuNum="5" id="menu_mine">'+
-'                	 <a href="javascript:void(0);" id="m5" toPage="mine.html" class="mine" dat="我的" ></a>'+
+'                	 <a style="background-size:30%" href="javascript:void(0);" id="m5" toPage="mine.html" class="mine" dat="我的" ></a>'+
 '                    <span>我的</span>'+
 '                </li>'+
 '            </ul>'+

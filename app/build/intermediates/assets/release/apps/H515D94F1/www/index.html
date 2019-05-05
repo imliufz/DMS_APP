@@ -1,436 +1,445 @@
-	<!-- HTML5 DOCUMENT -->
+<!-- HTML5 DOCUMENT -->
 
 <!DOCTYPE HTML>
 <html lang="zh-cn">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="Access-Control-Allow-Origin" content="*">
-<meta http-equiv="content-security-policy">
-<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta http-equiv="content-security-policy">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<script type="text/javascript" src="js/html_head.js"></script>
-        <link href="css/index.css" rel="stylesheet" type="text/css"/>
-        <link href="css/one.css" rel="stylesheet" type="text/css"/>
-        <link href="static/css/template/index.css" rel="stylesheet" type="text/css" media="all" />
-        <script type="text/javascript">
-			
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<link href="css/one.css" rel="stylesheet" type="text/css" />
+		<link href="static/css/template/index.css" rel="stylesheet" type="text/css" media="all" />
+		<!-- 样式修改新增css -->
+		<!-- 共用弹性布局文件 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/common_flex.css" />
+		<!-- 首页重写样式 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_index.css" />
+		<!-- 样式修改新增css-end -->
+		<script type="text/javascript">
+
 		</script>
 		<style type="text/css">
-			#scrollDiv{
-				position:absolute;
-				height:70%;
+			#scrollDiv {
+				position: absolute;
+				height: 75%;
 				overflow-x: hidden;
 				overflow-y: auto;
 			}
-			.help{
+
+			.help {
 				float: right;
 				width: 13%;
 			}
-			.title{
+
+			.title {
 				float: left;
 				width: 87%;
 			}
+
 			#topPopover {
 				position: fixed;
 				top: 16px;
 				right: 6px;
 				height: 300px;
 			}
-			
 		</style>
-    </head>
-    <body>
-    	<script type="text/javascript" src="js/index_head.js?_show_left_menu=1" id="index_head_js"></script>
-    	<div id="scrollDiv">
-    	<div>
-    	<div class="line">
-    		<div class="title"><img src="images/db.png" width="24"><span>待办</span></div>
-    		<div class="help"><img src="images/help.png" width="24"  id="dbHelp" style="margin-top:0px;width:22px;height:25px;"></div> 
-        </div>
-        
-        <ul class="icos">
-        	
-        	<li id="10503040" style="display: none;" url="hallReceptionNoStay.html">
-            	<a href="javascript:void(0);" target="_top">
-                	<img src="images/ico1.png">
-               		<div>未留档<i class="tipNum" id="ld" style="display: none;"></i></div>
-                </a>
-            </li>
-        	
-        	<li id="10503010" style="display: none;" url="gj_list.html">
-            	<a href="javascript:void(0);" target="_top">
-                	<img src="images/ico2.png">
-               		<div>待跟进<i class="tipNum" id="gj" style="display: none;"></i></div>
-                </a>
-            </li>
-        	<li id="10503020" style="display: none;" url="xs_allot_list.html">
-            	<a href="javascript:void(0);" target="_top">
-                	<img src="images/ico4.png">
-                	<div>待分配<i class="tipNum" id="fp" style="display: none;"></i></div>
-                </a>
-            </li>
-        	<li id="10503025" style="display: none;" url="zbsp_list.html">
-            	<a href="javascript:void(0);" target="_top">
-                	<img src="images/ico3.png">
-                	<div>待审批<i class="tipNum" id="zb" style="display: none;"></i></div>
-                </a>
-            </li>
-        </ul>
-    
-    	<div class="line 2">
-    		<div class="title"><img src="images/cx.png" width="20px"><span>查询</span></div>
-    		<div class="help"><img src="images/help.png" width="24"  id="cxHelp" style="margin-top:0px;width:22px;height:25px;"></div>                      
-        </div>
-        
-        <ul class="ico">
-        	<li id="10503015" style="display: none;" url="hallReceptionManage.html">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/app6.png">
-                    <span>展厅接待</span>
-                </a>
-            </li>
-            <li id="10503045" style="display: none;" url="ydwj_list.html">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/app1.png">
-                    <div>已订未销</div>
-                </a>
-            </li>
-        	<li id="10503055" style="display: none;" url="tdtc_list.html">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/app3.png">
-                    <div>退订退车</div>
-                </a>
-            </li>
-        </ul>
-        <ul class="ico lin">
-        	<li id="10503050" style="display: none;" url="zbReport.html">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/app2.png">
-                    <div>战败</div>
-                </a>
-            </li>
-        	<li id="10503060" style="display: none;" url="bykh_list.html">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/app4.png">
-                    <div>保有客户</div>
-                </a>
-            </li>
-        	<li id="10503065" style="display: none;" url="xs_list.html">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/app5.png">
-                    <span>线索查询</span>
-                </a>
-            </li>
-        </ul>
-        <ul class="ico lin" id="gwtc" style="display: none;">
-        <li id="10503035" url="sales_consultant_list.html" style="display: none;">
-        	<a href="javascript:void(0);" target="_top">
-                <img src="images/consultant.png">
-                <div>顾问管理</div>
-            </a>
-        </li>
-        	<li id="10503070">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/tb09.png">
-                    <div>在途查询</div>
-                </a>
-            </li>
-            <li id="10503071" url="storeQuery.html">
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/tb10.png">
-                    <div>库存查询</div>
-                </a>
-            </li>
-        </ul>
-        <ul class="ico lin" id="kccx" style="display: none;" >
-            <li id="10503071" url="storeQuery.html" >
-            	<a href="javascript:void(0);" target="_top">
-                    <img src="images/tb10.png">
-                    <div>库存查询</div>
-                </a>
-            </li>
-            <li>
-            </li>
-            <li>
-            </li>
-        </ul>
-    
-    	<div class="line">
-    		<div class="title"><img src="images/jr.png" width="30px"><span>今日</span></div>
-    		<div class="help"><img id="jrHelp" src="images/help.png" width="24" style="margin-top:0px;width:22px;height:25px;"></div> 
-        </div>
-        
-        
-         <ul class="tex">
-        	<li url="ldReport.html">
-            	<a href="javascript:void(0);" style="text-decoration: none;">
-                    <font>留档：</font>
-                    <span id="ldOrder">...</span>
-                </a>
-            </li>
-        	<li url="ddReport.html">
-            	<a href="javascript:void(0);" style="text-decoration: none;">
-                    <font>到店：</font>
-                    <span id="ddOrder" >...</span>
-                </a>
-            </li>
-        	<li url="gjReport.html">
-            	<a href="javascript:void(0);" style="text-decoration: none;">
-                    <font>跟进：</font>
-                    <span id="gjOrder" >...</span>
-                </a>
-            </li>
-        	<li url="orderReport.html">
-            	<a href="javascript:void(0);" style="text-decoration: none;">
-                    <font>订单：</font>
-                    <span id="orderId" >...</span>
-                </a>
-            </li>
-        </ul>
-        <div style="height: 30px;"></div>
-        </div>
-        </div>
-        <script type="text/javascript" src="js/index_bottom.js?_active_url=index.html" id="index_buttom_js"></script>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/index_head.js?_show_left_menu=1" id="index_head_js"></script>
+		<div id="scrollDiv" class="xf-res-scrollDiv">
+			<div>
+				<div class="line xf-res-line flex-box align-items-center">
+					<div class="title">
+						<i class="xf-blue-block"></i>
+						<!-- <img src="images/db.png" width="24"> -->
+						<span>待办</span>
+					</div>
+					<div class="help"><img src="images/help.png" width="24" id="dbHelp" style="margin-top:0px;width:22px;height:25px;"></div>
+				</div>
+
+				<ul class="icos xf-res-icos">
+
+					<li id="10503040" style="display: none;" url="hallReceptionNoStay.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/ico1.png">
+							<div class="font-12">未留档<i class="tipNum" id="ld" style="display: none;"></i></div>
+						</a>
+					</li>
+
+					<li id="10503010" style="display: none;" url="gj_list.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/ico2.png">
+							<div class="font-12">待跟进<i class="tipNum" id="gj" style="display: none;"></i></div>
+						</a>
+					</li>
+					<li id="10503020" style="display: none;" url="xs_allot_list.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/ico4.png">
+							<div class="font-12">待分配<i class="tipNum" id="fp" style="display: none;"></i></div>
+						</a>
+					</li>
+					<li id="10503025" style="display: none;" url="zbsp_list.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/ico3.png">
+							<div class="font-12">待审批<i class="tipNum" id="zb" style="display: none;"></i></div>
+						</a>
+					</li>
+				</ul>
+
+				<div class="line 2 xf-res-line flex-box align-items-center margin-t-8">
+					<div class="title">
+						<i class="xf-blue-block"></i>
+						<!-- <img src="images/cx.png" width="20px"> -->
+						<span>查询</span>
+					</div>
+					<div class="help"><img src="images/help.png" width="24" id="cxHelp" style="margin-top:0px;width:22px;height:25px;"></div>
+				</div>
+
+				<ul class="ico xf-res-ico flex-box">
+					<li class="cell-1" id="10503015" style="display: none;" url="hallReceptionManage.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app6.png">
+							<div class="font-12">展厅接待</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503045" style="display: none;" url="ydwj_list.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app1.png">
+							<div class="font-12">已订未销</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503055" style="display: none;" url="tdtc_list.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app3.png">
+							<div class="font-12">退订退车</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503050" style="display: none;" url="zbReport.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app2.png">
+							<div class="font-12">战败</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503060" style="display: none;" url="bykh_list.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app4.png">
+							<div class="font-12">保有客户</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="ico lin xf-res-ico flex-box" id="gwtc" style="display: none;">
+					<li class="cell-1" id="10503065" style="display: none;" url="xs_list.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app5.png">
+							<div class="font-12">线索查询</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503035" url="sales_consultant_list.html" style="display: none;">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app7.png">
+							<div class="font-12">顾问管理</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503070">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app8.png">
+							<div class="font-12">在途查询</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503071" url="storeQuery.html">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app9.png">
+							<div class="font-12">库存查询</div>
+						</a>
+					</li>
+					<li class="cell-1"></li>
+				</ul>
+	
+				<div class="line xf-res-line flex-box align-items-center margin-t-8">
+					<div class="title">
+						<i class="xf-blue-block"></i>
+						<!-- <img src="images/jr.png" width="30px"> -->
+						<span>今日</span>
+					</div>
+					<div class="help"><img id="jrHelp" src="images/help.png" width="24" style="margin-top:0px;width:22px;height:25px;"></div>
+				</div>
+
+				<ul class="tex xf-res-tex">
+					<li url="ldReport.html">
+						<a href="javascript:void(0);" style="text-decoration: none;">
+							<font>留档</font>
+							<span id="ldOrder">...</span>
+						</a>
+					</li>
+					<li url="ddReport.html">
+						<a href="javascript:void(0);" style="text-decoration: none;">
+							<font>到店</font>
+							<span id="ddOrder">...</span>
+						</a>
+					</li>
+					<li url="gjReport.html">
+						<a href="javascript:void(0);" style="text-decoration: none;">
+							<font>跟进</font>
+							<span id="gjOrder">...</span>
+						</a>
+					</li>
+					<li url="orderReport.html">
+						<a href="javascript:void(0);" style="text-decoration: none;">
+							<font>订单</font>
+							<span id="orderId">...</span>
+						</a>
+					</li>
+				</ul>
+				<div style="height: 30px;"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/index_bottom.js?_active_url=index.html" id="index_buttom_js"></script>
 	</body>
-<script type="text/javascript">
-	mui.init({
-		pullRefresh: {
-			container: '#scrollDiv',
-			down: {
-				callback: pulldownRefresh
+	<script type="text/javascript">
+		mui.init({
+			pullRefresh: {
+				container: '#scrollDiv',
+				down: {
+					callback: pulldownRefresh
+				}
 			}
-		}
-	});
-	
-	/**
-	 * 下拉刷新具体业务实现
-	 */
-	function pulldownRefresh() {
-		reloadData();
-	}
-</script>
-<script type="text/javascript">
-var dealerShortName = "";
-var logonUser = null;
-$(document).ready(function() {
-	//获取菜单权限
-	_loadMenu("105030");
-	if($("#10503020").css("display") == "none"){
-		$(".icos").css("text-align","left");
-		$("#10503010").css("margin-left","5px");
-	}
-	
-	logonUser = JSON.parse(getLocalStorage("logonUser"));
-	var jw = "W";
-	if(logonUser.chana == "80081001"){
-		jw = "J";
-	}
-	var ztUrl = "http://61.186.243.107:8099/custmap/map_search/map.html?J_W="+jw+"&DEALER_ID="+logonUser.DEALER_ID+"&DEALER_CODE="+logonUser.DEALER_CODE_MD5;
-	$("#10503070").attr("url",ztUrl);
-	if(logonUser.IS_MANAGER == "10041001"){
-		$("#gwtc").show();
-	}else{
-		$("#kccx").show();
-	}
-	
-	mui(".icos").on("tap","li",function(){
-		var url = this.getAttribute("url");
-		if(url != undefined && url != null && url != ""){
-			ToUrl(url);			
-		}
-	});
-	
-	mui(".ico").on("tap","li",function(){
-		var url = this.getAttribute("url");
-		if(url != undefined && url != null && url != ""){
-			ToUrl(url);			
-		}
-	});
-	
-	mui(".tex").on("tap","li",function(){
-		var url = this.getAttribute("url");
-		if(url != undefined && url != null && url != ""){
-			ToUrl(url);			
-		}
-	});
-	
-	document.getElementById("dbHelp").addEventListener("tap",function(){
-		showHelp(1);
-	});
-	document.getElementById("cxHelp").addEventListener("tap",function(){
-		showHelp(2);
-	});
-	document.getElementById("jrHelp").addEventListener("tap",function(){
-		showHelp(3);
-	});
-	
-	reloadData();
-});
+		});
 
-function reloadData(){
-	//加载待处理事项
-	var url = httpUrlHead+"PotcusAchieveService/getIndexWaitNum.json?"+httpUrlEnd;
-	makeFormCall(url,function(json){
-		var zbNum = json.zbNum;
-		var gjNum = json.gjNum;
-		var fpNum = json.fpNum;
-		var ldNum = json.ldNum;
-		//var yyNum = json.yyNum;
-		if(gjNum > 0){
-			if(gjNum >= 1000){
-				gjNum = "999+";
-			}
-			var gj = $("#gj");
-			if(gjNum.length == 1){
-				gj.css("width","20px");
-			} else if(gjNum.length == 2){
-				gj.css("width","30px");
-			} else if(gjNum.length == 3){
-				gj.css("width","40px");
-			} else {
-				gj.css("width","50px");
-			}
-			gj.show();
-			gj.html(gjNum);
+		/**
+		 * 下拉刷新具体业务实现
+		 */
+		function pulldownRefresh() {
+			reloadData();
 		}
-		if(fpNum > 0){
-			if(fpNum >= 1000) {
-				fpNum = "999+";
+	</script>
+	<script type="text/javascript">
+		var dealerShortName = "";
+		var logonUser = null;
+		$(document).ready(function() {
+			//获取菜单权限
+			_loadMenu("105030");
+			if ($("#10503020").css("display") == "none") {
+				$(".icos").css("text-align", "left");
+				$("#10503010").css("margin-left", "5px");
 			}
-			var fp = $("#fp");
-			if(fpNum.length == 1){
-				fp.css("width","20px");
-			} else if(fpNum.length == 2){
-				fp.css("width","30px");
-			} else if(fpNum.length == 3){
-				fp.css("width","40px");
-			} else {
-				fp.css("width","50px");
-			}
-			fp.show();
-			fp.html(fpNum);
-		}
-		if(ldNum > 0) {
-			if(ldNum >= 1000){
-				ldNum = "999+";
-			}
-			var ld = $("#ld");
-			if(ldNum.length == 1){
-				ld.css("width","20px");
-			} else if(ldNum.length == 2){
-				ld.css("width","30px");
-			} else if(ldNum.length == 3){
-				ld.css("width","40px");
-			} else {
-				ld.css("width","50px");
-			}
-			ld.show();
-			ld.html(ldNum);
-		}
-		/*if(yyNum > 0) {
-			if(yyNum >= 1000){
-				yyNum = "999+";
-			}
-			var yy = $("#yy");
-			if(yyNum.length == 1){
-				yy.css("width","20px");
-			} else if(yyNum.length == 2){
-				yy.css("width","30px");
-			} else if(yyNum.length == 3){
-				yy.css("width","40px");
-			} else {
-				yy.css("width","50px");
-			}
-			yy.show();
-			yy.html(yyNum);
-		}*/
-		var zbNum = json.zbNum;
-		if(zbNum > 0){
-			if(zbNum >= 1000) {
-				zbNum = "999+";
-			}
-			var zb = $("#zb");
-			if(zbNum.length == 1){
-				zb.css("width","20px");
-			} else if(zbNum.length == 2){
-				zb.css("width","30px");
-			} else if(zbNum.length == 3){
-				zb.css("width","40px");
-			} else {
-				zb.css("width","50px");
-			}
-			zb.show();
-			zb.html(zbNum);
-		}
-		mui('#scrollDiv').pullRefresh().endPulldownToRefresh(); 
-	},"fm");
-	
-	//加载今日留档
-	var ldUrl = httpUrlHead + "ComplaintServiceApp/queryTodayLd.json?"+ httpUrlEnd;
-	makeFormCall(ldUrl,function(json){
-      document.getElementById("ldOrder").innerText= json.todayLdNum;
-	},"fm");
-	//加载今日订单
-	var nextDate = new Date();
-    var bigin = nextDate.getFullYear()+"-"+(nextDate.getMonth()<9?"0":"")+(nextDate.getMonth()+1)+"-"+(nextDate.getDate()<10?"0":"")+(nextDate.getDate());
 
-	var urlPP = httpUrlHead + "PotcusAchieveService/queryOrderList01.json?date="+bigin+"&"+ httpUrlEnd;
-	makeFormCall(urlPP,function(json){
-	  var detail = json.tsList[0];
-      document.getElementById("orderId").innerText= detail.DINGCHESHU ;
-	},"fm");
-	
-	//加载今日到店
-	var ddUrl = httpUrlHead + "ReportServiceApp/queryIndexddReportList.json?startDate="+bigin+"&" + httpUrlEnd;
-	makeFormCall(ddUrl,function(json){
-	  var detail = json.details[0];
-      document.getElementById("ddOrder").innerText= detail.COUNT1 ;
-	},"fm");
-	
-	//加载今日跟进
-	var gjUrl = httpUrlHead + "ReportServiceApp/querygjReportList.json?startDate="+bigin+"&butType=dayType&" + httpUrlEnd;
-	makeFormCall(gjUrl,function(json){
-	  var detail = json.details[0];
-      document.getElementById("gjOrder").innerText= detail.COUNT5 ;
-	},"fm");
-}
+			logonUser = JSON.parse(getLocalStorage("logonUser"));
+			var jw = "W";
+			if (logonUser.chana == "80081001") {
+				jw = "J";
+			}
+			var ztUrl = "http://61.186.243.107:8099/custmap/map_search/map.html?J_W=" + jw + "&DEALER_ID=" + logonUser.DEALER_ID +
+				"&DEALER_CODE=" + logonUser.DEALER_CODE_MD5;
+			$("#10503070").attr("url", ztUrl);
+			if (logonUser.IS_MANAGER == "10041001") {
+				$("#gwtc").show();
+			} else {
+				$("#kccx").show();
+			}
 
-function showHelp(value){
-	var alertMsg = "";
-	if(value==1){
-		alertMsg += "<div style='text-align:left;'>"+
-					"<div>未留档：展厅接待未留下电话的线索</div>"+
+			mui(".icos").on("tap", "li", function() {
+				var url = this.getAttribute("url");
+				if (url != undefined && url != null && url != "") {
+					ToUrl(url);
+				}
+			});
+
+			mui(".ico").on("tap", "li", function() {
+				var url = this.getAttribute("url");
+				if (url != undefined && url != null && url != "") {
+					ToUrl(url);
+				}
+			});
+
+			mui(".tex").on("tap", "li", function() {
+				var url = this.getAttribute("url");
+				if (url != undefined && url != null && url != "") {
+					ToUrl(url);
+				}
+			});
+
+			document.getElementById("dbHelp").addEventListener("tap", function() {
+				showHelp(1);
+			});
+			document.getElementById("cxHelp").addEventListener("tap", function() {
+				showHelp(2);
+			});
+			document.getElementById("jrHelp").addEventListener("tap", function() {
+				showHelp(3);
+			});
+
+			reloadData();
+		});
+
+		function reloadData() {
+			//加载待处理事项
+			var url = httpUrlHead + "PotcusAchieveService/getIndexWaitNum.json?" + httpUrlEnd;
+			makeFormCall(url, function(json) {
+				var zbNum = json.zbNum;
+				var gjNum = json.gjNum;
+				var fpNum = json.fpNum;
+				var ldNum = json.ldNum;
+				//var yyNum = json.yyNum;
+				if (gjNum > 0) {
+					if (gjNum >= 1000) {
+						gjNum = "999+";
+					}
+					var gj = $("#gj");
+					if (gjNum.length == 1) {
+						gj.css("width", "20px");
+					} else if (gjNum.length == 2) {
+						gj.css("width", "30px");
+					} else if (gjNum.length == 3) {
+						gj.css("width", "40px");
+					} else {
+						gj.css("width", "50px");
+					}
+					gj.show();
+					gj.html(gjNum);
+				}
+				if (fpNum > 0) {
+					if (fpNum >= 1000) {
+						fpNum = "999+";
+					}
+					var fp = $("#fp");
+					if (fpNum.length == 1) {
+						fp.css("width", "20px");
+					} else if (fpNum.length == 2) {
+						fp.css("width", "30px");
+					} else if (fpNum.length == 3) {
+						fp.css("width", "40px");
+					} else {
+						fp.css("width", "50px");
+					}
+					fp.show();
+					fp.html(fpNum);
+				}
+				if (ldNum > 0) {
+					if (ldNum >= 1000) {
+						ldNum = "999+";
+					}
+					var ld = $("#ld");
+					if (ldNum.length == 1) {
+						ld.css("width", "20px");
+					} else if (ldNum.length == 2) {
+						ld.css("width", "30px");
+					} else if (ldNum.length == 3) {
+						ld.css("width", "40px");
+					} else {
+						ld.css("width", "50px");
+					}
+					ld.show();
+					ld.html(ldNum);
+				}
+				/*if(yyNum > 0) {
+					if(yyNum >= 1000){
+						yyNum = "999+";
+					}
+					var yy = $("#yy");
+					if(yyNum.length == 1){
+						yy.css("width","20px");
+					} else if(yyNum.length == 2){
+						yy.css("width","30px");
+					} else if(yyNum.length == 3){
+						yy.css("width","40px");
+					} else {
+						yy.css("width","50px");
+					}
+					yy.show();
+					yy.html(yyNum);
+				}*/
+				var zbNum = json.zbNum;
+				if (zbNum > 0) {
+					if (zbNum >= 1000) {
+						zbNum = "999+";
+					}
+					var zb = $("#zb");
+					if (zbNum.length == 1) {
+						zb.css("width", "20px");
+					} else if (zbNum.length == 2) {
+						zb.css("width", "30px");
+					} else if (zbNum.length == 3) {
+						zb.css("width", "40px");
+					} else {
+						zb.css("width", "50px");
+					}
+					zb.show();
+					zb.html(zbNum);
+				}
+				mui('#scrollDiv').pullRefresh().endPulldownToRefresh();
+			}, "fm");
+
+			//加载今日留档
+			var ldUrl = httpUrlHead + "ComplaintServiceApp/queryTodayLd.json?" + httpUrlEnd;
+			makeFormCall(ldUrl, function(json) {
+				document.getElementById("ldOrder").innerText = json.todayLdNum;
+			}, "fm");
+			//加载今日订单
+			var nextDate = new Date();
+			var bigin = nextDate.getFullYear() + "-" + (nextDate.getMonth() < 9 ? "0" : "") + (nextDate.getMonth() + 1) + "-" +
+				(nextDate.getDate() < 10 ? "0" : "") + (nextDate.getDate());
+
+			var urlPP = httpUrlHead + "PotcusAchieveService/queryOrderList01.json?date=" + bigin + "&" + httpUrlEnd;
+			makeFormCall(urlPP, function(json) {
+				var detail = json.tsList[0];
+				document.getElementById("orderId").innerText = detail.DINGCHESHU;
+			}, "fm");
+
+			//加载今日到店
+			var ddUrl = httpUrlHead + "ReportServiceApp/queryIndexddReportList.json?startDate=" + bigin + "&" + httpUrlEnd;
+			makeFormCall(ddUrl, function(json) {
+				var detail = json.details[0];
+				document.getElementById("ddOrder").innerText = detail.COUNT1;
+			}, "fm");
+
+			//加载今日跟进
+			var gjUrl = httpUrlHead + "ReportServiceApp/querygjReportList.json?startDate=" + bigin + "&butType=dayType&" +
+				httpUrlEnd;
+			makeFormCall(gjUrl, function(json) {
+				var detail = json.details[0];
+				document.getElementById("gjOrder").innerText = detail.COUNT5;
+			}, "fm");
+		}
+
+		function showHelp(value) {
+			var alertMsg = "";
+			if (value == 1) {
+				alertMsg += "<div style='text-align:left;'>" +
+					"<div>未留档：展厅接待未留下电话的线索</div>" +
 					"<div>待跟进：留有电话等待跟进的线索(红色:已超期 黄色:当日跟进 绿色:未到跟进日期)</div>";
-		if(logonUser.IS_MANAGER == "10041001"){
-			alertMsg += "<div>待分配：待分配销售顾问的线索</div>"+
+				if (logonUser.IS_MANAGER == "10041001") {
+					alertMsg += "<div>待分配：待分配销售顾问的线索</div>" +
 						"<div>待审批：待战败确认的线索</div>";
-		}
-		alertMsg += "</div>";
-		
-	}else if(value==2){
-		alertMsg += "<div style='text-align:left;'>"+
-					"<div>展厅接待：展厅接待录入的线索</div>"+
-					"<div>已订未销：O级客户(已创建销售订单但未交车)</div>"+
-					"<div>退订退车：取消订单或退车的客户</div>"+
-					"<div>战败：已经战败确认的线索</div>"+
-					"<div>保有客户：已成交的客户</div>"+
+				}
+				alertMsg += "</div>";
+
+			} else if (value == 2) {
+				alertMsg += "<div style='text-align:left;'>" +
+					"<div>展厅接待：展厅接待录入的线索</div>" +
+					"<div>已订未销：O级客户(已创建销售订单但未交车)</div>" +
+					"<div>退订退车：取消订单或退车的客户</div>" +
+					"<div>战败：已经战败确认的线索</div>" +
+					"<div>保有客户：已成交的客户</div>" +
 					"<div>线索查询：所有线索(含成交、战败)</div>";
-			if(logonUser.IS_MANAGER == "10041001"){
-				alertMsg += "<div>顾问管理：设置顾问在岗、不在岗</div>"+
-							"<div>在途查询：采购车辆在途位置查询</div>"+
-							"<div>订单状态：整车采购订单所处状态</div>";
-			}
-		alertMsg += "</div>";
-	}else if(value==3){
-		alertMsg += "<div style='text-align:left;'>"+
-					"<div>留档：留下电话的线索排行</div>"+
-					"<div>到店：到店、邀约到店排行</div>"+
-					"<div>跟进：跟进线索数量排行</div>"+
-					"<div>订单：订单、实销数量排行</div>"+
+				if (logonUser.IS_MANAGER == "10041001") {
+					alertMsg += "<div>顾问管理：设置顾问在岗、不在岗</div>" +
+						"<div>在途查询：采购车辆在途位置查询</div>" +
+						"<div>订单状态：整车采购订单所处状态</div>";
+				}
+				alertMsg += "</div>";
+			} else if (value == 3) {
+				alertMsg += "<div style='text-align:left;'>" +
+					"<div>留档：留下电话的线索排行</div>" +
+					"<div>到店：到店、邀约到店排行</div>" +
+					"<div>跟进：跟进线索数量排行</div>" +
+					"<div>订单：订单、实销数量排行</div>" +
 					"</div>";
-	}
-	MuiAlert(alertMsg);
-}
-</script>
-</html>	
+			}
+			MuiAlert(alertMsg);
+		}
+	</script>
+</html>

@@ -19,7 +19,7 @@
 		text-indent:2px;
 	}
 	.bordered th{
-		background: #10a6e2;
+		background: #1790E4;
 		color: #fff;
 		text-shadow:none;
 		font-size: 16px;
@@ -156,7 +156,7 @@
 		var url1 = httpUrlHead + "ReportServiceApp/StorageQueryDLR_Detail.json?" + httpUrlEnd;
 		var appendHtml = "";
 		makeFormCall(url1,function(json){
-			$("#queryBtn").css("background-color","#10a6e2");
+			$("#queryBtn").css("background-color","#1790E4");
 			if ( json.list == undefined || json.list == null || json.list.length == 0) {
 				pageNum = 0;
 				appendHtml += "<tr><td colspan='8'><a style=color:red>无数据</a></td></tr>";

@@ -12,7 +12,7 @@
 		text-indent:2px;
 	}
 	.bordered th{
-		background: #10a6e2;
+		background: #1790E4;
 		color: #fff;
 		text-shadow:none;
 		font-size: 16px;
@@ -80,6 +80,15 @@
 					</tr>
 				</table>
 			</ul>
+		<div class="mui-content">
+			<div style="padding: 2px 0px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#tabs1" id="consultantQuery">按顾问统计</a>
+					<a class="mui-control-item" href="#tabs2" id="channelQuery">按渠道统计</a>
+				</div>
+			</div>
+		</div>
+	</div>
 		<div class="cardexplain" id="_showContent" style="padding-top:0px;width: 100%;overflow-x: auto;">
 				<form action="javascript:;" method="post">
 					<div class="tab-pane active" id="panel-1">
@@ -92,6 +101,7 @@
                 <th width="18%" nowrap="nowrap" style="text-align: center;">待首次</th>
                 <th width="18%" nowrap="nowrap" style="text-align: center;">及时</th>
                 <th width="12%" nowrap="nowrap" style="text-align: center;">超期</th>
+                <th width="12%" nowrap="nowrap" style="text-align: center;">及时率</th>
             </tr>
             </thead>
             <tbody id="complaintReport">
@@ -147,9 +157,10 @@
 	window.addEventListener("backFunction",function(event){
 		loadData();
 	})
-	
+	var activeId = "";
 	function queryPt()
-	{
+	{	
+				
 	           var failDateBegin = document.getElementById('failDateBegin').value;
 	           var failDateEnd = document.getElementById('failDateEnd').value;
 	           if(failDateBegin == '' && failDateEnd == '')
@@ -157,10 +168,15 @@
 	             MuiAlert('日期必选');
 	             return false;
 	           }
+    	if(activeId == "channelQuery"){
+    		queryType = "2";
+    	} else {
+    		queryType = "1";
+    	}
 	           var INTENT_SERIES = document.getElementById('INTENT_SERIES').value;
 		        var CLUE_SOURCE = document.getElementById("CLUE_SOURCE").value;
 		        var complaintReport = document.getElementById("complaintReport");
-				var url1 = httpUrlHead + "ComplaintServiceApp/queryFUp.json?failDateBegin="+failDateBegin+"&failDateEnd="+failDateEnd+"&INTENT_SERIES="+INTENT_SERIES +"&CLUE_SOURCE="+CLUE_SOURCE+"&"+ httpUrlEnd;
+				var url1 = httpUrlHead + "ComplaintServiceApp/queryFUp.json?queryType="+queryType+"&failDateBegin="+failDateBegin+"&failDateEnd="+failDateEnd+"&INTENT_SERIES="+INTENT_SERIES +"&CLUE_SOURCE="+CLUE_SOURCE+"&"+ httpUrlEnd;
 				makeFormCall(url1,function(json){
 				  $("#complaintReport").html("");
 				   if(json.list.length == 0)
@@ -180,6 +196,8 @@
 				     newCell.innerHTML ="0";
 				      newCell = newRow.insertCell(4);
 				     newCell.innerHTML ="0";
+				     newCell = newRow.insertCell(5);
+				     newCell.innerHTML ="";
 				   }else{
 					   var na = "'";
 					    var url = "";
@@ -190,6 +208,10 @@
 						for(var i = 0; i < json.list.length;i++) {
 							var detail = json.list[i];
 							var sel = detail.SALES_CONSULTANT;
+							var jsRote = "0%";
+							if( parseInt(detail.XFSL) != 0 ){
+								jsRote = Math.round(parseInt(detail.JSGJ)*10000 / parseInt(detail.XFSL))/100 + "%";
+							}
 							if(sel != "待分配"){
 								XFSLNum += parseInt(detail.XFSL);
 								DFPNum += parseInt(detail.DFP);
@@ -251,6 +273,8 @@
 								  newCell.innerHTML = detail.CQ;
 							  }
 							}
+							newCell = newRow.insertCell(5);
+							newCell.innerHTML = jsRote;
 						}
 						//增加合计行
 						var newRow = complaintReport.insertRow(json.list.length);
@@ -268,6 +292,8 @@
 					     newCell.innerHTML =JSGJNum;
 					      newCell = newRow.insertCell(4);
 					     newCell.innerHTML =CQNum;
+					     newCell = newRow.insertCell(5);
+					     newCell.innerHTML ="";
 				   }
 				    
 				},"fm",true,true);
@@ -334,6 +360,14 @@
 		"</div>";
 		MuiAlert(alertMsg);
 	}
+    
+    document.querySelectorAll(".mui-control-item").forEach(function(item){
+		//TODO 
+		item.addEventListener('tap', function () {
+			activeId = $(this).attr("id");
+			queryPt();
+		})
+	});
    
 </script>
 </html>

@@ -5,7 +5,7 @@
 
 var _isLoading = false;
 var _curPage = 0;
-var T_url,T_fm,T_colorType,T_btnTxt,T_isCheckBox,T_nextFunc1,T_nextFunc2,T_str1,T_str2,T_str3,T_str4,T_str5,T_str6,T_str7;
+var T_url,T_fm,T_colorType,T_btnTxt,T_isCheckBox,T_nextFunc1,T_nextFunc2,T_str1,T_str2,T_str3,T_str4,T_str5,T_str6,T_str7,T_str8;
 /**
  * url 查询地址
  * fm 表单id
@@ -21,7 +21,7 @@ var T_url,T_fm,T_colorType,T_btnTxt,T_isCheckBox,T_nextFunc1,T_nextFunc2,T_str1,
  * str5 自定义显示字段5
  * str6 自定义显示字段6
  */
-function _exe_query(url,fm,colorType,btnTxt,isCheckBox,nextFunc1,nextFunc2,str1,str2,str3,str4,str5,str6,str7){
+function _exe_query(url,fm,colorType,btnTxt,isCheckBox,nextFunc1,nextFunc2,str1,str2,str3,str4,str5,str6,str7,str8){
 	$("#tabList").html("<div style='text-align:center;'><img src='static/img/wait.jpg' width='64' height='64'/></div>");
 	T_url = url;
 	T_fm = fm;
@@ -37,6 +37,7 @@ function _exe_query(url,fm,colorType,btnTxt,isCheckBox,nextFunc1,nextFunc2,str1,
 	T_str5 = str5;
 	T_str6 = str6;
 	T_str7 = str7;
+	T_str8 = str8;
 	_loadPageData("1");
 	
 }
@@ -67,6 +68,7 @@ function _loadPageData(loadType){
 	var str5 = T_str5;
 	var str6 = T_str6;
 	var str7 = T_str7;
+	var str8 = T_str8;
 	if (loadType == "1") {
 		_curPage = 1;
 	} else {
@@ -82,6 +84,17 @@ function _loadPageData(loadType){
 	}
 	_isLoading = true;
 	makeFormCall(url,function(json){
+		//增加360视图判断
+//		var view360Flag = json.view360Flag;
+//		if( !IsNull(view360Flag) && view360Flag == "1"){
+//			var contactorMobile = json.contactorMobile;
+//			MuiConfirm("本店无数据,是否跳转360视图？",function (e){
+//				if(e.index == 0){
+//					ToUrl("view360.html?contactorMobile="+contactorMobile);
+//					return false;
+//				}
+//			},null,"1");
+//		}
 		if(json.RESULT.maps != null && json.RESULT.maps.length > 0) {
 			var maps = json.RESULT.maps;
 			var tabBody = "";
@@ -94,7 +107,7 @@ function _loadPageData(loadType){
 				var value6 = "";
 				var value7 = "";
 				var wsId = "";
-				var buyCarIndex = "";
+				var value8 = "";
 				for (var key in json.RESULT.maps[i]) {
 					if(value1 == "" && str1 == key){
 						value1 = json.RESULT.maps[i][key];
@@ -119,7 +132,9 @@ function _loadPageData(loadType){
 					}
 					if(wsId == "" && "WSID" == key) {
 						wsId = $.trim(json.RESULT.maps[i][key]);
-						buyCarIndex = maps[i].BUYCARINDEX;
+					}
+					if(value8 == "" && str8 == key) {
+						value8 = $.trim(json.RESULT.maps[i][key]);
 					}
 				}
 				if (value6 != "") {
@@ -130,7 +145,7 @@ function _loadPageData(loadType){
 					isCq = maps[i].IS_CQ;
 				}
 				tabBody += _tabCol(isCq, maps[i].TAB_TYPE, maps[i].ID, maps[i].CUSTOMER_NAME, maps[i].CONTACTOR_MOBILE, maps[i].INTENT_LEVEL_DESC, maps[i].GENDER, isCheckBox, btnTxt, nextFunc1+"('"+maps[i].ID+"','"+maps[i].TAB_TYPE+"','"+maps[i].STATUS+"');",nextFunc2+"('"+maps[i].ID+"','"+maps[i].TAB_TYPE+"','"+maps[i].STATUS+"');",
-				value1, value2, value3,value4,value5,value7,i+1,maps[i].STATUS,maps[i].OPEN_ID,wsId,buyCarIndex);
+				value1, value2, value3,value4,value5,value7,i+1,maps[i].STATUS,maps[i].OPEN_ID,wsId,value8);
 			}
 			var totalRecords =  json.RESULT.totalRecords;
 			var tophtml = "<div style='text-align:left;width='100%';height='64px;'><font style='margin-left: 12px;'>总共</font><font id='totleNum' style='color:blue;'> "+totalRecords+"</font> 条记录</div>";
@@ -273,32 +288,60 @@ function setOnWisdomsalesType(){
 function onWisdomsales(){
 		$("td[wisdomsalesType='new']").each(function(){
 			var wsId = $(this).attr("wsId");
-			var buyCarIndex = $(this).attr("buyCarIndex");
+			var view360 = $(this).attr("view360");
+			var contactorMobile = $(this).attr("phone");
 			var ptId = $(this).attr("ptId");
 			var tabType = $(this).attr("tabType");
-			var toUrl = "wisdomSales.html?wsId="+wsId+"&ptId="+ptId+"&tabType="+tabType;
+			var toUrl = "wisdomSales.html?wsId="+wsId+"&ptId="+ptId;
+			var to360Url = "view360.html?contactorMobile="+contactorMobile;
+			var left_px = -28;
+			if(!IsNull(wsId) && !IsNull(view360)){
+				$(this).attr("width","40%");
+				left_px = -13;
+			}
 			try{
-				$(this).contip({
-				    fade: 0,
-				    rise: 0,
-				    opacity:0.5,
-				    v_size:-28,
-				    v_px:-25,
-				    font_size: '10px', // 正文字体
-				    rise: 0,
-				    padding: 1,
-				    radius: 9, // 气泡圆角大小 px
-				    align: 'bottom',
-				    show: true,
-				    live: true,
-				    bg: '#04a7e0',
-				    html: '<a href="javascript:void(0);" onclick="javascript:ToUrl(\''+toUrl+'\');">购车指数'+buyCarIndex+'</a>'
-	  			});
+				if(!IsNull(wsId)){
+					$(this).contip({
+					    fade: 0,
+					    rise: 0,
+					    opacity:0.7,
+					    v_size:-28,
+					    v_px:left_px,
+					    font_size: '10px', // 正文字体
+					    rise: 0,
+					    padding: 1,
+					    radius: 9, // 气泡圆角大小 px
+					    align: 'bottom',
+					    show: true,
+					    live: true,
+					    bg: '#1790E4',
+					    html: '<a href="javascript:void(0);" onclick="javascript:ToUrl(\''+toUrl+'\');">智慧网销</a>'
+	  				});
+	  				left_px = left_px - 40;
+				}
+				if(!IsNull(view360)){
+					$(this).contip({
+					    fade: 0,
+					    rise: 0,
+					    opacity:0.7,
+					    v_size:-28,
+					    v_px:left_px,
+					    font_size: '10px', // 正文字体
+					    rise: 0,
+					    padding: 1,
+					    radius: 9, // 气泡圆角大小 px
+					    align: 'bottom',
+					    show: true,
+					    live: true,
+					    bg: '#1790E4',
+					    html: '<a href="javascript:void(0);" style="padding:5px;" onclick="javascript:ToUrl(\''+to360Url+'\');">360</a>'
+	  				});
+				}
   			}catch(e){}
 		});
 	}
 
-function _tabCol(colorType,tabType,id,cusName,cusPhone,intentLevel,sex,isCheckbox,btnTxt,nextFunc1,nextFunc2,str1,str2,str3,str4,str5,str6,num,status,openId,wsId,buyCarIndex){
+function _tabCol(colorType,tabType,id,cusName,cusPhone,intentLevel,sex,isCheckbox,btnTxt,nextFunc1,nextFunc2,str1,str2,str3,str4,str5,str6,num,status,openId,wsId,str8){
 	if(cusName != null && cusName != undefined && cusName.length > 6) {
 		cusName = cusName.substring(0,6);
 	}
@@ -375,8 +418,15 @@ function _tabCol(colorType,tabType,id,cusName,cusPhone,intentLevel,sex,isCheckbo
 	} else {
 		
 		colBody += '		<td width="10%">'+numStr+'</td>';
-		if (wsId != null && wsId != "") {
-			colBody += '		<td width="25%" name = "wisdomsalesTd" wisdomsalesType="new" wsId="'+wsId+'" buyCarIndex="'+buyCarIndex+'" ptId="'+id+'" tabType="'+tabType+'">'+cusName+'</td>';
+		if ((wsId != null && wsId != "") || (str8 != null && str8 == "1")) {
+			var contipStr = "";
+			if( wsId != null && wsId != "" ){
+				contipStr += 'wsId="'+wsId+'"';
+			}
+			if( str8 != null && str8 == "1" ){
+				contipStr += 'view360="1"';
+			}
+			colBody += '		<td width="25%" phone="'+cusPhone+'" name = "wisdomsalesTd" wisdomsalesType="new" '+contipStr+' ptId="'+id+'" tabType="'+tabType+'">'+cusName+'</td>';
 		}else{
 			colBody += '		<td width="25%">'+cusName+'</td>';
 		}

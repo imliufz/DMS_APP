@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<title>360视图</title>
+    </head>
+    <style type="text/css">
+    	body{font-family:Microsoft YaHei,宋体;font-size: 14px;}
+    </style>
+<body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" onLoad="">
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=360视图" id="detail_head_js"></script>
+	<div style="margin-top: 60px;">
+		<ul class="round">
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%" id="dataTable">
+				
+			</table>
+		</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var contactorMobile = UrlParm.parm("contactorMobile");
+		var url = httpUrlHead+"PotcusAchieveService/query360ViewData.json?contactorMobile="+contactorMobile+"&"+httpUrlEnd;
+		makeFormCall(url,function(json){
+			if(json.view360Map != null ) {
+				var view360Map = json.view360Map;
+				var appendHtml = "";
+				for(var key in view360Map){
+					appendHtml += '<tr class="biaoge" style="height:44px;"><td>'+key+'</td><td><input type="text" class="px" value="'+view360Map[key]+'" /></td></tr>';
+				}
+				$("#dataTable").html(appendHtml);
+			}else{
+				var msg = json.RESULT.funcMessage;
+				MuiAlert(msg,function(){
+					setTimeout(function(){
+						mui.back();
+					},1)
+				});
+			}
+		},"fm",false,true);
+	});
+</script>
+</html>

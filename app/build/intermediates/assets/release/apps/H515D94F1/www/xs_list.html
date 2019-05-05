@@ -462,35 +462,7 @@
 	
 	function queryPt(){
 		_showQuery(1);
-		_exe_query(url,"fm",true,'both',false,"showDetail","showDetail","IS_SC","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE","ALLOCATED_TIME","","","WSID");
-		onWisdomsales();
-		
-	}
-	
-	function onWisdomsales(){
-		$("td[name='wisdomsalesTd']").each(function(){
-			var wsId = $(this).attr("wsId");
-			var buyCarIndex = $(this).attr("buyCarIndex");
-			var ptId = $(this).attr("ptId");
-			var tabType = $(this).attr("tabType");
-			var toUrl = "wisdomSales.html?wsId="+wsId+"&ptId="+ptId+"&tabType="+tabType;
-			$(this).contip({
-			    fade: 0,
-			    rise: 0,
-			    opacity:0.5,
-			    v_size:-28,
-			    v_px:-25,
-			    font_size: '10px', // 正文字体
-			    rise: 0,
-			    padding: 1,
-			    radius: 9, // 气泡圆角大小 px
-			    align: 'bottom',
-			    show: true,
-			    live: true,
-			    bg: '#04a7e0',
-			    html: '<a href="#" onclick="javascript:ToUrl(\''+toUrl+'\');">购车指数'+buyCarIndex+'</a>'
-  			});
-		});
+		_exe_query(url,"fm",true,'both',false,"showDetail","showDetail","IS_SC","REPEAT_NUM_PAGE","CUS_SOURCE_DESC_PAGE","ALLOCATED_TIME","","","WSID","VIEW360");
 	}
 	
 	function showDetail(id,tabType,status){
