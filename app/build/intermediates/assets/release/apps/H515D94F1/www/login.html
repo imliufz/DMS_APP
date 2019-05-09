@@ -321,6 +321,14 @@
 				makeFormCall(regUrl, function(json) {});
 			}
 		}
+		
+		
+		// 2019-3-25 xf 新增
+		// 手机状态栏颜色更改为app主题色
+		mui.plusReady(function () {
+			plus.navigator.setStatusBarBackground('#1790E4');//设置状态栏的颜色
+		})
+		// -------------------------
 	</script>
 
 </html>

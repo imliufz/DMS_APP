@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="js/html_head.js"></script>
 <script type="text/javascript" src="js/clpage.js"></script>
+<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
 <link href="css/index.css" rel="stylesheet" type="text/css"/>
 <title>客户意向报表</title>
 <style type="text/css">
@@ -69,6 +70,14 @@
     <!-- 菜单 -->
 </body>
 <script type="text/javascript">
+var se_finalStatus = 1;
+var se_loadStatus = 0;
+var newSelects = [{
+		id: 'oemCusSource',
+		title: '车系',
+		onChange: 'queryPt'
+	}
+];
 $(document).ready(function () {
 	
 });

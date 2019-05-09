@@ -1,338 +1,391 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="js/html_head.js"></script>
-<!--<script type="text/javascript" src="js/clpage.js"></script>-->
-<title>今日待跟进报表</title>
-<style type="text/css">
-	.bordered td{
-		text-align: center;
-		font-size: 15px;
-		text-indent:2px;
-	}
-	.bordered th{
-		background: #1790E4;
-		color: #fff;
-		text-shadow:none;
-		font-size: 16px;
-		text-indent:2px;
-	}
-</style>
-</head>
-<body onselectstart="return true;" ondragstart="return false;">
-	<script type="text/javascript" src="js/detail_head.js?_menu_name=今日待跟进报表&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
-	<form id="fm" method="post">
-		<div class="cardexplain">
-			<ul class="round"  style="border:none">
-			<table id="tb_query">
-				<tr class="biaoge">
-	             	<td>是否OEM来源</td>
-	             	<td><li class="nob">
-					<select name="isOem" id="isOem" class="download dropdown-select" >
-						<option value="">-请选择-</option>
-						<option value="10041001">是</option>
-						<option value="10041002">否</option>
-					</select>
-					</li></td>
-				</tr>  
-                <tr class="biaoge" id="cusSource_Tr" style="display: none;">
-						<td>客户来源</td>
-						<td>
-							<li class="nob">
-								<select name="cusSource" id="cusSource" class="download dropdown-select"  search="show" onchange="queryPt();">
-									<option value="">-请选择-</option>
-								</select>
-								<input name="cusSource_h" id="cusSource_h" value=""  type="hidden"  />
-							</li>
-						</td>
-					</tr>
-                <tr class="biaoge" id="oemCusSource_Tr" style="display: none;">
-                	<td>OEM客户来源						                </td>
-                    <td>
-						 <li class="nob">
-                             <select id="oemCusSource" name="oemCusSource" class="download dropdown-select"   search="show" onchange="queryPt();">
-                                <option value="">-请选择-</option>
-                            </select>
-                            <input name="oemCusSource_h" id="oemCusSource_h" value=""  type="hidden"  />
-                        </li>                    </td>
-                </tr>
-					<tr class="biaoge">
-						<td>意向级别</td>
-						<td>
-						<li class="nob">
-								<select id="INTENT_LEVEL" name="INTENT_LEVEL" class="download dropdown-select"   search="show"   onchange="queryPt();" >
-									<option value="">请选择</option>
-								</select>
-								<input name="INTENT_LEVEL_h" id="INTENT_LEVEL_h" value=""  type="hidden"  />
-					   </li>
-					   </td>
-					</tr>
-					<tr class="biaoge">
-						<td>车系</td>
-						<td>
-						<li class="nob">
-								<select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select"   search="show" onchange="queryPt();" >
-									<option value="">请选择</option>
-								</select>
-								<input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value=""  type="hidden"  />
-					   </li>
-					   </td>
-					</tr>
-				</table>
-			</ul>
-			 <table width="100%" style="background-color:white;">
-			<tr>
-				<td style="width:50%;">
-					<input   name="topBtn" class="button" onclick="BEDate('followToday.html')" style=" background-color:white; width: 90% ; height: 30px;border: 0px; " value="  今日待跟进  " type="button">
-				</td>
-				<td style="width:50%;">
-					<input  name="topBtn" id="tsNoDealNum" class="button"  style="  background-color:white; width: 90% ;height: 30px;border: 0px;" value="   跟进邀约    " type="button" >
-				</td>
-			</tr>
-			<tr style="height: 3px;">
-				<td style="width:50%;"  bgcolor="#FFFF00">
-					
-				</td>
-				<td style="width:50%;">
-					
-				</td>
-			</tr>
-		</table>
-		</ul>
-		<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
-				<form action="javascript:;" method="post">
-					<div class="tab-pane active" id="panel-1">
-			 <ul class="round">
-        <table class="bordered" style="background-color: white;">
-            <thead>
-            <tr class="biaoge">
-                <th width="85px" nowrap="nowrap"  style="text-align: center;">顾问</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">超期</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;" onclick="sort('ygj')">应跟进</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">已跟进</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;" onclick="sort('dgj')">待跟进</th>
-                
-            </tr>
-            </thead>
-            <tbody id="complaintReport"  >
-            </tbody>
-        </table>
-		</ul>
-		</div>
-	</form>
-	</div>
-</body>
-<script type="text/javascript">
-var groupSalesConsultant = null;
-var sortFlag = "dgj";
-$(document).ready(function () {
-	var isOem = $("#isOem").val();
-	if(isOem == '10041001') {
-		$("#cusSource_Tr").hide();
-		$("#oemCusSource_Tr").show();
-	} else if(isOem == "10041002") {
-		$("#cusSource_Tr").show();
-		$("#oemCusSource_Tr").hide();
-	} else {
-		$("#cusSource_Tr").hide();
-		$("#oemCusSource_Tr").hide();
-	}
-	$("#isOem").change(function() {
-		if($("#isOem").val() == '10041001') {
-			$("#cusSource").val("");
-			$("#cusSource_h").val("");
-			$("#cusSource_Tr").hide();
-    		$("#oemCusSource_Tr").show();
-		} else if($("#isOem").val() == "10041002") {
-			$("#oemCusSource").val("");
-			$("#oemCusSource_h").val("");
-			$("#cusSource_Tr").show();
-    		$("#oemCusSource_Tr").hide();
-		} else {
-			$("#cusSource").val("");
-			$("#oemCusSource").val("");
-			$("#cusSource_h").val("");
-			$("#oemCusSource_h").val("");
-			$("#cusSource_Tr").hide();
-    		$("#oemCusSource_Tr").hide();
-		}
-	});
-	var IS_MANAGER = getLocalStorage("IS_MANAGER");
-	if(IS_MANAGER == 10041001){//销售经理
-		var url = httpUrlHead+"PotcusAchieveService/querySalesConsultantList.json?"+httpUrlEnd;
-    	makeFormCall(url,function(json){
-    		if (json.tsList != null && json.tsList.length > 0) {
-    			groupSalesConsultant = json;
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<!--<script type="text/javascript" src="js/clpage.js"></script>-->
+		<!-- 样式修改新增css -->
+		<!-- 筛选条件 移动至 topNav 的交互逻辑 -->
+		<script src="js/resJs/res_followToday.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 共用弹性布局文件 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/common_flex.css" />
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_followToday.css" />
+		<!-- 当前页重写样式 -->
+		<link rel="stylesheet" type="text/css" href="components/common_sidebar/common_sidebar.css" />
+		<!-- 样式修改新增css-end -->
+		<title>今日待跟进报表</title>
+		<style type="text/css">
+			.bordered td {
+				text-align: center;
+				font-size: 15px;
+				text-indent: 2px;
 			}
-    		_loadSeries("INTENT_SERIES");
-    		_loadTcCodeAndCallBack("1311", "1310","3031","cusSource", "INTENT_LEVEL","oemCusSource");
-    	},"fm");
-	}else{
-		groupSalesConsultant = "all";
-		_loadSeries("INTENT_SERIES");
-		_loadTcCodeAndCallBack("1311", "1310","3031","cusSource", "INTENT_LEVEL","oemCusSource");
-	}
-	
-	var menuType = UrlParm.parm("menuType");
-	if(menuType == "4") {
-		$("#backPage").attr("onClick","_mainPage(4);");
-	}
-	var isGjList = UrlParm.parm("isGjList");//是否是通过跟进页面点击进的报表
-	var gjUrl = "gj_list.html?menuType=4";
-	if(isGjList == "1"){
-		gjUrl = "gj_list.html";
-	}
-	$("#tsNoDealNum").click(function(){
-		_toPage(gjUrl);
-	});
-});
+
+			.bordered th {
+				background: #1790E4;
+				color: #fff;
+				text-shadow: none;
+				font-size: 16px;
+				text-indent: 2px;
+			}
+			#tb_query {
+				transition-property:left;
+				transition-duration:0.4s;	
+				-webkit-transition-property:left;
+				-webkit-transition-duration: 0.4s;
+			}
+		</style>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;">
+		<!-- <script type="text/javascript" src="js/detail_head.js?_menu_name=今日待跟进报表&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" -->
+		<script type="text/javascript" src="js/detail_head.js?_menu_name=今日待跟进报表&_is_loading=1"
+		 id="detail_head_js"></script>
+		<form id="fm" method="post">
+			<div style="display: none;" id="paramDiv">
+				<input type="hidden" id="isOem" name="isOem" value="" />
+				<input type="hidden" id="cusSource" name="cusSource" value="" />
+				<input type="hidden" id="oemCusSource" name="oemCusSource" value="" />
+				<input type="hidden" id="INTENT_LEVEL" name="INTENT_LEVEL" value="" />
+				<input type="hidden" id="INTENT_SERIES" name="INTENT_SERIES" value="" />
+			</div>
+			<div class="cardexplain xf-res-cardexplain">
+				<!--<ul class="round xf-round" style="border:none;display: none;">
+					<table id="tb_query" width="100%">
+						<tr class="biaoge">
+							<td>是否OEM来源</td>
+							<td>
+								<li class="nob">
+									<select name="isOem" id="isOem" class="download dropdown-select">
+										<option value="">-请选择-</option>
+										<option value="10041001">是</option>
+										<option value="10041002">否</option>
+									</select>
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge" id="cusSource_Tr" style="display: none;">
+							<td>客户来源</td>
+							<td>
+								<li class="nob">
+									<select name="cusSource" id="cusSource" class="download dropdown-select" search="show" onchange="queryPt();">
+										<option value="">-请选择-</option>
+									</select>
+									<input name="cusSource_h" id="cusSource_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge" id="oemCusSource_Tr" style="display: none;">
+							<td>OEM客户来源 </td>
+							<td>
+								<li class="nob">
+									<select id="oemCusSource" name="oemCusSource" class="download dropdown-select" search="show" onchange="queryPt();">
+										<option value="">-请选择-</option>
+									</select>
+									<input name="oemCusSource_h" id="oemCusSource_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>意向级别</td>
+							<td>
+								<li class="nob">
+									<select id="INTENT_LEVEL" name="INTENT_LEVEL" class="download dropdown-select" search="show" onchange="queryPt();">
+										<option value="">请选择</option>
+									</select>
+									<input name="INTENT_LEVEL_h" id="INTENT_LEVEL_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>车系</td>
+							<td>
+								<li class="nob">
+									<select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select" search="show" onchange="queryPt();">
+										<option value="">请选择</option>
+									</select>
+									<input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center" height="60">
+								<li class="nob xf-nob flex-box">
+									<div class="cell-1">
+										<input id="clearQueryBtn" value="清除筛选" type="button" class="clear-btn" onClick="alert('执行清除筛选条件逻辑')">
+									</div>
+									<div class="cell-1">
+										<input id="queryBtn" value="查询" type="button" class="submit"  onClick="hidePop();">
+									</div>
+								</li>
+							</td>
+						</tr>
+					</table>
+				</ul>-->
+				<div class="xf-res-rp ">
+
+					<table width="100%" style="background-color:white;">
+						<tr>
+							<td style="width:50%;">
+								<input name="topBtn" id="tsNoDealNum" class="button" style="  background-color:white; width: 90% ;height: 30px;border: 0px;"
+								 value="   跟进邀约    " type="button">
+							</td>
+							<td style="width:50%;position: relative;" class="active">
+								<input name="topBtn" class="button" onclick="BEDate('followToday.html')" style=" background-color:white; width: 90% ; height: 30px;border: 0px; "
+								 value="  今日待跟进  " type="button">
+								<!-- 向上的三角形 -->
+								<span class="icon-sjarrow"></span>
+								<!-- 帮助 -->
+								<span class="help-alert mui-icon mui-icon-info" onclick="showHelp()"></span>
+							</td>
+						</tr>
+						<!-- <tr style="height: 3px;">
+						<td style="width:50%;" bgcolor="#FFFF00">
+
+						</td>
+						<td style="width:50%;">
+
+						</td>
+					</tr> -->
+					</table>
+				</div>
+
+				</ul>
+				<div class="cardexplain xf-res-cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
+					<form action="javascript:;" method="post">
+						<div class="tab-pane active" id="panel-1">
+							<ul class="round">
+								<table class="bordered" style="background-color: white;">
+									<thead>
+										<tr class="biaoge">
+											<th width="20%" nowrap="nowrap" style="text-align: center;">顾问</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">超期</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;" onclick="sort('ygj')">应跟进</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">已跟进</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;" onclick="sort('dgj')">待跟进</th>
+
+										</tr>
+									</thead>
+									<tbody id="complaintReport">
+									</tbody>
+								</table>
+							</ul>
+						</div>
+					</form>
+				</div>
+	</body>
+	<script type="text/javascript">
+		var groupSalesConsultant = null;
+		var sortFlag = "dgj";
+		$(document).ready(function() {
+			var isOem = $("#isOem").val();
+			if (isOem == '10041001') {
+				$("#cusSource_Tr").hide();
+				$("#oemCusSource_Tr").show();
+			} else if (isOem == "10041002") {
+				$("#cusSource_Tr").show();
+				$("#oemCusSource_Tr").hide();
+			} else {
+				$("#cusSource_Tr").hide();
+				$("#oemCusSource_Tr").hide();
+			}
+			$("#isOem").change(function() {
+				oemChange();
+			});
+			var IS_MANAGER = getLocalStorage("IS_MANAGER");
+			if (IS_MANAGER == 10041001) { //销售经理
+				var url = httpUrlHead + "PotcusAchieveService/querySalesConsultantList.json?" + httpUrlEnd;
+				makeFormCall(url, function(json) {
+					if (json.tsList != null && json.tsList.length > 0) {
+						groupSalesConsultant = json;
+					}
+//					_loadSeries("INTENT_SERIES");
+//					_loadTcCodeAndCallBack("1311", "1310", "3031", "cusSource", "INTENT_LEVEL", "oemCusSource");
+				}, "fm",true);
+			} else {
+				groupSalesConsultant = "all";
+//				_loadSeries("INTENT_SERIES");
+//				_loadTcCodeAndCallBack("1311", "1310", "3031", "cusSource", "INTENT_LEVEL", "oemCusSource");
+			}
+
+			var menuType = UrlParm.parm("menuType");
+			if (menuType == "4") {
+				$("#backPage").attr("onClick", "_mainPage(4);");
+			}
+			var isGjList = UrlParm.parm("isGjList"); //是否是通过跟进页面点击进的报表
+			var gjUrl = "gj_list.html?menuType=4";
+			if (isGjList == "1") {
+				gjUrl = "gj_list.html";
+			}
+			$("#tsNoDealNum").click(function() {
+				_toPage(gjUrl);
+			});
+		});
 		
-	//自定义回调刷新方法
-	window.addEventListener("backFunction",function(event){
-		queryPt();
-	})
-	
-	function queryPt()
-	{
-	           var CUS_SOURCE = document.getElementById('cusSource').value;
-	           var OEM_SOURCE = document.getElementById('oemCusSource').value;
-	           var INTENT_LEVEL = document.getElementById('INTENT_LEVEL').value;
-	           var INTENT_SERIES = document.getElementById('INTENT_SERIES').value;
-		        var complaintReport = document.getElementById("complaintReport");
-				var url1 = httpUrlHead + "ComplaintServiceApp/queryFODate.json?CUS_SOURCE="+CUS_SOURCE+"&OEM_SOURCE="+OEM_SOURCE+"&INTENT_LEVEL="+INTENT_LEVEL+"&INTENT_SERIES="+INTENT_SERIES +"&sortFlag="+sortFlag+"&"+httpUrlEnd;
-				makeFormCall(url1,function(json){
-				  $("#complaintReport").html("");
-				   if(json.list.length == 0)
-				   {
-				      var newRow = complaintReport.insertRow(0);
-				     var newCell = newRow.insertCell(0);
-				     newCell.innerHTML ="无数据";
-				     newCell = newRow.insertCell(1);
-				     newCell.innerHTML ="0";
-				      newCell = newRow.insertCell(2);
-				     newCell.innerHTML ="0";
-				      newCell = newRow.insertCell(3);
-				     newCell.innerHTML ="0";
-				      newCell = newRow.insertCell(4);
-				     newCell.innerHTML ="0";
-				   }
-				    var na = "'";
-				    var url = "";
-					for(var i = 0; i < json.list.length;i++) {
-						var detail = json.list[i];
-						var newRow = complaintReport.insertRow(i);
-						
-				    var newCell = newRow.insertCell(0);
-				    var isInGroup = isInGroupFc(detail.SALES_CONSULTANT);
-					newCell.innerHTML =detail.SALES_CONSULTANT;
+		function oemChange(){
+			if ($("#isOem").val() == '10041001') {
+				$("#cusSource").val("");
+				$("#cusSource_h").val("");
+				$("#cusSource_Tr").hide();
+				$("#oemCusSource_Tr").show();
+			} else if ($("#isOem").val() == "10041002") {
+				$("#oemCusSource").val("");
+				$("#oemCusSource_h").val("");
+				$("#cusSource_Tr").show();
+				$("#oemCusSource_Tr").hide();
+			} else {
+				$("#cusSource").val("");
+				$("#oemCusSource").val("");
+				$("#cusSource_h").val("");
+				$("#oemCusSource_h").val("");
+				$("#cusSource_Tr").hide();
+				$("#oemCusSource_Tr").hide();
+			}
+		}
+
+		//自定义回调刷新方法
+		window.addEventListener("backFunction", function(event) {
+			queryPt();
+		})
+
+		function queryPt() {
+			var CUS_SOURCE = document.getElementById('cusSource').value;
+			var OEM_SOURCE = document.getElementById('oemCusSource').value;
+			var INTENT_LEVEL = document.getElementById('INTENT_LEVEL').value;
+			var INTENT_SERIES = document.getElementById('INTENT_SERIES').value;
+			var complaintReport = document.getElementById("complaintReport");
+			var url1 = httpUrlHead + "ComplaintServiceApp/queryFODate.json?CUS_SOURCE=" + CUS_SOURCE + "&OEM_SOURCE=" +
+				OEM_SOURCE + "&INTENT_LEVEL=" + INTENT_LEVEL + "&INTENT_SERIES=" + INTENT_SERIES + "&sortFlag=" + sortFlag + "&" +
+				httpUrlEnd;
+			makeFormCall(url1, function(json) {
+				$("#complaintReport").html("");
+				if (json.list.length == 0) {
+					var newRow = complaintReport.insertRow(0);
+					var newCell = newRow.insertCell(0);
+					newCell.innerHTML = "无数据";
 					newCell = newRow.insertCell(1);
-					
-					if(detail.CQDGJ == '0' )
-					{
-					  newCell.innerHTML =detail.CQDGJ;
-					}else
-					{
-					    if(detail.SALES_CONSULTANT == '待分配')
-					    {
-							 url = "xs_allot_list.html?";
-			        		 newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+CUS_SOURCE+na+','+na+INTENT_LEVEL+na+','+na+INTENT_SERIES+na+',3,'+na+detail.SALES_CONSULTANT+na+')">'+detail.CQDGJ+'</a>';
-					    }else
-					    {
+					newCell.innerHTML = "0";
+					newCell = newRow.insertCell(2);
+					newCell.innerHTML = "0";
+					newCell = newRow.insertCell(3);
+					newCell.innerHTML = "0";
+					newCell = newRow.insertCell(4);
+					newCell.innerHTML = "0";
+				}
+				var na = "'";
+				var url = "";
+				for (var i = 0; i < json.list.length; i++) {
+					var detail = json.list[i];
+					var newRow = complaintReport.insertRow(i);
+
+					var newCell = newRow.insertCell(0);
+					var isInGroup = isInGroupFc(detail.SALES_CONSULTANT);
+					newCell.innerHTML = detail.SALES_CONSULTANT;
+					newCell = newRow.insertCell(1);
+
+					if (detail.CQDGJ == '0') {
+						newCell.innerHTML = detail.CQDGJ;
+					} else {
+						if (detail.SALES_CONSULTANT == '待分配') {
+							url = "xs_allot_list.html?";
+							newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+								',' + na + CUS_SOURCE + na + ',' + na + INTENT_LEVEL + na + ',' + na + INTENT_SERIES + na + ',3,' + na +
+								detail.SALES_CONSULTANT + na + ')">' + detail.CQDGJ + '</a>';
+						} else {
 							url = "gj_list.html?";
-							if(isInGroup){
-			        			newCell.innerHTML =  '<a style=" text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+CUS_SOURCE+na+','+na+INTENT_LEVEL+na+','+na+INTENT_SERIES+na+',4,'+na+detail.SALES_CONSULTANT+na+')">'+detail.CQDGJ+'</a>';
-							}else{
+							if (isInGroup) {
+								newCell.innerHTML = '<a style=" text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+									',' + na + CUS_SOURCE + na + ',' + na + INTENT_LEVEL + na + ',' + na + INTENT_SERIES + na + ',4,' + na +
+									detail.SALES_CONSULTANT + na + ')">' + detail.CQDGJ + '</a>';
+							} else {
 								newCell.innerHTML = detail.CQDGJ;
 							}
-					    }
+						}
 					}
 					newCell = newRow.insertCell(2);
-					newCell.innerHTML =detail.DYGJ;
+					newCell.innerHTML = detail.DYGJ;
 					newCell = newRow.insertCell(3);
-				    url = "xs_list.html?";
-				    if(detail.YGJ == '0')
-				    {
-				      newCell.innerHTML = detail.YGJ
-				    }else
-				    {
-				    	if(false){
-				    		newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+CUS_SOURCE+na+','+na+INTENT_LEVEL+na+','+na+INTENT_SERIES+na+',0,'+na+detail.SALES_CONSULTANT+na+')">'+detail.YGJ+'</a>';
-				    	}else{
-				    		newCell.innerHTML = detail.YGJ;
-				    	}
-				    }
+					url = "xs_list.html?";
+					if (detail.YGJ == '0') {
+						newCell.innerHTML = detail.YGJ
+					} else {
+						if (false) {
+							newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+								',' + na + CUS_SOURCE + na + ',' + na + INTENT_LEVEL + na + ',' + na + INTENT_SERIES + na + ',0,' + na +
+								detail.SALES_CONSULTANT + na + ')">' + detail.YGJ + '</a>';
+						} else {
+							newCell.innerHTML = detail.YGJ;
+						}
+					}
 					newCell = newRow.insertCell(4);
-					if(detail.DGJ == '0' )
-					{
-					  newCell.innerHTML =detail.DGJ;
-					}else
-					{
-					    if(detail.SALES_CONSULTANT == '待分配')
-					    {
-							 url = "xs_allot_list.html?";
-			        		 newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+CUS_SOURCE+na+','+na+INTENT_LEVEL+na+','+na+INTENT_SERIES+na+',1,'+na+detail.SALES_CONSULTANT+na+')">'+detail.DGJ+'</a>';
-							
-					    }else
-					    {
-							 url = "gj_list.html?";
-							 if(isInGroup){
-			        		 	newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+CUS_SOURCE+na+','+na+INTENT_LEVEL+na+','+na+INTENT_SERIES+na+',2,'+na+detail.SALES_CONSULTANT+na+')">'+detail.DGJ+'</a>';
-							 }else{
-								 newCell.innerHTML = detail.DGJ;
-							 }
-					    }
+					if (detail.DGJ == '0') {
+						newCell.innerHTML = detail.DGJ;
+					} else {
+						if (detail.SALES_CONSULTANT == '待分配') {
+							url = "xs_allot_list.html?";
+							newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+								',' + na + CUS_SOURCE + na + ',' + na + INTENT_LEVEL + na + ',' + na + INTENT_SERIES + na + ',1,' + na +
+								detail.SALES_CONSULTANT + na + ')">' + detail.DGJ + '</a>';
+
+						} else {
+							url = "gj_list.html?";
+							if (isInGroup) {
+								newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+									',' + na + CUS_SOURCE + na + ',' + na + INTENT_LEVEL + na + ',' + na + INTENT_SERIES + na + ',2,' + na +
+									detail.SALES_CONSULTANT + na + ')">' + detail.DGJ + '</a>';
+							} else {
+								newCell.innerHTML = detail.DGJ;
+							}
+						}
 					}
+				}
+			}, "fm", true, true);
+		}
+
+		function selcount(url, CUS_SOURCE, INTENT_LEVEL, INTENT_SERIES, IS_STA, SALES_CONSULTANT) {
+			_toPage(url + "menuType=4&CUS_SOURCE=" + CUS_SOURCE + "&INTENT_LEVEL=" + INTENT_LEVEL + "&INTENT_SERIES=" +
+				INTENT_SERIES + "&IS_STA=" + IS_STA + "&SALES_CONSULTANT=" + SALES_CONSULTANT);
+		}
+
+		function BEDate(val) {
+			_toPage(val);
+		}
+		//判断销售顾问是否在分组中	
+		function isInGroupFc(name) {
+			if (name == "待分配") {
+				return true;
+			}
+			if (groupSalesConsultant == "all") {
+				return true;
+			}
+			if (groupSalesConsultant == null) {
+				return false;
+			} else {
+				for (var i = 0; i < groupSalesConsultant.tsList.length; i++) {
+					if (groupSalesConsultant.tsList[i].NAME == name) {
+						return true;
 					}
-				},"fm",true,true);
-	}
-	
-   function selcount(url,CUS_SOURCE,INTENT_LEVEL,INTENT_SERIES,IS_STA,SALES_CONSULTANT )
-   {
-     _toPage( url+"menuType=4&CUS_SOURCE="+CUS_SOURCE+"&INTENT_LEVEL="+INTENT_LEVEL+"&INTENT_SERIES="+INTENT_SERIES+"&IS_STA="+IS_STA+"&SALES_CONSULTANT="+SALES_CONSULTANT);
-   }
-   function BEDate(val)
-   {
-	   _toPage(val);
-   }
-   //判断销售顾问是否在分组中	
-   function isInGroupFc(name){
-	   if(name == "待分配"){
-		   return true;
-	   }
-	   if(groupSalesConsultant == "all"){
-		   return true;
-	   }
-	   if(groupSalesConsultant == null){
-		   return false;
-	   }else{
-		   for(var i = 0;i < groupSalesConsultant.tsList.length;i++) {
-			   if(groupSalesConsultant.tsList[i].NAME == name){
-				   return true;
-			   }
-		   }
-		   return false;
-	   }
-   }
-   
-    function showHelp(){
-		var alertMsg = ""+
-		"<div style='text-align:left;'>"+
-			"<div>超期：已超期的线索</div>"+
-			"<div>应跟进：当天应跟进的线索</div>"+
-			"<div>已跟进：当天已跟进的线索</div>"+
-			"<div>待跟进：当天待跟进的线索</div>"+
-		"</div>";
-		MuiAlert(alertMsg);
-	}
-    
-    function sort(flag) {
-    		if(sortFlag != flag){
-    			sortFlag = flag;
-    			queryPt();
-    		}
-    		
-    }
-   
-</script>
+				}
+				return false;
+			}
+		}
+
+		function showHelp() {
+			var alertMsg = "" +
+				"<div style='text-align:left;'>" +
+				"<div>超期：已超期的线索</div>" +
+				"<div>应跟进：当天应跟进的线索</div>" +
+				"<div>已跟进：当天已跟进的线索</div>" +
+				"<div>待跟进：当天待跟进的线索</div>" +
+				"</div>";
+			MuiAlert(alertMsg);
+		}
+
+		function sort(flag) {
+			if (sortFlag != flag) {
+				sortFlag = flag;
+				queryPt();
+			}
+
+		}
+	</script>
 </html>

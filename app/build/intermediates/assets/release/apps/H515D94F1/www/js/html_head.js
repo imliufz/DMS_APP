@@ -41,7 +41,7 @@ var writeHtml = ''+
 '<script type="text/javascript" src="js/jquery-html5Validate-min.js"></script>'+
 '<script type="text/javascript" src="js/xlMui.js"></script>'+
 '<script type="text/javascript" src="js/xlAjax.js"></script>'+
-'<script type="text/javascript" src="js/xlpage.js"></script>'+
+//'<script type="text/javascript" src="js/xlpage.js"></script>'+
 '<script type="text/javascript" src="js/layer/layer.js"></script>'+
 '<script type="text/javascript" src="js/mui.picker.min.js"></script>'
 

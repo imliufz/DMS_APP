@@ -16,8 +16,8 @@ android {
         minSdkVersion 14
         targetSdkVersion 21 //建议此属性值设为21 io.dcloud.PandoraEntry 作为apk入口时   必须设置 targetSDKVersion>=21 沉浸式才生效
 
-        versionCode 56
-        versionName "5.1"
+        versionCode 57
+        versionName "5.2"
         multiDexEnabled true
 
         resValue("string", "growingio_project_id", "9666d5bacc0ca947")

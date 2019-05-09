@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="js/html_head.js"></script>
 <link href="css/index.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
 <title>战败报表</title>
 <style type="text/css">
 	.bordered td{
@@ -90,6 +91,14 @@ canvas {border:1px solid #4c4c4c;}
     <!-- 菜单 -->
 </body>
 <script type="text/javascript">
+var se_finalStatus = 1;
+var se_loadStatus = 0;
+var newSelects = [{
+		id: 'oemCusSource',
+		title: '车系',
+		onChange: 'queryPt'
+	}
+];
 _loadSeries("oemCusSource");
  var nextDate = _addDate(new Date(), 1);
  var bigin = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1);

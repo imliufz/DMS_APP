@@ -3,139 +3,70 @@
     <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript" src="js/html_head.js"></script>
+        <!-- 新样式引入start -->
+		<script type="text/javascript" src="js/html_head_res.js"></script>
+		<script src="js/resJs/set_allot_list.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 新样式引入end -->
 		<title>线索分配</title>
+		<style type="text/css">
+			.gwBtn {
+				background-color: white;
+				color: rgba(23,144,228);
+				border: 0.2px solid #1790E4;
+				border-bottom-left-radius: 20px;
+				border-top-left-radius: 20px;
+				font-size: 14px;
+				margin-right: 0px;
+			}
+			.fpBtn {
+				background-color: #1790E4;
+				color: white;
+				border: 0.2px solid #1790E4;
+				border-bottom-right-radius: 20px;
+				border-top-right-radius: 20px;
+				font-size: 14px;
+				margin-left: -5px;
+				margin-right: 5px;
+			}
+		</style>
     </head>
     <body onselectstart="return true;" ondragstart="return false;" onLoad="loadForm();">
-<div class="topBar" id="top1">
+<!--<div class="topBar" id="top1">
 	<div class="l"><a  class="arrow"  id="mainPage"></a></div>
 	<h1>线索分配</h1>
 	<div class="r" id="_dt_right_menu">		
-		<a href="javascript:ToUrl('sales_consultant_list.html')" id="_dt_right_btntype" style="background-image: url(&quot;&quot;);"><span style="font-size:16px;">顾问管理</span></a>	
+		
 	</div>
-</div>
-<div class="topBar" id="top2" style="display: none">
-	<div class="l"><a class="arrow" onclick="showDetail()" ></a></div>
-	<h1>线索明细</h1>
-</div>
-<div id="_showContentDiv1">
+</div>-->
+<script type="text/javascript" src="js/detail_head.js?_menu_name=线索分配" id="detail_head_js"></script>
     <form id="fm" method="post">
     <input type="hidden" id="status" name="status" value="30331001,30331003,30331004"/>
     <input type="hidden" id="noStay" name="noStay" value="1"/>
-	<div class="cardexplain">
-	<ul class="round">
-        <table id="tb_query">
-			<tr class="biaoge">
-                    <td>姓名/手机</td>
-                    <td><li class="nob">
-                            <input type="text" id="customerNamePhone" name="customerNamePhone" value="" placeholder="客户姓名/手机号码" class="px" />
-                        </li>    
-                        <input type="hidden" id="CUS_SOURCE01" name="CUS_SOURCE01" value="" />
-                        <input type="hidden" id="OEM_SOURCE01" name="OEM_SOURCE01" value="" />
-                        <input type="hidden" id="INTENT_LEVEL01" name="INTENT_LEVEL01" value="" />
-                        <input type="hidden" id="INTENT_SERIES01" name="INTENT_SERIES01" value="" />
-                        <input type="hidden" id="IS_STA01" name="IS_STA01" value="" />   
-                         <input type="hidden" id="failDateBegin01" name="failDateBegin01" value="" />
-                        <input type="hidden" id="failDateEnd01" name="failDateEnd01" value="" />
-                        <input type="hidden" id="CLUE_SOURCE01" name="CLUE_SOURCE01" value="" />
-                        <input type="hidden" id="IS_JS01" name="IS_JS01" value="" />
-                        <input type="hidden" id="SALES_CONSULTANT01" name="SALES_CONSULTANT01" value="" />
-                        
-                     </td>
-			</tr>
-			<tr class="biaoge">
-						<td>意向级别</td>
-						<td>
-							<li class="nob">
-								<input type="text" id="intentLevel_show" name="intentLevel_show"  placeholder="意向级别"  value="" class="px"   readonly="readonly"/>
-						 	 <input type="hidden" id="intentLevel" name="intentLevel" value="" />
-							</li>
-						</td>
-					<tr>
-<tr class="biaoge">
-  <td>是否分配</td>
-  <td><li class="nob">
-						<select name="isFp" id="isFp" class="download dropdown-select" >
-							<option value="10041001">是</option>
-							<option value="10041002" selected>否</option>
-						</select>
-					</li>  </td><tr>
-              <tr class="biaoge">
-				<td>选择顾问 </td>
-                 <td>
-	                    <li class="nob">
-	                        <select name="salesConsultant" id="salesConsultant" class="download dropdown-select" >
-	                            <option value="">选择顾问</option>
-	                        </select>
-	                    </li>	                </td>
-			</tr>
-			<tr class="biaoge">
-                 <td>是否OEM来源 </td>
-                 <td><li class="nob">
-						<select name="isOem" id="isOem" class="download dropdown-select" >
-							<option value="">-请选择-</option>
-							<option value="10041001">是</option>
-							<option value="10041002">否</option>
-						</select>
-					</li>   </td>
-			</tr>
-			<tr class="biaoge" id="cusSource_Tr" style="display: none;">
-						<td>客户来源</td>
-						<td>
-							<li class="nob">
-								<select name="cusSource" id="cusSource" class="download dropdown-select" >
-									<option value="">-请选择-</option>
-								</select>
-							</li>
-						</td>
-					</tr>
-					<tr id="oemCusSource_Tr" style="display: none;">
-						<td>OEM客户来源</td>
-						<td>
-							<li class="nob">
-								<select id="oemCusSource" name="oemCusSource" class="download dropdown-select" >
-									<option value="">-请选择-</option>
-								</select>
-							</li>
-						</td>
-					</tr>
-			<tr class="biaoge">
-				<td>时间类型 </td>
-			    <td><li class="nob">
-                           <select name="dataType" id="dataType" class="download dropdown-select"  onchange="dateTypeChange(this.value)" >
-                           	   <option value="">-请选择-</option>
-                           	   <option value="1">计划时间</option>
-                           	   <option value="2">下发时间</option>
-                           	   <option value="3">创建时间</option>
-                           </select>
-                       </li>  </td>
-			</tr>
-            <tr class="biaoge"  name="dateTr" style="display: none;">
-				<td>开始日期</td>
-				<td>
-					<li class="nob">
-						<input name="startDate" id="startDate" value="" type="date" class="px"  placeholder="开始日期" />
-                  </li>				</td>
-			</tr>
-			<tr class="biaoge"  name="dateTr" style="display: none;">
-				<td>结束日期</td>
-				<td>
-					<li class="nob">
-						<input name="endDate" id="endDate" value="" type="date" class="px"  placeholder="结束日期" />
-                  </li>				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center" height="60">
-					<li class="nob">
-						<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="queryPt();">
-					</li>
-				</td>
-			</tr>
-        </table>
-		<li class="shouqu" id="txt_query" onClick="_showQuery();changeSel();">收起</li>
-	</ul>
+    <input type="hidden" id="CUS_SOURCE01" name="CUS_SOURCE01" value="" />
+    <input type="hidden" id="OEM_SOURCE01" name="OEM_SOURCE01" value="" />
+    <input type="hidden" id="INTENT_LEVEL01" name="INTENT_LEVEL01" value="" />
+    <input type="hidden" id="INTENT_SERIES01" name="INTENT_SERIES01" value="" />
+    <input type="hidden" id="IS_STA01" name="IS_STA01" value="" />   
+     <input type="hidden" id="failDateBegin01" name="failDateBegin01" value="" />
+    <input type="hidden" id="failDateEnd01" name="failDateEnd01" value="" />
+    <input type="hidden" id="CLUE_SOURCE01" name="CLUE_SOURCE01" value="" />
+    <input type="hidden" id="IS_JS01" name="IS_JS01" value="" />
+    <input type="hidden" id="SALES_CONSULTANT01" name="SALES_CONSULTANT01" value="" />
+    <div style="display: none;" id="paramDiv">
+		<input type="hidden" id="customerNamePhone" name="customerNamePhone" value="" />
+		<input type="hidden" id="intentLevel" name="intentLevel" value="" />
+		<input type="hidden" id="isFp" name="isFp" value="" />
+		<input type="hidden" id="salesConsultant" name="salesConsultant" value="" />
+		<input type="hidden" id="isOem" name="isOem" value="" />
+		<input type="hidden" id="cusSource" name="cusSource" value="" />
+		<input type="hidden" id="oemCusSource" name="oemCusSource" value="" />
+		<input type="hidden" id="dataType" name="dataType" value="" />
+		<input type="hidden" id="startDate" name="startDate" value="" />
+		<input type="hidden" id="endDate" name="endDate" value="" />
+		<input type="hidden" id="salesConsultantSel" name="salesConsultantSel" value="" />
 	</div>
 	</div>
-	<div id="_showContentDiv3">
+	<!--<div id="_showContentDiv3">
         <ul class="round">
             <table>
                 <tr >
@@ -160,363 +91,45 @@
                 </tr>
             </table>
         </ul>
-    </div>
-    <div style="margin-top: 80px;" id="rp">
-		<div class="mui-content">
-			<div style="padding: 2px 0px;">
-				<div id="segmentedControl" class="mui-segmented-control">
-					<a class="mui-control-item mui-active" href="#tabs1" id="xsFp">待分配线索(<span id="xsFpNum">...</span>)</a>
-					<a class="mui-control-item" href="#tabs2" id="wldFp">未留档待分配(<span id="wldFpNum">...</span>)</a>
-				</div>
-			</div>
+    </div>-->
+	<div id="rp" class="xf-res-rp">
+		<table width="100%" id="reportTable">
+			<tr>
+				<td style="width:50%;position: relative;" class="active">
+					<a href="#" onclick="queryFilter(this,1)">待分配线索(<span id="xsFpNum">...</span>)</a>
+					<!-- 向上的三角形 -->
+					<span class="icon-sjarrow"></span>
+				</td>
+				<td style="width:50%;">
+					<a href="#" onclick="queryFilter(this,2)">未留档待分配(<span id="wldFpNum">...</span>)</a>
+					 <span class="icon-sjarrow" style="display: none;right:25%"></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+    <div id="tabList" class="xf-res-tabList" style="margin-top: 88px;"></div>
+    <div style="width:100%;height: 60px;position: fixed;background-color: #f5f5f5;bottom: 0px;" class="list-label flex-box align-items-center">
+		<div class="mui-input-row mui-checkbox mui-left cell-5" style="margin-top: 10px;height: 40px;margin-left: -9px;">
+			<label style="margin-top: -2px;font-size: 16px;">全选/取消</label>
+			<input id="allCheck" name="allCheck"  type="checkbox" onclick="changeCheck(this)">
 		</div>
-	</div>
-    <div id="showprocess" style="width: 100%;height: 100%;display: none;margin-top: 50%;"></div>
-    <div class="cardexplain" id="_showContentDiv2" style="display: none;">
-    	<!--<IFRAME id="content" name="content" class="content" width=100%  height="100%" SRC="cluesDetail.html" ></IFRAME>-->
-    	<!--<object style="border:0px" type="text/x-scriptlet" data="cluesDetail.htm" width=100% height=30></object>-->
-		<!--<ul class="round">
-			<form id="fm" method="post">
-		<li class="title mb"><span class="none">基本信息</span></li>
-				<li class="nob">
-			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-				<tr class="biaoge">
-					<td width="30%">客户姓名</td>
-					<td><input name="customerName" class="px" id="customerName" value="" placeholder="请输入客户姓名" type="text" readonly="readonly"></td>
-				</tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-				<tr class="biaoge">
-					<td width="30%">手机号码</td>
-					<td><input name="contactorMobile" class="px" id="contactorMobile" value="" placeholder="请输入手机号码" type="tel" readonly="readonly"></td>
-				</tr>
-			</table>
-		</li>
-		<li class="title mb"><span class="none">意向信息</span></li>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">意向级别</td>
-				<td>
-					<select name="intentLevel" id="intentLevel" class="download dropdown-select-nosel" disabled></select>
-				</td>
-			  </tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">意向车系</td>
-				<td>
-					<select name="intentSeries" id="intentSeries" class="download dropdown-select-nosel" disabled="disabled">
-					</select>
-				</td>
-			  </tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">意向车型</td>
-				<td>
-					<select name="intentModel" id="intentModel" class="download dropdown-select-nosel" disabled>
-					</select>
-				</td>
-			  </tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">意向配置</td>
-				<td>
-					<select name="intentPackage" id="intentPackage" class="download dropdown-select-nosel" disabled>
-						
-					</select>
-				</td>
-			  </tr>
-			</table>
-		</li>
-        <li class="nob">
-            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%" >
-                <tr class="biaoge">
-                    <td width="30%">意向颜色</td>
-                    <td>
-                        <select name="color" id="color" class="download dropdown-select-nosel" disabled>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </li>
-		<li class="title mb"><span class="none">其它信息</span></li>
-		<li class="nob">
-            <input name="formhash" id="formhash" value="2be3071a" type="hidden">
-            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr class="biaoge">
-                    <td width="30%">销售顾问</td>
-                    <td><input name="soldBy" class="px" id="soldBy" value="" type="text" readonly></td>
-                </tr>
-            </table>
-        </li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">客户来源</td>
-				<td>
-					<select name="cusSourceDetail" id="cusSourceDetail" class="download dropdown-select-nosel" disabled="disabled">
-						
-					</select>
-				</td>
-			  </tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">了解途径</td>
-				<td>
-					<select name="mediaType" id="mediaType" class="download dropdown-select-nosel" disabled>
-					</select>
-				</td>
-			  </tr>
-			</table>
-		</li>
-		
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">渠道细分</td>
-				<td>
-					<select name="mediaDetail" id="mediaDetail" class="download dropdown-select-nosel" disabled>
-						
-					</select>
-				</td>
-			  </tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-					<td>活动代码</td>
-					<td>
-						<input name="CAMPAIGN_CODE" class="px" id="CAMPAIGN_CODE" type="text" disabled="disabled">
-					</td>
-				</tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-				<tr class="biaoge">
-					<td width="30%">活动名称</td>
-					<td>
-						<input name="CAMPAIGN_NAME" class="px" id="CAMPAIGN_NAME" type="text" disabled="disabled">
-					</td>
-				</tr>
-			</table>
-		</li>
-		<li class="nob">
-			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr class="biaoge">
-				<td width="30%">是否试乘试驾</td>
-				<td>
-                    <select name="isPersonDriveCar" id="isPersonDriveCar" class="download dropdown-select-nosel" disabled>
-                    </select>
-                </td>
-			  </tr>
-			</table>
-		</li>
-        <li class="nob">
-            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr class="biaoge">
-                    <td width="30%">到店次数</td>
-                    <td><input name="num" class="px" id="num" value="" placeholder="" type="text" readonly="readonly"></td>
-                </tr>
-            </table>
-        </li>
-        <li class="nob">
-            <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr class="biaoge">
-                    <td width="30%">备注</td>
-                    <td><textarea name="remark"  id="remark"   readonly="readonly"   style="width:90%;height:90px;"></textarea></td>
-                </tr>
-            </table>
-        </li>
-		<li class="title mb"><span class="none">战败信息</span></li>
-		<li class="nob">
-                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr class="biaoge">
-                        <td width="30%">战败品牌</td>
-                        <td>
-                            <select name="failbranName" id="failbranName" class="download dropdown-select-nosel" disabled>
-                               
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-            <li class="nob">
-                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr class="biaoge">
-                        <td width="30%">战败车系</td>
-                        <td>
-                            <select name="failSeriesId" id="failSeriesId" class="download dropdown-select-nosel" disabled>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-			<li class="nob">
-                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr class="biaoge">
-                        <td width="30%">战败车型</td>
-                        <td>
-                            <select name="failModel" id="failModel" class="download dropdown-select-nosel" disabled>
-							</select>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-			<li class="nob">
-                <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tr class="biaoge">
-                        <td width="30%">战败原因</td>
-                        <td>
-                            <select name="failReason" id="failReason" class="download dropdown-select-nosel" disabled>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-      </form>
-		</ul>
-		<ul class="round">
-			<li class="title mb"><span class="none">跟进历史</span></li>
-			<table class="bordered">
-				<thead>
-				<tr class="biaoge">
-					<th width="25%">跟进时间</th>
-					<th width="25%">促进级别</th>
-					<th width="50%">经过情形</th>
-				</tr>
-				</thead>
-				<tbody id="gjls">
-            	</tbody>
-			</table>
-		</ul>-->
-	</div>
-	<div id="queryLevelHtml" style="display: none;">
-		<table width="100%"  style="margin-top: 30%;">
-            	<tr class="biaoge">
-                    <td width="10%" align="center">H级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101001">
-                     </td>
-                     <td width="10%"  align="center">A级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101002">
-                     </td>
-                     <td width="10%"  align="center">B级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101003">
-                     </td>
-                </tr >
-                <tr class="biaoge">
-                    <td width="10%" align="center">C级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101004">
-                     </td>
-                     <td width="10%"  align="center">N级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101005">
-                     </td>
-                     <td width="10%"  align="center">F0级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101006">
-                     </td>
-                </tr >
-                <tr class="biaoge">
-                    <td width="10%" align="center">F级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101007">
-                     </td>
-                     <td width="10%"  align="center">O级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101008">
-                     </td>
-                     <td width="10%"  align="center">D级</td>
-                    <td width="20%"  align="center">
-                            <input type="checkbox" name="level"  style="width: 20px;height: 20px;vertical-align:middle;" value="13101009">
-                     </td>
-                </tr >
-                <tr>
-					<td colspan="6" align="center" height="60">
-						<li class="nob">
-							<input value="确认选择" type="button" class="submit" style="width: 90%" onclick="closeQueryLevel()">
-						</li>
-					</td>
-				</tr>
-          </table>
-	</div>
-    <div id="tabList"></div>
+		<div class="text-right cell-6" style="margin-top: 10px;height: 40px;">
+			<button class="gwBtn" onclick="toGwgl()">顾问管理</button>
+			<button class="fpBtn" onclick="fpXs()">分配线索</button>
+		</div> 
+    </div>
 </form>
 </body>
 <script type="text/javascript">
-	var changeFlag = false;
-	var scrollHeight = 0;
 	$(document).ready(function() {
-		
-		$(":input").change(function(){
-			changeFlag=true;     
-		});
-		
-		$("select").change(function(){
-			changeFlag=true;     
-		});
-		
-		$("textarea").change(function(){
-			changeFlag=true;     
-		});
-		
-		$("#isOem").change(function() {
-    		if($("#isOem").val() == '10041001') {
-    			$("#cusSource").val("");
-    			$("#cusSource_Tr").hide();
-        		$("#oemCusSource_Tr").show();
-    		} else if($("#isOem").val() == "10041002") {
-    			$("#oemCusSource").val("");
-    			$("#cusSource_Tr").show();
-        		$("#oemCusSource_Tr").hide();
-    		} else {
-    			$("#cusSource").val("");
-    			$("#oemCusSource").val("");
-    			$("#cusSource_Tr").hide();
-        		$("#oemCusSource_Tr").hide();
-    		}
-    	});
-		$('#isFp').find('option:selected').css('color','red');
 		var menuType = UrlParm.parm("menuType");
 		$("#mainPage").click(function(){
 			_mainPage(menuType);
 		});
 		
-		$("#intentLevel_show").click(function(){
-			$("input[name='level']").attr("name","level_copy");
-			var queryLevelHtmlCopy = $("#queryLevelHtml").html();
-			$("input[name='level_copy']").attr("name","level");
-			var pageii = layer.open({
-    	    		type: 1,
-    	    		content: queryLevelHtmlCopy,
-    	    		style: 'position:fixed; left:0; top:0; width:100%; height:100%; border:none;'
-    		});
-    	});
 	});
 
 	
-	//加载tc_code
-	_loadTcCode("3031","1311","oemCusSource","cusSource");
 	 document.getElementById("CUS_SOURCE01").value = UrlParm.parm("CUS_SOURCE");
 	 document.getElementById("OEM_SOURCE01").value = UrlParm.parm("OEM_SOURCE0");
      document.getElementById("INTENT_LEVEL01").value = UrlParm.parm("INTENT_LEVEL");
@@ -526,7 +139,7 @@
      document.getElementById("failDateEnd01").value = UrlParm.parm("failDateEnd");
      document.getElementById("CLUE_SOURCE01").value = UrlParm.parm("CLUE_SOURCE");
      document.getElementById("IS_JS01").value = UrlParm.parm("IS_JS");
-      document.getElementById("SALES_CONSULTANT01").value = UrlParm.parm("SALES_CONSULTANT");
+     document.getElementById("SALES_CONSULTANT01").value = UrlParm.parm("SALES_CONSULTANT");
 
     function sleAllBox(val,status){
         var checkbox = document.getElementById(val);
@@ -550,32 +163,28 @@
         }
     }
 
-    /* function setDate(){
-        document.getElementById('actionDate').valueAsDate = new Date();
-    }
-    setDate(); */
 	
     //加载销售顾问
     function loadForm(){
     	$("#allotBack").click(function(){
     		_mainPage();
     	});
-    	var url = httpUrlHead+"PotcusAchieveService/querySalesConsultantList.json?isFp=1&"+httpUrlEnd;
-    	makeFormCall(url,function(json){
-    		if (json.tsList != null && json.tsList.length > 0) {
-    			var salesConsultant = document.getElementById("salesConsultant");
-    			var salesConsultantSel = document.getElementById("salesConsultantSel");
-				for(var i = 0;i < json.tsList.length;i++) {
-					salesConsultant.add(new Option(json.tsList[i].NAME,json.tsList[i].NAME));
-					salesConsultantSel.add(new Option(json.tsList[i].NAME,json.tsList[i].NAME));
-				}
-			} else {
-				MuiAlert("该分组下无销售顾问!");
-			}
-    	},"fm");
+//  	var url = httpUrlHead+"PotcusAchieveService/querySalesConsultantList.json?isFp=1&"+httpUrlEnd;
+//  	makeFormCall(url,function(json){
+//  		if (json.tsList != null && json.tsList.length > 0) {
+//  			var salesConsultant = document.getElementById("salesConsultant");
+//  			var salesConsultantSel = document.getElementById("salesConsultantSel");
+//				for(var i = 0;i < json.tsList.length;i++) {
+//					salesConsultant.add(new Option(json.tsList[i].NAME,json.tsList[i].NAME));
+//					salesConsultantSel.add(new Option(json.tsList[i].NAME,json.tsList[i].NAME));
+//				}
+//			} else {
+//				MuiAlert("该分组下无销售顾问!");
+//			}
+//  	},"fm");
     	
-    	queryPt();
-    	loadFpNum();//加载数量
+//  	queryPt();
+//  	loadFpNum();//加载数量
     }
     
     function loadFpNum(){
@@ -587,7 +196,7 @@
     }
     
     function queryPt(){
-    	_showQuery(1);
+    	/*_showQuery(1);
     	changeSel();
     	
     	var activeId = "";
@@ -603,229 +212,47 @@
     	} else {
     		var url = httpUrlHead+"HallReceptionService/queryHallReceptionQuery.json?"+httpUrlEnd;
 			_exe_query(url,"fm",true,"明细",true,"","_toUpdateOrDetailPageWld","SALES_CONSULTANT","INTENT_SERIES_PAGE","VISIT_TYPE_DESC","CUS_SOURCE_DESC");
-    	}
+    	}*/
 	}
     
 	var a='';
 	var b='';
     function _toUpdateOrDetailPage(id,tabType) {
-    	//记录点击明细之前的滑动高度
-//  	scrollHeight = $(document).scrollTop();
-//  	//点击明细之前先把跟进历史清空
-//  	$('#gjls').html("");
-////  	queryDetailData(id,tabType);
-//  	$('#_showContentDiv1').hide();
-//  	$('#_showContentDiv3').hide();
-//  	$('#_showContentDiv2').show();
-//  	$('#tabList').hide();
-//  	$('#top2').show();
-//  	$('#top1').hide();
-//  	$('html, body').animate({scrollTop:0}, 'fast');
 		ToUrl("potcusDetail.html?id="+id+"&tabType="+tabType);
 	}
-    
-    function showDetail() {
-    	$('#_showContentDiv1').show();
-    	$('#_showContentDiv3').show();
-    	$('#tabList').show();
-    	$('#_showContentDiv2').hide();
-    	$('#top1').show();
-    	$('#top2').hide();
-    	$('html, body').animate({scrollTop:scrollHeight}, 'fast');
-    }
-    
-    function queryDetailData(id,tabType) {
-    	//$("#showprocess").show();
-    	//$("#showprocess").append("<div style='text-align:center;' class='_nextLoad'><img src='static/img/wait.jpg' width='64' height='64'/></div>");
-		var url = httpUrlHead+"PotcusAchieveService/queryPotentialCustomerDetail.json?id="+id+"&tabType="+tabType+"&"+httpUrlEnd;
-		makeFormCall(url,function(json){
-			if(json.RESULT.maps != null && json.RESULT.maps.length > 0) {
-				var map = json.RESULT.maps[0];
-				document.getElementById("customerName").value = map.CUSTOMER_NAME;
-				document.getElementById("contactorMobile").value = map.CONTACTOR_MOBILE;
-				document.getElementById("intentLevel").add(new Option(map.INTENT_LEVEL_DESC,map.INTENT_LEVEL));
-				if (map.INTENT_SERIES != null && json.seriesList != null && json.seriesList.length > 0) {
-					var intentSeries = document.getElementById("intentSeries")
-					var selIndex = -1;
-					intentSeries.add(new Option("-请选择-",""));
-					
-					for ( var i = 0; i < json.seriesList.length; i++) {
-						
-						intentSeries.add(new Option(json.seriesList[i].GROUP_NAME,json.seriesList[i].GROUP_CODE));
-						if (map.INTENT_SERIES == json.seriesList[i].GROUP_CODE) {
-							selIndex = i;
-						}
-					}
-					if (selIndex != -1) {
-						intentSeries.options[selIndex+1].selected = "selected";
-					}
-				} else {
-					_loadSeries("intentSeries");
-				}
-				
-				if(map.INTENT_MODEL_DESC != null) {
-					document.getElementById("intentModel").add(new Option(map.INTENT_MODEL_DESC,map.INTENT_MODEL));					
-				}
-				if(map.INTENT_PACKAGE_DESC != null) {
-					document.getElementById("intentPackage").add(new Option(map.INTENT_PACKAGE_DESC,map.INTENT_PACKAGE));					
-				}
-				if (map.COLOR != null) {
-					document.getElementById("color").add(new Option(map.COLOR,map.COLOR));					
-				}
-				document.getElementById("soldBy").value = map.SOLD_NAME;
-				var sourceType = "1311";
-				if (map.CUS_SOURCE != null && map.CUS_SOURCE != "13111016") {//客户来源不为空,并且不为车厂下发	
-					document.getElementById("cusSourceDetail").setAttribute("defaultValue", map.CUS_SOURCE);
-				} else {
-					sourceType = "3031"
-					$("#cusSourceName").html("OEM客户来源");
-					document.getElementById("cusSourceDetail").setAttribute("defaultValue", map.CLUE_SOURCE);
-				}
-				document.getElementById("remark").value = map.REMARK;
-				if(map.MEDIA_TYPE_DESC != null) {
-					document.getElementById("mediaType").add(new Option(map.MEDIA_TYPE_DESC,map.MEDIA_TYPE));					
-				}
-				if (map.MEDIA_DETAIL_DESC != null) {
-					document.getElementById("mediaDetail").add(new Option(map.MEDIA_DETAIL_DESC,map.MEDIA_DETAIL));
-				}
-				document.getElementById("CAMPAIGN_CODE").value = map.CAMPAIGN_CODE;
-				document.getElementById("CAMPAIGN_NAME").value = map.CAMPAIGN_NAME;
-				if(map.IS_PERSON_DRIVER_CAR == "10041001") {
-					document.getElementById("isPersonDriveCar").add(new Option("是","10041001"));
-				} else {
-					document.getElementById("isPersonDriveCar").add(new Option("否","10041002"));
-				}
-				document.getElementById("num").value = map.ARRIVE_TIMES;
-				if (map.FAILBRAN_NAME != null) {
-					document.getElementById("failbranName").add(new Option(map.FAILBRAN_NAME,map.FAIL_SERIES_ID));
-				}
-				if(map.FAILSER_NAME != null) {
-					document.getElementById("failSeriesId").add(new Option(map.FAILSER_NAME,map.FAIL_SERIES_ID));					
-				}
-				if (map.FAIL_MODEL_DESC != null) {
-					document.getElementById("failModel").add(new Option(map.FAIL_MODEL_DESC,map.FAIL_MODEL));
-				}
-				if (map.FAIL_REASON_DESC != null) {
-					document.getElementById("failReason").add(new Option(map.FAIL_REASON_DESC,map.FAIL_REASON));
-				}
-				//加载跟进历史数据
-				if(json.details != null && json.details.length > 0) {
-					var gjls = document.getElementById("gjls");
-					for(var i = 0; i < json.details.length;i++) {
-						var detail = json.details[i];
-						var newRow = gjls.insertRow(i);
-						var newCell = newRow.insertCell(0);
-						newCell.align = "center";
-						newCell.innerHTML = detail.ACTION_DATE_STR;
-						
-						newCell = newRow.insertCell(1);
-						newCell.align = "center";
-						newCell.innerHTML = detail.NEXT_GRADE_DESC;
-						
-						newCell = newRow.insertCell(2);
-						newCell.align = "center";
-						newCell.innerHTML = detail.SCENE;
-					}
-				}
-				_loadTcCode(sourceType,"cusSourceDetail");
-				$('#_showContentDiv2').show();
-				//$('#showprocess').hide();
-				$("._nextLoad").remove();
-			}
-		},"fm",true);
-    }
-    
-    
 	
 	function fpFunc(){
 		//验证是否已经选择
-		var tabType_id_str = _getSelectStrs();
-		if (tabType_id_str == null || tabType_id_str == "") {
+		var checkedBoxs = $("input[name='checkBox']:checked")
+		if (checkedBoxs.length < 1) {
 			MuiAlert("请选择要分配的数据!");
+			hidePop();
 			return;
 		}
-		var salesConsultantSel = document.getElementById("salesConsultantSel").value;
-		if (salesConsultantSel == "") {
-			MuiAlert("请选择销售顾问!");
+		var selectedSales = $("ul[to_input='salesConsultantSel']").find(".active");
+		if (selectedSales.length == 0) {
+			MuiMessage("请选择销售顾问!");
 			return;
+		}else{
+			$("#salesConsultantSel").val(selectedSales.eq(0).attr("code"));
 		}
-		
+		var tabType_id_str = "";
+		checkedBoxs.each(function(){
+			tabType_id_str += $(this).val()+",";
+		});
+		tabType_id_str = tabType_id_str.substr(0, tabType_id_str.length - 1);
 		var activeId = "";
-    	$(".mui-control-item").each(function(){
-    		if($(this).attr("class")=="mui-control-item mui-active"){
-    			activeId = $(this).attr("id");
-    			return false;
-    		}
-    	});
-		
-		MuiConfirm("确定分配?",function(e){
-			if(e.index == 0){
-				var url = httpUrlHead+"PotcusAchieveService/distributionSalesLeadsDo.json?tabType_id_str="+tabType_id_str+"&fpType="+activeId+"&"+httpUrlEnd;
-				makeFormCall(url, function(json){
-					MuiAlert("客户分配成功!",function(){
-						queryPt();
-						loadFpNum();
-					});
-				}, "fm");
-			}
-		})
+    	if(_clickType == 1){
+    		activeId = "xsFp";
+    	}else{
+    		activeId = "wldFp";
+    	}
+		var url = httpUrlHead+"PotcusAchieveService/distributionSalesLeadsDo.json?tabType_id_str="+tabType_id_str+"&fpType="+activeId+"&"+httpUrlEnd;
+		makeFormCall(url, function(json){
+			MuiMessage("客户分配成功!");
+			initQueryFunc();
+		}, "fm");
 	}
-	function dateTypeChange(val){
-		if(val == ''){
-			$("tr[name='dateTr']").hide()
-			$("#startDate").val("");
-			$("#endDate").val("");
-		} else {
-			$("tr[name='dateTr']").show()
-			document.getElementById('startDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
-			document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
-		}
-	}
-	
-	function changeSel(){
-		var txtQuery = document.getElementById("txt_query").innerHTML;
-		if(txtQuery == "展开") {
-			$("#_showContentDiv3").css({"position":"fixed" ,"width":"100%","zIndex":"1","marginTop":"30px"});
-			$("#tabList").css({"marginTop":"10px"});
-			$("#rp").css({"marginTop":"80px"});
-		} else {
-			$("#_showContentDiv3").css({"position":"static" ,"width":"100%","zIndex":"1","marginTop":"0px"});
-			$("#tabList").css({"marginTop":"0px"});
-			$("#rp").css({"marginTop":"0px"});
-		}
-	}
-	
-	function closeQueryLevel(setText,setValues) {
-		var text = "";
-		var values = "";
-		if(!IsNull(setText) && !IsNull(setValues)) {
-			text = setText;
-			values = setValues;
-		} else {
-			$("input[name='level_copy']:checked").each(function(){
-				text += $(this).parent().prev().text()+",";
-				values += $(this).val()+",";
-			});
-		}
-		if(text != ""){
-			text = text.substring(0, text.length-1);
-			values = values.substring(0, values.length-1);
-		}
-		$("#intentLevel_show").val(text);
-		$("#intentLevel").val(values);
-		layer.closeAll();
-		var array = values.split(",");
-		$("input[name='level']").attr("checked",false);
-		for (var i=0 ; i< array.length ; i++){
-			$("input[name='level']").each(function(){
-				var value = $(this).val();
-				if(value == array[i]){
-					$(this).attr("checked",true);
-				}
-			});
-		}
-	}
-	
 	document.querySelectorAll(".mui-control-item").forEach(function(item){
 		//TODO 
 		item.addEventListener('tap', function () {
@@ -842,6 +269,39 @@
 	//未留档明细
 	function _toUpdateOrDetailPageWld(id,tabType) {
 		_toPage("hallReceptionDetail.html?id="+id);
+	}
+	function queryFilter(obj,type){
+		_clickType = type;
+		$("#onback").val(type);
+		var isHaveActive = $(obj).parent().hasClass("active");
+		if(!isHaveActive){
+			initQueryFunc();
+		}
+		toggleSjarrow(obj);
+		$("#allCheck").attr("checked",false);
+	}
+	function toggleSjarrow(obj){
+		$(".icon-sjarrow").hide();
+		$(obj).next().show();
+		$(obj).parent().siblings().removeClass("active");
+		$(obj).parent().addClass("active");
+		
+	}
+	function toGwgl(){
+		ToUrl('sales_consultant_list.html');
+		event.preventDefault();
+	}
+	function fpXs(){
+		//验证是否已经选择
+		var checkedBoxs = $("input[name='checkBox']:checked")
+		if (checkedBoxs.length < 1) {
+			MuiAlert("请选择要分配的数据!");
+			hidePop();
+			event.preventDefault();
+			return;
+		}
+		showPop("fp");
+		event.preventDefault();
 	}
 </script>
 </html>

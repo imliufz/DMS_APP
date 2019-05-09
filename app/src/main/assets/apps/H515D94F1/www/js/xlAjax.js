@@ -2,10 +2,11 @@
  * author liufazhong
  * ajax
  */
-//var httpUrlHead = "http://192.168.43.82:8085/app/dcsApp/";//本地
-//var httpUrlHead = "http://58.17.185.171:9080/jc_app/dcsApp/";//测试环境
+//var httpUrlHead = "http://localhost:28080/CHANADMS2/dcsApp/";//本地
+//var httpUrlHead = "http://10.0.14.219:8087/jcx-app-two/dcsApp/";//本地
+//var httpUrlHead = "http://scrmtest.changan.com.cn/jc_app/dcsApp/";//测试环境（外网）
+//var httpUrlHead = "http://10.64.9.31:8081/jc_app/dcsApp/";//测试环境（内网）
 var httpUrlHead = "http://cvsses.changan.com.cn/jcx-app-two/dcsApp/";//正式环境
-//var httpUrlHead = "http://scrmtest.changan.com.cn/jc_app/dcsApp/";
 var httpUrlEnd = "rpcFlag=2";
 
 var _data_type = _myBrowser();
@@ -50,7 +51,7 @@ function makeFormCall(toUrl,showFunc,formName,isLoading,isInitLoading){
 		setForm(formName);
 	}
 	try{formName = appendForm(formName);}catch(e){}
-    var formParam = $("#"+formName+"").serialize();//序列化表格内容为字符串    
+    var formParam = $("#"+formName+"").serialize();//序列化表格内容为字符串
     $.ajax({    
         type:'post',        
         url:toUrl,    

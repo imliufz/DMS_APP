@@ -1,382 +1,437 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="js/html_head.js"></script>
-<script type="text/javascript" src="js/clpage.js"></script>
-<script src="js/echarts-all.js"></script>
-<link href="css/index.css" rel="stylesheet" type="text/css"/>
-<title>到店报表</title>
-<style type="text/css">
-	.chart {
-		height: 300px;
-		margin: 0px;
-		padding: 0px;
-	}
-	.bordered td{
-		text-align: center;
-		font-size: 15px;
-		text-indent:2px;
-	}
-	.bordered th{
-		background: #1790E4;
-		color: #fff;
-		text-shadow:none;
-		font-size: 16px;
-		text-indent:2px;
-	}
-</style>
-</head>
-<body onselectstart="return true;" ondragstart="return false;">
-	<script type="text/javascript" src="js/detail_head.js?_menu_name=到店榜(到店、邀约排行)&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
-	<form id="fm" method="post">
-		<div class="cardexplain">
-			<ul class="round" style="border:none">
-			<table id="tb_query">
-                <tr class="biaoge" id="oemCusSource_Tr" >
-                	<td>日期						                </td>
-                    <td>
-						 <li class="nob">
-							<input name="startDate" id="startDate"   type="date"  onchange="insertData()" clearBtn="true" class="px" />
-                        </li>                    
-                    </td>
-                </tr>
-                <tr class="biaoge" id="oemCusSource_Tr" >
-                	<td>客户来源						                </td>
-                    <td>
-						 <li class="nob">
-                             <select id="oemCusSource" name="oemCusSource" class="download dropdown-select" exceptValue="13111016"  search="show" onchange="insertData();">
-                                <option value="">-请选择-</option>
-                            </select>
-                            <input name="oemCusSource_h" id="oemCusSource_h" value=""  type="hidden"  />
-                        </li>                    </td>
-                </tr>
-                 <tr class="biaoge">
-                	<td>车系						                </td>
-                    <td>
-						 <li class="nob">
-                             <select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select"   search="show" onchange="changeSMPCForLd(this.value)">
-                                <option value="">-请选择-</option>
-                            </select>
-                            <input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value=""  type="hidden"  />
-                        </li>                    </td>
-                </tr>
-                <tr class="biaoge">
-                	<td>车型						                </td>
-                    <td>
-						 <li class="nob">
-                             <select id="intentModel" name="intentModel" class="download dropdown-select"   search="show" onchange="insertData();">
-                                <option value="">-请选择-</option>
-                            </select>
-                            <input name="intentModel_h" id="intentModel_h" value=""  type="hidden"  />
-                        </li>                    </td>
-                </tr>
-				</table>
-				<table width="100%">
-			<tr>
-				<td style="width:50%;">
-					<input  name="topBtn" id="dayBtn"  style="background-color:white;  width: 90% ;height: 30px;border: 0px;" value="表格" type="button" onclick="changeReport(0)">
-				</td>
-				<td style="width:50%;">
-					<input   name="topBtn" id="monthBtn"  style="background-color:white; width: 90% ;height: 30px;border: 0px;" value="图形" type="button" onclick="changeReport(1)">
-				</td>
-			</tr>
-			<tr style="height: 3px;">
-				<td style="width:50%;"  bgcolor="#FFFF00" id="dayLineTr">
-					
-				</td>
-				<td style="width:50%;" id="monthLineTr">
-					
-				</td>
-			</tr>
-		</table>
-			</ul>
-		<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
-				<form action="javascript:;" method="post">
-					<div class="tab-pane active" id="panel-1">
-			 <ul class="round">
-        <table class="bordered" style="background-color: white;">
-            <thead>
-            <tr class="biaoge" >
-            	<th width="15%" nowrap="nowrap"  style="text-align: center;">排名</th>
-                <th width="85px" nowrap="nowrap"  style="text-align: center;">顾问</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">今日</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">今日邀约</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">本月</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">本月邀约</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">今日试乘驾</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">本月试乘驾</th>
-                
-            </tr>
-            </thead>
-            <tbody id="complaintReport"  >
-            </tbody>
-        </table>
-		</ul>
-		</div>
-	</form>
-	</div>
-	<div style="padding-top:5px;width: 100%;overflow-x: auto;">
-		<div id="viewReport" class="chart"></div>
-	</div>
-	
-	<br>
-	</br>
-	<!-- 菜单 -->
-    
-    <!-- 菜单 -->
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<script type="text/javascript" src="js/clpage.js"></script>
+		<script src="js/echarts-all.js"></script>
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<!-- tabs样式优化 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_tabs.css" />
+		<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
+		<!-- tabs样式优化end -->
+		<title>到店报表</title>
+		<style type="text/css">
+			.chart {
+				height: 300px;
+				margin: 0px;
+				padding: 0px;
+			}
 
-<script type="text/javascript">
-$(document).ready(function () {
+			.bordered td {
+				text-align: center;
+				font-size: 15px;
+				text-indent: 2px;
+			}
+
+			.bordered th {
+				background: #1790E4;
+				color: #fff;
+				text-shadow: none;
+				font-size: 16px;
+				text-indent: 2px;
+			}
+		</style>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;">
+		<script type="text/javascript" src="js/detail_head.js?_menu_name=到店榜(到店、邀约排行)&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp"
+		 id="detail_head_js"></script>
+		<form id="fm" method="post">
+			<div class="cardexplain">
+				<ul class="round" style="border:none">
+					<table id="tb_query">
+						<tr class="biaoge" id="oemCusSource_Tr">
+							<td>日期 </td>
+							<td>
+								<li class="nob">
+									<input name="startDate" id="startDate" type="date" onchange="insertData()" clearBtn="true" class="px" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge" id="oemCusSource_Tr">
+							<td>客户来源 </td>
+							<td>
+								<li class="nob">
+									<select id="oemCusSource" name="oemCusSource" class="download dropdown-select" exceptValue="13111016" search="show"
+									 onchange="insertData();">
+										<option value="">-请选择-</option>
+									</select>
+									<input name="oemCusSource_h" id="oemCusSource_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>车系 </td>
+							<td>
+								<li class="nob">
+									<select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select" search="show" onchange="changeSMPCForLd(this.value)">
+										<option value="">-请选择-</option>
+									</select>
+									<input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>车型 </td>
+							<td>
+								<li class="nob">
+									<select id="intentModel" name="intentModel" class="download dropdown-select" search="show" onchange="insertData();">
+										<option value="">-请选择-</option>
+									</select>
+									<input name="intentModel_h" id="intentModel_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+					</table>
+					<table id="rp" width="100%">
+						<tr>
+							<td style="width:50%;">
+								<input name="topBtn" id="dayBtn" style="background-color:white;  width: 90% ;height: 30px;border: 0px;" value="表格"
+								 type="button" onclick="changeReport(0)">
+							</td>
+							<td style="width:50%;">
+								<input name="topBtn" id="monthBtn" style="background-color:white; width: 90% ;height: 30px;border: 0px;" value="图形"
+								 type="button" onclick="changeReport(1)">
+							</td>
+						</tr>
+						<tr style="height: 3px;">
+							<td style="width:50%;" id="dayLineTr">
+									<span class="line"></span>
+							</td>
+							<td style="width:50%;" id="monthLineTr">
+									<span></span>
+							</td>
+						</tr>
+					</table>
+				</ul>
+				<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
+					<form action="javascript:;" method="post">
+						<div class="tab-pane active" id="panel-1">
+							<ul class="round">
+								<table class="bordered" style="background-color: white;">
+									<thead>
+										<tr class="biaoge">
+											<th width="15%" nowrap="nowrap" style="text-align: center;">排名</th>
+											<th width="85px" nowrap="nowrap" style="text-align: center;">顾问</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">今日</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">今日邀约</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">本月</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">本月邀约</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">今日试乘驾</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">本月试乘驾</th>
+
+										</tr>
+									</thead>
+									<tbody id="complaintReport">
+									</tbody>
+								</table>
+							</ul>
+						</div>
+					</form>
+				</div>
+				<div style="padding-top:5px;width: 100%;overflow-x: auto;">
+					<div id="viewReport" class="chart"></div>
+				</div>
+
+				<br>
+				</br>
+				<!-- 菜单 -->
+
+				<!-- 菜单 -->
+	</body>
+
+	<script type="text/javascript">
+		var se_finalStatus = 2;
+		var se_loadStatus = 0;
+		var newSelects = [{
+				id: 'oemCusSource',
+				title: '客户来源',
+				onChange: 'insertData'
+			}, {
+				id: 'INTENT_SERIES',
+				title: '车系',
+				onChange: 'changeSMPCForLd'
+			}, {
+				id: 'intentModel',
+				title: '车型',
+				onChange: 'insertData'
+			}
+		];
+		$(document).ready(function() {
 			_loadSeries("INTENT_SERIES");
-			document.getElementById('startDate').value = praseDate2(new Date(),2);
+			document.getElementById('startDate').value = praseDate2(new Date(), 2);
 			insertData();
-			_loadTcCode("1311","oemCusSource");
-});
-var reportFlag = 0;
-function changeReport(flag) {
-	if( flag == 0 ){
-          $("#viewReport").hide();
-          $("#_showContent").show();
-          $("#monthLineTr").attr("bgcolor","");
-          $("#dayLineTr").attr("bgcolor","#FFFF00");
-	}else{
-          $("#viewReport").show();
-          $("#_showContent").hide();
-          $("#dayLineTr").attr("bgcolor","");
-          $("#monthLineTr").attr("bgcolor","#FFFF00");
-	}
-	reportFlag = flag;
-}
+			_loadTcCode("1311", "oemCusSource");
+		});
+		var reportFlag = 0;
 
-function praseDate2(date,num){
-	     var year = date.getFullYear();
-	     var month = date.getMonth()+1;    //js从0开始取 
-	     var date1 = date.getDate(); 
-	     if (num == 1) {
-		     return year+"-"+(month<=9?"0":"")+month+"-01";
-	     }
-	     return year+"-"+(month<=9?"0":"")+month+"-"+(date1<=9?"0":"")+date1;
-	}
-	function insertData() {
-		var complaintReport = document.getElementById("complaintReport");
-		complaintReport.innerHTML ="";
-				var startDate = document.getElementById("startDate").value;
-				var IS_MANAGER = getLocalStorage("IS_MANAGER");
-				var logonUser = JSON.parse(getLocalStorage("logonUser"));
-				var logonName = logonUser.NAME;
-				var logonCount1 = 0;
-				var logonCount2 = 0;
-				var logonCount3 = 0;
-				var logonCount4 = 0;
-				var logonCount5 = 0;
-				var logonCount6 = 0;
-				var logonRank = 0;
-				var url1 = httpUrlHead + "ReportServiceApp/queryddReportList.json?startDate="+startDate+"&" + httpUrlEnd;
-				makeFormCall(url1,function(json){
-					if (json.details.length == 0) {
-						complaintReport.innerHTML = "<tr><td colspan=6><a style=color:red>无数据</a></td></tr>";
-						return;
+		function changeReport(flag) {
+			if (flag == 0) {
+				$("#viewReport").hide();
+				$("#_showContent").show();
+// 				$("#monthLineTr").attr("bgcolor", "");
+// 				$("#dayLineTr").attr("bgcolor", "#FFFF00");
+				$("#dayLineTr").find('span').addClass("line");
+				$("#monthLineTr").find('span').removeClass("line");
+			} else {
+				$("#viewReport").show();
+				$("#_showContent").hide();
+				// $("#dayLineTr").attr("bgcolor", "");
+				// $("#monthLineTr").attr("bgcolor", "#FFFF00");
+				$("#dayLineTr").find('span').removeClass("line");
+				$("#monthLineTr").find('span').addClass("line");
+			}
+			reportFlag = flag;
+		}
+
+		function praseDate2(date, num) {
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1; //js从0开始取 
+			var date1 = date.getDate();
+			if (num == 1) {
+				return year + "-" + (month <= 9 ? "0" : "") + month + "-01";
+			}
+			return year + "-" + (month <= 9 ? "0" : "") + month + "-" + (date1 <= 9 ? "0" : "") + date1;
+		}
+
+		function insertData() {
+			var complaintReport = document.getElementById("complaintReport");
+			complaintReport.innerHTML = "";
+			var startDate = document.getElementById("startDate").value;
+			var IS_MANAGER = getLocalStorage("IS_MANAGER");
+			var logonUser = JSON.parse(getLocalStorage("logonUser"));
+			var logonName = logonUser.NAME;
+			var logonCount1 = 0;
+			var logonCount2 = 0;
+			var logonCount3 = 0;
+			var logonCount4 = 0;
+			var logonCount5 = 0;
+			var logonCount6 = 0;
+			var logonRank = 0;
+			var url1 = httpUrlHead + "ReportServiceApp/queryddReportList.json?startDate=" + startDate + "&" + httpUrlEnd;
+			makeFormCall(url1, function(json) {
+				if (json.details.length == 0) {
+					complaintReport.innerHTML = "<tr><td colspan=6><a style=color:red>无数据</a></td></tr>";
+					return;
+				}
+				complaintReport.innerHTML = "<tr id='myRank'></tr>";
+				for (var i = 0; i < json.details.length; i++) {
+
+					var detail = json.details[i];
+					var newRow = complaintReport.insertRow(i + 1);
+
+					if (detail.SOLD_BY == logonName && IS_MANAGER == 10041002) {
+						logonRank = detail.RANK;
+						logonCount1 = detail.COUNT1;
+						logonCount2 = detail.COUNT2;
+						logonCount3 = detail.COUNT3;
+						logonCount4 = detail.COUNT4;
+						logonCount5 = detail.COUNT5;
+						logonCount6 = detail.COUNT6;
 					}
-					complaintReport.innerHTML ="<tr id='myRank'></tr>";
-					for(var i = 0; i < json.details.length;i++) {
-						
-						var detail = json.details[i];
-						var newRow = complaintReport.insertRow(i+1);
-						
-						if(detail.SOLD_BY == logonName && IS_MANAGER == 10041002){
-							logonRank = detail.RANK;
-							logonCount1 = detail.COUNT1;
-							logonCount2 = detail.COUNT2;
-							logonCount3 = detail.COUNT3;
-							logonCount4 = detail.COUNT4;
-							logonCount5 = detail.COUNT5;
-							logonCount6 = detail.COUNT6;
-						}
-						
-						if (i == 1) {
-							newRow.style = "color:red";
-						}
-						var newCell = newRow.insertCell(0);
-						newCell.align = "center";
-						if(i == 0){
-							newCell.innerHTML = '';
-						}else if(detail.RANK==1){
-							newCell.innerHTML = '<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a>';
-						}else if(detail.RANK==2){
-							newCell.innerHTML = '<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a>';
-						}else if(detail.RANK==3){
-							newCell.innerHTML = '<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a>';
-						}else{
-							newCell.innerHTML = detail.RANK;
-						}
-						var newCell = newRow.insertCell(1);
-						newCell.align = "center";
-						newCell.innerHTML = detail.SOLD_BY;
-						
+
+					if (i == 1) {
+						newRow.style = "color:red";
+					}
+					var newCell = newRow.insertCell(0);
+					newCell.align = "center";
+					if (i == 0) {
+						newCell.innerHTML = '';
+					} else if (detail.RANK == 1) {
+						newCell.innerHTML =
+							'<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a>';
+					} else if (detail.RANK == 2) {
+						newCell.innerHTML =
+							'<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a>';
+					} else if (detail.RANK == 3) {
+						newCell.innerHTML =
+							'<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a>';
+					} else {
+						newCell.innerHTML = detail.RANK;
+					}
+					var newCell = newRow.insertCell(1);
+					newCell.align = "center";
+					newCell.innerHTML = detail.SOLD_BY;
+
 					newCell = newRow.insertCell(2);
 					newCell.align = "center";
-					if (detail.COUNT1 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY !='合计') {
-						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(1,\''+detail.SOLD_BY+'\')">'+detail.COUNT1+'';
+					if (detail.COUNT1 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY != '合计') {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(1,\'' + detail.SOLD_BY +
+							'\')">' + detail.COUNT1 + '';
 					} else {
 						newCell.innerHTML = detail.COUNT1;
-					}						
-					    newCell = newRow.insertCell(3);
-						newCell.align = "center";
-					if (detail.COUNT2 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY !='合计') {
-						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(2,\''+detail.SOLD_BY+'\')">'+detail.COUNT2+'';
+					}
+					newCell = newRow.insertCell(3);
+					newCell.align = "center";
+					if (detail.COUNT2 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY != '合计') {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(2,\'' + detail.SOLD_BY +
+							'\')">' + detail.COUNT2 + '';
 					} else {
 						newCell.innerHTML = detail.COUNT2;
-					}							newCell = newRow.insertCell(4);
-							newCell.align = "center";
-					if (detail.COUNT3 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY !='合计') {
-						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(3,\''+detail.SOLD_BY+'\')">'+detail.COUNT3+'';
+					}
+					newCell = newRow.insertCell(4);
+					newCell.align = "center";
+					if (detail.COUNT3 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY != '合计') {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(3,\'' + detail.SOLD_BY +
+							'\')">' + detail.COUNT3 + '';
 					} else {
 						newCell.innerHTML = detail.COUNT3;
-					}							newCell = newRow.insertCell(5);
-							newCell.align = "center";
-					if (detail.COUNT4 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY !='合计') {
-							newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(4,\''+detail.SOLD_BY+'\')">'+detail.COUNT4+'';
+					}
+					newCell = newRow.insertCell(5);
+					newCell.align = "center";
+					if (detail.COUNT4 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY != '合计') {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(4,\'' + detail.SOLD_BY +
+							'\')">' + detail.COUNT4 + '';
 					} else {
 						newCell.innerHTML = detail.COUNT4;
 					}
 					newCell = newRow.insertCell(6);
 					newCell.align = "center";
-					if (detail.COUNT5 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY !='合计') {
-							newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(5,\''+detail.SOLD_BY+'\')">'+detail.COUNT5+'';
+					if (detail.COUNT5 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY != '合计') {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(5,\'' + detail.SOLD_BY +
+							'\')">' + detail.COUNT5 + '';
 					} else {
 						newCell.innerHTML = detail.COUNT5;
 					}
 					newCell = newRow.insertCell(7);
 					newCell.align = "center";
-					if (detail.COUNT6 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY !='合计') {
-							newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(6,\''+detail.SOLD_BY+'\')">'+detail.COUNT6+'';
+					if (detail.COUNT6 != 0 && IS_MANAGER == 10041001 && detail.SOLD_BY != '合计') {
+						newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(6,\'' + detail.SOLD_BY +
+							'\')">' + detail.COUNT6 + '';
 					} else {
 						newCell.innerHTML = detail.COUNT6;
 					}
-					
+
+				}
+				if (IS_MANAGER == 10041002) {
+					var myRank = document.getElementById("myRank");
+					var newRankCell = myRank.insertCell(0);
+					newRankCell.align = "center";
+					if (logonRank == 1) {
+						newRankCell.innerHTML =
+							'<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a>';
+					} else if (logonRank == 2) {
+						newRankCell.innerHTML =
+							'<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a>';
+					} else if (logonRank == 3) {
+						newRankCell.innerHTML =
+							'<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a>';
+					} else {
+						newRankCell.innerHTML = logonRank;
 					}
-					if(IS_MANAGER == 10041002){
-						var myRank = document.getElementById("myRank");
-						var newRankCell = myRank.insertCell(0);
-						newRankCell.align = "center";
-						if(logonRank==1){
-							newRankCell.innerHTML = '<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a>';
-						}else if(logonRank==2){
-							newRankCell.innerHTML = '<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a>';
-						}else if(logonRank==3){
-							newRankCell.innerHTML = '<a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a>';
-						}else{
-							newRankCell.innerHTML = logonRank;
-						}
-						var newRankCell = myRank.insertCell(1);
-						newRankCell.align = "center";
-						newRankCell.innerHTML = '我的排名';
-						var newRankCell = myRank.insertCell(2);
-						newRankCell.align = "center";
-						if (logonCount1 != 0) {
-							newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(1,\''+logonName+'\')">'+logonCount1+'';
-						} else {
-							newRankCell.innerHTML = logonCount1;
-						}
-						var newRankCell = myRank.insertCell(3);
-						newRankCell.align = "center";
-						if (logonCount2 != 0) {
-							newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(2,\''+logonName+'\')">'+logonCount2+'';
-						} else {
-							newRankCell.innerHTML = logonCount2;
-						}
-						var newRankCell = myRank.insertCell(4);
-						newRankCell.align = "center";
-						if (logonCount3 != 0) {
-							newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(3,\''+logonName+'\')">'+logonCount3+'';
-						} else {
-							newRankCell.innerHTML = logonCount3;
-						}
-						var newRankCell = myRank.insertCell(5);
-						newRankCell.align = "center";
-						if (logonCount4 != 0) {
-							newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(4,\''+logonName+'\')">'+logonCount4+'';
-						} else {
-							newRankCell.innerHTML = logonCount4;
-						}
-						var newRankCell = myRank.insertCell(6);
-						newRankCell.align = "center";
-						if (logonCount5 != 0) {
-							newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(5,\''+logonName+'\')">'+logonCount5+'';
-						} else {
-							newRankCell.innerHTML = logonCount5;
-						}
-						var newRankCell = myRank.insertCell(7);
-						newRankCell.align = "center";
-						if (logonCount5 != 0) {
-							newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(6,\''+logonName+'\')">'+logonCount6+'';
-						} else {
-							newRankCell.innerHTML = logonCount6;
-						}
+					var newRankCell = myRank.insertCell(1);
+					newRankCell.align = "center";
+					newRankCell.innerHTML = '我的排名';
+					var newRankCell = myRank.insertCell(2);
+					newRankCell.align = "center";
+					if (logonCount1 != 0) {
+						newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(1,\'' +
+							logonName + '\')">' + logonCount1 + '';
+					} else {
+						newRankCell.innerHTML = logonCount1;
 					}
-					json.reportId = "viewReport";
-					json.reportType = "bar";
-					json.reportTitle = ['今日', '今日邀约','本月','本月邀约','今日试乘驾','本月试乘驾'];
-					$("#viewReport").show();
-					setViewReport(json);
-					if( reportFlag == 0 ){
-						$("#viewReport").hide();
+					var newRankCell = myRank.insertCell(3);
+					newRankCell.align = "center";
+					if (logonCount2 != 0) {
+						newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(2,\'' +
+							logonName + '\')">' + logonCount2 + '';
+					} else {
+						newRankCell.innerHTML = logonCount2;
 					}
-				},"fm",true,true);
-	}
-	
-	function setViewReport(json){
-	 var titleArray = json.reportTitle;
-	 var seriesArray = [];
-	 var salesArray = [];
-	 var dataArray1 = [];
-	 var dataArray2 = [];
-	 var dataArray3 = [];
-	 var dataArray4 = [];
-	 var dataArray5 = [];
-	 var dataArray6 = [];
-	 var stCount = 0;
-	 for(var i = 0; i < json.details.length;i++) {
-		 var detail = json.details[i];
-		 var COUNT1 = detail.COUNT1;
-		 var COUNT2 = detail.COUNT2;
-		 var COUNT3 = detail.COUNT3;
-		 var COUNT4 = detail.COUNT4;
-		 var COUNT5 = detail.COUNT5;
-		 var COUNT6 = detail.COUNT6;
-		 var totleCount = COUNT1 + COUNT2 + COUNT3 + COUNT4 + COUNT5 + COUNT6;
-		 if(totleCount ==0 || detail.SOLD_BY == '合计') {
-		 	continue;
-		 }
-		stCount++;
-	 	salesArray.push(detail.SOLD_BY);
-	 	dataArray1.push(COUNT1);
-	 	dataArray2.push(COUNT2);
-	 	dataArray3.push(COUNT3);
-	 	dataArray4.push(COUNT4);
-	 	dataArray5.push(COUNT5);
-	 	dataArray6.push(COUNT6);
-	 }
-	 if(stCount > 0) {
-	 	var vrw = parseInt($("#viewReport").css("width").substr(0,$("#viewReport").css("width").length-2));
-	 	var wt = 80*stCount < vrw ? vrw : 80*stCount;
-	 	$("#viewReport").css("width",wt+"px");
-	 } else {
-	 	$("#viewReport").css("width","100%");
-	 }
-	 var dataArray = [dataArray1,dataArray2,dataArray3,dataArray4,dataArray5,dataArray6];
-	 for(var i = 0; i < titleArray.length;i++) {
-	 var tempJson = {
-						name: titleArray[i],
-						type: json.reportType,
-						data: dataArray[i]
-					};
-	 	seriesArray.push(tempJson);
-	 }
-		var getOption = function(chartType) {
-				var chartOption =  {
+					var newRankCell = myRank.insertCell(4);
+					newRankCell.align = "center";
+					if (logonCount3 != 0) {
+						newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(3,\'' +
+							logonName + '\')">' + logonCount3 + '';
+					} else {
+						newRankCell.innerHTML = logonCount3;
+					}
+					var newRankCell = myRank.insertCell(5);
+					newRankCell.align = "center";
+					if (logonCount4 != 0) {
+						newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(4,\'' +
+							logonName + '\')">' + logonCount4 + '';
+					} else {
+						newRankCell.innerHTML = logonCount4;
+					}
+					var newRankCell = myRank.insertCell(6);
+					newRankCell.align = "center";
+					if (logonCount5 != 0) {
+						newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(5,\'' +
+							logonName + '\')">' + logonCount5 + '';
+					} else {
+						newRankCell.innerHTML = logonCount5;
+					}
+					var newRankCell = myRank.insertCell(7);
+					newRankCell.align = "center";
+					if (logonCount5 != 0) {
+						newRankCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="detailData(6,\'' +
+							logonName + '\')">' + logonCount6 + '';
+					} else {
+						newRankCell.innerHTML = logonCount6;
+					}
+				}
+				json.reportId = "viewReport";
+				json.reportType = "bar";
+				json.reportTitle = ['今日', '今日邀约', '本月', '本月邀约', '今日试乘驾', '本月试乘驾'];
+				$("#viewReport").show();
+				setViewReport(json);
+				if (reportFlag == 0) {
+					$("#viewReport").hide();
+				}
+			}, "fm", true, true);
+		}
+
+		function setViewReport(json) {
+			var titleArray = json.reportTitle;
+			var seriesArray = [];
+			var salesArray = [];
+			var dataArray1 = [];
+			var dataArray2 = [];
+			var dataArray3 = [];
+			var dataArray4 = [];
+			var dataArray5 = [];
+			var dataArray6 = [];
+			var stCount = 0;
+			for (var i = 0; i < json.details.length; i++) {
+				var detail = json.details[i];
+				var COUNT1 = detail.COUNT1;
+				var COUNT2 = detail.COUNT2;
+				var COUNT3 = detail.COUNT3;
+				var COUNT4 = detail.COUNT4;
+				var COUNT5 = detail.COUNT5;
+				var COUNT6 = detail.COUNT6;
+				var totleCount = COUNT1 + COUNT2 + COUNT3 + COUNT4 + COUNT5 + COUNT6;
+				if (totleCount == 0 || detail.SOLD_BY == '合计') {
+					continue;
+				}
+				stCount++;
+				salesArray.push(detail.SOLD_BY);
+				dataArray1.push(COUNT1);
+				dataArray2.push(COUNT2);
+				dataArray3.push(COUNT3);
+				dataArray4.push(COUNT4);
+				dataArray5.push(COUNT5);
+				dataArray6.push(COUNT6);
+			}
+			if (stCount > 0) {
+				var vrw = parseInt($("#viewReport").css("width").substr(0, $("#viewReport").css("width").length - 2));
+				var wt = 80 * stCount < vrw ? vrw : 80 * stCount;
+				$("#viewReport").css("width", wt + "px");
+			} else {
+				$("#viewReport").css("width", "100%");
+			}
+			var dataArray = [dataArray1, dataArray2, dataArray3, dataArray4, dataArray5, dataArray6];
+			for (var i = 0; i < titleArray.length; i++) {
+				var tempJson = {
+					name: titleArray[i],
+					type: json.reportType,
+					data: dataArray[i]
+				};
+				seriesArray.push(tempJson);
+			}
+			var getOption = function(chartType) {
+				var chartOption = {
 					legend: {
 						data: titleArray
 					},
@@ -398,7 +453,7 @@ function praseDate2(date,num){
 							},
 							magicType: {
 								show: true,
-								type: ['bar','line']
+								type: ['bar', 'line']
 							},
 							restore: {
 								show: true
@@ -428,74 +483,83 @@ function praseDate2(date,num){
 			};
 			var barChart = echarts.init(byId(json.reportId));
 			barChart.setOption(getOption(json.reportType));
-	}
-	
-	function detailData(index,name){
-	var INTENT_SERIES = "";
-	var dayDate = $("#startDate").val();
-	var oemCusSource = $("#oemCusSource").val();
-	var INTENT_SERIES = $("#INTENT_SERIES").val();
-	var intentModel = $("#intentModel").val();
-	var monthDate = "";
-	var reportFrom ="ddReport";
-	var title = "";
-		title = name + ":到店";
-	var headTitle = ["客户","来访","来访日期","来源","初始级别","顾问"];//表头
-	var headWidth = ["100px","100px","100px","100px","100px","100px"];//表头
-	var showCol = ["CUSTOMER_NAME","VISIT_TYPE","VISIT_TIME","CUS_SOURCE","INTENT_LEVEL","SOLD_BY"];//显示字段
-	var paramName = ["sales_consultant","INTENT_SERIES","dayDate","oemCusSource","INTENT_SERIES","intentModel","monthDate","cellIndex","reportFrom"];//查询参数
-	var paramValue = [name,INTENT_SERIES,dayDate,oemCusSource,INTENT_SERIES,intentModel,monthDate,index,"ddReport"];//参数值
-	//组装url
-	var url = "report_detail.html?headTitle="+headTitle+"&paramName="+paramName+"&paramValue="+paramValue+"&showCol="+showCol+"&headWidth="+headWidth+"&title="+title;
-	ToUrl(url);
-}
-	
-	function showHelp(){
-		var alertMsg = ""+
-		"<div style='text-align:left;'>"+
-			"<div>排名：按今日+今日邀约之和倒序排列</div>"+
-			"<div>今日：今日到店量</div>"+
-			"<div>今日邀约：今日邀约到店量</div>"+
-			"<div>本月：本月到店量</div>"+
-			"<div>本月邀约：本月邀约到店量</div>"+
-		"</div>";
-		MuiAlert(alertMsg);
-	}
-	//车系车型配置颜色联动
-function changeSMPCForLd(code) {
-	var smpc = null;
-	var defaultValue = null;
-	smpc = document.getElementById("intentModel");
-	defaultValue = $("#intentModel").attr("defaultValue");
-	document.getElementById("intentModel").options.length=0;
-	if (code == "") {
-		return;
-	}
-	smpc.add(new Option("加载中...",""));
-	var url = httpUrlHead+"PotcusAchieveService/querySMPC.json?code="+code+"&codeType=1&"+httpUrlEnd;
-	makeFormCall(url, function(json){
-		smpc.options.length=0;
-		smpc.add(new Option("-请选择-",""));
-		if(json.RESULT.funcStatus == "1") {
-			var list = json.list;
-			if(list != null && list.length > 0) {
-				var selIndex = -1;
-				for(var i = 0;i < list.length;i++) {
-					smpc.add(new Option(list[i].GROUP_NAME,list[i].GROUP_CODE));
-					if (defaultValue != undefined && defaultValue != null && defaultValue != "" && defaultValue == list[i].GROUP_CODE) {
-						selIndex = i;
-					}
-				}
-				if (selIndex >= 0) {
-					smpc.options[selIndex+1].selected = true;						
-				}
-				$("#intentModel").attr("defaultValue","");
-				insertData();
-			}
-		} else {
-			MuiAlert("加载数据失败!");
 		}
-	}, "fm");
-}
-</script>
+
+		function detailData(index, name) {
+			var INTENT_SERIES = "";
+			var dayDate = $("#startDate").val();
+			var oemCusSource = $("#oemCusSource").val();
+			var INTENT_SERIES = $("#INTENT_SERIES").val();
+			var intentModel = $("#intentModel").val();
+			var monthDate = "";
+			var reportFrom = "ddReport";
+			var title = "";
+			title = name + ":到店";
+			var headTitle = ["客户", "来访", "来访日期", "来源", "初始级别", "顾问"]; //表头
+			var headWidth = ["100px", "100px", "100px", "100px", "100px", "100px"]; //表头
+			var showCol = ["CUSTOMER_NAME", "VISIT_TYPE", "VISIT_TIME", "CUS_SOURCE", "INTENT_LEVEL", "SOLD_BY"]; //显示字段
+			var paramName = ["sales_consultant", "INTENT_SERIES", "dayDate", "oemCusSource", "INTENT_SERIES", "intentModel",
+				"monthDate", "cellIndex", "reportFrom"
+			]; //查询参数
+			var paramValue = [name, INTENT_SERIES, dayDate, oemCusSource, INTENT_SERIES, intentModel, monthDate, index,
+				"ddReport"
+			]; //参数值
+			//组装url
+			var url = "report_detail.html?headTitle=" + headTitle + "&paramName=" + paramName + "&paramValue=" + paramValue +
+				"&showCol=" + showCol + "&headWidth=" + headWidth + "&title=" + title;
+			ToUrl(url);
+		}
+
+		function showHelp() {
+			var alertMsg = "" +
+				"<div style='text-align:left;'>" +
+				"<div>排名：按今日+今日邀约之和倒序排列</div>" +
+				"<div>今日：今日到店量</div>" +
+				"<div>今日邀约：今日邀约到店量</div>" +
+				"<div>本月：本月到店量</div>" +
+				"<div>本月邀约：本月邀约到店量</div>" +
+				"</div>";
+			MuiAlert(alertMsg);
+		}
+		//车系车型配置颜色联动
+		function changeSMPCForLd(code) {
+			var smpc = null;
+			var defaultValue = null;
+			smpc = document.getElementById("intentModel");
+			defaultValue = $("#intentModel").attr("defaultValue");
+			document.getElementById("intentModel").options.length = 0;
+			if (code == "") {
+				smpc.options.length = 0;
+				smpc.add(new Option("-请选择-", ""));
+				loadSelectRes();
+				return;
+			}
+			smpc.add(new Option("加载中...", ""));
+			var url = httpUrlHead + "PotcusAchieveService/querySMPC.json?code=" + code + "&codeType=1&" + httpUrlEnd;
+			makeFormCall(url, function(json) {
+				smpc.options.length = 0;
+				smpc.add(new Option("-请选择-", ""));
+				if (json.RESULT.funcStatus == "1") {
+					var list = json.list;
+					if (list != null && list.length > 0) {
+						var selIndex = -1;
+						for (var i = 0; i < list.length; i++) {
+							smpc.add(new Option(list[i].GROUP_NAME, list[i].GROUP_CODE));
+							if (defaultValue != undefined && defaultValue != null && defaultValue != "" && defaultValue == list[i].GROUP_CODE) {
+								selIndex = i;
+							}
+						}
+						if (selIndex >= 0) {
+							smpc.options[selIndex + 1].selected = true;
+						}
+						$("#intentModel").attr("defaultValue", "");
+						insertData();
+					}
+				} else {
+					MuiAlert("加载数据失败!");
+				}
+				loadSelectRes();
+			}, "fm");
+		}
+	</script>
 </html>

@@ -9,216 +9,52 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42dbb714-db43-441d-b9c5-195460551319" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/view360.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ar/values-ar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-az/values-az.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bn/values-bn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bs/values-bs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ca/values-ca.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-cs/values-cs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-de/values-de.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-el/values-el.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-et/values-et.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fa/values-fa.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gu/values-gu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hr/values-hr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hy/values-hy.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-is/values-is.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-iw/values-iw.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ja/values-ja.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lo/values-lo.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lt/values-lt.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lv/values-lv.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mk/values-mk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ml/values-ml.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr/values-mr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-nb/values-nb.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-nl/values-nl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pa/values-pa.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt/values-pt.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ro/values-ro.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ru/values-ru.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-si/values-si.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sk/values-sk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sr/values-sr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-te/values-te.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-th/values-th.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tl/values-tl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tr/values-tr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ur/values-ur.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v12/values-v12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v13/values-v13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh/values-zh.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-af/values-af.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-am/values-am.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ar/values-ar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-az/values-az.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-be/values-be.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-bg/values-bg.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-bn/values-bn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-bs/values-bs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ca/values-ca.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-cs/values-cs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-da/values-da.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-de/values-de.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-el/values-el.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rAU/values-en-rAU.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rGB/values-en-rGB.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rIN/values-en-rIN.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-es-rUS/values-es-rUS.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-es/values-es.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-et/values-et.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-eu/values-eu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-fa/values-fa.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-fi/values-fi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-fr-rCA/values-fr-rCA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-fr/values-fr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-gl/values-gl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-gu/values-gu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hi/values-hi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hr/values-hr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hu/values-hu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hy/values-hy.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-in/values-in.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-is/values-is.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-it/values-it.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-iw/values-iw.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ja/values-ja.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ka/values-ka.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-kk/values-kk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-km/values-km.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-kn/values-kn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ko/values-ko.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ky/values-ky.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-land/values-land.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-large-v4/values-large-v4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-lo/values-lo.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-lt/values-lt.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-lv/values-lv.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-mk/values-mk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ml/values-ml.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-mn/values-mn.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-mr/values-mr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ms/values-ms.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-my/values-my.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-nb/values-nb.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ne/values-ne.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-night-v8/values-night-v8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-nl/values-nl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-pa/values-pa.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-pl/values-pl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-port/values-port.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-pt-rBR/values-pt-rBR.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-pt-rPT/values-pt-rPT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-pt/values-pt.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ro/values-ro.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ru/values-ru.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-si/values-si.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sk/values-sk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sl/values-sl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sq/values-sq.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sr/values-sr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sv/values-sv.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sw/values-sw.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ta/values-ta.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-te/values-te.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-th/values-th.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-tl/values-tl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-tr/values-tr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-uk/values-uk.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ur/values-ur.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-uz/values-uz.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v11/values-v11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v12/values-v12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v13/values-v13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v14/values-v14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v16/values-v16.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v17/values-v17.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v18/values-v18.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v21/values-v21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v22/values-v22.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v23/values-v23.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v24/values-v24.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v25/values-v25.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-vi/values-vi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh-rCN/values-zh-rCN.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh-rHK/values-zh-rHK.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh-rTW/values-zh-rTW.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh/values-zh.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-zu/values-zu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml" afterPath="" />
+    <list default="true" id="42dbb714-db43-441d-b9c5-195460551319" name="Default" comment="20190505新版UI前版本">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/GetuiSDK2_10_3_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/MiPush_SDK_Client_3_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/alipaySingle_20161222.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/alipayutdid.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/aps.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/aps_igexin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/geolocation_amap.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/geolocation_baidu.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jcore_1_2_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jpush_3_1_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lib_5plus_base_release_.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/map_baidu.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/messaging.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/oauth_miui.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/oauth_qq.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/oauth_sina.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/oauth_weixin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/payment_alipay.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/payment_weixin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/share_qq.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/share_sina.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/share_tencent.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/share_weixin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/sinaweibo4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/speech.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/speech_ifly.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/statistics_umeng.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_26_0_0_alpha1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/tx_weibo_sdk.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/tx_weibo_sdk_component.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/tx_weibo_sdk_httpclient_3_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/tx_wx.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/umeng_analytics_v6_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/vds_android_agent_autotrack_2_6_6.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -227,76 +63,31 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/add.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/add.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app1.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app2.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app3.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app4.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app5.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app6.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/app6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/help.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/help.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico1.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico2.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico3.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico4.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/ico4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t1.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t1_.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t1_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t2.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t2_.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t2_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t3.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t3_.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t3_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t4.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t4_.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/t4_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/tz.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/tz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/tz_.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/tz_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/welcome_jc.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/welcome_jc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/bohao.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/bohao.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/duanxing.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/duanxing.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/hrt.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/hrt.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/hrt_.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/hrt_.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/weChat.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/images/weChat.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/img/bohao.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/img/bohao.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/img/duanxing.png" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/img/duanxing.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/img/wait.jpg" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/img/wait.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/androidTest/debug/com/yy/jc/test/BuildConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/androidTest/debug/com/yy/jc/test/BuildConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/yy/jc/BuildConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/yy/jc/BuildConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/yy/jc/BuildConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/yy/jc/BuildConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/zip-cache/eao1JVpTVQrZi3lSyeLN0mAp5XI=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/zip-cache/eao1JVpTVQrZi3lSyeLN0mAp5XI=" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/multi-dex/release/componentClasses.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/multi-dex/release/componentClasses.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-hdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-hdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-ldpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-ldpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-mdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-mdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-xhdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-xhdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-xxhdpi/splash.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/drawable-xxhdpi/splash.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-release.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-release.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/jarMerging/release/jars/1/1f/combined.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/jarMerging/release/jars/1/1f/combined.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/add.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/add.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app1.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app2.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app3.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app4.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app5.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app6.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/app6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/help.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/help.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico1.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico2.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico3.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico4.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/ico4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t1.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t1_.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t1_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t2.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t2_.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t2_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t3.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t3_.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t3_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t4.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t4_.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/t4_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/tz.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/tz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/tz_.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/tz_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/welcome_jc.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/welcome_jc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/splash.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/splash.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/splash.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/splash.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/splash.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/splash.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/bohao.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/bohao.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/duanxing.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/duanxing.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/hrt.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/hrt.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/hrt_.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/hrt_.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/weChat.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/images/weChat.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/img/bohao.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/img/bohao.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/img/duanxing.png" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/img/duanxing.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/img/wait.jpg" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/img/wait.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
@@ -304,111 +95,81 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/yy/jc/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/yy/jc/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/release/com/yy/jc/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/release/com/yy/jc/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/First_followUp.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/First_followUp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/birthRemind.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/birthRemind.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/bykh_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/bykh_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cloudStoreHallReceptionDetail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cloudStoreHallReceptionDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cloudStoreMoreGjDetail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cloudStoreMoreGjDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cloudStorePotcusDetail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cloudStorePotcusDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cluesDetail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cluesDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cof.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/cof.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/complaint.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/complaint.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/detail_head.css" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/detail_head.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/index.css" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/mui.css" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/mui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/style.css" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ddReport.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ddReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ddgwreport.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ddgwreport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/followToday.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/followToday.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/gjReport.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/gjReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/gj_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/gj_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionAdd.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionAdd.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionDetail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionDetail_Bak.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionDetail_Bak.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionEdit.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionEdit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionEdit_Bak.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionEdit_Bak.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/index.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/index_bottom.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/index_bottom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/index_head.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/index_head.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionManage.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionManage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionNoStay.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/hallReceptionNoStay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/common.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/detail_head.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/detail_head.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/html_head.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/html_head.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/jquery-html5Validate-min.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/jquery-html5Validate-min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/xlAjax.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/xlAjax.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/xlpage.js" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/js/xlpage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/khly.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/khly.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/khyx.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/khyx.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/khyxDel.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/khyxDel.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ldReport.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ldReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/login.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/manifest.json" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/mine.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/mine.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/moreGjDetail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/moreGjDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/orderReport.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/orderReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/orderReport_detail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/orderReport_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/potcusDetail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/potcusDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/potcusFollow.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/potcusFollow.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/remind.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/remind.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/report_detail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/report_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/report_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/report_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/sales_consultant_lock_show.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/sales_consultant_lock_show.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/speechTechnique.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/speechTechnique.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/css/onlinebooking.css" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/css/onlinebooking.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/css/table_css.css" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/static/css/table_css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/storeQuery.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/storeQuery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/wisdomSales.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/wisdomSales.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/sales_consultant_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/sales_consultant_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/tdtc_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/tdtc_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/xs_allot_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/xs_allot_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/xs_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/xs_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ydwj_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/ydwj_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/zbReport.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/zbReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/zbReport_detail.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/zbReport_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/zbsp_list.html" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/apps/H515D94F1/www/zbsp_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseAssets/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseAssets/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/release/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/lint-results-release-fatal.html" afterPath="$PROJECT_DIR$/app/build/outputs/lint-results-release-fatal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/First_followUp.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/First_followUp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/birthRemind.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/birthRemind.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/bykh_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/bykh_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cloudStoreHallReceptionDetail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cloudStoreHallReceptionDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cloudStoreMoreGjDetail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cloudStoreMoreGjDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cloudStorePotcusDetail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cloudStorePotcusDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cluesDetail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cluesDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cof.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/cof.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/complaint.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/complaint.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/detail_head.css" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/detail_head.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/index.css" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/mui.css" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/mui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/style.css" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ddReport.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ddReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ddgwreport.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ddgwreport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/followToday.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/followToday.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/gjReport.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/gjReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/gj_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/gj_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionAdd.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionAdd.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionDetail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionDetail_Bak.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionDetail_Bak.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionEdit.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionEdit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionEdit_Bak.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionEdit_Bak.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/index.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/index_bottom.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/index_bottom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/index_head.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/index_head.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionManage.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionManage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionNoStay.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/hallReceptionNoStay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/common.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/detail_head.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/detail_head.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/html_head.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/html_head.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/jquery-html5Validate-min.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/jquery-html5Validate-min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/xlAjax.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/xlAjax.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/xlpage.js" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/xlpage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/khly.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/khly.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/khyx.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/khyx.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/khyxDel.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/khyxDel.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ldReport.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ldReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/login.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/manifest.json" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/mine.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/mine.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/moreGjDetail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/moreGjDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/orderReport.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/orderReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/orderReport_detail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/orderReport_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/potcusDetail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/potcusDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/potcusFollow.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/potcusFollow.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/remind.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/remind.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/report_detail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/report_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/report_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/report_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/sales_consultant_lock_show.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/sales_consultant_lock_show.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/speechTechnique.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/speechTechnique.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/css/onlinebooking.css" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/css/onlinebooking.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/css/table_css.css" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/static/css/table_css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/storeQuery.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/storeQuery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/wisdomSales.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/wisdomSales.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/sales_consultant_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/sales_consultant_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/tdtc_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/tdtc_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/xs_allot_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/xs_allot_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/xs_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/xs_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ydwj_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/ydwj_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/zbReport.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/zbReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/zbReport_detail.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/zbReport_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/zbsp_list.html" afterPath="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/zbsp_list.html" />
     </list>
     <list id="3b3e3081-727f-4fdb-af13-902471128321" name="ignore" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -442,54 +203,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8949">
-              <caret line="471" column="48" selection-start-line="471" selection-start-column="48" selection-end-line="471" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4180">
-              <caret line="220" column="56" selection-start-line="220" selection-start-column="56" selection-end-line="220" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2622">
-              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="2793">
+              <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="complaint.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/complaint.html">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+            <state relative-caret-position="171">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xlAjax.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xlAjax.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/xlAjax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="114">
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -2026,7 +1774,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="D:\AndroidProjects\DMS_APP" value="4619911528710" />
+        <entry key="D:\AndroidProjects\DMS_APP" value="4624747355600" />
         <entry key="E:\works\temp\DMS_APP" value="4569889928709" />
       </map>
     </option>
@@ -2399,10 +2147,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/yy/app/DmsApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/sales_consultant_lock_show.html" />
         <option value="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/view360.html" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/manifest.json" />
         <option value="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/login.html" />
         <option value="$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/xlAjax.js" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
   </component>
@@ -2462,12 +2210,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane />
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2621,9 +2368,44 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DMS_APP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DMS_APP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2650,11 +2432,11 @@
       <recent name="com.HBuilder.integrate" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AndroidProjects\DMS_APP\app\src\main\assets\apps\H515D94F1\www\js" />
       <recent name="D:\AndroidProjects\DMS_APP\app\src\main\assets\apps\H515D94F1\www" />
       <recent name="D:\AndroidProjects\DMS_APP\app\src\main\res\drawable-xxhdpi" />
       <recent name="D:\AndroidProjects\DMS_APP\app\src\main\res\drawable-xhdpi" />
       <recent name="D:\AndroidProjects\DMS_APP\app\src\main\res\drawable-mdpi" />
-      <recent name="D:\AndroidProjects\DMS_APP\app\src\main\res\drawable-ldpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -3026,7 +2808,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548040172844</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="20190505新版UI前版本">
+      <created>1557020566234</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557020566234</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3256,13 +3045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yy/app/AppService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -3281,13 +3063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -3372,17 +3147,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8949">
-          <caret line="471" column="48" selection-start-line="471" selection-start-column="48" selection-end-line="471" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/splash.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3438,34 +3202,60 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/complaint.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="12" column="69" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4180">
+        <state relative-caret-position="490">
           <caret line="220" column="56" selection-start-line="220" selection-start-column="56" selection-end-line="220" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="471" column="48" selection-start-line="471" selection-start-column="48" selection-end-line="471" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2622">
-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="2793">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/complaint.html">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+        <state relative-caret-position="171">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/apps/H515D94F1/www/js/xlAjax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="114">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
           <folding />
         </state>
       </provider>

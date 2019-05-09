@@ -20,7 +20,7 @@ var _is_submit = JSParm(jsId,"_is_submit");
 var _show_tel = JSParm(jsId,"_show_tel");
 var _right_btn_name = JSParm(jsId,"_right_btn_name");
 var writeHtml = ''+
-'<div class="topBar">'+
+'<div class="topBar xf-res-topBar">'+
 '	<div class="l" id="_dt_left_menu">'+
 '		<a class="arrow" href="javascript:void(0)"></a>'+
 '	</div>'+

@@ -393,6 +393,10 @@ function _loadTcCode(){
 				}
 			}
 		}
+		if(typeof(se_loadStatus) != "undefined"){
+			se_loadStatus++;
+			loadSelectRes();
+		}
 	},"fm");
 }
 
@@ -460,6 +464,10 @@ function _loadTcCodeAndCallBack(){
 				}
 			}
 		}
+		if(typeof(se_loadStatus) != "undefined"){
+			se_loadStatus++;
+			loadSelectRes();
+		}
 		initSearch();
 	},"fm");
 }
@@ -505,6 +513,10 @@ function _loadSeries(seriesId){
 		} else {
 			MuiAlert("加载数据失败!");
 		}
+		if(typeof(se_loadStatus) != "undefined"){
+			se_loadStatus++;
+			loadSelectRes();
+		}
 	}, "fm");
 }
 
@@ -532,6 +544,7 @@ function _changeSMPC(code,codeType) {
 		return;
 	}
 	if (code == "") {
+		loadSelectRes();
 		return;
 	}
 	smpc.add(new Option("加载中...",""));
@@ -563,6 +576,7 @@ function _changeSMPC(code,codeType) {
 		} else {
 			MuiAlert("加载数据失败!");
 		}
+		loadSelectRes();
 	}, "fm");
 }
 
@@ -666,6 +680,7 @@ function _changeFailBran(failBranCode,failSeriesId){
 		} else {
 			MuiAlert("加载数据失败!");
 		}
+		loadSelectRes();
 	}, "fm");
 }
 
@@ -720,4 +735,12 @@ function sendMsg(tel,content){
     msg.to = [tel];
     msg.body = content;
     plus.messaging.sendMessage( msg );
+}
+
+function addCssLink(src) {
+    var link = document.createElement("link");
+    link.rel = "stylesheet"
+    link.type = "text/css";
+    link.href = src;
+    document.getElementsByTagName("head")[0].appendChild(link);
 }
