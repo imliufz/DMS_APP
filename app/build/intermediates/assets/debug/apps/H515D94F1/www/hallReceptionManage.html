@@ -3,114 +3,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="js/html_head.js"></script>
+<!-- 新样式引入start -->
+<script type="text/javascript" src="js/html_head_res.js"></script>
+<script src="js/resJs/set_hallReception_list.js" type="text/javascript" charset="utf-8"></script>
+<!-- 新样式引入end -->
 <title>展厅接待</title>
 </head>
 <body onselectstart="return true;" ondragstart="return false;" >
-	<script type="text/javascript" src="js/detail_head.js?_menu_name=展厅接待&_back_url=index.html&_show_save=1&_btn_type=1&_save_func=openAdd" id="detail_head_js"></script>
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=展厅接待&_back_url=index.html" id="detail_head_js"></script>
 	<form id="fm" method="post">
-		<div class="cardexplain">
-			<ul class="round">
-				<table id="tb_query">
-					<tr class="biaoge">
-						<td>姓名/手机</td>
-						<td>
-							<li class="nob">
-								<input type="text" id="customerNamePhone" name="customerNamePhone" placeholder="客户姓名/手机号码" class="px" />
-							</li>
-						</td>
-					</tr>
-					<tr class="biaoge">
-						<td>意向级别</td>
-						<td>
-							<li class="nob">
-								<select id="intentLevel" name="intentLevel" class="download dropdown-select">
-									<option value="">-请选择-</option>
-									<option value="13101001">H级</option>
-									<option value="13101002">A级</option>
-									<option value="13101003">B级</option>
-									<option value="13101004">C级</option>
-									<option value="13101005">N级</option>
-									<option value="13101008">O级</option>
-								</select>
-							</li>
-						</td>
-					</tr>
-					<tr class="biaoge">
-						<td>来访方式</td>
-						<td>
-							<li class="nob">
-								<select id="visitType" name="visitType" class="download dropdown-select" search="show">
-									<option value="">-请选择-</option>
-								</select>
-								<input name="visitType_h" id="visitType_h" value=""  type="hidden"  />
-							</li>
-						</td>
-					</tr>
-					<tr class="biaoge">
-						<td>客户来源</td>
-						<td>
-							<li class="nob">
-								<select id="cusSource" name="cusSource" class="download dropdown-select" search="show">
-									<option value="">-请选择-</option>
-								</select>
-								<input name="cusSource_h" id="cusSource_h" value=""  type="hidden"  />
-							</li>
-						</td>
-					</tr>
-					<tr class="biaoge">
-						<td>是否首次到店</td>
-						<td>
-							<li class="nob">
-								<select name="isFirstArrive" id="isFirstArrive" class="download dropdown-select">
-									<option value="">-请选择-</option>
-									<option value="10041001">是</option>
-									<option value="10041002">否</option>
-								</select>
-							</li>
-						</td>
-					</tr>
-					<tr class="biaoge">
-						<td>时间类型</td>
-						<td>
-							<li class="nob">
-								<select name="dataType" id="dataType" class="download dropdown-select"  onchange="dateTypeChange(this.value)">
-									<option value="">-请选择-</option>
-									<option value="0" selected="selected">来访时间</option>
-									<option value="1">创建时间</option>
-								</select>
-							</li>
-						</td>
-					</tr>
-					<tr class="biaoge" name="dateTr" >
-						<td>开始日期</td>
-						<td>
-							<li class="nob">
-								<input name="startDate" id="startDate" value="" type="date" class="px" placeholder="开始日期"  search="show"/>
-								<input name="startDate_h" id="startDate_h" value=""  type="hidden"  />
-							</li>
-						</td>
-					</tr>
-					<tr class="biaoge" name="dateTr" >
-						<td>结束日期</td>
-						<td>
-							<li class="nob">
-								<input name="endDate" id="endDate" value="" type="date" class="px" placeholder="结束日期"  search="show"/>
-								<input name="endDate_h" id="endDate_h" value=""  type="hidden"  />
-							</li>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center" height="60">
-							<li class="nob">
-								<input id="queryBtn" value="查   询" type="button" class="submit" style="width: 90%" onClick="queryPt();">
-							</li>
-						</td>
-					</tr>
-				</table>
-				<li class="shouqu" id="txt_query" onClick="_showQuery();">收起</li>
-			</ul>
+		<div style="display: none;" id="paramDiv">
+			<input type="hidden" id="customerNamePhone" name="customerNamePhone" value="" />
+			<input type="hidden" id="intentLevel" name="intentLevel" value="" />
+			<input type="hidden" id="visitType" name="visitType" value="" />
+			<input type="hidden" id="cusSource" name="cusSource" value="" />
+			<input type="hidden" id="isFirstArrive" name="isFirstArrive" value="0" />
+			<input type="hidden" id="dataType" name="dataType" value="" />
+			<input type="hidden" id="startDate" name="startDate" value="" />
+			<input type="hidden" id="endDate" name="endDate" value="" />
 		</div>
-		<div id="tabList"></div>
+		<!--<div id="rp" class="xf-res-rp">
+			<table width="100%" id="reportTable">
+				<tr>
+					<td style="width:50%;position: relative;" class="active">
+						<input name="topBtn" class="button" onclick="queryFilter(this,1)" style=" background-color:#edf0f8; width: 90% ;height: 30px;border: 0px;"
+						value="默认" type="button">
+						<span class="icon-sjarrow"></span>
+					</td>
+					<td style="width:50%;">
+						<input name="topBtn" class="button" onclick="queryFilter(this,2)"
+						 style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="筛选" type="button">
+						 <span class="icon-sjarrow" style="display: none;right:25%"></span>
+					</td>
+				</tr>
+			</table>
+		</div>-->
+		<div id="tabList" class="xf-res-tabList" style="margin-top: 44px;"></div>
+		<div class="right-bottom-button">
+			<input type="button" onclick="openAdd()" value="新  增"/>
+		</div>
 	</form>
 </body>
 <script type="text/javascript">
@@ -118,20 +49,20 @@
 		
 	});
 	//加载tc_code
-	_loadTcCodeAndCallBack("1309", "1311", "visitType", "cusSource");
+	//_loadTcCodeAndCallBack("1309", "1311", "visitType", "cusSource");
 	$(document).ready(function() {
-		document.getElementById('startDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
-		document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+//		document.getElementById('startDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
+//		document.getElementById('endDate').value = new Date().getFullYear()+"-"+(new Date().getMonth()<9?"0":"")+(new Date().getMonth()+1)+"-"+(new Date().getDate()<10?"0":"")+new Date().getDate();
 	});
 	function queryPt(){
-		_showQuery(1);
-		var url = httpUrlHead+"HallReceptionService/queryHallReceptionQuery.json?"+httpUrlEnd;
-		_exe_query(url,"fm",true,'OPERATION_TYPE',false,"_toUpdateOrDetailPage","_toUpdateOrDetailPage","SALES_CONSULTANT","INTENT_SERIES_PAGE","VISIT_TYPE_DESC","CUS_SOURCE_DESC");
+//		_showQuery(1);
+//		var url = httpUrlHead+"HallReceptionService/queryHallReceptionQuery.json?"+httpUrlEnd;
+//		_exe_query(url,"fm",true,'OPERATION_TYPE',false,"_toUpdateOrDetailPage","_toUpdateOrDetailPage","SALES_CONSULTANT","INTENT_SERIES_PAGE","VISIT_TYPE_DESC","CUS_SOURCE_DESC");
 	}
 	
 	//自定义回调刷新方法
 	window.addEventListener("backFunction",function(event){
-		queryPt();
+		getListData(1);
 	})
 	
 	function _toUpdateOrDetailPage(id,tabType) {
@@ -180,6 +111,24 @@
 	
 	function openAdd(){
 		ToUrl("hallReceptionEdit.html");
+	}
+	function queryFilter(obj,type){
+		var isHaveActive = $(obj).parent().hasClass("active");
+		if( type== 1){//全部
+			if(!isHaveActive){
+				initQueryFunc();
+			}
+		}else{//筛选
+			showPop();
+		}
+		toggleSjarrow(obj);
+	}
+	function toggleSjarrow(obj){
+		$(".icon-sjarrow").hide();
+		$(obj).next().show();
+		$(obj).parent().siblings().removeClass("active");
+		$(obj).parent().addClass("active");
+		
 	}
 </script>
 </html>

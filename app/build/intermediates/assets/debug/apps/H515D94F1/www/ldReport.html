@@ -1,344 +1,394 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="js/html_head.js"></script>
-<script type="text/javascript" src="js/clpage.js"></script>
-<link href="css/index.css" rel="stylesheet" type="text/css"/>
-<title>留档报表</title>
-<style type="text/css">
-	.bordered td{
-		text-align: center;
-		font-size: 14px;
-		text-indent:2px;
-		text-indent:2px;
-	}
-	.bordered th{
-		background: #10a6e2;
-		color: #fff;
-		text-shadow:none;
-		font-size: 16px;
-		text-indent:2px;
-	}
-</style>
-</head>
-<body onselectstart="return true;" ondragstart="return false;">
-	<script type="text/javascript" src="js/detail_head.js?_menu_name=留档榜(留电数量排行)&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
-	<form id="fm" method="post">
-		<div class="cardexplain">
-			<ul class="round"  style="border:none">
-			<table width="100%">
-			<tr>
-				<td style="width:50%;">
-					<input  name="topBtn" id="dayBtn"  style="background-color:white;  width: 90% ;height: 30px;border: 0px;" value="   日数据    " type="button" onclick="changeDate(0)">
-				</td>
-				<td style="width:50%;">
-					<input   name="topBtn" id="monthBtn"  style="background-color:white; width: 90% ;height: 30px;border: 0px;" value="  月数据  " type="button" onclick="changeDate(1)">
-				</td>
-			</tr>
-			<tr style="height: 3px;">
-				<td style="width:50%;"  bgcolor="#FFFF00" id="dayLineTr">
-					
-				</td>
-				<td style="width:50%;" id="monthLineTr">
-					
-				</td>
-			</tr>
-		</table>
-			<table id="tb_query">
-                <tr class="biaoge" id="dayTr" >
-                	<td>日期</td>
-                    <td>
-						 <li class="nob">
-                            <input name="dayDate" id="dayDate"   type="date"  onchange="queryData();" clearBtn="true" class="px" />
-                        </li>                    </td>
-                </tr>
-                <tr class="biaoge" id="monthTr" style="display: none;">
-                	<td>日期</td>
-                    <td>
-						 <li class="nob">
-                            <input name="monthDate" id="monthDate"   type="month"  onchange="queryData();" clearBtn="true" class="px" />
-                        </li>                    </td>
-                </tr>
-                <tr class="biaoge">
-                	<td>车系						                </td>
-                    <td>
-						 <li class="nob">
-                             <select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select"   search="show" onchange="changeSMPCForLd(this.value)">
-                                <option value="">-请选择-</option>
-                            </select>
-                            <input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value=""  type="hidden"  />
-                        </li>                    </td>
-                </tr>
-                <tr class="biaoge">
-                	<td>车型						                </td>
-                    <td>
-						 <li class="nob">
-                             <select id="intentModel" name="intentModel" class="download dropdown-select"   search="show" onchange="queryData();">
-                                <option value="">-请选择-</option>
-                            </select>
-                            <input name="intentModel_h" id="intentModel_h" value=""  type="hidden"  />
-                        </li>                    </td>
-                </tr>
-				</table>
-			</ul>
-		<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
-				<form action="javascript:;" method="post">
-					<div class="tab-pane active" id="panel-1">
-			 <ul class="round">
-        <table class="bordered" style="background-color: white;">
-            <thead>
-            <tr class="biaoge" >
-            	<th width="15%" nowrap="nowrap"  style="text-align: center;">排名</th>
-                <th width="85px" nowrap="nowrap"  style="text-align: center;">顾问</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">基盘</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">留档</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">战败</th>
-                <th width="15%" nowrap="nowrap"  style="text-align: center;">留存</th>
-                
-            </tr>
-            </thead>
-            <tbody id="reportBody"  >
-            </tbody>
-        </table>
-		</ul>
-		</div>
-		<br>
-		<br>
-		<br>
-	</form>
-	</div>
-	<!-- 菜单 -->
-    <!--<script type="text/javascript" src="js/index_bottom.js?_active_url=index.html" id="index_buttom_js"></script>-->
-    <!-- 菜单 -->
-</body>
-<script type="text/javascript">
-$(document).ready(function () {
-	_loadSeries("INTENT_SERIES");
-	setInitDate();
-	queryData(0);
-});
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<script type="text/javascript" src="js/clpage.js"></script>
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<!-- tabs样式优化 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_tabs.css" />
+		<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
+		<!-- tabs样式优化end -->
+		<title>留档报表</title>
+		<style type="text/css">
+			.bordered td {
+				text-align: center;
+				font-size: 14px;
+				text-indent: 2px;
+				text-indent: 2px;
+			}
 
-function queryData (isMonth) {
-	var dayDate = $("#dayDate").val();
-	var monthDate = $("#monthDate").val();
-	var INTENT_SERIES = $("#INTENT_SERIES").val();
-	var url = httpUrlHead + "ComplaintServiceApp/queryLdReport.json?dayDate="+dayDate+"&monthDate="+monthDate+"&INTENT_SERIES="+INTENT_SERIES + "&" + httpUrlEnd;
-	makeFormCall(url,function(json){
-		var appendHtml = "";
-		var totleJpNum = 0;
-		var totleLdNum = 0;
-		var totleZbNum = 0;
-		var totleLcNum = 0;
-		var redIndex = 0;
-		var isCurrtDate = true;
-		var IS_MANAGER = getLocalStorage("IS_MANAGER");
-		var logonUser = JSON.parse(getLocalStorage("logonUser"));
-		var logonName = logonUser.NAME;
-		var logonJpNum = 0;
-		var logonLdNum = 0;
-		var logonZbNum = 0;
-		var logonLcNum = 0;
-		var logonRank = 0;
-		if( isMonth == 0 ){
-			isCurrtDate =  _GetDateDiff(dayDate,getInitDate(0),"day") > 0;
-		}
-		if (json.list.length == 0) {
-			appendHtml += "<tr><td colspan=5><a style=color:red>无数据</a></td></tr>";
-			$("#reportBody").append(appendHtml);
-			return;
-		}
-		for (var i=0;i<json.list.length;i++){
-			var name = json.list[i].SALES_CONSULTANT;
-			if(name == "待分配"){
-				redIndex = 1;
+			.bordered th {
+				background: #1790E4;
+				color: #fff;
+				text-shadow: none;
+				font-size: 16px;
+				text-indent: 2px;
 			}
-			var rank = json.list[i].RANK;
-			var lcNum = parseInt(json.list[i].CURRENTLCNUM);
-			var zbNum = parseInt(json.list[i].ZBNUM);
-			var currtZbNum = parseInt(json.list[i].CURRENTZBNUM);
-			var currtLdNum = parseInt(json.list[i].CURRENTLDNUM);
-			var ldNum = parseInt(json.list[i].LDNUM);
-			var jpNum = 0;
-			if( isCurrtDate ){//昨日留存
-				lcNum = lcNum + currtZbNum - currtLdNum;
+			ul.round{
+				background-color: #f5f5f5;
 			}
-			jpNum = lcNum + zbNum - ldNum;
-			if (i == redIndex){
-				appendHtml += '<tr style="color:red">';
-			}else{
-				appendHtml += '<tr>';
-			}
-			if(name != "待分配"){
-				totleJpNum += jpNum;
-				totleLdNum += ldNum;
-				totleZbNum += zbNum;
-				totleLcNum += lcNum;
-			}
-			if(name == logonName && IS_MANAGER == 10041002){
-				logonJpNum += jpNum;
-				logonLdNum += ldNum;
-				logonZbNum += zbNum;
-				logonLcNum += lcNum;
-				logonRank = rank;
-			}
-			if(rank==1){
-				appendHtml += '<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a></td>';
-			}else if(rank==2){
-				appendHtml += '<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a></td>';
-			}else if(rank==3){
-				appendHtml += '<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a></td>';
-			}else{
-				appendHtml += '<td>'+rank+'</td>';
-			}
-			appendHtml += '<td>'+name+'</td>';
-			appendHtml += '<td>'+jpNum+'</td>';
-			if( ldNum > 0 && IS_MANAGER == 10041001){
-				appendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(1,\''+name+'\')">'+ldNum+'</td>';
-			}else{
-				appendHtml += '<td>'+ldNum+'</td>';
-			}
-			if( zbNum > 0 && IS_MANAGER == 10041001){
-				appendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(2,\''+name+'\')">'+zbNum+'</td>';
-			}else{
-				appendHtml += '<td>'+zbNum+'</td>';
-			}
-			appendHtml += '<td>'+lcNum+'</td>';
-		}
-		var hjAppendHtml='<tr><td></td><td>合计</td><td>'+totleJpNum+'</td><td>'+totleLdNum+'</td><td>'+totleZbNum+'</td><td>'+totleLcNum+'</td></tr>';		
-		
-		if(IS_MANAGER == 10041002){
-			var brAppendHtml = "<tr>";
-			if(rank==1){
-				brAppendHtml += '<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a></td>';
-			}else if(rank==2){
-				brAppendHtml += '<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a></td>';
-			}else if(rank==3){
-				brAppendHtml += '<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a></td>';
-			}else{
-				brAppendHtml += '<td>'+logonRank+'</td>';
-			}
-			brAppendHtml+=		'<td>我的排名</td>';
-			brAppendHtml+=		'<td>'+logonJpNum+'</td>';
-			if( logonLdNum > 0){
-				brAppendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(1,\''+logonName+'\')">'+logonLdNum+'</td>';
-			}else{
-				brAppendHtml+=		'<td>'+logonLdNum+'</td>';
-			}
-			if( logonZbNum > 0){
-				brAppendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(2,\''+logonName+'\')">'+logonZbNum+'</td>';
-			}else{
-				brAppendHtml+=		'<td>'+logonZbNum+'</td>';
-			}
-			brAppendHtml+=		'<td>'+logonLcNum+'</td></tr>';
-			appendHtml = brAppendHtml + hjAppendHtml + appendHtml;
-		} else{
-			appendHtml = hjAppendHtml + appendHtml;
-		}
-		$("#reportBody").html(appendHtml);
-	},null,true,true);
-}
+		</style>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;">
+		<script type="text/javascript" src="js/detail_head.js?_menu_name=留档榜(留电数量排行)&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp"
+		 id="detail_head_js"></script>
+		<form id="fm" method="post">
+			<div id='rp' class="cardexplain">
+				<ul class="round" style="border:none">
+					<table width="100%">
+						<tr>
+							<td style="width:50%;">
+								<input name="topBtn" id="dayBtn" style="background-color:white;  width: 90% ;height: 30px;border: 0px;" value="   日数据    "
+								 type="button" onclick="changeDate(0)">
+							</td>
+							<td style="width:50%;">
+								<input name="topBtn" id="monthBtn" style="background-color:white; width: 90% ;height: 30px;border: 0px;" value="  月数据  "
+								 type="button" onclick="changeDate(1)">
+							</td>
+						</tr>
+						<tr style="height: 3px;">
+							<td style="width:50%;" id="dayLineTr">
+								<span class="line"></span>
+							</td>
+							<td style="width:50%;" id="monthLineTr">
+								<span></span>
+							</td>
+						</tr>
+					</table>
+					<table id="tb_query" style="margin-top: 8px;">
+						<tr class="biaoge" id="dayTr">
+							<td>日期</td>
+							<td>
+								<li class="nob">
+									<input name="dayDate" id="dayDate" type="date" onchange="queryData();" clearBtn="true" class="px" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge" id="monthTr" style="display: none;">
+							<td>日期</td>
+							<td>
+								<li class="nob">
+									<input name="monthDate" id="monthDate" type="month" onchange="queryData();" clearBtn="true" class="px" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>车系 </td>
+							<td>
+								<li class="nob">
+									<select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select" search="show" onchange="changeSMPCForLd(this.value)">
+										<option value="">-请选择-</option>
+									</select>
+									<input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>车型 </td>
+							<td>
+								<li class="nob">
+									<select id="intentModel" name="intentModel" class="download dropdown-select" search="show" onchange="queryData();">
+										<option value="">-请选择-</option>
+									</select>
+									<input name="intentModel_h" id="intentModel_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+					</table>
+				</ul>
+				<div class="cardexplain" id="_showContent" style="padding-top:5px;width: 100%;overflow-x: auto;">
+					<form action="javascript:;" method="post">
+						<div class="tab-pane active" id="panel-1">
+							<ul class="round">
+								<table class="bordered" style="background-color: white;">
+									<thead>
+										<tr class="biaoge">
+											<th width="15%" nowrap="nowrap" style="text-align: center;">排名</th>
+											<th width="85px" nowrap="nowrap" style="text-align: center;">顾问</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">基盘</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">留档</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">战败</th>
+											<th width="15%" nowrap="nowrap" style="text-align: center;">留存</th>
 
-function setInitDate() {
-	$("#dayDate").val(getInitDate(0));
-}
+										</tr>
+									</thead>
+									<tbody id="reportBody">
+									</tbody>
+								</table>
+							</ul>
+						</div>
+						<br>
+						<br>
+						<br>
+					</form>
+				</div>
+				<!-- 菜单 -->
+				<!--<script type="text/javascript" src="js/index_bottom.js?_active_url=index.html" id="index_buttom_js"></script>-->
+				<!-- 菜单 -->
+	</body>
+	<script type="text/javascript">
+		var se_finalStatus = 1;
+		var se_loadStatus = 0;
+		var newSelects = [{
+				id: 'intentModel',
+				title: '车型',
+				onChange: 'queryData'
+			}, {
+				id: 'INTENT_SERIES',
+				title: '车系',
+				onChange: 'changeSMPCForLd'
+			}
+		];
+		$(document).ready(function() {
+			_loadSeries("INTENT_SERIES");
+			setInitDate();
+			queryData(0);
+		});
 
-function getInitDate(isMonth){
-	var nextDate = new Date();
-	var initDate = "";
-	if( isMonth == 0 ){
-		initDate = nextDate.getFullYear()+"-"+(nextDate.getMonth()<9?"0":"")+(nextDate.getMonth()+1)+"-"+(nextDate.getDate()<10?"0":"")+(nextDate.getDate());
-	}else{
-		initDate = nextDate.getFullYear()+"-"+(nextDate.getMonth()<9?"0":"")+(nextDate.getMonth()+1);
-	}
-	return initDate;
-}
-function changeDate(isMonth) {
-	if( isMonth == 0 ){
-		  $("#dayDate").val( getInitDate(0) );
-          $("#monthDate").val("");
-          $("#monthTr").hide();
-          $("#dayTr").show();
-          $("#monthLineTr").attr("bgcolor","");
-          $("#dayLineTr").attr("bgcolor","#FFFF00");
-	}else{
-		  $("#dayDate").val("");
-          $("#monthDate").val( getInitDate(1) );
-          $("#monthTr").show();
-          $("#dayTr").hide();
-          $("#dayLineTr").attr("bgcolor","");
-          $("#monthLineTr").attr("bgcolor","#FFFF00");
-	}
-	queryData(1);
-}
-
-function detailData(index,name){
-	var INTENT_SERIES = $("#INTENT_SERIES").val();
-	var dayDate = $("#dayDate").val();
-	var monthDate = $("#monthDate").val();
-	var reportFrom ="ldReport";
-	var title = "";
-	if(index == 1){
-		title = name + ":留档";
-	}else{
-		title = name + ":战败";
-	}
-	var headTitle = ["客户名字","电话号码","意向级别","状态","来源"];//表头
-	var headWidth = ["15%","15%","15%","100px","15%"];//表头
-	var showCol = ["CUSTOMER_NAME","CONTACTOR_MOBILE","INTENT_LEVEL","STATUS","CUS_SOURCE"];//显示字段
-	var paramName = ["sales_consultant","INTENT_SERIES","dayDate","monthDate","cellIndex","reportFrom"];//查询参数
-	var paramValue = [name,INTENT_SERIES,dayDate,monthDate,index,"ldReport"];//参数值
-	//组装url
-	var url = "report_detail.html?headTitle="+headTitle+"&paramName="+paramName+"&paramValue="+paramValue+"&showCol="+showCol+"&headWidth="+headWidth+"&title="+title;
-	ToUrl(url);
-}
-function showHelp(){
-	var alertMsg = ""+
-	"<div style='text-align:left;'>"+
-		"<div>排名：按留档倒序排列</div>"+
-		"<div>基盘：截止到选定时间之前跟进中线索</div>"+
-		"<div>留档：选定日期当天创建线索</div>"+
-		"<div>战败：选定日期当天战败数</div>"+
-		"<div>留存：截止到选定时间未战败数</div>"+
-	"</div>";
-	MuiAlert(alertMsg);
-}
-//车系车型配置颜色联动
-function changeSMPCForLd(code) {
-	var smpc = null;
-	var defaultValue = null;
-	smpc = document.getElementById("intentModel");
-	defaultValue = $("#intentModel").attr("defaultValue");
-	document.getElementById("intentModel").options.length=0;
-	if (code == "") {
-		return;
-	}
-	smpc.add(new Option("加载中...",""));
-	var url = httpUrlHead+"PotcusAchieveService/querySMPC.json?code="+code+"&codeType=1&"+httpUrlEnd;
-	makeFormCall(url, function(json){
-		smpc.options.length=0;
-		smpc.add(new Option("-请选择-",""));
-		if(json.RESULT.funcStatus == "1") {
-			var list = json.list;
-			if(list != null && list.length > 0) {
-				var selIndex = -1;
-				for(var i = 0;i < list.length;i++) {
-					smpc.add(new Option(list[i].GROUP_NAME,list[i].GROUP_CODE));
-					if (defaultValue != undefined && defaultValue != null && defaultValue != "" && defaultValue == list[i].GROUP_CODE) {
-						selIndex = i;
+		function queryData(isMonth) {
+			var dayDate = $("#dayDate").val();
+			var monthDate = $("#monthDate").val();
+			var INTENT_SERIES = $("#INTENT_SERIES").val();
+			var url = httpUrlHead + "ComplaintServiceApp/queryLdReport.json?dayDate=" + dayDate + "&monthDate=" + monthDate +
+				"&INTENT_SERIES=" + INTENT_SERIES + "&" + httpUrlEnd;
+			makeFormCall(url, function(json) {
+				var appendHtml = "";
+				var totleJpNum = 0;
+				var totleLdNum = 0;
+				var totleZbNum = 0;
+				var totleLcNum = 0;
+				var redIndex = 0;
+				var isCurrtDate = true;
+				var IS_MANAGER = getLocalStorage("IS_MANAGER");
+				var logonUser = JSON.parse(getLocalStorage("logonUser"));
+				var logonName = logonUser.NAME;
+				var logonJpNum = 0;
+				var logonLdNum = 0;
+				var logonZbNum = 0;
+				var logonLcNum = 0;
+				var logonRank = 0;
+				if (isMonth == 0) {
+					isCurrtDate = _GetDateDiff(dayDate, getInitDate(0), "day") > 0;
+				}
+				if (json.list.length == 0) {
+					appendHtml += "<tr><td colspan=5><a style=color:red>无数据</a></td></tr>";
+					$("#reportBody").append(appendHtml);
+					return;
+				}
+				for (var i = 0; i < json.list.length; i++) {
+					var name = json.list[i].SALES_CONSULTANT;
+					if (name == "待分配") {
+						redIndex = 1;
 					}
+					var rank = json.list[i].RANK;
+					var lcNum = parseInt(json.list[i].CURRENTLCNUM);
+					var zbNum = parseInt(json.list[i].ZBNUM);
+					var currtZbNum = parseInt(json.list[i].CURRENTZBNUM);
+					var currtLdNum = parseInt(json.list[i].CURRENTLDNUM);
+					var ldNum = parseInt(json.list[i].LDNUM);
+					var jpNum = 0;
+					if (isCurrtDate) { //昨日留存
+						lcNum = lcNum + currtZbNum - currtLdNum;
+					}
+					jpNum = lcNum + zbNum - ldNum;
+					if (i == redIndex) {
+						appendHtml += '<tr style="color:red">';
+					} else {
+						appendHtml += '<tr>';
+					}
+					if (name != "待分配") {
+						totleJpNum += jpNum;
+						totleLdNum += ldNum;
+						totleZbNum += zbNum;
+						totleLcNum += lcNum;
+					}
+					if (name == logonName && IS_MANAGER == 10041002) {
+						logonJpNum += jpNum;
+						logonLdNum += ldNum;
+						logonZbNum += zbNum;
+						logonLcNum += lcNum;
+						logonRank = rank;
+					}
+					if (rank == 1) {
+						appendHtml +=
+							'<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a></td>';
+					} else if (rank == 2) {
+						appendHtml +=
+							'<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a></td>';
+					} else if (rank == 3) {
+						appendHtml +=
+							'<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a></td>';
+					} else {
+						appendHtml += '<td>' + rank + '</td>';
+					}
+					appendHtml += '<td>' + name + '</td>';
+					appendHtml += '<td>' + jpNum + '</td>';
+					if (ldNum > 0 && IS_MANAGER == 10041001) {
+						appendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(1,\'' + name + '\')">' +
+							ldNum + '</td>';
+					} else {
+						appendHtml += '<td>' + ldNum + '</td>';
+					}
+					if (zbNum > 0 && IS_MANAGER == 10041001) {
+						appendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(2,\'' + name + '\')">' +
+							zbNum + '</td>';
+					} else {
+						appendHtml += '<td>' + zbNum + '</td>';
+					}
+					appendHtml += '<td>' + lcNum + '</td>';
 				}
-				if (selIndex >= 0) {
-					smpc.options[selIndex+1].selected = true;						
-				}
-				$("#intentModel").attr("defaultValue","");
-				queryData();
-			}
-		} else {
-			MuiAlert("加载数据失败!");
-		}
-	}, "fm");
-}
+				var hjAppendHtml = '<tr><td></td><td>合计</td><td>' + totleJpNum + '</td><td>' + totleLdNum + '</td><td>' +
+					totleZbNum + '</td><td>' + totleLcNum + '</td></tr>';
 
-</script>
+				if (IS_MANAGER == 10041002) {
+					var brAppendHtml = "<tr>";
+					if (rank == 1) {
+						brAppendHtml +=
+							'<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no1.png"></a></td>';
+					} else if (rank == 2) {
+						brAppendHtml +=
+							'<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no2.png"></a></td>';
+					} else if (rank == 3) {
+						brAppendHtml +=
+							'<td><a href="javascript:;"><img style="margin-left:5px;width:25px;height:32px;" src="images/no3.png"></a></td>';
+					} else {
+						brAppendHtml += '<td>' + logonRank + '</td>';
+					}
+					brAppendHtml += '<td>我的排名</td>';
+					brAppendHtml += '<td>' + logonJpNum + '</td>';
+					if (logonLdNum > 0) {
+						brAppendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(1,\'' + logonName +
+							'\')">' + logonLdNum + '</td>';
+					} else {
+						brAppendHtml += '<td>' + logonLdNum + '</td>';
+					}
+					if (logonZbNum > 0) {
+						brAppendHtml += '<td><a style="text-decoration: underline;color:blue;" onclick="detailData(2,\'' + logonName +
+							'\')">' + logonZbNum + '</td>';
+					} else {
+						brAppendHtml += '<td>' + logonZbNum + '</td>';
+					}
+					brAppendHtml += '<td>' + logonLcNum + '</td></tr>';
+					appendHtml = brAppendHtml + hjAppendHtml + appendHtml;
+				} else {
+					appendHtml = hjAppendHtml + appendHtml;
+				}
+				$("#reportBody").html(appendHtml);
+			}, null, true, true);
+		}
+
+		function setInitDate() {
+			$("#dayDate").val(getInitDate(0));
+		}
+
+		function getInitDate(isMonth) {
+			var nextDate = new Date();
+			var initDate = "";
+			if (isMonth == 0) {
+				initDate = nextDate.getFullYear() + "-" + (nextDate.getMonth() < 9 ? "0" : "") + (nextDate.getMonth() + 1) + "-" +
+					(nextDate.getDate() < 10 ? "0" : "") + (nextDate.getDate());
+			} else {
+				initDate = nextDate.getFullYear() + "-" + (nextDate.getMonth() < 9 ? "0" : "") + (nextDate.getMonth() + 1);
+			}
+			return initDate;
+		}
+
+		function changeDate(isMonth) {
+			if (isMonth == 0) {
+				$("#dayDate").val(getInitDate(0));
+				$("#monthDate").val("");
+				$("#monthTr").hide();
+				$("#dayTr").show();
+				// $("#monthLineTr").attr("bgcolor","");
+				// $("#dayLineTr").attr("bgcolor","#FFFF00");
+				$("#monthLineTr").find('span').removeClass("line");
+				$("#dayLineTr").find('span').addClass("line");
+			} else {
+				$("#dayDate").val("");
+				$("#monthDate").val(getInitDate(1));
+				$("#monthTr").show();
+				$("#dayTr").hide();
+				// $("#dayLineTr").attr("bgcolor","");
+				// $("#monthLineTr").attr("bgcolor","#FFFF00");
+				$("#monthLineTr").find('span').addClass("line");
+				$("#dayLineTr").find('span').removeClass("line");
+			}
+			queryData(isMonth);
+		}
+
+		function detailData(index, name) {
+			var INTENT_SERIES = $("#INTENT_SERIES").val();
+			var dayDate = $("#dayDate").val();
+			var monthDate = $("#monthDate").val();
+			var reportFrom = "ldReport";
+			var title = "";
+			if (index == 1) {
+				title = name + ":留档";
+			} else {
+				title = name + ":战败";
+			}
+			var headTitle = ["客户名字", "电话号码", "意向级别", "状态", "来源"]; //表头
+			var headWidth = ["15%", "15%", "15%", "100px", "15%"]; //表头
+			var showCol = ["CUSTOMER_NAME", "CONTACTOR_MOBILE", "INTENT_LEVEL", "STATUS", "CUS_SOURCE"]; //显示字段
+			var paramName = ["sales_consultant", "INTENT_SERIES", "dayDate", "monthDate", "cellIndex", "reportFrom"]; //查询参数
+			var paramValue = [name, INTENT_SERIES, dayDate, monthDate, index, "ldReport"]; //参数值
+			//组装url
+			var url = "report_detail.html?headTitle=" + headTitle + "&paramName=" + paramName + "&paramValue=" + paramValue +
+				"&showCol=" + showCol + "&headWidth=" + headWidth + "&title=" + title;
+			ToUrl(url);
+		}
+
+		function showHelp() {
+			var alertMsg = "" +
+				"<div style='text-align:left;'>" +
+				"<div>排名：按留档倒序排列</div>" +
+				"<div>基盘：截止到选定时间之前跟进中线索</div>" +
+				"<div>留档：选定日期当天创建线索</div>" +
+				"<div>战败：选定日期当天战败数</div>" +
+				"<div>留存：截止到选定时间未战败数</div>" +
+				"</div>";
+			MuiAlert(alertMsg);
+		}
+		//车系车型配置颜色联动
+		function changeSMPCForLd(code) {
+			var smpc = null;
+			var defaultValue = null;
+			smpc = document.getElementById("intentModel");
+			defaultValue = $("#intentModel").attr("defaultValue");
+			document.getElementById("intentModel").options.length = 0;
+			if (code == "") {
+				smpc.options.length = 0;
+				smpc.add(new Option("-请选择-", ""));
+				loadSelectRes();
+				return;
+			}
+			smpc.add(new Option("加载中...", ""));
+			var url = httpUrlHead + "PotcusAchieveService/querySMPC.json?code=" + code + "&codeType=1&" + httpUrlEnd;
+			makeFormCall(url, function(json) {
+				smpc.options.length = 0;
+				smpc.add(new Option("-请选择-", ""));
+				if (json.RESULT.funcStatus == "1") {
+					var list = json.list;
+					if (list != null && list.length > 0) {
+						var selIndex = -1;
+						for (var i = 0; i < list.length; i++) {
+							smpc.add(new Option(list[i].GROUP_NAME, list[i].GROUP_CODE));
+							if (defaultValue != undefined && defaultValue != null && defaultValue != "" && defaultValue == list[i].GROUP_CODE) {
+								selIndex = i;
+							}
+						}
+						if (selIndex >= 0) {
+							smpc.options[selIndex + 1].selected = true;
+						}
+						$("#intentModel").attr("defaultValue", "");
+						queryData();
+					}
+				} else {
+					MuiAlert("加载数据失败!");
+				}
+				loadSelectRes();
+			}, "fm");
+		}
+	</script>
 </html>

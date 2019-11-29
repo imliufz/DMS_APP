@@ -11,35 +11,35 @@ var _show_add = JSParm(jsId,"_show_add");
 var _show_left_menu = JSParm(jsId,"_show_left_menu");
 
 var writeHtml = ''+
-'<div class="nav">'+
+'<div class="nav xf-res-header">'+
 '        	<div class="left" id="leftMenu">'+
 '            	<font menu></font>'+
 '            </div>'+
 '        	<div class="center">'+
-'            	<h4><img src="images/logo.png">&nbsp;<span id="dealerName"></span></h4>'+
+'            	<h4><span id="dealerName"></span></h4>'+
 '            </div>'+
 '        	<div class="right" id="addZt">'+
 '            	<font add></font>'+
 '            </div>'+
 '        </div>'+
 '    	'+
-'        <div class="wlc">'+
-'        	<div>'+
-'            	<img src="images/xl.png"><font>欢迎您：</font><font><span id="logonName"></span></font>'+
-'            </div>'+
-'        	<div>'+
-'            	<a href="tel:023-67543333" target="_self">'+
-'            		<img src="images/tel.png" />'+
-'                </a>&nbsp;&nbsp;'+
-'            	<a href="javascript:void(0);" id="_tc">'+
-'            		<img src="images/wtsb.png" style="width:22px;height:20px;"/>&nbsp;<img src="images/tc.png" style="width:30px;height:14px;"/>'+
-'                </a>'+
-'            </div>'+
-'        </div>'+
-'    '+
-'    	<div class="wlc input" style="height:40px;position:relative;z-index:1;" id="_search">'+
+//'        <div class="wlc">'+
+//'        	<div>'+
+//'            	<img src="images/xl.png"><font>欢迎您：</font><font><span id="logonName"></span></font>'+
+//'            </div>'+
+//'        	<div>'+
+//'            	<a href="tel:023-67543333" target="_self">'+
+//'            		<img src="images/tel.png" />'+
+//'                </a>&nbsp;&nbsp;'+
+//'            	<a href="javascript:void(0);" id="_tc">'+
+//'            		<img src="images/wtsb.png" style="width:22px;height:20px;"/>&nbsp;<img src="images/tc.png" style="width:30px;height:14px;"/>'+
+//'                </a>'+
+//'            </div>'+
+//'        </div>'+
+//'    '+
+'    	<div class="wlc input xf-res-input" style="height:40px;position:relative;z-index:1;background-color:#1790E4;margin-top:-1px;" id="_search">'+
 '        	<form onsubmit="searchFunc();return false;"><input style="width: 80%;height:30px;margin-top:5px;" id="search_txt" type="text" value="" class="text" placeholder="请输入客户姓名/电话/级别">'+
-'           <img src="images/seach.gif" id="seach" style="width:27px;height:25px;"/></form>'+
+'           <img src="images/seach.png" id="seach" style="width:27px;height:25px;"/></form>'+
 '        </div>';
 document.write(writeHtml);
 
@@ -52,9 +52,9 @@ $(document).ready(function() {
 	}catch(e){
 		//TODO 不存在新增按钮
 	}
-	document.getElementById("_tc").addEventListener("tap",function(){
-		ToUrl("problemReportAdd.html?toPage=index");
-	});
+//	document.getElementById("_tc").addEventListener("tap",function(){
+//		ToUrl("problemReportAdd.html?toPage=index");
+//	});
 	document.getElementById("seach").addEventListener("tap",function(){
 		var search_txt = document.getElementById("search_txt").value;
 		if(search_txt == ""){

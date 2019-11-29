@@ -6,34 +6,41 @@ var _active_url = JSParm(jsId,"_active_url");
 var isHaveFwgwRole = getLocalStorage("HAVE_FWGW_ROLE");
 var isHaveZxRole = getLocalStorage("HAVE_ZX_ROLE");
 
+var isHaveJsRole = getLocalStorage("HAVE_JSZX_ROLE");
 var writeHtml = ''+
 //'<br/><br/><br/><br/>'+
 '<div  class="menu xf-res-menu">'+
 '            <ul>'+
 '                <li toPage="index.html" menuNum="1" id="menu_clue" style="display:none;">'+
-'                	 <a style="background-size:30%" href="javascript:void(0);" toPage="index.html" id="m1" class="home" dat="长安风尚轿车销售" ></a>'+
+'                	 <a style="background-size:27px;" href="javascript:void(0);" toPage="index.html" id="m1" class="home" dat="长安风尚轿车销售" ></a>'+
 '                    <span>线索</span>'+
 '                </li>'+
 '                <li toPage="remind.html" menuNum="2" id="menu_remind" style="display:none;">'+
-'                	 <a style="background-size:30%" href="javascript:void(0);" toPage="remind.html" id="m2" class="alert" dat="提醒" ></a>'+
+'                	 <a style="background-size:27px;" href="javascript:void(0);" toPage="remind.html" id="m2" class="alert" dat="提醒" ></a>'+
 '                    <span>提醒</span>'+
 /*'                <li toPage="complaint.html" menuNum="2" id="menu_complaint" style="display:none;">'+
 '                	 <a href="javascript:void(0);" toPage="complaint.html" id="m2" class="alert" dat="投诉" ></a>'+
 '                    <span>投诉</span>'+*/
 '                </li>'+
 '                <li toPage="report_list.html" menuNum="3" id="menu_report" style="display:none;">'+
-'					 <a style="background-size:30%" href="javascript:void(0);" toPage="report_list.html" id="m3" class="report" dat="报表" ></a>'+
+'					 <a style="background-size:27px;" href="javascript:void(0);" toPage="report_list.html" id="m3" class="report" dat="报表" ></a>'+
 '                    <span>报表</span>'+
 '                </li>';
 if(!IsNull(isHaveZxRole) && isHaveZxRole == '1'){
 	writeHtml += '                <li menuNum="4" id="menu_zxapp">'+
-'					 <a style="background-size:30%" href="javascript:void(0);" toPage="" id="m4" class="zxapp" dat="尊享" ></a>'+
-'                    <span>尊享</span>'+
+'					 <a style="background-size:27px;" href="javascript:void(0);" toPage="" id="m4" class="zxapp" dat="管家" ></a>'+
+'                    <span>管家</span>'+
+'                </li>';
+}
+if(!IsNull(isHaveJsRole) && isHaveJsRole != '0'){
+	writeHtml += '                <li menuNum="5" id="menu_jszxapp">'+
+'					 <a style="background-size:27px;" href="javascript:void(0);" toPage="" id="m5" class="jszxapp" dat="技师在线" ></a>'+
+'                    <span>技师</span>'+
 '                </li>';
 }
 writeHtml +=
-'                <li toPage="mine.html"  menuNum="5" id="menu_mine">'+
-'                	 <a style="background-size:30%" href="javascript:void(0);" id="m5" toPage="mine.html" class="mine" dat="我的" ></a>'+
+'                <li toPage="mine.html"  menuNum="6" id="menu_mine">'+
+'                	 <a style="background-size:27px;" href="javascript:void(0);" id="m6" toPage="mine.html" class="mine" dat="我的" ></a>'+
 '                    <span>我的</span>'+
 '                </li>'+
 '            </ul>'+
@@ -60,6 +67,10 @@ mui('.menu').on('tap', 'li', function(e) {
 	}
 	if(IsNull(toPage) && newMenuNum == 4){//尊享APP
 		toZxApp();
+		return;
+	}
+	if(IsNull(toPage) && newMenuNum == 5){//技师在线APP
+		toJszxApp();
 		return;
 	}
 	//ToUrl(toPage,animationTypeShow);
@@ -108,18 +119,42 @@ function toZxApp(){
 			if(!IsNull(url)){
 				ToUrl(url);
 			}else{
-				MuiAlert("尊享APP地址配置不正确");
+				MuiAlert("管家APP地址配置不正确");
+			}
+		}
+	},"fm");
+}
+function toJszxApp(){
+	var url = httpUrlHead+"PotcusAchieveService/getJszxUrl.json?"+httpUrlEnd;
+	makeFormCall(url,function(json){
+		if(json.RESULT.funcStatus == "1"){
+			var url = json.url;
+			if(!IsNull(url)){
+				ToUrl(url);
+			}else{
+				MuiAlert("技师在线APP地址配置不正确");
 			}
 		}
 	},"fm");
 }
 mui.os.plus && !mui.os.stream && mui.plusReady(function(){
+	var haveJump = false;
 	var isHaveFwgwRole = getLocalStorage("HAVE_FWGW_ROLE");
 	var IS_HAVE_JUMP = getLocalStorage("IS_HAVE_JUMP");//是否跳转尊享APP
+	
 	if(!IsNull(isHaveFwgwRole) && isHaveFwgwRole == '1' && !IsNull(IS_HAVE_JUMP) && IS_HAVE_JUMP == '0' ){
 		setLocalStorage("IS_HAVE_JUMP","1");
 		//有服务顾问权限自动跳转到尊享APP页面
-	    MuiLoading("正在打开尊享APP...");
+	    MuiLoading("正在打开管家APP...");
 	    setTimeout('toZxApp()',1000);
+	    haveJump = true;
+	    return;
 	}
+	/*var IS_HAVE_JSZX_JUMP = getLocalStorage("IS_HAVE_JSZX_JUMP");//是否跳转技师在线APP
+	if(!haveJump && !IsNull(isHaveJsRole) && isHaveJsRole == '1' && !IsNull(IS_HAVE_JSZX_JUMP) && IS_HAVE_JSZX_JUMP == '0' ){
+		setLocalStorage("IS_HAVE_JUMP","1");
+		//有服务顾问权限自动跳转到尊享APP页面
+	    MuiLoading("正在打开技师在线APP...");
+	    setTimeout('toJszxApp()',1000);
+	}*/
 });

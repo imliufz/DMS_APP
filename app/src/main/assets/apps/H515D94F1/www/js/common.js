@@ -96,14 +96,6 @@ $(document).ready(function() {
 			})(mui)
 		}
 	});
-	
-	//app报表界面展示隐藏查询条件
-	var menuType = UrlParm.parm("menuType");
-	if(menuType == "3" || menuType == "5"){
-		$("#tb_query").hide();
-		$("#txt_query").hide();
-		$("#tabList").css("margin-top","0px");
-	}
 	//短信按钮模板调用加载
 	$("img[name='callMsg']").click(function(){
 		var phone = $("#contactorMobile").val();

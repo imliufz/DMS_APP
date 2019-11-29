@@ -1,339 +1,397 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="js/html_head.js"></script>
-<!--<script type="text/javascript" src="js/clpage.js"></script>-->
-<title>首次跟进报表（车厂下发）</title>
-<style type="text/css">
-	.bordered td{
-		text-align: center;
-		font-size: 15px;
-		text-indent:2px;
-	}
-	.bordered th{
-		background: #10a6e2;
-		color: #fff;
-		text-shadow:none;
-		font-size: 16px;
-		text-indent:2px;
-	}
-</style>
-</head>
-<body onselectstart="return true;" ondragstart="return false;">
-	<script type="text/javascript" src="js/detail_head.js?_menu_name=首次跟进报表（车厂下发）&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
-	<form id="fm" method="post">
-		 <input type="hidden" id="dayOrMonth" name="dayOrMonth" value="0"/>
-		<div class="cardexplain">
-		 <table width="100%" style="background-color:white;">
-			<tr>
-				<td style="width:50%;">
-					<input  name="topBtn" id="tsNoDealNum" class="button" onclick="BEDate('Bdate','Edate')"  style="  width: 90% ;background-color:white;height: 30px;border: 0px;" value="   日数据    " type="button" >
-				</td>
-				<td style="width:50%;">
-					<input   name="topBtn" id="tsNoDealNum" class="button" onclick="BEDate('Edate','Bdate')" style=" width: 90% ;background-color:white;height: 30px;border: 0px;" value="  月数据  " type="button">
-				</td>
-			</tr>
-			<tr style="height: 3px;">
-				<td style="width:50%;"  bgcolor="#FFFF00" id="B_TD">
-					
-				</td>
-				<td style="width:50%;" id="E_TD">
-					
-				</td>
-			</tr>
-		</table>
-			<ul class="round"  style="border:none">
-				<table id="tb_query">
-				<tr class="biaoge">
-				    <td>日期</td>
-					<td>
-						<li class="nob" id="Bdate" >
-							<input name="failDateBegin" id="failDateBegin" class="px" value="" type="date"  onchange="queryPt();" clearBtn="true"/>
-                        </li>
-                        <li class="nob" id="Edate" style="display: none">
-							<input name="failDateEnd" id="failDateEnd" class="px" value="" type="month"    onchange="queryPt();"/>
-                        </li>
-					</td>
-				</tr>
-					<tr class="biaoge">
-						<td>来源渠道</td>
-						<td >
-							<li class="nob">
-								<select id="CLUE_SOURCE" name="CLUE_SOURCE" class="download dropdown-select"   search="show"   onchange="queryPt();" >
-									<option value="">请选择</option>
-								</select>
-								<input name="CLUE_SOURCE_h" id="CLUE_SOURCE_h" value=""  type="hidden"  />
-							</li>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<!--<script type="text/javascript" src="js/clpage.js"></script>-->
+		<!-- tabs样式优化 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_tabs.css" />
+		<!-- tabs样式优化end -->
+		<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
+		<title>首次跟进报表（车厂下发）</title>
+		<style type="text/css">
+			.bordered td {
+				text-align: center;
+				font-size: 15px;
+				text-indent: 2px;
+			}
+
+			.bordered th {
+				background: #1790E4;
+				color: #fff;
+				text-shadow: none;
+				font-size: 16px;
+				text-indent: 2px;
+			}
+		</style>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;">
+		<script type="text/javascript" src="js/detail_head.js?_menu_name=首次跟进报表（车厂下发）&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp"
+		 id="detail_head_js"></script>
+		<form id="fm" method="post">
+			<input type="hidden" id="dayOrMonth" name="dayOrMonth" value="0" />
+			<div class="cardexplain">
+				<table id='rp' width="100%" style="background-color:white;">
+					<tr>
+						<td style="width:50%;">
+							<input name="topBtn" id="tsNoDealNum" class="button" onclick="BEDate('Bdate','Edate')" style="  width: 90% ;background-color:white;height: 30px;border: 0px;"
+							 value="   日数据    " type="button">
+						</td>
+						<td style="width:50%;">
+							<input name="topBtn" id="tsNoDealNum" class="button" onclick="BEDate('Edate','Bdate')" style=" width: 90% ;background-color:white;height: 30px;border: 0px;"
+							 value="  月数据  " type="button">
 						</td>
 					</tr>
-					<tr class="biaoge">
-						<td>车系</td>
-						<td>
-						<li class="nob">
-								<select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select"   search="show" onchange="queryPt();"  >
-									<option value="">请选择</option>
-								</select>
-								<input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value=""  type="hidden"  />
-					   </li>
-					   </td>
+					<tr style="height: 3px;">
+						<td style="width:50%;" id="B_TD">
+								<span class="line"></span>
+						</td>
+						<td style="width:50%;" id="E_TD">
+								<span></span>
+						</td>
 					</tr>
 				</table>
-			</ul>
-		<div class="cardexplain" id="_showContent" style="padding-top:0px;width: 100%;overflow-x: auto;">
+				<ul class="round" style="border:none">
+					<table id="tb_query">
+						<tr class="biaoge">
+							<td>日期</td>
+							<td>
+								<li class="nob" id="Bdate">
+									<input name="failDateBegin" id="failDateBegin" class="px" value="" type="date" onchange="queryPt();" clearBtn="true" />
+								</li>
+								<li class="nob" id="Edate" style="display: none">
+									<input name="failDateEnd" id="failDateEnd" class="px" value="" type="month" onchange="queryPt();" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>来源渠道</td>
+							<td>
+								<li class="nob">
+									<select id="CLUE_SOURCE" name="CLUE_SOURCE" class="download dropdown-select" search="show" onchange="queryPt();">
+										<option value="">请选择</option>
+									</select>
+									<input name="CLUE_SOURCE_h" id="CLUE_SOURCE_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+						<tr class="biaoge">
+							<td>车系</td>
+							<td>
+								<li class="nob">
+									<select id="INTENT_SERIES" name="INTENT_SERIES" class="download dropdown-select" search="show" onchange="queryPt();">
+										<option value="">请选择</option>
+									</select>
+									<input name="INTENT_SERIES_h" id="INTENT_SERIES_h" value="" type="hidden" />
+								</li>
+							</td>
+						</tr>
+					</table>
+				</ul>
+				<div class="mui-content">
+					<div style="padding: 2px 0px;">
+						<div id="segmentedControl" class="mui-segmented-control">
+							<a class="mui-control-item mui-active" href="#tabs1" id="consultantQuery">按顾问统计</a>
+							<a class="mui-control-item" href="#tabs2" id="channelQuery">按渠道统计</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cardexplain" id="_showContent" style="padding-top:0px;width: 100%;overflow-x: auto;">
 				<form action="javascript:;" method="post">
 					<div class="tab-pane active" id="panel-1">
-	   <ul class="round">
-        <table class="bordered" style="background-color: white;">
-            <thead>
-            <tr class="biaoge">
-                <th width="30%" nowrap="nowrap" style="text-align: center;">顾问</th>
-                <th width="18%" nowrap="nowrap" style="text-align: center;">下发数</th>
-                <th width="18%" nowrap="nowrap" style="text-align: center;">待首次</th>
-                <th width="18%" nowrap="nowrap" style="text-align: center;">及时</th>
-                <th width="12%" nowrap="nowrap" style="text-align: center;">超期</th>
-            </tr>
-            </thead>
-            <tbody id="complaintReport">
-            </tbody>
-        </table>
-        </ul>
-		</div>
-	</form>
-	</div>
-</body>
-<script type="text/javascript">
-	var groupSalesConsultant = null;
-	$(document).ready(function () {
-		var IS_MANAGER = getLocalStorage("IS_MANAGER");
-		if(IS_MANAGER == 10041001){//销售经理
-			var url = httpUrlHead+"PotcusAchieveService/querySalesConsultantList.json?"+httpUrlEnd;
-	    	makeFormCall(url,function(json){
-	    		if (json.tsList != null && json.tsList.length > 0) {
-	    			groupSalesConsultant = json;
+						<ul class="round">
+							<table class="bordered" style="background-color: white;">
+								<thead>
+									<tr class="biaoge">
+										<th width="30%" nowrap="nowrap" style="text-align: center;">顾问</th>
+										<th width="18%" nowrap="nowrap" style="text-align: center;">下发数</th>
+										<th width="18%" nowrap="nowrap" style="text-align: center;">待首次</th>
+										<th width="18%" nowrap="nowrap" style="text-align: center;">及时</th>
+										<th width="12%" nowrap="nowrap" style="text-align: center;">超期</th>
+										<th width="12%" nowrap="nowrap" style="text-align: center;">及时率</th>
+									</tr>
+								</thead>
+								<tbody id="complaintReport">
+								</tbody>
+							</table>
+						</ul>
+					</div>
+				</form>
+			</div>
+	</body>
+	<script type="text/javascript">
+		var groupSalesConsultant = null;
+		var se_finalStatus = 2;
+		var se_loadStatus = 0;
+		var newSelects = [{
+				id: 'CLUE_SOURCE',
+				title: '来源渠道',
+				onChange: 'queryPt'
+			}, {
+				id: 'INTENT_SERIES',
+				title: '车系',
+				onChange: 'queryPt'
+			}
+		];
+		$(document).ready(function() {
+			var IS_MANAGER = getLocalStorage("IS_MANAGER");
+			if (IS_MANAGER == 10041001) { //销售经理
+				var url = httpUrlHead + "PotcusAchieveService/querySalesConsultantList.json?" + httpUrlEnd;
+				makeFormCall(url, function(json) {
+					if (json.tsList != null && json.tsList.length > 0) {
+						groupSalesConsultant = json;
+					}
+					_loadSeries("INTENT_SERIES");
+					_loadTcCodeAndCallBack("3031", "CLUE_SOURCE");
+					var dayOrMonth = $("#dayOrMonth").val();
+					if (dayOrMonth == "1") {
+						BEDate('Edate', 'Bdate');
+					} else {
+						BEDate('Bdate', 'Edate');
+					}
+				}, "fm");
+			} else {
+				groupSalesConsultant = "all";
+				_loadSeries("INTENT_SERIES");
+				_loadTcCodeAndCallBack("3031", "CLUE_SOURCE");
+				var dayOrMonth = $("#dayOrMonth").val();
+				if (dayOrMonth == "1") {
+					BEDate('Edate', 'Bdate');
+				} else {
+					BEDate('Bdate', 'Edate');
 				}
-	    		_loadSeries("INTENT_SERIES");
-	    		_loadTcCodeAndCallBack("3031", "CLUE_SOURCE");
-	    		var dayOrMonth = $("#dayOrMonth").val();
-	    		if(dayOrMonth == "1"){
-	    			BEDate('Edate','Bdate');
-	    		}else{
-	    			BEDate('Bdate','Edate');
-	    		}
-	    	},"fm");
-		}else{
-			groupSalesConsultant = "all";
-			_loadSeries("INTENT_SERIES");
-    		_loadTcCodeAndCallBack("3031", "CLUE_SOURCE");
-    		var dayOrMonth = $("#dayOrMonth").val();
-    		if(dayOrMonth == "1"){
-    			BEDate('Edate','Bdate');
-    		}else{
-    			BEDate('Bdate','Edate');
-    		}
+			}
+		});
+
+		function loadData() {
+			var dayOrMonth = $("#dayOrMonth").val();
+			if (dayOrMonth == "1") {
+				BEDate('Edate', 'Bdate');
+			} else {
+				BEDate('Bdate', 'Edate');
+			}
 		}
-	});
-	
-	function loadData(){
-		var dayOrMonth = $("#dayOrMonth").val();
-		if(dayOrMonth == "1"){
-			BEDate('Edate','Bdate');
-		}else{
-			BEDate('Bdate','Edate');
-		}
-	}
-	
-	//自定义回调刷新方法
-	window.addEventListener("backFunction",function(event){
-		loadData();
-	})
-	
-	function queryPt()
-	{
-	           var failDateBegin = document.getElementById('failDateBegin').value;
-	           var failDateEnd = document.getElementById('failDateEnd').value;
-	           if(failDateBegin == '' && failDateEnd == '')
-	           {
-	             MuiAlert('日期必选');
-	             return false;
-	           }
-	           var INTENT_SERIES = document.getElementById('INTENT_SERIES').value;
-		        var CLUE_SOURCE = document.getElementById("CLUE_SOURCE").value;
-		        var complaintReport = document.getElementById("complaintReport");
-				var url1 = httpUrlHead + "ComplaintServiceApp/queryFUp.json?failDateBegin="+failDateBegin+"&failDateEnd="+failDateEnd+"&INTENT_SERIES="+INTENT_SERIES +"&CLUE_SOURCE="+CLUE_SOURCE+"&"+ httpUrlEnd;
-				makeFormCall(url1,function(json){
-				  $("#complaintReport").html("");
-				   if(json.list.length == 0)
-				   {
-				     var newRow = complaintReport.insertRow(0);
-				     var newCell = newRow.insertCell(0);
-				     
-				     newCell.innerHTML ="无数据";
-				     newCell = newRow.insertCell(1);
-				     
-				     newCell.innerHTML ="0";
-				      newCell = newRow.insertCell(2);
-				     
-				     newCell.innerHTML ="0";
-				      newCell = newRow.insertCell(3);
-				     
-				     newCell.innerHTML ="0";
-				      newCell = newRow.insertCell(4);
-				     newCell.innerHTML ="0";
-				   }else{
-					   var na = "'";
-					    var url = "";
-					    var XFSLNum = 0;
-					    var DFPNum = 0;
-					    var JSGJNum = 0;
-					    var CQNum = 0;
-						for(var i = 0; i < json.list.length;i++) {
-							var detail = json.list[i];
-							var sel = detail.SALES_CONSULTANT;
-							if(sel != "待分配"){
-								XFSLNum += parseInt(detail.XFSL);
-								DFPNum += parseInt(detail.DFP);
-								JSGJNum += parseInt(detail.JSGJ);
-								CQNum += parseInt(detail.CQ);
-							}
-							var newRow = complaintReport.insertRow(i);
-							var newCell = newRow.insertCell(0);
-							var isInGroup = isInGroupFc(detail.SALES_CONSULTANT);
-							newCell.innerHTML =detail.SALES_CONSULTANT;
-							if(sel == "待分配"){
-								newCell.setAttribute("style","color:red");
-							}
-							newCell = newRow.insertCell(1);
-							newCell.innerHTML =detail.XFSL;
-							newCell = newRow.insertCell(2);
-							if(detail.DFP == '0' )
-							{
-							  newCell.innerHTML =detail.DFP;
-							}else
-							{
-							    if(detail.SALES_CONSULTANT == '待分配')
-							    {
-							        url = "xs_allot_list.html?";
-							        newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+failDateBegin+na+','+na+failDateEnd+na+','+na+INTENT_SERIES+na+','+na+CLUE_SOURCE+na+',1,'+na+sel+na+')">'+detail.DFP+'</a>';
-							    }else
-							    {
-							      url = "gj_list.html?";
-							      if(isInGroup){
-							      	newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+failDateBegin+na+','+na+failDateEnd+na+','+na+INTENT_SERIES+na+','+na+CLUE_SOURCE+na+',2,'+na+sel+na+')">'+detail.DFP+'</a>';
-							      }else{
-							    	  newCell.innerHTML = detail.DFP;
-							      }
-							    }
-							}
-							newCell = newRow.insertCell(3);
-							if(detail.JSGJ == '0')
-							{
-							  newCell.innerHTML = detail.JSGJ;
-							}else
-							{
-							 url = "xs_list.html?";
-							 if(isInGroup){
-							 	newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+failDateBegin+na+','+na+failDateEnd+na+','+na+INTENT_SERIES+na+','+na+CLUE_SOURCE+na+',0,'+na+sel+na+')">'+detail.JSGJ+'</a>';
-							 }else{
-								 newCell.innerHTML = detail.JSGJ;
-							 }
-							}
-							newCell = newRow.insertCell(4);
-							if(detail.CQ == '0')
-							{
-								 newCell.innerHTML =  detail.CQ ;
-							}else
-							{
-							  url = "xs_list.html?";
-							  if(isInGroup){
-							  	newCell.innerHTML =  '<a style="text-decoration: underline;color:blue;" onclick="selcount('+na+url+na+','+na+failDateBegin+na+','+na+failDateEnd+na+','+na+INTENT_SERIES+na+','+na+CLUE_SOURCE+na+',3,'+na+sel+na+')">'+detail.CQ+'</a>';
-							  }else{
-								  newCell.innerHTML = detail.CQ;
-							  }
+
+		//自定义回调刷新方法
+		window.addEventListener("backFunction", function(event) {
+			loadData();
+		})
+		var activeId = "";
+
+		function queryPt() {
+
+			var failDateBegin = document.getElementById('failDateBegin').value;
+			var failDateEnd = document.getElementById('failDateEnd').value;
+			if (failDateBegin == '' && failDateEnd == '') {
+				MuiAlert('日期必选');
+				return false;
+			}
+			if (activeId == "channelQuery") {
+				queryType = "2";
+			} else {
+				queryType = "1";
+			}
+			var INTENT_SERIES = document.getElementById('INTENT_SERIES').value;
+			var CLUE_SOURCE = document.getElementById("CLUE_SOURCE").value;
+			var complaintReport = document.getElementById("complaintReport");
+			var url1 = httpUrlHead + "ComplaintServiceApp/queryFUp.json?queryType=" + queryType + "&failDateBegin=" +
+				failDateBegin + "&failDateEnd=" + failDateEnd + "&INTENT_SERIES=" + INTENT_SERIES + "&CLUE_SOURCE=" + CLUE_SOURCE +
+				"&" + httpUrlEnd;
+			makeFormCall(url1, function(json) {
+				$("#complaintReport").html("");
+				if (json.list.length == 0) {
+					var newRow = complaintReport.insertRow(0);
+					var newCell = newRow.insertCell(0);
+
+					newCell.innerHTML = "无数据";
+					newCell = newRow.insertCell(1);
+
+					newCell.innerHTML = "0";
+					newCell = newRow.insertCell(2);
+
+					newCell.innerHTML = "0";
+					newCell = newRow.insertCell(3);
+
+					newCell.innerHTML = "0";
+					newCell = newRow.insertCell(4);
+					newCell.innerHTML = "0";
+					newCell = newRow.insertCell(5);
+					newCell.innerHTML = "";
+				} else {
+					var na = "'";
+					var url = "";
+					var XFSLNum = 0;
+					var DFPNum = 0;
+					var JSGJNum = 0;
+					var CQNum = 0;
+					for (var i = 0; i < json.list.length; i++) {
+						var detail = json.list[i];
+						var sel = detail.SALES_CONSULTANT;
+						var jsRote = "0%";
+						if (parseInt(detail.XFSL) != 0) {
+							jsRote = Math.round(parseInt(detail.JSGJ) * 10000 / parseInt(detail.XFSL)) / 100 + "%";
+						}
+						if (sel != "待分配") {
+							XFSLNum += parseInt(detail.XFSL);
+							DFPNum += parseInt(detail.DFP);
+							JSGJNum += parseInt(detail.JSGJ);
+							CQNum += parseInt(detail.CQ);
+						}
+						var newRow = complaintReport.insertRow(i);
+						var newCell = newRow.insertCell(0);
+						var isInGroup = isInGroupFc(detail.SALES_CONSULTANT);
+						newCell.innerHTML = detail.SALES_CONSULTANT;
+						if (sel == "待分配") {
+							newCell.setAttribute("style", "color:red");
+						}
+						newCell = newRow.insertCell(1);
+						newCell.innerHTML = detail.XFSL;
+						newCell = newRow.insertCell(2);
+						if (detail.DFP == '0') {
+							newCell.innerHTML = detail.DFP;
+						} else {
+							if (detail.SALES_CONSULTANT == '待分配') {
+								url = "xs_allot_list.html?";
+								newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+									',' + na + failDateBegin + na + ',' + na + failDateEnd + na + ',' + na + INTENT_SERIES + na + ',' + na +
+									CLUE_SOURCE + na + ',1,' + na + sel + na + ')">' + detail.DFP + '</a>';
+							} else {
+								url = "gj_list.html?";
+								if (isInGroup) {
+									newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+										',' + na + failDateBegin + na + ',' + na + failDateEnd + na + ',' + na + INTENT_SERIES + na + ',' + na +
+										CLUE_SOURCE + na + ',2,' + na + sel + na + ')">' + detail.DFP + '</a>';
+								} else {
+									newCell.innerHTML = detail.DFP;
+								}
 							}
 						}
-						//增加合计行
-						var newRow = complaintReport.insertRow(json.list.length);
-					    var newCell = newRow.insertCell(0);
-					     
-					     newCell.innerHTML ="合计";
-					     newCell = newRow.insertCell(1);
-					     
-					     newCell.innerHTML =XFSLNum;
-					      newCell = newRow.insertCell(2);
-					     
-					     newCell.innerHTML =DFPNum;
-					      newCell = newRow.insertCell(3);
-					     
-					     newCell.innerHTML =JSGJNum;
-					      newCell = newRow.insertCell(4);
-					     newCell.innerHTML =CQNum;
-				   }
-				    
-				},"fm",true,true);
-	}
-   function selcount(url,failDateBegin,failDateEnd,INTENT_SERIES,CLUE_SOURCE,IS_JS,SALES_CONSULTANT )
-   {
-     _toPage( url+"menuType=5&failDateBegin="+failDateBegin+"&failDateEnd="+failDateEnd+"&INTENT_SERIES="+INTENT_SERIES+"&CLUE_SOURCE="+CLUE_SOURCE+"&IS_JS="+IS_JS+"&SALES_CONSULTANT="+SALES_CONSULTANT);
-   }
-   function BEDate(Bval,Eval)
-   {
-      var nextDate = new Date();
-      document.getElementById(Bval).style.display ='';
-      document.getElementById(Eval).style.display ='none';
-      if(Bval == 'Bdate')
-      {
-    	  $("#dayOrMonth").val("0");
-    	  if(document.getElementById('failDateBegin').value == ""){
-          	document.getElementById('failDateBegin').value = nextDate.getFullYear()+"-"+(nextDate.getMonth()<9?"0":"")+(nextDate.getMonth()+1)+"-"+(nextDate.getDate()<10?"0":"")+(nextDate.getDate());
-     	  }
-          document.getElementById('failDateEnd').value = '';
-          $("#B_TD").attr("bgcolor","#FFFF00");
-          $("#E_TD").attr("bgcolor","");
-      }else
-      {
-    	  
-    	  $("#dayOrMonth").val("1");
-          document.getElementById('failDateBegin').value = '';
-          if(document.getElementById('failDateEnd').value == ""){
-          	document.getElementById('failDateEnd').value = nextDate.getFullYear()+"-"+(nextDate.getMonth()<9?"0":"")+(nextDate.getMonth()+1);
-          }
-          $("#B_TD").attr("bgcolor","");
-          $("#E_TD").attr("bgcolor","#FFFF00");
-      }
-      queryPt();
-      
-   }
- //判断销售顾问是否在分组中	
-   function isInGroupFc(name){
-	   if(name == "待分配"){
-		   return true;
-	   }
-	   if(groupSalesConsultant == "all"){
-		   return true;
-	   }
-	   if(groupSalesConsultant == null){
-		   return false;
-	   }else{
-		   for(var i = 0;i < groupSalesConsultant.tsList.length;i++) {
-			   if(groupSalesConsultant.tsList[i].NAME == name){
-				   return true;
-			   }
-		   }
-		   return false;
-	   }
-   }
-   
-    function showHelp(){
-		var alertMsg = ""+
-		"<div style='text-align:left;'>"+
-			"<div>下发数：选定日期车厂下发的线索</div>"+
-			"<div>待首次：选定日期待首次跟进的线索</div>"+
-			"<div>及时：选定日期已及时跟进的线索</div>"+
-			"<div>超期：选定日期超期跟进的线索</div>"+
-		"</div>";
-		MuiAlert(alertMsg);
-	}
-   
-</script>
+						newCell = newRow.insertCell(3);
+						if (detail.JSGJ == '0') {
+							newCell.innerHTML = detail.JSGJ;
+						} else {
+							url = "xs_list.html?";
+							if (isInGroup) {
+								newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+									',' + na + failDateBegin + na + ',' + na + failDateEnd + na + ',' + na + INTENT_SERIES + na + ',' + na +
+									CLUE_SOURCE + na + ',0,' + na + sel + na + ')">' + detail.JSGJ + '</a>';
+							} else {
+								newCell.innerHTML = detail.JSGJ;
+							}
+						}
+						newCell = newRow.insertCell(4);
+						if (detail.CQ == '0') {
+							newCell.innerHTML = detail.CQ;
+						} else {
+							url = "xs_list.html?";
+							if (isInGroup) {
+								newCell.innerHTML = '<a style="text-decoration: underline;color:blue;" onclick="selcount(' + na + url + na +
+									',' + na + failDateBegin + na + ',' + na + failDateEnd + na + ',' + na + INTENT_SERIES + na + ',' + na +
+									CLUE_SOURCE + na + ',3,' + na + sel + na + ')">' + detail.CQ + '</a>';
+							} else {
+								newCell.innerHTML = detail.CQ;
+							}
+						}
+						newCell = newRow.insertCell(5);
+						newCell.innerHTML = jsRote;
+					}
+					//增加合计行
+					var newRow = complaintReport.insertRow(json.list.length);
+					var newCell = newRow.insertCell(0);
+
+					newCell.innerHTML = "合计";
+					newCell = newRow.insertCell(1);
+
+					newCell.innerHTML = XFSLNum;
+					newCell = newRow.insertCell(2);
+
+					newCell.innerHTML = DFPNum;
+					newCell = newRow.insertCell(3);
+
+					newCell.innerHTML = JSGJNum;
+					newCell = newRow.insertCell(4);
+					newCell.innerHTML = CQNum;
+					newCell = newRow.insertCell(5);
+					newCell.innerHTML = "";
+				}
+
+			}, "fm", true, true);
+		}
+
+		function selcount(url, failDateBegin, failDateEnd, INTENT_SERIES, CLUE_SOURCE, IS_JS, SALES_CONSULTANT) {
+			_toPage(url + "menuType=5&failDateBegin=" + failDateBegin + "&failDateEnd=" + failDateEnd + "&INTENT_SERIES=" +
+				INTENT_SERIES + "&CLUE_SOURCE=" + CLUE_SOURCE + "&IS_JS=" + IS_JS + "&SALES_CONSULTANT=" + SALES_CONSULTANT);
+		}
+
+		function BEDate(Bval, Eval) {
+			var nextDate = new Date();
+			document.getElementById(Bval).style.display = '';
+			document.getElementById(Eval).style.display = 'none';
+			if (Bval == 'Bdate') {
+				$("#dayOrMonth").val("0");
+				if (document.getElementById('failDateBegin').value == "") {
+					document.getElementById('failDateBegin').value = nextDate.getFullYear() + "-" + (nextDate.getMonth() < 9 ? "0" :
+						"") + (nextDate.getMonth() + 1) + "-" + (nextDate.getDate() < 10 ? "0" : "") + (nextDate.getDate());
+				}
+				document.getElementById('failDateEnd').value = '';
+// 				$("#B_TD").attr("bgcolor", "#FFFF00");
+// 				$("#E_TD").attr("bgcolor", "");
+				$("#B_TD").find('span').addClass("line");
+				$("#E_TD").find('span').removeClass("line");
+			} else {
+
+				$("#dayOrMonth").val("1");
+				document.getElementById('failDateBegin').value = '';
+				if (document.getElementById('failDateEnd').value == "") {
+					document.getElementById('failDateEnd').value = nextDate.getFullYear() + "-" + (nextDate.getMonth() < 9 ? "0" : "") +
+						(nextDate.getMonth() + 1);
+				}
+// 				$("#B_TD").attr("bgcolor", "");
+// 				$("#E_TD").attr("bgcolor", "#FFFF00");
+				$("#B_TD").find('span').removeClass("line");
+				$("#E_TD").find('span').addClass("line");
+			}
+			queryPt();
+
+		}
+		//判断销售顾问是否在分组中	
+		function isInGroupFc(name) {
+			if (name == "待分配") {
+				return true;
+			}
+			if (groupSalesConsultant == "all") {
+				return true;
+			}
+			if (groupSalesConsultant == null) {
+				return false;
+			} else {
+				for (var i = 0; i < groupSalesConsultant.tsList.length; i++) {
+					if (groupSalesConsultant.tsList[i].NAME == name) {
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		function showHelp() {
+			var alertMsg = "" +
+				"<div style='text-align:left;'>" +
+				"<div>下发数：选定日期车厂下发的线索</div>" +
+				"<div>待首次：选定日期待首次跟进的线索</div>" +
+				"<div>及时：选定日期已及时跟进的线索</div>" +
+				"<div>超期：选定日期超期跟进的线索</div>" +
+				"</div>";
+			MuiAlert(alertMsg);
+		}
+
+		document.querySelectorAll(".mui-control-item").forEach(function(item) {
+			//TODO 
+			item.addEventListener('tap', function() {
+				activeId = $(this).attr("id");
+				queryPt();
+			})
+		});
+	</script>
 </html>

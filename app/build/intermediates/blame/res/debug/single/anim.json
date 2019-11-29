@@ -20,12 +20,12 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\anim\\abc_fade_in.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\dcloud_slide_out_to_right.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\anim\\dcloud_slide_out_to_right.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\dcloud_slide_static.xml",
@@ -36,12 +36,12 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\dcloud_slide_right_out.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\anim\\dcloud_slide_right_out.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\dcloud_slide_in_from_right.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\anim\\dcloud_slide_in_from_right.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\dcloud_slide_right_out.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\anim\\dcloud_slide_right_out.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\anim\\dcloud_slide_out_to_top.xml",

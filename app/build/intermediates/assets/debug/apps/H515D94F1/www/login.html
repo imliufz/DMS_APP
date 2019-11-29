@@ -1,16 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script type="text/javascript" src="js/html_head.js"></script>
-	<script type="text/javascript" src="js/update.js"></script>
-	<title>长安汽车DMS移动应用</title>
-	<script type="text/javascript">
-		mui.init();
-	</script>
-</head>
-<body onload="loadData();">
-<section class="login-form-wrap">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/html_head.js"></script>
+		<script type="text/javascript" src="js/update.js"></script>
+		<title>长安汽车DMS移动应用</title>
+		<style>
+			input {
+				width: 80%;
+				border-bottom: 1px solid #D8D8D8;
+				border-top: 0px;
+				border-left: 0px;
+				border-right: 0px;
+				margin-top: 30px;
+			}
+			
+			.button {
+				border: none;
+				margin: 0px auto;
+				width: 80%;
+				height: 50px;
+				line-height: 50px;
+				color: white;
+				background: linear-gradient(113deg, rgba(87, 181, 254, 1) 0%, rgba(33, 156, 252, 1) 100%);
+				box-shadow: 0px 4px 10px -2px rgba(34, 156, 252, 1);
+				border-radius: 50px;
+			}
+			
+			.login-backgrand {
+				background: linear-gradient(#57B5FE, #219CFC);
+				border-radius: 0 0 20px 20px;
+				height: 37%;
+			}
+			
+			.login-out-box {
+				position: absolute;
+				left: 0px;
+				top: 15%;
+				width: 100%;
+			
+				background-color: rgba(255, 255, 255, 0.0);
+			}
+			
+			.login-in-box {
+				width: 93%;
+				margin: 0px auto;
+				height: 65%;
+				background: rgba(255, 255, 255, 1);
+				box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.5);
+				border-radius: 12px;
+			}
+		</style>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+
+	</head>
+
+	<body onload="loadData();">
+		<form style="background-color: white;width: 100%;height: 100%;" method="post" id="fmLg" name="fmLg">
+			<div class="login-backgrand">
+
+			</div>
+			<div class="login-out-box">
+				<div class="login-in-box">
+					<div style="width: 100%;text-align: center;">
+						<img style="margin-top: 70px;margin-bottom: 12%;" src="images/dms_logo.png" />
+
+						<input style="width: 80%;" type="text" name="user" id="user" placeholder="手机号" />
+						<input style="margin-bottom: 15%;" type="password" name="password" id="password" placeholder="密码" />
+
+						<!--<div  class="button" id="loginSubmit">登陆</div>-->
+						<input class="button" type="submit" value="登录" id="loginSubmit">
+						<table width="100%" height="50">
+							<tr>
+								<td align="left">
+									<input style="width: 10px;border: 1px solid #F5F5F5;" type="checkbox" value="1" id="remember" name="remember" checked>
+									<a style="color:#999;font-size:13px;line-height: 30px;cursor:pointer;" onClick="sleBox()">记住密码</a>
+								</td>
+								
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div style="position: absolute;left: 0; bottom: 20px;width: 100%;height: 10px;text-align: center;">
+				<div style="font-family:PingFangSC-Regular;font-weight:400;color:rgba(153,153,153,1);font-size: 13px;">版权所有：重庆长安汽车股份有限公司</div>
+			</div>
+		</form>
+		<form style="display:none;" method="post" id="fm" name="fm">
+			<input type="hidden" name="devVendor" id="devVendor" />
+			<input type="hidden" name="devModel" id="devModel" />
+			<input type="hidden" name="osName" id="osName" />
+			<input type="hidden" name="osVendor" id="osVendor" />
+			<input type="hidden" name="osVersion" id="osVersion" />
+			<input type="hidden" name="pushType" id="pushType" value="ALI" />
+		</form>
+		<!--<section class="login-form-wrap">
 	<h1>长安乘用车DMS移动应用</h1>
 	<form class="login-form" method="post" id="fmLg">
 		<label>
@@ -32,189 +119,249 @@
 		<input type="submit" value="登   录" id="loginSubmit">
 	</form>
 	<h5><a href="http://www.changan.com.cn/">版权所有：重庆长安汽车股份有限公司</a></h5>
-</section>
-<div style="text-align:center;clear:both">
-</div>
-</body>
-<script type="text/javascript">
-	mui.os.plus && !mui.os.stream && mui.plusReady(rTm);
-	function rTm(){
-		setTimeout(releaseMemory,"500");
-	}
-	
-	function releaseMemory(){
-		try{
-			var webs = plus.webview.all();
-			if(webs != null && webs.length > 0){
-				for (var i = 0;i < webs.length;i++) {
-					if(webs[i].id != plus.webview.currentWebview().id){
-						webs[i].close();
+</section>-->
+		<div style="text-align:center;clear:both">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var userId = "";
+		mui.os.plus && !mui.os.stream && mui.plusReady(rTm);
+
+		function rTm() {
+			setTimeout(releaseMemory, "500");
+			mui.back=function(){
+				//切换到后台运行
+				var main = plus.android.runtimeMainActivity();  
+    			main.moveTaskToBack(false);  
+			    return false;  
+			}
+		}
+
+		function releaseMemory() {
+			try {
+				var webs = plus.webview.all();
+				if(webs != null && webs.length > 0) {
+					for(var i = 0; i < webs.length; i++) {
+						if(webs[i].id != plus.webview.currentWebview().id) {
+							webs[i].close("none",0);
+						}
 					}
 				}
+			} catch(e) {}
+		}
+
+		function loadData() {
+			var registrationID = UrlParm.parm("registrationID");
+			//alert(registrationID);
+		}
+
+		//设置自定义级别
+		function setPotcusLevel(maps) {
+			if(maps != null && maps.length > 0) {
+				setLocalStorage("H_DAY", maps[0].H_DAY);
+				setLocalStorage("H_CX_DAY", maps[0].H_CX_DAY);
+				setLocalStorage("A_DAY", maps[0].A_DAY);
+				setLocalStorage("A_CX_DAY", maps[0].A_CX_DAY);
+				setLocalStorage("B_DAY", maps[0].B_DAY);
+				setLocalStorage("B_CX_DAY", maps[0].B_CX_DAY);
+				setLocalStorage("C_DAY", maps[0].C_DAY);
+				setLocalStorage("C_CX_DAY", maps[0].C_CX_DAY);
+				setLocalStorage("N_DAY", maps[0].N_DAY);
+				setLocalStorage("N_CX_DAY", maps[0].N_CX_DAY);
+				setLocalStorage("FO_DAY", maps[0].FO_DAY);
+				setLocalStorage("FO_CX_DAY", maps[0].FO_CX_DAY);
+				setLocalStorage("O_DAY", maps[0].O_DAY);
+				setLocalStorage("O_CX_DAY", maps[0].O_CX_DAY);
 			}
-		}catch(e){
 		}
-	}
 
-	function loadData(){
-		var registrationID = UrlParm.parm("registrationID");
-		//alert(registrationID);
-	}
-	
-	//设置自定义级别
-	function setPotcusLevel(maps){
-		if(maps != null && maps.length > 0) {
-			setLocalStorage("H_DAY",maps[0].H_DAY);
-			setLocalStorage("H_CX_DAY",maps[0].H_CX_DAY);
-			setLocalStorage("A_DAY",maps[0].A_DAY);
-			setLocalStorage("A_CX_DAY",maps[0].A_CX_DAY);
-			setLocalStorage("B_DAY",maps[0].B_DAY);
-			setLocalStorage("B_CX_DAY",maps[0].B_CX_DAY);
-			setLocalStorage("C_DAY",maps[0].C_DAY);
-			setLocalStorage("C_CX_DAY",maps[0].C_CX_DAY);
-			setLocalStorage("N_DAY",maps[0].N_DAY);
-			setLocalStorage("N_CX_DAY",maps[0].N_CX_DAY);
-			setLocalStorage("FO_DAY",maps[0].FO_DAY);
-			setLocalStorage("FO_CX_DAY",maps[0].FO_CX_DAY);
-			setLocalStorage("O_DAY",maps[0].O_DAY);
-			setLocalStorage("O_CX_DAY",maps[0].O_CX_DAY);
+		function sleBox() {
+			var checkbox = document.getElementById('remember');
+			if(checkbox.checked) {
+				checkbox.checked = false;
+			} else {
+				checkbox.checked = true;
+			}
 		}
-	}
-	
-	function sleBox(){
-	    var checkbox = document.getElementById('remember');
-	    if(checkbox.checked){
-	        checkbox.checked =false;
-	    }
-	    else{
-	        checkbox.checked =true;
-	    }
-	}
-	
-	//获取是否记住密码
-	if(getLocalStorage("IS_REMEMBER")=="10041001"){
-		var userCode = getLocalStorage("LOGIN_CODE");
-		var userPwd = getLocalStorage("LOGIN_PWD");
-		document.getElementById("user").value = userCode;
-		document.getElementById("password").value = deCode(userPwd);
-		document.getElementById('remember').checked = true;
-	}
-	
-	$("#fmLg").html5Validate(function(){
-		login();
-	});
 
-	//用户登录
-	function login(){
-		//移除原来的cookie
-		removeLocalStorage("LOGIN_CODE");
-		removeLocalStorage("LOGIN_PWD");
-		removeLocalStorage("IS_MANAGER");
-		removeLocalStorage("LOGIN_MENU");
-		removeLocalStorage("logonUser");
-		var userCode = document.getElementById("user").value;
-		var userPwd = document.getElementById("password").value
-		var userPwdJM = enCode(userPwd);
-		var ver = "0";
-		try{
-			ver = plus.runtime.version;
-		}catch(e){
+		//获取是否记住密码
+		if(getLocalStorage("IS_REMEMBER") == "10041001") {
+			var userCode = getLocalStorage("LOGIN_CODE");
+			var userPwd = getLocalStorage("LOGIN_PWD");
+			document.getElementById("user").value = userCode;
+			document.getElementById("password").value = deCode(userPwd);
+			document.getElementById('remember').checked = true;
 		}
-		var url = httpUrlHead+"PotcusAchieveService/userLogin.json?rpcFlag=2&LOGIN_CODE="+userCode+"&LOGIN_PWD="+userPwdJM+"&ver="+ver;
-		makeFormCall(url,function(json){
-			if (json.locked != null&&json.locked == true){//营销宝用户僵尸账号锁定
-				var id = json.id;
 
-				//跳转到锁定提示页面
-				var indexUrl = "sales_consultant_lock_show.html?id="+id;
+		$("#fmLg").html5Validate(function() {
+			login();
+		});
+
+		//用户登录
+		function login() {
+			//移除原来的cookie
+			removeLocalStorage("LOGIN_CODE");
+			removeLocalStorage("LOGIN_PWD");
+			removeLocalStorage("IS_MANAGER");
+			removeLocalStorage("LOGIN_MENU");
+			removeLocalStorage("logonUser");
+			var userCode = document.getElementById("user").value;
+			var userPwd = document.getElementById("password").value
+			var userPwdJM = enCode(userPwd);
+			var ver = "0";
+			try {
+				//系统版本号
+				ver = plus.runtime.version;
+				//获取设备的生产厂商
+				document.getElementById("devVendor").value = plus.device.vendor;
+				// 获取系统版本信息
+				document.getElementById("osVersion").value = plus.os.version;
+				//获取设备的型号
+				document.getElementById("devModel").value = plus.device.model;
+				// 获取系统的名称
+				document.getElementById("osName").value = plus.os.name;
+				// 获取系统的供应商信息
+				document.getElementById("osVendor").value = plus.os.vendor;
+			} catch(e) {}
+			var url = httpUrlHead + "PotcusAchieveService/userLogin.json?rpcFlag=2&LOGIN_CODE=" + userCode + "&LOGIN_PWD=" + userPwdJM + "&ver=" + ver;
+			makeFormCall(url, function(json) {
+				if(json.locked != null && json.locked == true) { //营销宝用户僵尸账号锁定
+					var id = json.id;
+
+					//跳转到锁定提示页面
+					var indexUrl = "sales_consultant_lock_show.html?id=" + id;
+					ToUrl(indexUrl);
+					return;
+				}
+				if(!IsNull(json.isValidTel) && json.isValidTel == '10041002') { //手机号是否验证
+					var id = json.id;
+					var indexUrl = "tel_valid.html?id=" + id;
+					ToUrl(indexUrl);
+					return;
+				}
+				if(json.RESULT.funcStatus == 1) {
+					//写入cookie
+					setLocalStorage("LOGIN_CODE", userCode);
+					setLocalStorage("LOGIN_PWD", userPwdJM);
+					setLocalStorage("logonUser", JSON.stringify(json.logonUser)); //用户所有信息
+					var checkbox = document.getElementById('remember');
+					if(checkbox.checked) {
+						setLocalStorage("IS_REMEMBER", "10041001")
+					} else {
+						setLocalStorage("IS_REMEMBER", "10041002")
+					}
+					setLocalStorage("IS_MANAGER", json.IS_MANAGER);
+					setLocalStorage("HAVE_FWGW_ROLE", json.HAVE_FWGW_ROLE);
+					setLocalStorage("HAVE_ZX_ROLE", json.HAVE_ZX_ROLE);
+					setLocalStorage("IS_HAVE_JUMP", "0"); //是否跳转尊享APP
+					setLocalStorage("HAVE_JSZX_ROLE", json.HAVE_JSZX_ROLE);//包含技师在线权限
+					setLocalStorage("IS_HAVE_JSZX_JUMP", "0"); //是否跳转技师在线APP
+					setPotcusLevel(json.RESULT.maps);
+					//设置极光推送注册ID
+					userId = json.logonUser.ID;
+					try {
+						setUserRegistration(json.logonUser.ID);
+					} catch(e) {}
+					//加载首页菜单权限
+					loadMenuToStorage(userCode, userPwdJM);
+				}
+			}, 'fm', true);
+		}
+
+		function loadMenuToStorage(userCode, userPwd) {
+			//获取菜单权限
+			var menuUrl = httpUrlHead + "PotcusAchieveService/menuQuery.json?rpcFlag=2&LOGIN_CODE=" + userCode + "&LOGIN_PWD=" + userPwd;
+			makeFormCall(menuUrl, function(json) {
+				var tagFlag = json.tagFlag;
+				if(!IsNull(tagFlag) && tagFlag == '0') {
+					ToUrl("myTagLogin.html");
+				}
+				delete json["logonUser"];
+				setLocalStorage("LOGIN_MENU", JSON.stringify(json));
+				var indexUrl = "";
+				for(var i = 0; i < json.menuList.length; i++) {
+					if(json.menuList[i].MENUTYPE == "105030") {
+						//线索 1
+						indexUrl = "index.html";
+						break;
+					} else if(json.menuList[i].MENUTYPE == "105530") {
+						//投诉 2
+						indexUrl = "complaint.html";
+					} else if(json.menuList[i].MENUTYPE == "105630") {
+						//报表 3
+						if(indexUrl == "" || indexUrl == "remind.html") {
+							indexUrl = "report_list.html";
+						}
+					} else if(json.menuList[i].MENUTYPE == "105730") {
+						//提醒 4
+						if(indexUrl == "") {
+							indexUrl = "remind.html";
+						}
+					}
+				}
+				if(indexUrl == "") {
+					indexUrl = "mine.html";
+				}
 				ToUrl(indexUrl);
-				return;
-			}
-			if (json.RESULT.funcStatus == 1) {
-				//写入cookie
-				setLocalStorage("LOGIN_CODE",userCode);
-				setLocalStorage("LOGIN_PWD", userPwdJM);
-				setLocalStorage("logonUser", JSON.stringify(json.logonUser));//用户所有信息
-				var checkbox = document.getElementById('remember');
-			    if(checkbox.checked){
-			    	setLocalStorage("IS_REMEMBER", "10041001")
-			    } else {
-			    	setLocalStorage("IS_REMEMBER", "10041002")
-			    }
-			    setLocalStorage("IS_MANAGER",json.IS_MANAGER);
-			    setLocalStorage("HAVE_FWGW_ROLE",json.HAVE_FWGW_ROLE);
-			    setLocalStorage("IS_HAVE_JUMP","0");//是否跳转尊享APP
-			    setPotcusLevel(json.RESULT.maps);
-
-			    //设置极光推送注册ID
-				setUserRegistration(json.logonUser.ID);
-			    //加载首页菜单权限
-			    loadMenuToStorage(userCode,userPwdJM);
-			}
-		},'fm',true);
-	}
-
-	function loadMenuToStorage(userCode,userPwd){
-		//获取菜单权限
-		var menuUrl = httpUrlHead+"PotcusAchieveService/menuQuery.json?rpcFlag=2&LOGIN_CODE="+userCode+"&LOGIN_PWD="+userPwd;
-		makeFormCall(menuUrl,function(json){
-			delete json["logonUser"];
-			setLocalStorage("LOGIN_MENU",JSON.stringify(json));
-			var indexUrl = "";
-			for (var i=0;i<json.menuList.length;i++){
-				if(json.menuList[i].MENUTYPE=="105030"){
-					//线索 1
-					indexUrl = "index.html";
-					break;
-				} else if(json.menuList[i].MENUTYPE=="105530"){
-					//投诉 2
-					indexUrl = "complaint.html";
-				} else if(json.menuList[i].MENUTYPE=="105630"){
-					//报表 3
-					if(indexUrl == "" || indexUrl == "remind.html"){
-						indexUrl = "report_list.html";
-					}
-				}  else if(json.menuList[i].MENUTYPE=="105730"){
-					//提醒 4
-					if(indexUrl == ""){
-						indexUrl = "remind.html";
-					}
-				}
-			}
-			if(indexUrl == ""){
-				indexUrl = "mine.html";
-			}
-			ToUrl(indexUrl);
-		},"fm",true);
-	}
-
-	$(document).ready(function() {
-
-	});
-
-	mui.os.plus && !mui.os.stream && mui.plusReady(function(){
-		//设置竖屏
-		try{plus.screen.lockOrientation("portrait-primary");}catch(e){}
-	});
-
-	function setUserRegistration(userId){
-		var registrationId = "";
-		var u = navigator.userAgent;
-		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-		if(isAndroid){//安卓
-			var JpushService = plus.android.importClass("cn.jpush.android.api.JPushInterface");
-			var main = plus.android.runtimeMainActivity(); //获取activity
-			JpushService.setDebugMode(false);//测试版为true
-			JpushService.init(main.getApplicationContext());
-			registrationId = JpushService.getRegistrationID(main.getApplicationContext());
-		} else {//IOS
-
+			}, "fm", true);
 		}
-        if(registrationId != ""){
-        	//更新用户注册ID
-        	var regUrl = httpUrlHead+"AppService/userRegistration.json?rpcFlag=2&id="+userId+"&registrationId="+registrationId;
-        	makeFormCall(regUrl,function(json){});
-        }
-	}
-</script>
+
+		$(document).ready(function() {
+
+		});
+
+		mui.os.plus && !mui.os.stream && mui.plusReady(function() {
+			//设置竖屏
+			try {
+				plus.screen.lockOrientation("portrait-primary");
+			} catch(e) {}
+		});
+
+		function setUserRegistration(userId) {
+			var registrationId = "";
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+			if(isAndroid) { //安卓
+				//极光推送获取注册ID
+				/*var JpushService = plus.android.importClass("cn.jpush.android.api.JPushInterface");
+				var main = plus.android.runtimeMainActivity(); //获取activity
+				JpushService.setDebugMode(false); //测试版为true
+				JpushService.init(main.getApplicationContext());
+				registrationId = JpushService.getRegistrationID(main.getApplicationContext());*/
+				
+				//阿里推送获取注册ID
+				plus.android.importClass("com.alibaba.sdk.android.push.noonesdk.PushServiceFactory");
+				plus.android.importClass("com.alibaba.sdk.android.push.CloudPushService");
+				var utl = plus.android.importClass("com.yy.app.ProtogenDataUtil");
+				registrationId = utl.getAliDeviceId();
+			} else { //IOS
+				var DMSPeoplePickerNavigationController = plus.ios.importClass("DMSPeoplePickerNavigationController");
+				// 创建对象的实例
+				var peoplePicker = new DMSPeoplePickerNavigationController();
+				peoplePicker.getRegistrationID();
+			}
+			if(registrationId != "") {
+				//更新用户注册ID
+				var regUrl = httpUrlHead + "AppService/userRegistration.json?rpcFlag=2&id=" + userId + "&registrationId=" + registrationId;
+				makeFormCall(regUrl, function(json) {});
+			}
+		}
+
+		function returnRegistrationID(registrationId) {
+			if(registrationId != "") {
+				//更新用户注册ID
+				var regUrl = httpUrlHead + "AppService/userRegistration.json?rpcFlag=2&id=" + userId + "&registrationId=" + registrationId;
+				makeFormCall(regUrl, function(json) {});
+			}
+		}
+		
+		
+		// 2019-3-25 xf 新增
+		// 手机状态栏颜色更改为app主题色
+		mui.plusReady(function () {
+			plus.navigator.setStatusBarBackground('#1790E4');//设置状态栏的颜色
+		})
+		// -------------------------
+	</script>
+
 </html>

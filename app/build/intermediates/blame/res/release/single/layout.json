@@ -1,7 +1,15 @@
 [
     {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\push_pure_pic_notification.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\meizu-push\\3.8.3-fix\\res\\layout\\push_pure_pic_notification.xml"
+    },
+    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\ad_dcloud_main.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\ad_dcloud_main.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\upsdk_ota_update_view.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push-base\\2.6.3.305\\res\\layout\\upsdk_ota_update_view.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_view_list_nav_layout.xml",
@@ -14,6 +22,10 @@
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_action.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\hwpush_buttons_layout.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push\\2.6.3.305\\res\\layout\\hwpush_buttons_layout.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_popup_menu_header_item_layout.xml",
@@ -64,16 +76,20 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_screen_simple.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_item_layout.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\jpush_popwin_layout.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\cn.jiguang.sdk\\jpush\\3.1.5\\res\\layout\\jpush_popwin_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\hms_download_progress.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push-base\\2.6.3.305\\res\\layout\\hms_download_progress.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_snow_black_progress.xml",
@@ -86,6 +102,14 @@
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_dialog.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_dialog.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\hwpush_layout8.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push\\2.6.3.305\\res\\layout\\hwpush_layout8.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\push_expandable_big_text_notification.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\meizu-push\\3.8.3-fix\\res\\layout\\push_expandable_big_text_notification.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_icon_group.xml",
@@ -112,16 +136,16 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\notification_action_tombstone.xml"
     },
     {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\hwpush_layout2.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push\\2.6.3.305\\res\\layout\\hwpush_layout2.xml"
+    },
+    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\side_bar_layout.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\side_bar_layout.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_content_include.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_custom_big.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\notification_template_custom_big.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple_overlay_action_mode.xml",
@@ -140,12 +164,12 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_custom_notification_mi.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_multichoice_material.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_market_fragment_base.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_market_fragment_base.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_dialog_title_material.xml",
@@ -184,6 +208,10 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\hwpush_icons_layout.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push\\2.6.3.305\\res\\layout\\hwpush_icons_layout.xml"
+    },
+    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view_list_item.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
@@ -202,6 +230,14 @@
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\hwpush_layout7.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push\\2.6.3.305\\res\\layout\\hwpush_layout7.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\hwpush_layout4.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push\\2.6.3.305\\res\\layout\\hwpush_layout4.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_record_address.xml",
@@ -224,28 +260,40 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_streamapp_custom_dialog_layout.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_streamapp_custom_dialog_layout.xml"
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\upsdk_app_dl_progress_dialog.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push-base\\2.6.3.305\\res\\layout\\upsdk_app_dl_progress_dialog.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_streamapp_custom_dialog_layout.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_streamapp_custom_dialog_layout.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\jpush_webview_layout.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\cn.jiguang.sdk\\jpush\\3.1.5\\res\\layout\\jpush_webview_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_custom_alert_dialog_layout.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_custom_alert_dialog_layout.xml"
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\push_expandable_big_image_notification.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\meizu-push\\3.8.3-fix\\res\\layout\\push_expandable_big_image_notification.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\webview_layout.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\webview_layout.xml"
     },
     {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_custom_alert_dialog_layout.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_custom_alert_dialog_layout.xml"
+    },
+    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_material.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\ad_dcloud_splash.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\ad_dcloud_splash.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_custom_notification_white.xml",
@@ -254,9 +302,5 @@
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\dcloud_main_test_activity.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\dcloud_main_test_activity.xml"
-    },
-    {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\layout\\ad_dcloud_splash.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\layout\\ad_dcloud_splash.xml"
     }
 ]

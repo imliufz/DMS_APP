@@ -3,6 +3,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="js/html_head.js"></script>
+<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
+<link rel="stylesheet" type="text/css" href="css/resStyle/common_flex.css" />
+<style type="text/css">
+	.titleBox{
+		font-size: 16px;
+		padding: 6px 14px;
+		height: 30px;
+	}
+	.inputBox{
+		font-size: 16px !important;
+		border: 0px;
+		padding-left:8px;
+		width: 100% !important;
+		color:rgb(103,103,103);
+	}
+</style>
 <title>问题上报</title>
 </head>
 <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" ovalidate="true">
@@ -15,10 +31,9 @@
 			</script>
 	</div>
 	<form method="post" id="fm">
-		<div class="cardexplain" id="_showContentDiv1">
 			<!--普通用户登录时显示-->
 
-			<ul class="round">
+			<!--<ul class="round">
 				<li class="title mb">
 					<span class="none">基本信息</span>
 				</li>
@@ -47,15 +62,39 @@
 						</tr>
 					</table>
 				</li>
-			</ul>
-			<div class="footReturn">
-				<input id="submitBtn" value="提   交"  type="submit" class="submit" style="width: 100%">
-				<br /> <br /> <br /> <br />
+			</ul>-->
+			<div class="titleBox" style="margin-top: 44px;">
+				业务类型
 			</div>
+			<div>
+				<select id="type" name="type" class="download dropdown-select" style="width: 100%;font-size: 14px;background-color: white;padding-left: 12px;">
+					<option value="1">业务咨询</option>
+					<option value="2">系统问题</option>
+					<option value="3">需求优化</option>
+					<option value="4">其它</option>
+				</select>
+				
+			</div>
+			<div class="titleBox">
+				问题描述
+			</div>
+			<div>
+				<textarea rows="10" cols="4" class="inputBox" name="problemDesc" id="problemDesc" required="required" placeholder="请输入模板内容<字数限制500>" ></textarea>
+			</div>
+			<div class="footReturn">
+				<input id="submitBtn" value="提        交"  type="submit" class="submit" style="width: 100%;height: 44px;margin-top: 20px;font-size: 20px;">
+				<br /> <br /> <br /> <br />
 			</div>
 	</form>
 </body>
 <script type="text/javascript">
+	var se_loadStatus = 0;
+	var se_finalStatus = 0;
+	var newSelects = [{
+		id: 'type',
+		title: '业务类型'
+	}
+];
 	$(document).ready(function(){
 		var toPage = UrlParm.parm("toPage");
 		if(toPage == "index"){
@@ -82,6 +121,7 @@
 				}
 			});
 		});
+		loadSelectRes();
 	});
 </script>
 </html>

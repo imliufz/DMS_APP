@@ -2,10 +2,10 @@
  * author liufazhong
  * ajax
  */
-//var httpUrlHead = "http://localhost:28080/CHANADMS2/dcsApp/";//本地
-//var httpUrlHead = "http://10.0.14.219:8087/jcx-app-two/dcsApp/";//本地
+//var httpUrlHead = "http://10.64.19.180:8080/CHANADMS/dcsApp/";//本地
+//var httpUrlHead = "http://10.0.14.216:58080/jcx-app-two/dcsApp/";//正式
 //var httpUrlHead = "http://scrmtest.changan.com.cn/jc_app/dcsApp/";//测试环境（外网）
-//var httpUrlHead = "http://10.64.9.31:8081/jc_app/dcsApp/";//测试环境（内网）
+//var httpUrlHead = "http://127.0.0.1:8085/app/dcsApp/";//测试环境（内网）
 var httpUrlHead = "http://cvsses.changan.com.cn/jcx-app-two/dcsApp/";//正式环境
 var httpUrlEnd = "rpcFlag=2";
 

@@ -5,33 +5,400 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="535083977616583"
+    timestamp="3110344065916075"
     token="-4592013585335417834"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="591" />
+        duration="299" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1166" />
+        duration="24" />
     <task
         name="verifier"
-        duration="862" />
+        duration="123" />
 
     <artifact
-        location="D:\AndroidProjects\DMS_APP\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\ba95c17447376d15e32b0201e12bff5e_0cb49bc1faf96668b584a129b99fc9925a371988\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\70797d907a275baf670709f99932b7cd_7a460ac9339400bc640ffc3f0247e654b59ae083\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\49443a4b86994eff35d62c21da6a85a5_6cf90676fc294e972e5f79c6c4faad65790cd92b\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\f53b338cb8478468f430c0951794d3d4_972ca4f148969fdd4e27bbe16c1b097735202ed6\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\d33aa2e4f21a2f7cdfd3ffda0ae31ea7_757b2653ee3a4510ccdb98a5cba1583174bc016c\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\5c1c10c40d00286c3f0d0555958b5b65_f5abe5d3c44d1c00ecc8cc5f3aa93bf17067f2a9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\7bad6c720ff2f036bb54169de4f832c7_5f5a426e7e023567de452027e0735aacd8b0ca15\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\84fe8d80a8e0f36d2c58c0666cbc5669_847650d51db562a5262c6486aa772e7e412a0afb\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\a971b430abd2359b46958ce560835566_22112d63a32f4b637058b7a0381a68ca21cd6dbe\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\f84e316c13a1a71b9efdcbea9d3b0079_f47cdaa315c12768da88b5286bcbd6bccbae397f\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\ae230688c66d3a7e2ae2c07ee61ff633_a64bab0f7dd7f0ede835645846bc71f28028220e\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\852cbacc8955ec50d483042c36b26e05_97c0066e150593ded5d9811529f6388a0152a92e\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b74c49cba943f9f27c9edc7cf7221523_bdc40d69df89aabf3b0145cd2642ab94a1ef7195\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\4c2e190a0b3920e6ce19ee1641e1df2c_dc9823ac3decc9b9af363a1d9a62a81ba25f9763\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\596bef9e03eb6412de38992241dc592b_567872e66320791c43670adba3cce6b8d083bcd8\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\456831b1ab8401ffb68cc53d7591719f_5e72dfd7e122bac30c850460d0b355bd61c046be\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\2d92acfb74a580961dc5cfb766c26bbe_937c48650897a4097e49da18a6cbe1ed161d61e3\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\c85f96bf270299bd5e22890b838fc53f_e674ae47bc370ac4c9636eeb4add6587cd364e96\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\20e416ecf4aea18995d16846bb868bae_2a4898ddeacd3fd76275b4f6be15af9b886e915e\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\497d415fdc9a64aaf4f9602a94505853_4b48762328673200078a4871f7dd4515500eb9fc\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\840717478009cf8b9aee36845efa147a_8fcab4bab7e94a45d3c2097c4355c57b6dd3baf1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\3c0d8d182287830709b385303ea2adca_11765ea029e5c9c1fb88c2327790f26855c50aa6\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\09e78f16938c70ac9edb057d13308077_c6526babf81b77ec6352c60d20862897424a4d9c\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\7926173253450a4d5e75df256529e445_3ee03ac47886985acd6cb6e4548d31a7ea1e6673\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\b257d8ccc8b06f0c90f1fcb74795e335_affdf612918488a78073ed2fc45c343bfcdb439d\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\6139bbc6aeeaba27c20cbacc3ce9ab98_37d824a685c0fdc338598fd3047a5fa907b00b06\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\d0069aa46a8caef9879ff2314b40bce7_8da195859ed496a3b71d51dd2ce630cd9a104655\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\0789a38b871b29034fb9d2259c7c49b7_ff626f642fb5ff95057f917a8215af20e435b443\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\e3e25f60f802341cc9a9326a8eab936a_a0aad98b9d2f315061f231287f174b17ee6f646f\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\d22c7eaebc7af9006f689c520a42653e_13834b24df46dceb9cd96db528f438ee3a2afd1f\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\3301a90e0e2f2ad9c8c984a31dff906e_b32019dfae9595d30f76b2f30740b31057bb18e3\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\17c72af0435099722cf8c4f11a9a184d_bffb19dc72df52a9a967ecbf3784eb62f23af2bb\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\8ed68ca76cc12543d2ff8ed2ef0bbea7_7828a696423e02a99af277498721bd0203b8c2e1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\5f7ca2e01e518832e08ac68c52849feb_39fabfc6d6220aa9b6c5d2b47005c5a73e6ee4b7\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\5dcac4c9afed949b244ad98aee3098da_0a12aaced04887bd0712b1dc437e855bc17c9cfd\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\8964e68a3fbe25aed1ce38b9ba770609_979eaac143a90a8ccf646666040db5355cfa0a3e\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\dd7ed96659b35dd3690ed00108bbca94_dda79a35a09676a204a3dc5945de9cbef59140a2\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\9db4410bcdaa8c4886c922c7a1600366_ae3fb853eabff2f9471ea0c93b16810698722533\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\93a71f232901080c41fff6ff647374f8_6888c6dbd74b9ad5134ca9481e076880a5763e20\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\ce70383c5d824d8562b8a651bfbb7804_e593bf6630e14adfbfd42a7e338abb953611dc62\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\0dffc7518fd19ce0453dc95fddfbd7e7_7f9d0ebf677a5197f4da2aea22f9ad593d5bba44\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b839bd0fa574000993c6e325527a449e_5d5e154ba1615f34233b4ab99a0cb1a426ee0192\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\db46c44345e50a0eb15ab7866b971eec_f19a11f2dc38093b630222737fa7f72c4508daf8\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\0c0228d1eba0e9bba1c486bd78e514a6_797c484b1ffe292fec0190abaafd39aceb75dc40\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\25867082893db3bd51d3354a1be34b69_2236f5dbf5e6f886564390f303e487f0297c6c29\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\7fd1808e49a75f3501a60a0b3027a6a1_b9f5d86f7f8590d842badbf172f61d2a435d3808\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\be42d61e549e76674c28a88002f46006_a774ee9515af750dc91f7d6d7e6ea996eda34ef3\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\cd39680d75b4822db695d23967a1ed37_9022d38596b1dcc61048a6cd43403c9b1040932e\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\5d702e35a6ca885c553a14bafa57400c_8a0357770f68095a0e415fdacd4f6299b8662f47\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b7859a2f7957b8507565cf1e98b50b0d_b4e19a36b9b8ecd4bac4b7f7eab255014b28f10f\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\5eb9e97d7bcceeb61014f1d89b09ce2a_ef33eaaa9a9f5ca1e64cc61eec6d044060f44243\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\dcb01468bc8051637c70c26fe85f7b33_b9d611b4b685d8377760f69d86efc2f8eb2eaf92\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\12d7fa5ebea49362f9f1e838449fc23c_b980164734a16456e0141c236841a62d38295386\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\4116f3595d4e21456827d4b1eebe75ea_c08c7db22d5951afccf105e92e8522fddacfbf3c\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\9f1e8f26dd6a0fd942a3caf644024f9b_c90f838c5506ced177b13810cfa4a509520d3163\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\1540a6cb6b515c0b0eb32520d811a218_e6882509b0ccb9c6c7006780043ba3a57a95bdcf\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\7348f3f7e7e8ea48cc54aa23c3868a18_a00c2ad2a282dbc29cc035b5da3d2c3203a597cb\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\a9afccc0dc1eba80b6a6d5101f9ad2af_ce5f882f8064486624af8f32ffc7f49a281a57c4\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\1c74ee400eb57a2eb06d7a0c28e3b993_fd45971b3a8f480da63ab64a27359ac86d4edafc\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b343f665df1f948f5bb975bd1920483d_7c91d5df48eb0484b571d5671744991c1cb6327d\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="535083977616583"
+        timestamp="3108999385803214"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\AndroidProjects\DMS_APP\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="3110344065916075"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\ba95c17447376d15e32b0201e12bff5e_0cb49bc1faf96668b584a129b99fc9925a371988\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\70797d907a275baf670709f99932b7cd_7a460ac9339400bc640ffc3f0247e654b59ae083\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\49443a4b86994eff35d62c21da6a85a5_6cf90676fc294e972e5f79c6c4faad65790cd92b\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\f53b338cb8478468f430c0951794d3d4_972ca4f148969fdd4e27bbe16c1b097735202ed6\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\d33aa2e4f21a2f7cdfd3ffda0ae31ea7_757b2653ee3a4510ccdb98a5cba1583174bc016c\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\5c1c10c40d00286c3f0d0555958b5b65_f5abe5d3c44d1c00ecc8cc5f3aa93bf17067f2a9\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\7bad6c720ff2f036bb54169de4f832c7_5f5a426e7e023567de452027e0735aacd8b0ca15\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\84fe8d80a8e0f36d2c58c0666cbc5669_847650d51db562a5262c6486aa772e7e412a0afb\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\a971b430abd2359b46958ce560835566_22112d63a32f4b637058b7a0381a68ca21cd6dbe\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\f84e316c13a1a71b9efdcbea9d3b0079_f47cdaa315c12768da88b5286bcbd6bccbae397f\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\ae230688c66d3a7e2ae2c07ee61ff633_a64bab0f7dd7f0ede835645846bc71f28028220e\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\852cbacc8955ec50d483042c36b26e05_97c0066e150593ded5d9811529f6388a0152a92e\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b74c49cba943f9f27c9edc7cf7221523_bdc40d69df89aabf3b0145cd2642ab94a1ef7195\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\4c2e190a0b3920e6ce19ee1641e1df2c_dc9823ac3decc9b9af363a1d9a62a81ba25f9763\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\596bef9e03eb6412de38992241dc592b_567872e66320791c43670adba3cce6b8d083bcd8\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\456831b1ab8401ffb68cc53d7591719f_5e72dfd7e122bac30c850460d0b355bd61c046be\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\2d92acfb74a580961dc5cfb766c26bbe_937c48650897a4097e49da18a6cbe1ed161d61e3\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\c85f96bf270299bd5e22890b838fc53f_e674ae47bc370ac4c9636eeb4add6587cd364e96\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\20e416ecf4aea18995d16846bb868bae_2a4898ddeacd3fd76275b4f6be15af9b886e915e\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\497d415fdc9a64aaf4f9602a94505853_4b48762328673200078a4871f7dd4515500eb9fc\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\840717478009cf8b9aee36845efa147a_8fcab4bab7e94a45d3c2097c4355c57b6dd3baf1\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\3c0d8d182287830709b385303ea2adca_11765ea029e5c9c1fb88c2327790f26855c50aa6\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\09e78f16938c70ac9edb057d13308077_c6526babf81b77ec6352c60d20862897424a4d9c\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\7926173253450a4d5e75df256529e445_3ee03ac47886985acd6cb6e4548d31a7ea1e6673\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\b257d8ccc8b06f0c90f1fcb74795e335_affdf612918488a78073ed2fc45c343bfcdb439d\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\6139bbc6aeeaba27c20cbacc3ce9ab98_37d824a685c0fdc338598fd3047a5fa907b00b06\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\d0069aa46a8caef9879ff2314b40bce7_8da195859ed496a3b71d51dd2ce630cd9a104655\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\0789a38b871b29034fb9d2259c7c49b7_ff626f642fb5ff95057f917a8215af20e435b443\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\e3e25f60f802341cc9a9326a8eab936a_a0aad98b9d2f315061f231287f174b17ee6f646f\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\d22c7eaebc7af9006f689c520a42653e_13834b24df46dceb9cd96db528f438ee3a2afd1f\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\3301a90e0e2f2ad9c8c984a31dff906e_b32019dfae9595d30f76b2f30740b31057bb18e3\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\17c72af0435099722cf8c4f11a9a184d_bffb19dc72df52a9a967ecbf3784eb62f23af2bb\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\8ed68ca76cc12543d2ff8ed2ef0bbea7_7828a696423e02a99af277498721bd0203b8c2e1\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\5f7ca2e01e518832e08ac68c52849feb_39fabfc6d6220aa9b6c5d2b47005c5a73e6ee4b7\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\5dcac4c9afed949b244ad98aee3098da_0a12aaced04887bd0712b1dc437e855bc17c9cfd\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\8964e68a3fbe25aed1ce38b9ba770609_979eaac143a90a8ccf646666040db5355cfa0a3e\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\dd7ed96659b35dd3690ed00108bbca94_dda79a35a09676a204a3dc5945de9cbef59140a2\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\9db4410bcdaa8c4886c922c7a1600366_ae3fb853eabff2f9471ea0c93b16810698722533\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\93a71f232901080c41fff6ff647374f8_6888c6dbd74b9ad5134ca9481e076880a5763e20\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\ce70383c5d824d8562b8a651bfbb7804_e593bf6630e14adfbfd42a7e338abb953611dc62\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\0dffc7518fd19ce0453dc95fddfbd7e7_7f9d0ebf677a5197f4da2aea22f9ad593d5bba44\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b839bd0fa574000993c6e325527a449e_5d5e154ba1615f34233b4ab99a0cb1a426ee0192\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\db46c44345e50a0eb15ab7866b971eec_f19a11f2dc38093b630222737fa7f72c4508daf8\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\0c0228d1eba0e9bba1c486bd78e514a6_797c484b1ffe292fec0190abaafd39aceb75dc40\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\25867082893db3bd51d3354a1be34b69_2236f5dbf5e6f886564390f303e487f0297c6c29\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\7fd1808e49a75f3501a60a0b3027a6a1_b9f5d86f7f8590d842badbf172f61d2a435d3808\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\be42d61e549e76674c28a88002f46006_a774ee9515af750dc91f7d6d7e6ea996eda34ef3\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\cd39680d75b4822db695d23967a1ed37_9022d38596b1dcc61048a6cd43403c9b1040932e\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\5d702e35a6ca885c553a14bafa57400c_8a0357770f68095a0e415fdacd4f6299b8662f47\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b7859a2f7957b8507565cf1e98b50b0d_b4e19a36b9b8ecd4bac4b7f7eab255014b28f10f\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\5eb9e97d7bcceeb61014f1d89b09ce2a_ef33eaaa9a9f5ca1e64cc61eec6d044060f44243\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\dcb01468bc8051637c70c26fe85f7b33_b9d611b4b685d8377760f69d86efc2f8eb2eaf92\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\12d7fa5ebea49362f9f1e838449fc23c_b980164734a16456e0141c236841a62d38295386\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\4116f3595d4e21456827d4b1eebe75ea_c08c7db22d5951afccf105e92e8522fddacfbf3c\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\9f1e8f26dd6a0fd942a3caf644024f9b_c90f838c5506ced177b13810cfa4a509520d3163\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\1540a6cb6b515c0b0eb32520d811a218_e6882509b0ccb9c6c7006780043ba3a57a95bdcf\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\2\7348f3f7e7e8ea48cc54aa23c3868a18_a00c2ad2a282dbc29cc035b5da3d2c3203a597cb\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\a9afccc0dc1eba80b6a6d5101f9ad2af_ce5f882f8064486624af8f32ffc7f49a281a57c4\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\1c74ee400eb57a2eb06d7a0c28e3b993_fd45971b3a8f480da63ab64a27359ac86d4edafc\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\AndroidProjects\DMS_APP\app\build\intermediates\transforms\dex\debug\folders\1000\10\b343f665df1f948f5bb975bd1920483d_7c91d5df48eb0484b571d5671744991c1cb6327d\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

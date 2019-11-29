@@ -15,9 +15,8 @@ body{
 }
 
 .nav {
-	background: #10a6e1;
-	height: 55px;
-	line-height: 45px;
+	background: #1790E4;
+	line-height: 30px;
 	padding: 0 0;
 	width: 100%;
 	text-align: center;
@@ -42,13 +41,13 @@ body{
 
 .nav .left font[menu]{
 	display: inline-block;
-	background-image: url(../images/menu.gif);
+	background-image: url(../images/menu.png);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 24px 19px;
-	width: 24px;
+	background-size: 100%;
+	width: 30px;
 	height: 19px;
-	margin-bottom: -10px;
+	margin-bottom: -12px;
 }
 
 .nav .left img {
@@ -79,8 +78,11 @@ body{
 	display: inline-block;
 	height: auto;
 	width: auto;	
-	color: #fff;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif, "微软雅黑", "黑体", "幼圆", "宋体";
+	
+	font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+	
 	margin-top:15px;
 }
 
@@ -100,7 +102,7 @@ body{
 	background-size: 25px 25px;
 	width: 25px;
 	height: 25px;
-	margin-bottom: -12px;
+	margin-bottom: -14px;
 }
 
 .nav .right img {
@@ -121,9 +123,11 @@ body{
 div.menu {
 	
 	position:absolute;
-	bottom:0px;
+	bottom:50px;
 	left:0px;
 	width: 100%;
+	height: 49px;
+overflow: hidden;
 }
 
 /* 所有class为menu的div中的ul样式 */
@@ -134,7 +138,7 @@ div.menu ul
     width: auto; /* 宽度根据元素内容调整 */
 	border-top: #bdbdbd solid 1px;
 	background-color: #f8f8f8;
-	height: 62px;
+	height: 49px;
 	padding: 0 0;
 }
 /* 所有class为menu的div中的ul中的li样式 */
@@ -170,6 +174,7 @@ div.menu ul li a:active
 }
 
 div.menu ul li a{
+color: #666;
 	display: inline-block;
 	margin: auto auto;
 	width: 100%;
@@ -179,8 +184,8 @@ div.menu ul li a{
 	background-position: center;
 	text-align: center;
 	padding: 0 0;
-	margin-bottom: -4px;
-	margin-top: 2px;
+	margin-bottom: -13px;
+	/*margin-top: 2px;*/
 }
 
 div.menu ul li span
@@ -211,11 +216,15 @@ div.menu ul li span
 	}
 .zxapp{	
 	background-image: url(../images/tz_.png);
+	}
+.jszxapp{	
+	background-image: url(../images/jszx_.png);
 	}	
 	
 	
 .home_active{	
 	background-image: url(../images/t1.png);
+	background-size: 20px 20px;
 	}
 	
 .report_active{	
@@ -231,4 +240,7 @@ div.menu ul li span
 	}
 .zxapp_active{	
 	background-image: url(../images/tz.png);
+	}
+.jszxapp_activ{	
+	background-image: url(../images/jszx.png);
 	}

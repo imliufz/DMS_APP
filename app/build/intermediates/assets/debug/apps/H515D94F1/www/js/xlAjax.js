@@ -2,9 +2,11 @@
  * author liufazhong
  * ajax
  */
-var httpUrlHead = "http://192.168.43.82:8085/app/dcsApp/";//本地
-//var httpUrlHead = "http://222.177.26.242:9080/yxbapp/dcsApp/";//测试环境
-//var httpUrlHead = "http://cvsses.changan.com.cn/jcx-app-two/dcsApp/";//正式环境
+//var httpUrlHead = "http://10.64.19.180:8080/CHANADMS/dcsApp/";//本地
+//var httpUrlHead = "http://10.0.14.216:58080/jcx-app-two/dcsApp/";//正式
+//var httpUrlHead = "http://scrmtest.changan.com.cn/jc_app/dcsApp/";//测试环境（外网）
+//var httpUrlHead = "http://127.0.0.1:8085/app/dcsApp/";//测试环境（内网）
+var httpUrlHead = "http://cvsses.changan.com.cn/jcx-app-two/dcsApp/";//正式环境
 var httpUrlEnd = "rpcFlag=2";
 
 var _data_type = _myBrowser();
@@ -17,8 +19,7 @@ function checkError(inputVal){
 	/*var errorMap = ["select", "and", "or", "update", "delete", "insert", "script", "sleep", "iframe", 
 "union", "all", "null", "char", "from", "where", "sleep", "chr","(", ")", "<", ">", ";", "=", "'", "\"", "*", "/", "#", "+", "|" ];*/
 
-var errorMap = ["select", "and", "or", "update", "delete", "insert", "script", "sleep", "iframe", 
-"union", "all", "char", "from", "where", "sleep", "chr", "<", ">"];
+var errorMap = ["script", "iframe", "<", ">"];
 	for (var i=0;i<errorMap.length;i++) {
 		if(inputVal.indexOf(errorMap[i]) !=-1){
 			return errorMap[i];
@@ -50,7 +51,7 @@ function makeFormCall(toUrl,showFunc,formName,isLoading,isInitLoading){
 		setForm(formName);
 	}
 	try{formName = appendForm(formName);}catch(e){}
-    var formParam = $("#"+formName+"").serialize();//序列化表格内容为字符串    
+    var formParam = $("#"+formName+"").serialize();//序列化表格内容为字符串
     $.ajax({    
         type:'post',        
         url:toUrl,    

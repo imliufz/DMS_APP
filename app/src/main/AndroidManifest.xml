@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.yy.jc">
+    package="com.yonyou.jcdms">
 
     <supports-screens
         android:anyDensity="true"
@@ -11,7 +11,7 @@
         android:smallScreens="true" />
 
     <!-- GROWING IO -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- Barcode(二维码)  begin -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -32,7 +32,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_LOGS" />
@@ -96,7 +95,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!--<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />-->
+    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> -->
     <!-- Share - 微信分享 -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <!-- Push(推送)   end -->
@@ -136,7 +135,6 @@
         android:supportsRtl="true"
         tools:replace="android:name">
 
-
         <!-- Statistic(统计)-友盟统计 begin -->
         <!-- 官方网站：http://www.umeng.com/analytics -->
         <!-- meta-data节点android:name="UMENG_APPKEY"项中android:value值为友盟网站申请的APPKEY -->
@@ -152,7 +150,8 @@
 
         <!-- Maps(地图) begin -->
         <!-- meta-data节点android:name="com.baidu.lbsapi.API_KEY"项中android:value值为百度地图应用的Appkey -->
-<!--        <meta-data
+        <!--
+            <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="Z3erUvGIwBCBQdBl6CArCAGT">
         </meta-data>
@@ -160,14 +159,15 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>-->
+            android:process=":remote"></service>
+        -->
         <!-- Maps(地图) end -->
 
 
         <!-- Oauth 授权登陆 start -->
         <!-- Oauth QQ start -->
         <!-- QQ 分享 配置和授权登陆相同 -->
-        <meta-data
+        <!--<meta-data
             android:name="QQ_APPID"
             android:value="%appid%" />
 
@@ -187,7 +187,7 @@
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
         <!-- Oauth QQ end -->
 
 
@@ -269,13 +269,13 @@
                 <action android:name="com.HBuilder.integrate.__CLILK_NOTIFICATION" />
             </intent-filter>
         </receiver>
-        <service
-            android:name="io.dcloud.feature.apsGt.GTNormalIntentService"/>
+
+        <service android:name="io.dcloud.feature.apsGt.GTNormalIntentService" />
         <service
             android:name="io.dcloud.feature.apsGt.GTNormalPushService"
             android:exported="true"
             android:label="PushService"
-            android:process=":pushservice"></service>
+            android:process=":pushservice" />
 
         <!-- Push(推送)-个推  end -->
 
@@ -297,7 +297,7 @@
             android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
             android:configChanges="keyboardHidden|orientation"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
             android:launchMode="singleTask"
@@ -325,7 +325,7 @@
 
         <activity
             android:name="io.dcloud.share.tencent.WebAuthorize"
-            android:theme="@android:style/Theme.NoTitleBar"></activity>
+            android:theme="@android:style/Theme.NoTitleBar" />
         <!-- 微信分享 配置begin -->
         <meta-data
             android:name="WX_SECRET"
@@ -351,17 +351,17 @@
 
 
         <!-- 支付宝支付 配置begin -->
-        <activity
+        <!--<activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="com.alipay.sdk.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind"></activity>
+            android:screenOrientation="behind" />-->
         <!-- 支付宝支付 配置end -->
 
 
@@ -377,7 +377,7 @@
 
         <!-- 微信支付配置end -->
         <!-- 小米分享 -->
-        <meta-data
+        <!--<meta-data
             android:name="MIUI_APPID"
             android:value="_%小米分享的APPID%" />
         <meta-data
@@ -387,7 +387,7 @@
             android:name="MIUI_REDIRECT_URI"
             android:value="%小米分享的回调地址%" />
 
-        <activity android:name="com.xiaomi.account.openauth.AuthorizeActivity" />
+        <activity android:name="com.xiaomi.account.openauth.AuthorizeActivity" />-->
         <!-- 小米分享 end -->
 
 
@@ -398,7 +398,7 @@
             <meta-data android:name="PUSH_APPID" android:value="_%小米推送的APPID%"/>
         <meta-data android:name="PUSH_APPKEY" android:value="_%小米推送的APPKEY%"/>
         -->
-        <service
+        <!--<service
             android:name="com.xiaomi.push.service.XMPushService"
             android:enabled="true"
             android:process=":pushservice" />
@@ -456,13 +456,12 @@
                 <action android:name="com.HBuilder.integrate.__CLEAR_NOTIFICATION" />
                 <action android:name="com.HBuilder.integrate.__CLILK_NOTIFICATION" />
             </intent-filter>
-        </receiver>
+        </receiver>-->
 
         <!-- 小米推送 end -->
 
 
-
-        <!--===========================================广告联盟配置相关 开始===================================-->
+        <!-- ===========================================广告联盟配置相关 开始=================================== -->
 
         <activity
             android:name="com.yy.app.AppService"
@@ -471,47 +470,45 @@
             android:screenOrientation="nosensor"
             android:theme="@style/TranslucentTheme"
             android:windowSoftInputMode="adjustResize">
-
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <action
-                    android:name="android.intent.action.MAIN" />
-
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
             <!-- GROWING IO -->
             <intent-filter>
-                <data android:scheme="growing.8bc60be0bc7ca4c7"/>
+                <data android:scheme="growing.8bc60be0bc7ca4c7" />
+
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
-        <!--开发者须自行配置该字段对应value值，替换appid和adid为自己应用的appid和广告联盟会员id，否则可能影响统计结算-->
-<!--        <meta-data
+        <!-- 开发者须自行配置该字段对应value值，替换appid和adid为自己应用的appid和广告联盟会员id，否则可能影响统计结算 -->
+        <!--
+            <meta-data
             android:name="DCLOUD_STREAMAPP_CHANNEL"
-            android:value="io.dcloud.%APPID%|%APPID%|%adid" />-->
+            android:value="io.dcloud.%APPID%|%APPID%|%adid" />
+        -->
         <meta-data
             android:name="DCLOUD_STREAMAPP_CHANNEL"
             android:value="io.dcloud.HelloH5|HelloH5|adid" />
 
-        <!--===========================================广告联盟配置相关 结束===================================-->
+        <!-- ===========================================广告联盟配置相关 结束=================================== -->
 
-
-        <activity
+        <!--<activity
             android:name="com.HBuilder.integrate.SDK_WebApp"
             android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
             android:screenOrientation="user"
-            android:theme="@style/DCloudTheme"> <!-- 离线配置沉浸式  SDK_WebApp  作为apk入口时  必须设置 SDK_WebApp   的主题为android:theme="@style/DCloudTheme" -->
-        </activity>
+            android:theme="@style/DCloudTheme"> &lt;!&ndash; 离线配置沉浸式  SDK_WebApp  作为apk入口时  必须设置 SDK_WebApp   的主题为android:theme="@style/DCloudTheme" &ndash;&gt;
+        </activity>-->
         <activity
             android:name="com.HBuilder.integrate.SDK_WebView"
             android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
             android:screenOrientation="sensor"
-            android:theme="@style/DCloudTheme"></activity>
+            android:theme="@style/DCloudTheme" />
 
         <receiver
             android:name="io.dcloud.feature.jpush.JPushReceiver"
@@ -528,6 +525,86 @@
                 <category android:name="${JPUSH_PKGNAME}" />
             </intent-filter>
         </receiver>
+
+        <!-- 阿里推送配置文件 -->
+        <meta-data
+            android:name="com.alibaba.app.appkey"
+            android:value="28116696" /> <!-- 请填写你自己的- appKey -->
+        <meta-data
+            android:name="com.alibaba.app.appsecret"
+            android:value="8cd8c0597649a47d85b6cbad8c99f1e3" /> <!-- 请填写你自己的appSecret -->
+
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=101414995" /><!-- 请填写你自己华为平台上注册的appid -->
+
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="xxxxxxxxxxxxxxxxxxx" />  <!-- 请填写您自己的vivo平台上的appKey -->
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="xxxx" />    <!-- 请填写您自己的vivo平台上的appId -->
+
+        <!--消息接收监听器-->
+        <receiver android:name="io.dcloud.feature.jpush.AlibabaReceiver">
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.taobao.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 通道保持服务 -->
+        <service android:name="com.alibaba.sdk.android.push.ChannelService"
+            android:exported="true" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING_V4" />
+                <category android:name="taobao" />
+            </intent-filter>
+        </service>
+        <!-- 消息接收服务 -->
+        <service android:name="com.alibaba.sdk.android.push.MsgService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.NOTIFY_ACTION" />
+            </intent-filter>
+        </service>
+        <!-- 消息接收增强服务（可提高通知/消息达到率）-->
+        <service android:name="com.alibaba.sdk.android.push.channel.TaobaoRecvService" android:exported="true">
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

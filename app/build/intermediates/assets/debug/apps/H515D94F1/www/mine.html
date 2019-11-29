@@ -2,14 +2,20 @@
 
 <!DOCTYPE HTML>
 <html lang="zh-cn">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript" src="js/html_head.js"></script>
-        <link href="css/index.css" rel="stylesheet" type="text/css"/>
-        <link href="css/one.css" rel="stylesheet" type="text/css"/>
-        <link href="static/css/template/index.css" rel="stylesheet" type="text/css" media="all" />
-        <style>
-.settingTr {
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<link href="css/one.css" rel="stylesheet" type="text/css" />
+		<link href="static/css/template/index.css" rel="stylesheet" type="text/css" media="all" />
+		<!-- 样式修改新增css -->
+		<!-- 共用弹性布局文件 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/common_flex.css" />
+		<!-- 当前页重写样式 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_mine.css" />
+		<!-- 样式修改新增css-end -->
+		<style>
+			.settingTr {
 	height: 45px;
 	border: none;
 	width: 100%;
@@ -49,46 +55,78 @@
     background: rgba(0,0,0,.3) url(static/img/wait.jpg) no-repeat center center;
 }
 </style>
-<script type="text/javascript">
-	
-</script>
-    </head>
-    <body>
-    	<script type="text/javascript" src="js/index_head.js?_show_search=0&_show_left_menu=1" id="index_head_js"></script>
-    
-    	<form id="fm" method="post">
-		<div style="height:5px;width:100%;background-color:#f6f5fa;">&nbsp;</div>
-		<div class="cardexplain" >
-			<ul class="round" style="margin-top:-55px;border: none;">
-				<table id="tb_query">
-					<tr class="settingTr"  url="complaint.html" id="tsManage" style="display: none;">
-						<td><img src="images/ts.png" style="width: 30px;height: 30px;"></img></td>
-		                 <td>
-			                    <li class="nob">
-			                        	投诉管理
-			                    </li>	    
-			            </td>
-			            <td width="15%"></td>
-					</tr>
-					<tr class="settingTr" url="msgManage.html">
-						<td><img src="images/dxmb_03.png" style="width: 30px;height: 30px;"></img></td>
-						<td width="85%">
-							<li class="nob">
-								短信模板
-							</li>
-						</td>
-						<td width="15%"></td>
-					</tr>
-					<tr class="settingTr"  url="problemReportAdd.html">
-						<td><img src="images/wtsb.png" style="width: 30px;height: 30px;"></img></td>
-		                 <td>
-			                    <li class="nob">
-			                        	问题上报
-			                    </li>	    
-			            </td>
-			            <td width="15%"></td>
-					</tr>
-					<tr class="settingTr"  url="cof.html">
+		<script type="text/javascript">
+
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/index_head.js?_show_search=0&_show_left_menu=1" id="index_head_js"></script>
+
+		<form id="fm" method="post">
+			<div class="cardexplain xc-res-cardexplain">
+				<!-- 新增模块 2019-03-11 -->
+				<div class="mui-wrap">
+					<div class="blue-bg"></div>
+					<div class="mine-content">
+						<div class="mine-body flex-box" id="tb_query_two">
+							<div class="cell-3">
+								<i class="user-mask">
+									<img src="images/user-def.png">
+								</i>
+							</div>
+							<div class="cell-5 user-info">
+								<h4 id="salesConsultantName">姓名</h4>
+								<p id="salesConsultantPosition">职位</p>
+							</div>
+							<div class="cell-4 user-qz" url="cof.html">
+								<span>圈子</span>
+							</div>
+						</div>
+						 <div class="mine-menu flex-box">
+							<div class="cell-1" onclick="javascript:window.location.href='tel:02367543333';">
+								<span class="icon-kfrx"></span>
+								<span class="mine-kf">客服热线</span>
+								<i class="y-line"></i>
+							</div>
+							<div class="cell-1" onclick="javascript:ToUrl('problemReportAdd.html')">
+								<span class="icon-yjfk"></span>
+								<span class="mine-yjfk">意见反馈</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 新增模块 END -->
+				<ul class="round xf-res-round" style="margin-top:-55px;border: none;">
+					<table id="tb_query">
+						<tr class="settingTr" url="complaint.html" id="tsManage" style="display: none;">
+							<td><img src="images/mine-06.png" style="width: 30px;height: 30px;"></img></td>
+							<td>
+								<li class="nob">
+									投诉管理
+								</li>
+							</td>
+							<td width="15%"><i class="mui-icon mui-icon-arrowright mui-pull-right"></i></td>
+						</tr>
+						<tr class="settingTr" url="msgManage.html">
+							<td><img src="images/mine-05.png" style="width: 30px;height: 30px;"></img></td>
+							<td width="85%">
+								<li class="nob">
+									短信模板
+								</li>
+							</td>
+							<td width="15%"><i class="mui-icon mui-icon-arrowright mui-pull-right"></i></td>
+						</tr>
+						<tr class="settingTr" url="problemReportAdd.html" style="display: none;">
+							<td><img src="images/mine-07.png" style="width: 30px;height: 30px;"></img></td>
+							<td>
+								<li class="nob">
+									问题上报
+								</li>
+							</td>
+							<td width="15%"><i class="mui-icon mui-icon-arrowright mui-pull-right"></i></td>
+						</tr>
+						<!-- <tr class="settingTr" url="cof.html">
 							<td><img src="images/qz.png" style="width: 30px;height: 30px;"></img></td>
 							<td>
 								<li class="nob">
@@ -98,72 +136,107 @@
 							<td width="15%">
 								<div id="tipDiv" style="display: none;"><span class="mui-badge" id="tipSpan" style="display:inline;padding: 6px 9px;background-color: rosybrown;"></span></div>
 							</td>
-					</tr>
-					<tr class="settingTr"  url="update_password.html" url="update_password.html">
-						<td><img src="images/xgmm.png" style="width: 30px;height: 30px;"></img></td>
-						<td>
-							<li class="nob">
-								修改密码
-							</li>
-						</td>
-						<td width="15%"></td>
-					</tr>
-					<tr class="settingTr"  url="logout">
-						<td><img src="images/logout.png" style="width: 30px;height: 30px;"></img></td>
-		                 <td>
-			                    <li class="nob">
-			                        	注销
-			                    </li>	    
-			            </td>
-			            <td width="15%"></td>
-					</tr>
-			</table>
-			</ul>
-			<div style="margin-left: 12px;">
-				版本号:<span id="verSpan">...</span>
+						</tr> -->
+						<tr class="settingTr" url="update_password.html" url="update_password.html">
+							<td><img src="images/mine-04.png" style="width: 30px;height: 30px;"></img></td>
+							<td>
+								<li class="nob">
+									修改密码
+								</li>
+							</td>
+							<td width="15%"><i class="mui-icon mui-icon-arrowright mui-pull-right"></i></td>
+						</tr>
+						<tr class="settingTr" url="myTag.html">
+							<td><img src="images/mine-08.png" style="width: 30px;height: 30px;"></img></td>
+							<td>
+								<li class="nob">
+									我的标签
+								</li>
+							</td>
+							<td width="15%"><i class="mui-icon mui-icon-arrowright mui-pull-right"></i></td>
+						</tr>
+						<tr class="settingTr" url="workState.html">
+							<td><img src="images/mine-09.png" style="width: 30px;height: 30px;"></img></td>
+							<td>
+								<li class="nob">
+									在岗状态
+								</li>
+							</td>
+							<td width="15%"><i class="mui-icon mui-icon-arrowright mui-pull-right"></i></td>
+						</tr>
+						<tr class="settingTr" url="logout">
+							<td><img src="images/mine-03.png" style="width: 30px;height: 30px;"></img></td>
+							<td>
+								<li class="nob">
+									注销
+								</li>
+							</td>
+							<td width="15%"><i class="mui-icon mui-icon-arrowright mui-pull-right"></i></td>
+						</tr>
+					</table>
+				</ul>
+				<div style="margin-left: 12px;text-align: center;color: #999999;margin-top: 15px;">
+					版本号:<span id="verSpan">...</span>
+				</div>
+				<div style="height: 50px;"></div>
 			</div>
-			<div style="height: 50px;"></div>
-		</div>
-	</form>
-    <script type="text/javascript" src="js/index_bottom.js?_active_url=mine.html" id="index_buttom_js"></script>
+		</form>
+		<script type="text/javascript" src="js/index_bottom.js?_active_url=mine.html" id="index_buttom_js"></script>
 	</body>
-<script type="text/javascript">
-$(document).ready(function() {
-	//获取菜单权限
-	_loadMenu();
-	mui("#tb_query").on("tap","tr",function(e){
-		var toUrl = this.getAttribute("url");
-		if( toUrl == "logout"){
-			_loginOut();
-		} else {
-			ToUrl(toUrl);
-		}
-	});
-	queryNewCof();
-});
-function setVersion(){
-    $("#verSpan").html(plus.runtime.version);
-}
-mui.os.plus && !mui.os.stream && mui.plusReady(setVersion);
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var logonUser = JSON.parse(getLocalStorage("logonUser"));
+			$("#salesConsultantName").text(logonUser.NAME);
+			$("#salesConsultantPosition").text(logonUser.roleNames);
+			//获取菜单权限
+			_loadMenu();
+			mui("#tb_query").on("tap", "tr", function(e) {
+				var toUrl = this.getAttribute("url");
+				if (toUrl == "logout") {
+					_loginOut();
+				} else {
+					ToUrl(toUrl);
+				}
+			});
+			// 2019-3-13 新增模块 绑定事件
+			mui("#tb_query_two").on("tap", "div", function(e) {
+				var toUrl = this.getAttribute("url");
+				if(!toUrl){ return }
+ 				if (toUrl == "logout") {
+					_loginOut();
+				} else {
+					ToUrl(toUrl);
+				}
+			});
+			// 2019-3-13 新增模块 绑定事件  END
+			queryNewCof();
+		});
 
-var mask = null;
-function showmb(){
-	mask = mui.createMask(closemb);//callback为用户点击蒙版时自动执行的回调；
-	mask.show();//显示遮罩
-}
-function closemb(){
-	
-}
-//查询圈子新回复
-function queryNewCof(){
-	var url = httpUrlHead + "PotcusAchieveService/queryNewReply.json?" + httpUrlEnd;
-	makeFormCall(url,function(json){
-		var tipNum = parseInt(json.tipNum);
-		if ( tipNum > 0 ){
-			$("#tipSpan").html(tipNum);
-			$("#tipDiv").show();
+		function setVersion() {
+			$("#verSpan").html(plus.runtime.version);
 		}
-	},null);
-}
-</script>
-</html>	
+		mui.os.plus && !mui.os.stream && mui.plusReady(setVersion);
+
+		var mask = null;
+
+		function showmb() {
+			mask = mui.createMask(closemb); //callback为用户点击蒙版时自动执行的回调；
+			mask.show(); //显示遮罩
+		}
+
+		function closemb() {
+
+		}
+		//查询圈子新回复
+		function queryNewCof() {
+			var url = httpUrlHead + "PotcusAchieveService/queryNewReply.json?" + httpUrlEnd;
+			makeFormCall(url, function(json) {
+				var tipNum = parseInt(json.tipNum);
+				if (tipNum > 0) {
+					$("#tipSpan").html(tipNum);
+					$("#tipDiv").show();
+				}
+			}, null);
+		}
+	</script>
+</html>

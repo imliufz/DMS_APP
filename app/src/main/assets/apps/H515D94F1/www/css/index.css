@@ -216,6 +216,9 @@ div.menu ul li span
 	}
 .zxapp{	
 	background-image: url(../images/tz_.png);
+	}
+.jszxapp{	
+	background-image: url(../images/jszx_.png);
 	}	
 	
 	
@@ -237,4 +240,7 @@ div.menu ul li span
 	}
 .zxapp_active{	
 	background-image: url(../images/tz.png);
+	}
+.jszxapp_activ{	
+	background-image: url(../images/jszx.png);
 	}

@@ -59,8 +59,7 @@
 	</head>
 
 	<body onload="loadData();">
-		<form style="background-color: white;width: 100%;height: 100%;" method="post" id="fmLg">
-
+		<form style="background-color: white;width: 100%;height: 100%;" method="post" id="fmLg" name="fmLg">
 			<div class="login-backgrand">
 
 			</div>
@@ -89,6 +88,14 @@
 			<div style="position: absolute;left: 0; bottom: 20px;width: 100%;height: 10px;text-align: center;">
 				<div style="font-family:PingFangSC-Regular;font-weight:400;color:rgba(153,153,153,1);font-size: 13px;">版权所有：重庆长安汽车股份有限公司</div>
 			</div>
+		</form>
+		<form style="display:none;" method="post" id="fm" name="fm">
+			<input type="hidden" name="devVendor" id="devVendor" />
+			<input type="hidden" name="devModel" id="devModel" />
+			<input type="hidden" name="osName" id="osName" />
+			<input type="hidden" name="osVendor" id="osVendor" />
+			<input type="hidden" name="osVersion" id="osVersion" />
+			<input type="hidden" name="pushType" id="pushType" value="ALI" />
 		</form>
 		<!--<section class="login-form-wrap">
 	<h1>长安乘用车DMS移动应用</h1>
@@ -122,6 +129,12 @@
 
 		function rTm() {
 			setTimeout(releaseMemory, "500");
+			mui.back=function(){
+				//切换到后台运行
+				var main = plus.android.runtimeMainActivity();  
+    			main.moveTaskToBack(false);  
+			    return false;  
+			}
 		}
 
 		function releaseMemory() {
@@ -197,7 +210,18 @@
 			var userPwdJM = enCode(userPwd);
 			var ver = "0";
 			try {
+				//系统版本号
 				ver = plus.runtime.version;
+				//获取设备的生产厂商
+				document.getElementById("devVendor").value = plus.device.vendor;
+				// 获取系统版本信息
+				document.getElementById("osVersion").value = plus.os.version;
+				//获取设备的型号
+				document.getElementById("devModel").value = plus.device.model;
+				// 获取系统的名称
+				document.getElementById("osName").value = plus.os.name;
+				// 获取系统的供应商信息
+				document.getElementById("osVendor").value = plus.os.vendor;
 			} catch(e) {}
 			var url = httpUrlHead + "PotcusAchieveService/userLogin.json?rpcFlag=2&LOGIN_CODE=" + userCode + "&LOGIN_PWD=" + userPwdJM + "&ver=" + ver;
 			makeFormCall(url, function(json) {
@@ -230,6 +254,8 @@
 					setLocalStorage("HAVE_FWGW_ROLE", json.HAVE_FWGW_ROLE);
 					setLocalStorage("HAVE_ZX_ROLE", json.HAVE_ZX_ROLE);
 					setLocalStorage("IS_HAVE_JUMP", "0"); //是否跳转尊享APP
+					setLocalStorage("HAVE_JSZX_ROLE", json.HAVE_JSZX_ROLE);//包含技师在线权限
+					setLocalStorage("IS_HAVE_JSZX_JUMP", "0"); //是否跳转技师在线APP
 					setPotcusLevel(json.RESULT.maps);
 					//设置极光推送注册ID
 					userId = json.logonUser.ID;
@@ -296,11 +322,18 @@
 			var u = navigator.userAgent;
 			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
 			if(isAndroid) { //安卓
-				var JpushService = plus.android.importClass("cn.jpush.android.api.JPushInterface");
+				//极光推送获取注册ID
+				/*var JpushService = plus.android.importClass("cn.jpush.android.api.JPushInterface");
 				var main = plus.android.runtimeMainActivity(); //获取activity
 				JpushService.setDebugMode(false); //测试版为true
 				JpushService.init(main.getApplicationContext());
-				registrationId = JpushService.getRegistrationID(main.getApplicationContext());
+				registrationId = JpushService.getRegistrationID(main.getApplicationContext());*/
+				
+				//阿里推送获取注册ID
+				plus.android.importClass("com.alibaba.sdk.android.push.noonesdk.PushServiceFactory");
+				plus.android.importClass("com.alibaba.sdk.android.push.CloudPushService");
+				var utl = plus.android.importClass("com.yy.app.ProtogenDataUtil");
+				registrationId = utl.getAliDeviceId();
 			} else { //IOS
 				var DMSPeoplePickerNavigationController = plus.ios.importClass("DMSPeoplePickerNavigationController");
 				// 创建对象的实例

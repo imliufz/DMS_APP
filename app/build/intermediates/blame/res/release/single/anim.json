@@ -56,12 +56,12 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\anim\\dcloud_slide_in_from_right.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\anim\\abc_fade_in.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_bottom.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_out.xml",

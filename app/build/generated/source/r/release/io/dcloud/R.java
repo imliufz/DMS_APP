@@ -39,12 +39,12 @@ public final class R {
 	}
 	public static final class color {
 		public static final int dadada = 0x7f090013;
-		public static final int dcloud_slt_about_text_color = 0x7f090056;
+		public static final int dcloud_slt_about_text_color = 0x7f09005c;
 		public static final int e4e4e4 = 0x7f090018;
-		public static final int ffffff = 0x7f090019;
-		public static final int image_pick_title_btn_normal = 0x7f09001e;
-		public static final int image_pick_title_btn_pressed = 0x7f09001f;
-		public static final int ime_background = 0x7f090020;
+		public static final int ffffff = 0x7f09001c;
+		public static final int image_pick_title_btn_normal = 0x7f090021;
+		public static final int image_pick_title_btn_pressed = 0x7f090022;
+		public static final int ime_background = 0x7f090023;
 	}
 	public static final class dimen {
 		public static final int dcloud_wel_base_content_space = 0x7f06004e;
@@ -136,8 +136,8 @@ public final class R {
 		public static final int bottom_content_layout = 0x7f0a0090;
 		public static final int cancel = 0x7f0a0066;
 		public static final int checkbox = 0x7f0a003e;
-		public static final int close = 0x7f0a00c2;
-		public static final int content = 0x7f0a00c5;
+		public static final int close = 0x7f0a00ea;
+		public static final int content = 0x7f0a00ed;
 		public static final int customLayout = 0x7f0a0064;
 		public static final int dcloud_dialog_btn1 = 0x7f0a0070;
 		public static final int dcloud_dialog_btn2 = 0x7f0a0071;
@@ -169,34 +169,34 @@ public final class R {
 		public static final int dcloud_tv_loading = 0x7f0a007c;
 		public static final int dcloud_view_seaparator = 0x7f0a007b;
 		public static final int delete = 0x7f0a0080;
-		public static final int favoriteIcon = 0x7f0a00bc;
+		public static final int favoriteIcon = 0x7f0a00d3;
 		public static final int gridGallery = 0x7f0a0074;
 		public static final int guide_title = 0x7f0a0091;
 		public static final int image = 0x7f0a0029;
 		public static final int imgNoMedia = 0x7f0a0075;
 		public static final int imgQueue = 0x7f0a0076;
 		public static final int imgQueueMask = 0x7f0a0077;
-		public static final int leftLayout = 0x7f0a00c0;
+		public static final int leftLayout = 0x7f0a00e8;
 		public static final int ll_title_bar = 0x7f0a0068;
 		public static final int logs = 0x7f0a0081;
-		public static final int menu = 0x7f0a00c4;
+		public static final int menu = 0x7f0a00ec;
 		public static final int pager = 0x7f0a005f;
 		public static final int progressBar = 0x7f0a0097;
 		public static final int query_page = 0x7f0a007f;
-		public static final int refresh = 0x7f0a00c3;
-		public static final int rightLayout = 0x7f0a00c1;
+		public static final int refresh = 0x7f0a00eb;
+		public static final int rightLayout = 0x7f0a00e9;
 		public static final int rl_notification = 0x7f0a0067;
 		public static final int root = 0x7f0a008f;
 		public static final int set_priority = 0x7f0a007e;
-		public static final int sideBarButtonsLayout = 0x7f0a00ba;
-		public static final int sideBarCloseLayout = 0x7f0a00bf;
-		public static final int sideBarFavoriteLayout = 0x7f0a00bb;
-		public static final int sideBarHomeLayout = 0x7f0a00b6;
-		public static final int sideBarOpenOrCloseIV = 0x7f0a00b8;
-		public static final int sideBarOpenOrCloseLayout = 0x7f0a00b7;
-		public static final int sideBarOpenOrCloseTipIV = 0x7f0a00b9;
-		public static final int sideBarReFreshLayout = 0x7f0a00be;
-		public static final int sideBarShareLayout = 0x7f0a00bd;
+		public static final int sideBarButtonsLayout = 0x7f0a00d1;
+		public static final int sideBarCloseLayout = 0x7f0a00d6;
+		public static final int sideBarFavoriteLayout = 0x7f0a00d2;
+		public static final int sideBarHomeLayout = 0x7f0a00cd;
+		public static final int sideBarOpenOrCloseIV = 0x7f0a00cf;
+		public static final int sideBarOpenOrCloseLayout = 0x7f0a00ce;
+		public static final int sideBarOpenOrCloseTipIV = 0x7f0a00d0;
+		public static final int sideBarReFreshLayout = 0x7f0a00d5;
+		public static final int sideBarShareLayout = 0x7f0a00d4;
 		public static final int start_manage = 0x7f0a007d;
 		public static final int sure = 0x7f0a0065;
 		public static final int tab0 = 0x7f0a0060;
@@ -209,7 +209,7 @@ public final class R {
 		public static final int title = 0x7f0a002d;
 		public static final int titleBtn = 0x7f0a0073;
 		public static final int tvTitleText = 0x7f0a0072;
-		public static final int webview = 0x7f0a00c6;
+		public static final int webview = 0x7f0a00ee;
 	}
 	public static final class layout {
 		public static final int ad_dcloud_main = 0x7f03001b;
@@ -233,31 +233,31 @@ public final class R {
 		public static final int dcloud_snow_black_progress = 0x7f03002d;
 		public static final int dcloud_snow_white_progress = 0x7f03002e;
 		public static final int dcloud_streamapp_custom_dialog_layout = 0x7f03002f;
-		public static final int side_bar_layout = 0x7f030044;
-		public static final int webview_layout = 0x7f030046;
+		public static final int side_bar_layout = 0x7f03004e;
+		public static final int webview_layout = 0x7f030052;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f050023;
-		public static final int dcloud_gallery_app_name = 0x7f050015;
-		public static final int stream_my = 0x7f050016;
+		public static final int app_name = 0x7f050051;
+		public static final int dcloud_gallery_app_name = 0x7f050043;
+		public static final int stream_my = 0x7f050044;
 	}
 	public static final class style {
-		public static final int ActionSheetStyleIOS6 = 0x7f07009f;
-		public static final int ActionSheetStyleIOS7 = 0x7f0700a0;
-		public static final int DCloudTheme = 0x7f0700d0;
-		public static final int DeviceDefault = 0x7f0700d1;
-		public static final int DeviceDefault_Light = 0x7f0700d2;
-		public static final int NotificationText = 0x7f0700d4;
-		public static final int NotificationText_Dark = 0x7f0700d5;
-		public static final int NotificationTitle = 0x7f0700d6;
-		public static final int NotificationTitle_Dark = 0x7f0700d7;
-		public static final int OpenStreamAppTransferActivityTheme = 0x7f0700d8;
-		public static final int ThemeNoTitleBar = 0x7f07011b;
-		public static final int TranslucentTheme = 0x7f070123;
-		public static final int dcloud_anim_dialog_window_in_out = 0x7f07016c;
-		public static final int dcloud_defalut_dialog = 0x7f07016d;
-		public static final int featureLossDialog = 0x7f07016e;
-		public static final int streamDelete19Dialog = 0x7f07016f;
+		public static final int ActionSheetStyleIOS6 = 0x7f0700a0;
+		public static final int ActionSheetStyleIOS7 = 0x7f0700a1;
+		public static final int DCloudTheme = 0x7f0700d1;
+		public static final int DeviceDefault = 0x7f0700d2;
+		public static final int DeviceDefault_Light = 0x7f0700d3;
+		public static final int NotificationText = 0x7f0700d5;
+		public static final int NotificationText_Dark = 0x7f0700d6;
+		public static final int NotificationTitle = 0x7f0700d7;
+		public static final int NotificationTitle_Dark = 0x7f0700d8;
+		public static final int OpenStreamAppTransferActivityTheme = 0x7f0700d9;
+		public static final int ThemeNoTitleBar = 0x7f07011c;
+		public static final int TranslucentTheme = 0x7f070124;
+		public static final int dcloud_anim_dialog_window_in_out = 0x7f07016d;
+		public static final int dcloud_defalut_dialog = 0x7f07016e;
+		public static final int featureLossDialog = 0x7f07016f;
+		public static final int streamDelete19Dialog = 0x7f070170;
 	}
 	public static final class styleable {
 		public static final int[] ActionSheet = { 0x7f01001f, 0x7f010020, 0x7f010021, 0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025, 0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029, 0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d };

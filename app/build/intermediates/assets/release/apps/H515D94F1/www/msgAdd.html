@@ -3,6 +3,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="js/html_head.js"></script>
+<link rel="stylesheet" type="text/css" href="css/resStyle/common_flex.css" />
+<style type="text/css">
+	.titleBox{
+		font-size: 16px;
+		padding: 6px 14px;
+		height: 30px;
+	}
+	.inputBox{
+		font-size: 16px !important;
+		border: 0px;
+		padding-left:8px;
+		width: 100% !important;
+		color:rgb(103,103,103);
+	}
+</style>
 <title>短信模板</title>
 </head>
 <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" ovalidate="true">
@@ -16,18 +31,15 @@
 	</div>
 	<form method="post" id="fm">
 			<input type="hidden" id="id" name="id" value=""/>
-			<ul class="round">
-				<li class="title mb">
-					<span class="none">基本信息</span>
-				</li>
+			<!--<ul class="round">
 				<li class="nob">
 					<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 						<tr class="biaoge">
-							<td>
+							<td style="font-size: 15px;">
 								模板标题<font color="red">*</font>
 							</td>
 							<td>
-								<input name="title" class="px" type="text" id="title" required="required" placeholder="请输入模板标题" >
+								<input name="title" style="height: 64px;font-size: 15px;" class="px" type="text" id="title" required="required" placeholder="请输入模板标题" >
 							</td>
 						</tr>
 					</table>
@@ -44,9 +56,21 @@
 						</tr>
 					</table>
 				</li>
-			</ul>
+			</ul>-->
+			<div class="titleBox" style="margin-top: 44px;">
+				标题
+			</div>
+			<div>
+				<input name="title" class="inputBox" style="height: 44px;" type="text" id="title" required="required" placeholder="请输入模板标题" >
+			</div>
+			<div class="titleBox">
+				内容
+			</div>
+			<div>
+				<textarea rows="10" cols="4" class="inputBox" name="content" id="content" required="required" placeholder="请输入模板内容<字数限制500>" ></textarea>
+			</div>
 			<div class="footReturn">
-				<input id="submitBtn" value="提   交"  type="submit" class="submit" style="width: 100%">
+				<input id="submitBtn" value="提        交"  type="submit" class="submit" style="width: 100%;height: 44px;margin-top: 20px;font-size: 20px;">
 				<br /> <br /> <br /> <br />
 			</div>
 	</form>

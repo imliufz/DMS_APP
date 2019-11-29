@@ -66,14 +66,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/jni" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
@@ -82,11 +74,25 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/cn.jiguang.sdk/jcore/1.2.3/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/cn.jiguang.sdk/jpush/3.1.5/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.aliyun.ams/alicloud-android-push/3.1.3/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.aliyun.ams/alicloud-android-third-push/3.0.9/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.aliyun.ams/huawei-push-base/2.6.3.305/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.aliyun.ams/huawei-push/2.6.3.305/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.aliyun.ams/meizu-push/3.8.3-fix/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/multidex-instrumentation/1.0.1/jars" />
@@ -98,6 +104,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.blankj/utilcode/1.13.5/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.growingio.android/vds-android-agent/autotrack-2.6.6/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/lib.5plus.base-release/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
@@ -124,49 +131,58 @@
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="oauth-miui" level="project" />
-    <orderEntry type="library" exported="" name="support-core-ui-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="jpush-3.1.5" level="project" />
     <orderEntry type="library" exported="" name="jcore-1.2.3" level="project" />
-    <orderEntry type="library" exported="" name="sinaweibo4.1" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="speech_ifly" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="support-media-compat-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="geolocation-amap" level="project" />
     <orderEntry type="library" exported="" name="oauth-qq" level="project" />
-    <orderEntry type="library" exported="" name="alipaySingle-20161222" level="project" />
-    <orderEntry type="library" exported="" name="tx_weibo_sdk_component" level="project" />
+    <orderEntry type="library" exported="" name="alicloud-android-beacon-1.0.3" level="project" />
+    <orderEntry type="library" exported="" name="ormlite-android-4.48" level="project" />
     <orderEntry type="library" exported="" name="aps-igexin" level="project" />
-    <orderEntry type="library" exported="" name="oauth-sina" level="project" />
+    <orderEntry type="library" exported="" name="alicloud-android-utils-1.1.5" level="project" />
     <orderEntry type="library" exported="" name="share-sina" level="project" />
     <orderEntry type="library" exported="" name="geolocation-baidu" level="project" />
-    <orderEntry type="library" exported="" name="tx_weibo_sdk-httpclient-3.0.1" level="project" />
-    <orderEntry type="library" exported="" name="oauth-weixin" level="project" />
     <orderEntry type="library" exported="" name="GetuiSDK2.10.3.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="multidex-instrumentation-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="alipayutdid" level="project" />
     <orderEntry type="library" exported="" name="lib.5plus.base-release-" level="project" />
-    <orderEntry type="library" exported="" name="map-baidu" level="project" />
-    <orderEntry type="library" exported="" name="payment-alipay" level="project" />
-    <orderEntry type="library" exported="" name="MiPush_SDK_Client_3_1_2" level="project" />
     <orderEntry type="library" exported="" name="umeng-analytics-v6.0.1" level="project" />
-    <orderEntry type="library" exported="" name="share-qq" level="project" />
-    <orderEntry type="library" exported="" name="tx_weibo_sdk" level="project" />
+    <orderEntry type="library" exported="" name="utilcode-1.13.5" level="project" />
     <orderEntry type="library" exported="" name="aps" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="tx_wx" level="project" />
     <orderEntry type="library" exported="" name="statistics-umeng" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="vds-android-agent-autotrack-2.6.6" level="project" />
     <orderEntry type="library" exported="" name="messaging" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="meizu-push-3.8.3-fix" level="project" />
     <orderEntry type="library" exported="" name="payment-weixin" level="project" />
     <orderEntry type="library" exported="" name="share-weixin" level="project" />
+    <orderEntry type="library" exported="" name="share-tencent" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="support-core-ui-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="sinaweibo4.1" level="project" />
+    <orderEntry type="library" exported="" name="huawei-push-2.6.3.305" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="support-media-compat-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="geolocation-amap" level="project" />
+    <orderEntry type="library" exported="" name="tx_weibo_sdk_component" level="project" />
+    <orderEntry type="library" exported="" name="oauth-sina" level="project" />
+    <orderEntry type="library" exported="" name="alicloud-android-push-3.1.3" level="project" />
+    <orderEntry type="library" exported="" name="tx_weibo_sdk-httpclient-3.0.1" level="project" />
+    <orderEntry type="library" exported="" name="oauth-weixin" level="project" />
+    <orderEntry type="library" exported="" name="map-baidu" level="project" />
+    <orderEntry type="library" exported="" name="payment-alipay" level="project" />
+    <orderEntry type="library" exported="" name="share-qq" level="project" />
+    <orderEntry type="library" exported="" name="tx_weibo_sdk" level="project" />
+    <orderEntry type="library" exported="" name="tx_wx" level="project" />
+    <orderEntry type="library" exported="" name="huawei-push-base-2.6.3.305" level="project" />
+    <orderEntry type="library" exported="" name="alicloud-android-ut-5.4.1" level="project" />
+    <orderEntry type="library" exported="" name="ormlite-core-4.48" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="speech" level="project" />
-    <orderEntry type="library" exported="" name="share-tencent" level="project" />
+    <orderEntry type="library" exported="" name="alicloud-android-third-push-3.0.9" level="project" />
     <orderEntry type="library" exported="" name="support-compat-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="alicloud-android-utdid-1.1.5.4" level="project" />
   </component>
 </module>

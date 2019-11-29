@@ -96,7 +96,7 @@ function ToUrl(toUrl,animationTypeShow){
 		},
 		createNew:true,
 		waiting: {
-					autoShow: true, //自动显示等待框，默认为true  
+					autoShow: false, //自动显示等待框，默认为true  
 					title: '正在加载...', //等待对话框上显示的提示内容  
 					options: {
 						width: "120px", //等待框背景区域宽度，默认根据内容自动计算合适宽度  

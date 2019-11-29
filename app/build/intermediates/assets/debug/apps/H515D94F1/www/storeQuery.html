@@ -19,7 +19,7 @@
 		text-indent:2px;
 	}
 	.bordered th{
-		background: #10a6e2;
+		background: #1790E4;
 		color: #fff;
 		text-shadow:none;
 		font-size: 16px;
@@ -28,60 +28,48 @@
 </style>
 </head>
 <body onselectstart="return true;" ondragstart="return false;">
-	<script type="text/javascript" src="js/detail_head.js?_menu_name=库存查询&_is_loading=1&_show_save=2&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
+	<script type="text/javascript" src="js/detail_head.js?_menu_name=库存查询&_is_loading=1&_show_save=1&_btn_type=3&_save_func=showHelp" id="detail_head_js"></script>
 	<form id="fm" method="post">
 		<div class="cardexplain">
 			<ul class="round" style="border:none;margin-bottom: 0px;">
 			<table id="tb_query">
                 <tr class="biaoge" id="oemCusSource_Tr" >
-                	<td>库存状态 </td>
+                	<td>车系</td>
                     <td>
 						 <li class="nob">
-                             <select id="vehicle_life" name="vehicle_life" class="download dropdown-select">
-                                <option value="">-请选择-</option>
-                                <option value="10321003">经销商库存</option>
-                                <option value="10321005">经销商在途</option>
-                            </select>
+                            <select name="intentSeries" id="intentSeries" class="download dropdown-select" required="required" onChange="_changeSMPC(this.value, 1)">
+								<option value="">-请选择-</option>
+							</select>
                         </li>                   
                     </td>
                 </tr>
                  <tr class="biaoge">
-                	<td>车辆所有者						                </td>
+                	<td>车型</td>
                     <td>
 						 <li class="nob">
-                             <select id="vehicleOwn" name="vehicleOwn" class="download dropdown-select">
-                                <option value="">-请选择-</option>
-                                <option value="01">自有车</option>
-								<option value="03">代销车</option>
-								<option value="02">代管车</option>
-                            </select>
+	                        <select name="intentModel" id="intentModel" class="download dropdown-select" onChange="_changeSMPC(this.value, 2)">
+							</select>
+						</li>
                 </tr>
                 <tr class="biaoge">
-                	<td>锁定状态						                </td>
+                	<td>配置</td>
                     <td>
 						 <li class="nob">
-                             <select id="lockStatus" name="lockStatus" class="download dropdown-select">
-                                <option value="">-请选择-</option>
-                                <option value="10241001">正常状态</option>
-                                <option value="10241002">发运锁定</option>
-                                <option value="10241003">预留锁定</option>
-                                <option value="10241004">质损锁定</option>
-                                <option value="10241005">退车锁定</option>
-                                <option value="10241006">批发锁定</option>
-                                <option value="10241007">二手车置换锁定</option>
-                            </select>
+                            <select name="intentPackage" id="intentPackage" class="download dropdown-select" onChange="getMaterial();">
+							</select>
                         </li>                    
                     </td>
                 </tr>
                 <tr class="biaoge">
-						<td>库存超过</td>
-						<td>
-							<li class="nob">
-								<input type="text" id="days" name="days" value="" placeholder="(天)" class="px" />
-							</li>
-						</td>
-				</tr>
-				<tr class="biaoge">
+                	<td>物料</td>
+                    <td>
+						 <li class="nob">
+                            <select name="materialCode" id="materialCode" class="download dropdown-select"></select>
+							<select name="color" id="color" class="download dropdown-select" style="display: none;"></select>
+                        </li>                    
+                    </td>
+                </tr>
+				<tr class="biaoge" style="display: none;">
 						<td>VIN</td>
 						<td>
 							<li class="nob">
@@ -108,8 +96,8 @@
             	<th nowrap="nowrap"  style="text-align: center;">车系</th>
                 <th nowrap="nowrap"  style="text-align: center;">车型</th>
                 <th nowrap="nowrap"  style="text-align: center;">配置</th>
-                <th nowrap="nowrap"  style="text-align: center;">物料代码</th>
-                <th nowrap="nowrap"  style="text-align: center;">物料名称</th>
+                <!--<th nowrap="nowrap"  style="text-align: center;">物料代码</th>-->
+                <th nowrap="nowrap"  style="text-align: center;">物料</th>
                 <th nowrap="nowrap"  style="text-align: center;">在库数量</th>
                 <th nowrap="nowrap"  style="text-align: center;">在途数量</th>
                 <th nowrap="nowrap"  style="text-align: center;">已订未销</th>
@@ -139,13 +127,39 @@
 	$(document).ready(function () {
 		loadData();
 	});
+	
+	function getMaterial(){
+		var materialCode = document.getElementById('materialCode');
+		materialCode.length=0;
+		materialCode.add(new Option("数据加载中...", ""));
+		var url = httpUrlHead + "ReportServiceApp/getMaterial.json?" + httpUrlEnd;
+		makeFormCall(url,function(json){
+			materialCode.length=0;
+			if ( json.list == undefined || json.list == null || json.list.length == 0) {
+				materialCode.add(new Option("无数据", ""));
+				return;
+			} else {
+				materialCode.add(new Option("-请选择-", ""));
+				for(var i = 0; i < json.list.length;i++) {
+					var detail = json.list[i];
+					var objOption = new Option(detail.MATERIAL_NAME, detail.MATERIAL_CODE);
+					materialCode.add(objOption);
+				}
+			}
+		},"fm");
+	}
+	
 	function loadData() {
+		_loadSeries("intentSeries");
+		$("#queryBtn").css("background-color","gray");
+		$("#dataReport").html("");
 		var url1 = httpUrlHead + "ReportServiceApp/StorageQueryDLR_Detail.json?" + httpUrlEnd;
 		var appendHtml = "";
 		makeFormCall(url1,function(json){
+			$("#queryBtn").css("background-color","#1790E4");
 			if ( json.list == undefined || json.list == null || json.list.length == 0) {
 				pageNum = 0;
-				appendHtml += "<tr><td colspan='9'><a style=color:red>无数据</a></td></tr>";
+				appendHtml += "<tr><td colspan='8'><a style=color:red>无数据</a></td></tr>";
 				$("#dataReport").html(appendHtml);
 				return;
 			}
@@ -160,7 +174,7 @@
 				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.SERIES_NAME+"</td>";
 				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.MODEL_NAME+"</td>";
 				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.PACKAGE_NAME+"</td>";
-				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.MATERIAL_CODE+"</td>";
+				/*appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.MATERIAL_CODE+"</td>";*/
 				appendHtml += "<td nowrap='nowrap' algin='center'>"+detail.MATERIAL_NAME+"</td>";
 				if( parseInt(changeNullvalue(detail.NO_WAY)) > 0 ){
 					appendHtml += "<td nowrap='nowrap' algin='center'><a type='2'>"+changeNullvalue(detail.NO_WAY)+"</a></td>";
@@ -190,7 +204,7 @@
 				orderNum += parseInt(changeNullvalue(detail.ORDERNUM));
 			}
 			sumHtml += "<tr>";
-			sumHtml += "<td nowrap='nowrap' style='text-align:left;' colspan='5'>小计:</td>";
+			sumHtml += "<td nowrap='nowrap' style='text-align:left;' colspan='4'>小计:</td>";
 			sumHtml += "<td nowrap='nowrap' algin='center'>"+NO_WAY+"</td>";
 			sumHtml += "<td nowrap='nowrap' algin='center'>"+ON_WAY+"</td>";
 			sumHtml += "<td nowrap='nowrap' algin='center'>"+orderNum+"</td>";
@@ -220,9 +234,9 @@
 		var vin = $("#vin").val();
 		var reportFrom ="storeReport";
 		var title = "库存查询";
-		var headTitle = ["车型名称","配置","物料代码","物料名称","VIN","库存状态","锁定状态","入库日期","库存天数","已订未销"];//表头
-		var headWidth = ["220px","200px","100px","300px","100px","100px","100px","100px","100px","100px"];//表头
-		var showCol = ["MODEL_NAME","PACKAGE_NAME","MATERIAL_CODE","MATERIAL_NAME","VIN","LIFE_CYCLE","LOCK_STATUS","STORAGE_TIME","DAY_COUNT","DMS_STATUS"];//显示字段
+		var headTitle = ["VIN","库存状态","锁定状态","入库日期","库存天数","已订未销"];//表头
+		var headWidth = ["100px","100px","100px","100px","100px","100px"];//表头
+		var showCol = ["VIN","LIFE_CYCLE","LOCK_STATUS","STORAGE_TIME","DAY_COUNT","DMS_STATUS"];//显示字段
 		var paramName = ["vehicle_life","vehicleOwn","lockStatus","days","vin","material_code","reportFrom","type"];//查询参数
 		var paramValue = [vehicle_life,vehicleOwn,lockStatus,days,vin,code,reportFrom,type];//参数值
 		//组装url
@@ -239,6 +253,17 @@
 		}catch(e){
 			return "";
 		}
+	}
+	
+	function showHelp(){
+		var alertMsg = ""+
+		"<div style='text-align:left;'>"+
+			"<div>在库数：库存状态为经销商库存的数量</div>"+
+			"<div>在途数：库存状态为经销商在途的数量</div>"+
+			"<div>已订未销：客户已订车但未实销上报</div>"+
+			"<div>可用数：可用数=在库+在途-已订未销</div>"+
+		"</div>";
+		MuiAlert(alertMsg);
 	}
 </script>
 </html>

@@ -99,7 +99,7 @@
 					<div class="help"><img src="images/help.png" width="24" id="cxHelp" style="margin-top:0px;width:22px;height:25px;"></div>
 				</div>
 
-				<ul class="ico xf-res-ico flex-box">
+				<ul class="ico xf-res-ico" style="text-align: left;">
 					<li class="cell-1" id="10503015" style="display: none;" url="hallReceptionManage.html">
 						<a href="javascript:void(0);" target="_top">
 							<img src="images/app6.png">
@@ -130,8 +130,8 @@
 							<div class="font-12">保有客户</div>
 						</a>
 					</li>
-				</ul>
-				<ul class="ico lin xf-res-ico flex-box" id="gwtc" style="display: none;">
+				<!--</ul>
+				<ul class="ico lin xf-res-ico" style="text-align: left;" id="gwtc">-->
 					<li class="cell-1" id="10503065" style="display: none;" url="xs_list.html">
 						<a href="javascript:void(0);" target="_top">
 							<img src="images/app5.png">
@@ -144,19 +144,30 @@
 							<div class="font-12">顾问管理</div>
 						</a>
 					</li>
-					<li class="cell-1" id="10503070">
+					<li class="cell-1" id="10503070" style="display: none;">
 						<a href="javascript:void(0);" target="_top">
 							<img src="images/app8.png">
 							<div class="font-12">在途查询</div>
 						</a>
 					</li>
-					<li class="cell-1" id="10503071" url="storeQuery.html">
+					<li class="cell-1" id="10503071" style="display: none;" url="storeQuery.html">
 						<a href="javascript:void(0);" target="_top">
 							<img src="images/app9.png">
 							<div class="font-12">库存查询</div>
 						</a>
 					</li>
-					<li class="cell-1"></li>
+					<li class="cell-1" id="10503072" style="display: none;">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app10.png">
+							<div class="font-12">话术推荐</div>
+						</a>
+					</li>
+					<li class="cell-1" id="10503073" style="display: none;">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app11.png">
+							<div class="font-12">客户直评</div>
+						</a>
+					</li>
 				</ul>
 	
 				<div class="line xf-res-line flex-box align-items-center margin-t-8">
@@ -232,13 +243,25 @@
 			if (logonUser.chana == "80081001") {
 				jw = "J";
 			}
-			var ztUrl = "http://61.186.243.107:8099/custmap/map_search/map.html?J_W=" + jw + "&DEALER_ID=" + logonUser.DEALER_ID +
+			var ztUrl = "http://cvsses.changan.com.cn/logistics/?J_W=" + jw + "&DEALER_ID=" + logonUser.DEALER_ID +
 				"&DEALER_CODE=" + logonUser.DEALER_CODE_MD5;
 			$("#10503070").attr("url", ztUrl);
-			if (logonUser.IS_MANAGER == "10041001") {
+			//话术推荐
+			$("#10503072").attr("url", "http://cvsses.changan.com.cn/speech/");
+			//客户直评
+			$("#10503073").attr("url", "http://tapp2smart.changan.com.cn/overview/OverviewApp?dealerId="+logonUser.DEALER_ID);
+			/*if (logonUser.IS_MANAGER == "10041001") {
 				$("#gwtc").show();
 			} else {
 				$("#kccx").show();
+			}*/
+			if(!IsNull(isHaveJsRole) && isHaveJsRole != '0'){
+				if (logonUser.IS_MANAGER == "10041001") {
+					$("#jszx").show();
+				}else{
+					$("#jszx_ul").show();
+				}
+				$("a[name='jszx_app']").on("tap",toJszxApp);
 			}
 
 			mui(".icos").on("tap", "li", function() {

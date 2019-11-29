@@ -4,14 +4,15 @@ package com.yy.app;
 //import android.app.PendingIntent;
 //import android.content.Context;
 //import android.content.Intent;
+
 import android.os.Bundle;
-//import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
-//import com.yy.jc.R;
+import com.yy.utils.PmTool;
 
-import cn.jpush.android.api.JPushInterface;
 import io.dcloud.PandoraEntry;
+
+//import android.support.v4.app.NotificationCompat;
+//import com.yy.jc.R;
 
 /**
  * Created by ERIC on 2018-08-27.
@@ -25,11 +26,16 @@ public class AppService extends PandoraEntry {
     protected void onCreate(Bundle var1) {
         super.onCreate(var1);
 
-        JPushInterface.setDebugMode(false);//测试版为true
+        //取消使用极光推送2019年11月26日16:57:02----start
+        /*JPushInterface.setDebugMode(false);//测试版为true
         JPushInterface.init(this.getApplicationContext());
         String registrationId = JPushInterface.getRegistrationID(this.getApplicationContext());
-        Log.e("1099", "run:--------->registrationId： "+registrationId );
+        Log.e("1099", "run:--------->registrationId： "+registrationId );*/
+        //取消使用极光推送2019年11月26日16:57:02----end
 
+        //加载权限
+        PmTool.permissionAll(this);
+        //PmTool.permission(this,);
         /*Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {

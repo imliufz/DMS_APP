@@ -5,6 +5,17 @@
 		<script type="text/javascript" src="js/html_head.js"></script>
 		<link href="css/index.css" rel="stylesheet" type="text/css"/>
 		<title>展厅接待</title>
+		<!-- 样式修改新增css -->
+		<!-- 共用弹性布局文件 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/common_flex.css" />
+		<!-- 重写样式 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_hallReceptionEdit.css" />
+		<!-- 新增样式逻辑 -->
+		<script src="js/resJs/res_hallReceptionEdit.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 2019-3-25 XF 新增单选组件-->
+		<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
+		<!-- 2019-3-25 XF 新增单选组件 END-->
+		<!-- 样式修改新增css-end -->
     </head>
     <style type="text/css">
     	.addImg{
@@ -19,7 +30,7 @@
     	.addSeach{
 		    color: #fff;
 		    border-radius: 15px;
-			background-color: #10a6e2;
+			background-color: #1790E4;
 		    background-image: url(images/seach.png);
 			background-repeat: no-repeat;
 			background-position: center;
@@ -35,41 +46,41 @@
     <body id="onlinebooking" onselectstart="return true;" ondragstart="return false;" onLoad="">
 	<form id="fm" method="post">
 	<script type="text/javascript" src="js/detail_head.js?_menu_name=展厅接待&_show_save=1&_is_submit=1&_save_func=save" id="detail_head_js"></script>
-	<div style="height: 55px;display: none;" id="blankDiv"></div>
+	<div style="height: 44px;display: none;" id="blankDiv"></div>
     <input type="hidden" name="ITEM_ID" id="ITEM_ID" value="" />
     <input type="hidden" name="id" id="id" value="" />
     <input type="hidden" name="ver" id="ver" value="0" />
 	<!--普通用户登录时显示-->
-	<div class="cardexplain" id="_showContentDiv1">
+	<div class="cardexplain xf-res-cardexplain" id="_showContentDiv1">
 	<div id="rp" style="position: fixed;z-index: 99;background-color: #edf0f8;width: 100%;">
 		<table width="100%" id="reportTable">
 			<tr>
 				<td style="width:30%;">
-					<input   name="topBtn" id="mu1" class="button" onclick="showTabs(1);" style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="客户资料" type="button">
+					<input   name="topBtn" id="mu1" class="button" onclick="showTabs(1);" style=" background-color:#edf0f8;height: 30px;border: 0px;" value="客户资料" type="button">
 				</td>
 				<td style="width:30%;">
-					<input   name="topBtn" id="mu2" class="button" onclick="showTabs(2);" style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="意向车辆" type="button">
+					<input   name="topBtn" id="mu2" class="button" onclick="showTabs(2);" style=" background-color:#edf0f8;height: 30px;border: 0px;" value="意向车辆" type="button">
 				</td>
 				<td style="width:30%;">
-					<input  name="topBtn" id="mu3" class="button" onclick="showTabs(3);"  style=" background-color:#edf0f8; width: 90% ;height: 30px;border: 0px;" value="其它信息" type="button" >
+					<input  name="topBtn" id="mu3" class="button" onclick="showTabs(3);"  style=" background-color:#edf0f8;height: 30px;border: 0px;" value="其它信息" type="button" >
 				</td>
 				
 			</tr>
-			<tr style="height: 3px;">
-				<td id="hg1" bgcolor="#FFFF00">
-					
+			<tr style="height: 2px;">
+				<td id="hg1">
+					<span class="line"></span>
 				</td>
 				<td id="hg2">
-					
+					<span></span>
 				</td>
 				<td id="hg3">
-					
+					<span></span>
 				</td>
 				
 			</tr>
 		</table>
 	</div>
-	<div style="height: 33px;width: 100%;">&nbsp;</div>
+	<div style="height: 44px;width: 100%;margin-bottom: 8px;">&nbsp;</div>
 	<div id="tabs1">
 		<ul class="round">
 				<li class="nob">
@@ -78,9 +89,15 @@
 				<tr class="biaoge">
 					<td>客户姓名<font color="red">*</font></td>
 					<td>
-						<input name="CUSTOMER_NAME" class="px" id="CUSTOMER_NAME" type="text" required="required" style="display: inline; width: 50%;" placeholder="请输入客户姓名" >
-						<input id="customerChooseBtn" type="button" value="老客户" style="display: inline; width: 20%;font-size: 14px;" />
-						<input type="button" value="通讯录" style="display: inline; width: 20%;font-size: 14px;" onclick="addressBookChoose();"/>
+						<div class="flex-box">
+							<div class="cell-3">
+								<input name="CUSTOMER_NAME" class="px" id="CUSTOMER_NAME" type="text" required="required" style="display: inline;" placeholder="请输入客户姓名" >
+							</div>
+							<div class="cell-2" style="height: 40px;">
+								<input class="customer-new" type="button" value="" style="display: inline;" onclick="addressBookChoose();"/>
+								<input class="customer-old" id="customerChooseBtn" type="button" value="" style="display: inline;" />
+							</div>
+						</div>
 					</td>
 				</tr>
 			</table>
@@ -90,8 +107,18 @@
                 <tr class="biaoge">
                     <td>客户性别<font color="red">*</font></td>
                     <td>
-                        <select name="GENDER" id="GENDER" class="download dropdown-select" required="required">
-                        	<option value="">-请选择-</option>
+					   <!-- 2019-3-25新增 
+							本想用input来代替select元素的，但替换过后
+							xlAjax.js:71 会报类型错误 Cannot set property 'length' of undefined ，
+							因此就没用input元素了 
+							这里封装的一个choose_list单选组件，然后通过select的id on绑定了tap事件来进行的处理
+							具体使用逻辑看下 res_hallReceptionEdit.js  即可。
+						 -->
+					   <!-- <input type="text" name="GENDER" id="GENDER" value="" placeholder="请选择" readonly="readonly"/> -->
+					   <!-- 2019-3-25新增 END -->
+					   <!-- 原代码 -->
+                       <select name="GENDER" id="GENDER" class="download dropdown-select" required="required">
+                        	<option value="">请选择</option>
                         </select>
                     </td>
                 </tr>
@@ -122,8 +149,18 @@
 			<tr class="biaoge">
 				<td>意向级别<font color="red" id="INTENT_LEVEL_MUST" style="display: none;">*</font></td>
 				<td>
-					<select name="INTENT_LEVEL" id="INTENT_LEVEL" class="download dropdown-select-nosel" style="border:none;" onChange="intentLevelChange(this.value);">
-						<option value="">-请选择-</option>
+					<!-- 2019-3-25新增 
+          本想用input来代替select元素的，但替换过后
+          xlAjax.js:71 会报类型错误 Cannot set property 'length' of undefined ，
+          因此就没用input元素了 
+          这里封装的一个choose_list单选组件，然后通过select的id on绑定了tap事件来进行的处理
+          具体使用逻辑看下 res_hallReceptionEdit.js  即可。
+         -->
+					<!-- <input type="text" name="INTENT_LEVEL" id="INTENT_LEVEL" value="" placeholder="请选择" readonly="readonly"/> -->
+					<!-- 2019-3-25新增 END -->
+					<!-- 原代码 -->
+					<select name="INTENT_LEVEL" id="INTENT_LEVEL" class="download dropdown-select" style="border:none;" onChange="intentLevelChange(this.value);">
+						<option value="">请选择</option>
 						<option value="13101001">H级</option>
 						<option value="13101002">A级</option>
 						<option value="13101003">B级</option>
@@ -169,8 +206,18 @@
 								</td>
 								<td>
 									<li class="nob">
+										<!-- 2019-3-25新增 
+          本想用input来代替select元素的，但替换过后
+          xlAjax.js:71 会报类型错误 Cannot set property 'length' of undefined ，
+          因此就没用input元素了 
+          这里封装的一个choose_list单选组件，然后通过select的id on绑定了tap事件来进行的处理
+          具体使用逻辑看下 res_hallReceptionEdit.js  即可。
+         -->
+										<!-- <input type="text" name="VISIT_TYPE" id="VISIT_TYPE" value="" placeholder="请选择" readonly="readonly"/> -->
+										<!-- 2019-3-25新增 END -->
+										<!-- 原代码 -->
 										<select id="VISIT_TYPE" name="VISIT_TYPE" class="download dropdown-select" required="required" onChange="visitTypeChange(this.value);">
-											<option value="">-请选择-</option>
+											<option value="">请选择</option>
 											<option value="13091001">来电</option>
 											<option value="13091002">来店</option>
 											<option value="13091003">网络</option>
@@ -243,9 +290,13 @@
 		</li>
 		<li class="nob">
             <table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                    <td>销售顾问</td>
-                    <td><input name="soldBy" class="px" id="soldBy" value="" type="text" readonly></td>
+                <tr class="biaoge">
+                    <td>销售顾问<font color="red">*</font></td>
+                    <td>
+                    	<select name="soldBy" id="soldBy" class="download dropdown-select" required="required">
+						</select>
+                    	<!--<input name="soldBy" class="px" id="soldBy" value="" type="text" readonly>-->
+                    </td>
                 </tr>
             </table>
         </li>
@@ -313,7 +364,7 @@
 			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr class="biaoge">
 					<td>
-						是否试乘试驾<font color="red">*</font>
+						试乘试驾<font color="red">*</font>
 					</td>
 					<td>
 						<li class="nob">
@@ -376,7 +427,7 @@
 							</td>
 							<td>
 								<input name="VIN" class="px" id="VIN" type="text" onKeyDown="return false;" style="display: inline; width: 70%;" placeholder="请选择VIN">
-								<input id="vinChooseBtn" type="button" value="选择" style="display: inline; width: 20%;" />
+								<input id="vinChooseBtn" type="button" value="选择" class="chooseBtn" style="display: inline; width: 20%;" />
 							</td>
 						</tr>
 					</table>
@@ -427,11 +478,27 @@
 			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr class="biaoge">
 					<td>
-						客户来源<font color="red" id="CUS_SOURCE_MUST" style="display: none;">*</font>
+						一级来源<font color="red" id="CUS_SOURCE_MUST" style="display: none;">*</font>
 					</td>
 					<td>
 						<li class="nob">
-							<select id="CUS_SOURCE" name="CUS_SOURCE" class="download dropdown-select" onChange="knowWayChange(this.value, document.getElementById('MEDIA_TYPE').value);" exceptValue="13111016">
+							<select id="CUS_SOURCE" name="CUS_SOURCE" class="download dropdown-select" onChange="knowWayChange(this.value, document.getElementById('MEDIA_TYPE').value);cusSourceChange(this.value,null);" exceptValue="13111016">
+								<option value="">-请选择-</option>
+							</select>
+						</li>
+					</td>
+				</tr>
+			</table>
+		</li>
+		<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>
+						二级来源<font color="red">*</font>
+					</td>
+					<td>
+						<li class="nob">
+							<select id="CUS_SOURCE_SMALL" name="CUS_SOURCE_SMALL" class="download dropdown-select">
 								<option value="">-请选择-</option>
 							</select>
 						</li>
@@ -490,7 +557,7 @@
 					<td>
 						<li class="nob">
 							<input type="text" id="REFEREE_NAME" name="REFEREE_NAME" class="px" placeholder="请选择推荐人" readonly="readonly" style="display: inline; width: 70%;">
-							<input id="refereeChooseBtn" type="button" value="选择" style="display: inline; width: 20%;" />
+							<input id="refereeChooseBtn" type="button" value="选择" class="chooseBtn" style="display: inline; width: 20%;" />
 						</li>
 					</td>
 				</tr>
@@ -513,7 +580,7 @@
 		<li class="nob">
 			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr class="biaoge">
-					<td>活动选择</td>
+					<td>活动选择<font color="red" id="CAMPAIGN_NAME_MUST" style="display: none;">*</font></td>
 					<td>
 						<input name="CAMPAIGN_CODE" class="px" id="CAMPAIGN_CODE" type="hidden">
 						<input name="CAMPAIGN_NAME" class="px" id="CAMPAIGN_NAME" type="text" readonly="readonly" style="display: inline; width: 70%;" placeholder="请选择活动">
@@ -646,7 +713,7 @@
 	</div>
 </form>
 </div>
-<div class="cardexplain" id="_showContentDiv2" style="display: none;">
+<div class="cardexplain xf-res-cardexplain" id="_showContentDiv2" style="display: none;">
 	<ul class="round">
 		<li>展厅接待&nbsp;&nbsp;>>&nbsp;&nbsp;选择潜客</li>
 	</ul>
@@ -679,9 +746,9 @@
 						<td></td>
 						<td align="left">
 							<li class="nob">
-								<input value="查 询" type="submit" class="submit" style="display: inline; width: 30%;">
+								<input value="查 询" type="submit" class="activityQueryBtn" style="display: inline; width: 30%;">
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<input value="返 回" type="button" class="submit" style="display: inline; width: 30%;" onClick="backLastLevel();">
+								<input value="返 回" type="button" class="activityQueryBtn" style="display: inline; width: 30%;" onClick="backLastLevel();">
 							</li>
 						</td>
 					</tr>
@@ -715,7 +782,7 @@
 </div>
 
 
-<div class="cardexplain" id="_showContentDiv3" style="display: none;">
+<div class="cardexplain xf-res-cardexplain" id="_showContentDiv3" style="display: none;">
 	<ul class="round">
 		<li>展厅接待&nbsp;&nbsp;>>&nbsp;&nbsp;选择保有客户</li>
 	</ul>
@@ -738,9 +805,9 @@
 						<td></td>
 						<td align="left">
 							<li class="nob">
-								<input value="查 询" type="submit" class="submit" style="display: inline; width: 30%;">
+								<input value="查 询" type="submit" class="activityQueryBtn" style="display: inline; width: 30%;">
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<input value="返 回" type="button" class="submit" style="display: inline; width: 30%;" onClick="backLastLevel();">
+								<input value="返 回" type="button" class="activityQueryBtn" style="display: inline; width: 30%;" onClick="backLastLevel();">
 							</li>
 						</td>
 					</tr>
@@ -768,7 +835,8 @@
 		</table>
 	</ul>
 </div>
-<div class="cardexplain" id="_showContentDiv4" style="display: none;">
+<!-- 活动选择  原HTML片段 -->
+<div class="cardexplain xf-res-cardexplain" id="_showContentDiv4" style="display: none;">
 	<ul class="round">
 		<li>跟进邀约&nbsp;&nbsp;>>&nbsp;&nbsp;选择活动</li>
 	</ul>
@@ -799,7 +867,7 @@
 						<td>活动分类<font color="red">*</font></td>
 						<td>
 							<li class="nob">
-								<select id="ACTIVE_TYPE" name="ACTIVE_TYPE" class="download dropdown-select" style="width: 90%" required="required">
+								<select id="ACTIVE_TYPE" name="ACTIVE_TYPE" class="download dropdown-select" style="width: 90%" required="required" defaultValue="13051002">
 									<option value="">活动分类</option>
 								</select>
 							</li>
@@ -809,9 +877,9 @@
 						<td></td>
 						<td align="left">
 							<li class="nob">
-								<input value="查 询" type="submit" class="submit" style="display: inline; width: 30%;">
+								<input value="查 询" type="submit" class="activityQueryBtn" style="display: inline; width: 30%;">
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<input value="返 回" type="button" class="submit" style="display: inline; width: 30%;" onClick="backLastLevel();">
+								<input value="返 回" type="button" class="activityQueryBtn" style="display: inline; width: 30%;" onClick="backLastLevel();">
 							</li>
 						</td>
 					</tr>
@@ -833,8 +901,9 @@
 		</table>
 	</ul>
 </div>
+<!-- 活动选择  原HTML片段 --------------END-->
 
-<div class="cardexplain" id="_showContentDiv5" style="display: none;">
+<div class="cardexplain xf-res-cardexplain" id="_showContentDiv5" style="display: none;">
 	<ul class="round">
 		<li>展厅接待&nbsp;&nbsp;>>&nbsp;&nbsp;选择试乘试驾车辆</li>
 	</ul>
@@ -896,9 +965,9 @@
 					<td></td>
 					<td align="left">
 						<li class="nob">
-							<input id="vinSubmitBtn" value="查 询" type="button" class="submit" style="display: inline; width: 30%;" onClick="queryVinData();">
+							<input id="vinSubmitBtn" value="查 询" type="button" class="activityQueryBtn" style="display: inline; width: 30%;" onClick="queryVinData();">
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input value="返 回" type="button" class="submit" style="display: inline; width: 30%;" onClick="backLastLevel();">
+							<input value="返 回" type="button" class="activityQueryBtn" style="display: inline; width: 30%;" onClick="backLastLevel();">
 						</li>
 					</td>
 				</tr>
@@ -913,7 +982,7 @@
 		</li>
 		<table class="bordered">
 			<thead>
-				<tr class="biaoge">
+				<tr class="">
 					<th align="center">车型
 					</td>
 					<th align="center">颜色
@@ -929,6 +998,7 @@
 </div>
 </body>
 <script type="text/javascript">
+	
 	var changeFlag = false;
 	var chana = "";
 	$(document).ready(function() {
@@ -951,7 +1021,25 @@
 			}
 			$("#salesConsultant").val(currentSalesConsultant);
 		}
-		$("#soldBy").val(currentSalesConsultant);
+		var sbSelect = document.getElementById("soldBy");
+		if (!IsNull(logonUser.roleIds)) {
+			var reg = new RegExp("1000000008");//前台接待
+			if(logonUser.roleIds.match(reg) && !IsNull(logonUser.groupSalesConsultant)){
+				sbSelect.add(new Option("-请选择-", ""));
+				//含前台接待职位
+				var groupSalesConsultant = logonUser.groupSalesConsultant.split(",");
+				for(var i = 0;i < groupSalesConsultant.length;i++){
+					var name = groupSalesConsultant[i].replace(/\'/g,"");
+					sbSelect.add(new Option(name, name));
+				}
+			} else {
+				sbSelect.add(new Option(currentSalesConsultant, currentSalesConsultant));
+				//$("#soldBy").val(currentSalesConsultant);
+			}
+		} else {
+			sbSelect.add(new Option(currentSalesConsultant, currentSalesConsultant));
+			//$("#soldBy").val(currentSalesConsultant);
+		}
 		chana = logonUser.chana;
 		if(IsNull(chana)){
 			MuiAlert("部分信息获取失败,请重新登录!",function(){
@@ -1074,6 +1162,7 @@
 			changeFlag=true;     
 		});
 		if(!IsNull(UrlParm.parm("id"))){
+			$("#soldBy").val(currentSalesConsultant);
 			document.addEventListener('plusready',function () {
 				try{initLoading = MuiLoading();}catch(e){}
 			});
@@ -1117,6 +1206,9 @@
 				document.getElementById("EXPECTED_DELIVERY_DATE").value = map.EXPECTED_DELIVERY_DATE;
 				document.getElementById("VISIT_TYPE").value = map.VISIT_TYPE;
 				document.getElementById("CUS_SOURCE").setAttribute("defaultValue", map.CUS_SOURCE);
+				if(!IsNull(map.FIELD_C)){
+					cusSourceChange(map.CUS_SOURCE,map.FIELD_C);
+				}
 				document.getElementById("MEDIA_TYPE").value = map.MEDIA_TYPE;
 				document.getElementById("MEDIA_DETAIL").value = map.MEDIA_DETAIL;
 				document.getElementById("REFEREE_NAME").value = map.REFEREE_NAME;
@@ -1534,6 +1626,48 @@
 		}
 	}
 	
+	//一级客户来源改变事件
+	function cusSourceChange(val1,defaultValue){
+		if(!IsNull(val1)){
+			//根据一级来源获取二级来源
+			var cusSourceSmall = document.getElementById('CUS_SOURCE_SMALL');
+			cusSourceSmall.length=0;
+			cusSourceSmall.add(new Option("二级来源获取中...", ""));
+			document.getElementById('CUS_SOURCE_SMALL').required = true;//未加载完成限制提交
+			var url = httpUrlHead + "HallReceptionService/codeAssociated.json?" + httpUrlEnd + "&parCodeId="+val1;
+			makeFormCall(url, function(json){
+				cusSourceSmall.length=0;
+				if(json.codeList != null && json.codeList.length > 0){
+					//活动必选
+					document.getElementById('CAMPAIGN_NAME').required = true;
+					$("#CAMPAIGN_NAME_MUST").show();
+					// 建立Option对象
+					cusSourceSmall.add(new Option("-请选择-", ""));
+					for(var i=0;i<json.codeList.length;i++) {
+						var objOption = new Option(json.codeList[i].CODE_DESC, json.codeList[i].CHILD_ID);
+						cusSourceSmall.add(objOption);
+					}
+					if(!IsNull(defaultValue)){
+						$("#CUS_SOURCE_SMALL").val(defaultValue);
+					}
+				} else {
+					//改为不必填
+					cusSourceSmall.add(new Option("无", ""));
+					document.getElementById('CUS_SOURCE_SMALL').required = false;
+					document.getElementById('CAMPAIGN_NAME').required = false;
+					$("#CAMPAIGN_NAME_MUST").hide();
+				}
+				loadSelectRes();
+			}, 'fm', false);
+		}else{
+			//根据一级来源获取二级来源
+			var cusSourceSmall = document.getElementById('CUS_SOURCE_SMALL');
+			cusSourceSmall.length=0;
+			cusSourceSmall.add(new Option("-请选择-", ""));
+			loadSelectRes();
+		}
+	}
+	
 	function backLastLevel() {
 		$('#_showContentDiv1').show();
 		$('#_dt_left_menu').show();
@@ -1651,9 +1785,16 @@
     	if(chana == "80081001"){
     		//轿车
     		//移除O级
-	    	$("#INTENT_LEVEL option[value='13101008']").remove();
+    		//$("#INTENT_LEVEL option[value='13101008']").remove();
+    		$("#INTENT_LEVEL").find("option").remove();
+	    	$("#INTENT_LEVEL").append("<option value=''>-请选择-</option>");
+			$("#INTENT_LEVEL").append("<option value='13101001'>H级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101002'>A级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101003'>B级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101004'>C级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101005'>N级</option>");
     	}
-    	var pattern = new RegExp("^1[3|4|5|6|7|8|9|][0-9]{9}$");
+    	var pattern = new RegExp("^1[0-9]{10}$");
 		if (pattern.exec($.trim(phone))) {
 			document.getElementById('INTENT_LEVEL_MUST').style.display = "";
 			document.getElementById('INTENT_LEVEL').required = true;
@@ -1699,14 +1840,15 @@
 				visitTypeChange($("#VISIT_TYPE").val());
 				if(json.noAdd){
 					if(json.followName != undefined && json.followName != null && json.followName != "null" && json.followName != "") {
-						MuiAlert("此客户已由销售顾问"+json.followName+"在跟进,不能录入展厅!");							
+						MuiAlert("此客户已由销售顾问"+json.followName+"在跟进!");							
 					} else {
 						MuiAlert("此客户还未分配销售顾问,不能录入展厅,请在线索分配功能中进行分配!");
 					}
 				}
 				//如果之前意向级别为O级则默认选中O级别
 				if(json.intentLevel == "13101008"){
-					$("#INTENT_LEVEL option[value='13101008']").remove();
+					//$("#INTENT_LEVEL option[value='13101008']").remove();
+					$("#INTENT_LEVEL").find("option").remove();
 					$("#INTENT_LEVEL").append("<option value='13101008'>O级</option>");
 					$("#INTENT_LEVEL").val("13101008");
 				}
@@ -1719,6 +1861,7 @@
 					$("#CUS_SOURCE").find("option").remove();
 					_loadTcCode("1311","CUS_SOURCE");
 				}
+				cusSourceChange($("#CUS_SOURCE").val(),null);
 				if(json.potcusObj != null){
 					if(document.getElementById('CUSTOMER_NAME').value.trim() == "" && json.potcusObj.CUSTOMER_NAME != null){
 						$("#CUSTOMER_NAME").val(json.potcusObj.CUSTOMER_NAME);
@@ -1727,6 +1870,7 @@
 						$("#GENDER").val(json.potcusObj.GENDER);
 					}
 				}
+				loadSelectRes();
 			}, "fm", false);
 		} else {
 			document.getElementById('INTENT_LEVEL_MUST').style.display = "none";
@@ -1749,6 +1893,7 @@
 				$("#CUS_SOURCE").find("option").remove();
 				_loadTcCode("1311","CUS_SOURCE");
 			}
+			loadSelectRes();
 		}
     }
     
@@ -1784,7 +1929,7 @@
 			}
 		}
 		if(nextValidate){
-			var pattern = new RegExp("^1[3|4|5|6|7|8|9|][0-9]{9}$");
+			var pattern = new RegExp("^1[0-9]{10}$");
 			if (pattern.exec($.trim(document.getElementById("CONTACTOR_MOBILE").value)) || IsNull(document.getElementById("CONTACTOR_MOBILE").value)) {
 			} else {
 				nextValidate = false;
@@ -1874,40 +2019,65 @@
     		$("#tabs2").hide();
     		$("#tabs3").hide();
     		$("#tabs4").hide();
-    		$("#hg1").attr("bgcolor","#FFFF00");
-    		$("#hg2").attr("bgcolor","");
-    		$("#hg3").attr("bgcolor","");
-    		$("#hg4").attr("bgcolor","");
+			// 2019-03-21 
+			$("#hg1").find('span').addClass("line");
+			$("#hg2").find('span').removeClass("line");
+			$("#hg3").find('span').removeClass("line");
+			$("#hg4").find('span').removeClass("line");
+			// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+//     		$("#hg1").attr("bgcolor","#1790E4");
+//     		$("#hg2").attr("bgcolor","");
+//     		$("#hg3").attr("bgcolor","");
+//     		$("#hg4").attr("bgcolor","");
     	} else if(val == "2") {
     		$("#tabs1").hide();
     		$("#tabs2").show();
     		$("#tabs3").hide();
     		$("#tabs4").hide();
-    		$("#hg1").attr("bgcolor","");
-    		$("#hg2").attr("bgcolor","#FFFF00");
-    		$("#hg3").attr("bgcolor","");
-    		$("#hg4").attr("bgcolor","");
+			// 2019-03-21 
+    		$("#hg1").find('span').removeClass("line");
+    		$("#hg2").find('span').addClass("line");
+    		$("#hg3").find('span').removeClass("line");
+    		$("#hg4").find('span').removeClass("line");
+			// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+//     		$("#hg1").attr("bgcolor","");
+//     		$("#hg2").attr("bgcolor","#1790E4");
+//     		$("#hg3").attr("bgcolor","");
+//     		$("#hg4").attr("bgcolor","");
     	} else if(val == "3") {
     		$("#tabs1").hide();
     		$("#tabs2").hide();
     		$("#tabs3").show();
     		$("#tabs4").hide();
-    		$("#hg1").attr("bgcolor","");
-    		$("#hg2").attr("bgcolor","");
-    		$("#hg3").attr("bgcolor","#FFFF00");
-    		$("#hg4").attr("bgcolor","");
+			// 2019-03-21 
+			$("#hg1").find('span').removeClass("line");
+			$("#hg2").find('span').removeClass("line");
+			$("#hg3").find('span').addClass("line");
+			$("#hg4").find('span').removeClass("line");
+			// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+//     		$("#hg1").attr("bgcolor","");
+//     		$("#hg2").attr("bgcolor","");
+//     		$("#hg3").attr("bgcolor","#1790E4");
+//     		$("#hg4").attr("bgcolor","");
     	} else if(val == "4"){
     		$("#tabs1").hide();
     		$("#tabs2").hide();
     		$("#tabs3").hide();
     		$("#tabs4").show();
-    		$("#hg1").attr("bgcolor","");
-    		$("#hg2").attr("bgcolor","");
-    		$("#hg3").attr("bgcolor","");
-    		$("#hg4").attr("bgcolor","#FFFF00");
+			// 2019-03-21 
+			$("#hg1").find('span').removeClass("line");
+			$("#hg2").find('span').removeClass("line");
+			$("#hg3").find('span').removeClass("line");
+			$("#hg4").find('span').addClass("line");
+			// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+//     		$("#hg1").attr("bgcolor","");
+//     		$("#hg2").attr("bgcolor","");
+//     		$("#hg3").attr("bgcolor","");
+//     		$("#hg4").attr("bgcolor","#1790E4");
     	}
     }
     //初始化单页的区域滚动
 	mui('.mui-scroll-wrapper').scroll();
+	
 </script>
 </html>

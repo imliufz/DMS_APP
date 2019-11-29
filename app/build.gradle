@@ -12,12 +12,12 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.yy.jc"
-        minSdkVersion 14
-        targetSdkVersion 21 //建议此属性值设为21 io.dcloud.PandoraEntry 作为apk入口时   必须设置 targetSDKVersion>=21 沉浸式才生效
+        applicationId "com.yonyou.jcdms"
+        minSdkVersion 16
+        targetSdkVersion 26 //建议此属性值设为21 io.dcloud.PandoraEntry 作为apk入口时   必须设置 targetSDKVersion>=21 沉浸式才生效
 
-        versionCode 57
-        versionName "5.2"
+        versionCode 65
+        versionName "5.28"
         multiDexEnabled true
 
         resValue("string", "growingio_project_id", "9666d5bacc0ca947")
@@ -33,7 +33,17 @@ android {
                 JPUSH_APPKEY : "2e7da480d4df88f7a38e9cae",
                 JPUSH_CHANNEL: "developer-default", // 暂时填写默认值即可
         ]
+
+        /*jackOptions {
+            enabled true
+        }*/
     }
+
+    /*compileOptions{
+        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+    }*/
+
     buildTypes {
         release {
             minifyEnabled false
@@ -50,8 +60,8 @@ dependencies {
 
     //compile fileTree(dir: 'libs', include: ['*.jar'])
     compile(name: 'lib.5plus.base-release', ext: 'aar')
-    compile files('libs/alipaySingle-20161222.jar')
-    compile files('libs/alipayutdid.jar')
+    //compile files('libs/alipaySingle-20161222.jar')
+    //compile files('libs/alipayutdid.jar')
     compile files('libs/aps-igexin.jar')
     compile files('libs/aps.jar')
     compile files('libs/geolocation-amap.jar')
@@ -59,7 +69,7 @@ dependencies {
     compile files('libs/GetuiSDK2.10.3.5.jar')
     compile files('libs/map-baidu.jar')
     compile files('libs/messaging.jar')
-    compile files('libs/MiPush_SDK_Client_3_1_2.jar')
+    //compile files('libs/MiPush_SDK_Client_3_1_2.jar')
     compile files('libs/oauth-miui.jar')
     compile files('libs/oauth-qq.jar')
     compile files('libs/oauth-sina.jar')
@@ -81,6 +91,20 @@ dependencies {
     compile files('libs/umeng-analytics-v6.0.1.jar')
     compile 'cn.jiguang.sdk:jcore:1.2.3'
     compile 'cn.jiguang.sdk:jpush:3.1.5'
+    //compile 'com.android.support:support-v4:26.0.1'
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile 'com.growingio.android:vds-android-agent:autotrack-2.6.6@aar'
+    compile ('com.aliyun.ams:alicloud-android-push:3.1.3@aar') {
+        transitive true
+    }
+    compile 'com.aliyun.ams:alicloud-android-third-push:3.0.9@aar'
+
+    compile 'com.aliyun.ams:meizu-push:3.8.3-fix'
+    compile 'com.aliyun.ams:huawei-push:2.6.3.305'
+    compile 'com.aliyun.ams:huawei-push-base:2.6.3.305'
+    //compile ('com.google.firebase:firebase-messaging:17.6.0')
+
+    compile 'com.blankj:utilcode:1.13.5'
 }

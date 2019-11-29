@@ -1785,7 +1785,14 @@
     	if(chana == "80081001"){
     		//轿车
     		//移除O级
-	    	$("#INTENT_LEVEL option[value='13101008']").remove();
+    		//$("#INTENT_LEVEL option[value='13101008']").remove();
+    		$("#INTENT_LEVEL").find("option").remove();
+	    	$("#INTENT_LEVEL").append("<option value=''>-请选择-</option>");
+			$("#INTENT_LEVEL").append("<option value='13101001'>H级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101002'>A级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101003'>B级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101004'>C级</option>");
+			$("#INTENT_LEVEL").append("<option value='13101005'>N级</option>");
     	}
     	var pattern = new RegExp("^1[0-9]{10}$");
 		if (pattern.exec($.trim(phone))) {
@@ -1840,7 +1847,8 @@
 				}
 				//如果之前意向级别为O级则默认选中O级别
 				if(json.intentLevel == "13101008"){
-					$("#INTENT_LEVEL option[value='13101008']").remove();
+					//$("#INTENT_LEVEL option[value='13101008']").remove();
+					$("#INTENT_LEVEL").find("option").remove();
 					$("#INTENT_LEVEL").append("<option value='13101008'>O级</option>");
 					$("#INTENT_LEVEL").val("13101008");
 				}
@@ -1862,6 +1870,7 @@
 						$("#GENDER").val(json.potcusObj.GENDER);
 					}
 				}
+				loadSelectRes();
 			}, "fm", false);
 		} else {
 			document.getElementById('INTENT_LEVEL_MUST').style.display = "none";
@@ -1884,6 +1893,7 @@
 				$("#CUS_SOURCE").find("option").remove();
 				_loadTcCode("1311","CUS_SOURCE");
 			}
+			loadSelectRes();
 		}
     }
     

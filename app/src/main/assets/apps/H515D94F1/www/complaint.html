@@ -46,7 +46,14 @@
     				<div>投诉单查询</div>
     			</a>
     		</li>
-			<li></li>
+    		<li id="10553015" style="display: none;" menuType="complaint">
+    			<a href="javascript:void(0);" id="khzp" style="width:100px">
+    				<img src="images/tskhzp.png" />
+    				<div>客户直评</div>
+    			</a>
+    		</li>
+			<li>
+			</li>
         </ul>
 		<div class="line">
             <img src="images/jr.png" width="30px"><span>今日</span>
@@ -109,6 +116,10 @@ $(document).ready(function() {
 		ToUrl($(this).attr("url"));
 	});
 	
+	if(!IsNull(isHaveJsRole) && isHaveJsRole != '0'){
+		$("#jszx").show();
+		$("#jszx").on("tap",toJszxApp);
+	}
 	//加载待处理事项
 	var url1 = httpUrlHead + "ComplaintServiceApp/queryComplaintDealList.json?WS_STATUS=30231001&DUE_DT=1&" + httpUrlEnd;
 	makeFormCall(url1,function(json){
@@ -142,6 +153,12 @@ $(document).ready(function() {
 	
 	document.getElementById("tsdcx").addEventListener("tap",function(){
 		ToUrl("complaintServiceQuery.html");
+	});
+	
+	//客户直评
+	document.getElementById("khzp").addEventListener("tap",function(){
+		var logonUser = JSON.parse(getLocalStorage("logonUser"));
+		ToUrl("http://tapp2smart.changan.com.cn/overview/OverviewApp?dealerId="+logonUser.DEALER_ID);
 	});
 });
 </script>

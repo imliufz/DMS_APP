@@ -1,19 +1,19 @@
 [
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\side_bar_favorite.png",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-xhdpi\\side_bar_favorite.png"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\offline_pin.png",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-xhdpi\\offline_pin.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\offline_pin_round.png",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-xhdpi\\offline_pin_round.png"
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\side_bar_favorite.png",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-xhdpi\\side_bar_favorite.png"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\sidebar_shortcut.png",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-xhdpi\\sidebar_shortcut.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\offline_pin_round.png",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\src\\main\\res\\drawable-xhdpi\\offline_pin_round.png"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\side_bar_home.png",

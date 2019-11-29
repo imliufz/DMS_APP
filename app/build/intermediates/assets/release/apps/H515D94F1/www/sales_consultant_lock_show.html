@@ -151,7 +151,7 @@
 						document.getElementById("registerInfo").style.display = "block";
 						//document.getElementById("submitBtn").style.backgroundColor = "gray";
 						document.getElementById("submitBtn").onclick = function(){
-							showMsg();
+							showMsg(json.position);
 						};
 						//隐藏解锁申请表格
 	    				var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
@@ -165,7 +165,7 @@
 							document.getElementById("activateInfo").style.display = "block";
 							//document.getElementById("submitBtn").style.backgroundColor = "gray";
 							document.getElementById("submitBtn").onclick = function(){
-								showMsg();
+								showMsg(json.position);
 							};
 							//隐藏解锁申请表格
 		    				var unlockApplyAuditDiv = document.getElementById("unlockApplyAuditDiv");//解锁申请审核展示
@@ -313,8 +313,8 @@
     	}
   	}
   	
-  	function showMsg(){
-  		MuiAlert("解锁需总经理注册企业微信，请先联系总经理注册");
+  	function showMsg(position){
+  		MuiAlert("解锁需"+position+"注册企业微信，请先联系"+position+"注册");
   	}
 </script>
 </html>

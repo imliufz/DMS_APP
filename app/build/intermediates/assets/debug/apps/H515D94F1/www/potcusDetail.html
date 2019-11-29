@@ -4,6 +4,11 @@
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript" src="js/html_head.js"></script>
 		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<!-- tabs样式优化 -->
+		<link rel="stylesheet" type="text/css" href="css/resStyle/res_tabs.css" />
+		<!-- tabs样式优化end -->
+		<script src="js/resJs/res_potcusDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
 		<title>战败审批</title>
     </head>
     <style type="text/css">
@@ -19,7 +24,7 @@
     	.addSeach{
 		    color: #fff;
 		    border-radius: 15px;
-			background-color: #10a6e2;
+			background-color: #1790E4;
 		    background-image: url(images/seach.png);
 			background-repeat: no-repeat;
 			background-position: center;
@@ -45,35 +50,35 @@
 		<table width="100%" id="reportTable">
 			<tr>
 				<td style="width:25%;">
-					<input   name="topBtn" id="mu1" class="button" onclick="showTabs(1);" style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="客户资料" type="button">
+					<input   name="topBtn" id="mu1" class="button" onclick="showTabs(1);" style=" background-color:#edf0f8; height: 30px;border: 0px;" value="客户资料" type="button">
 				</td>
 				<td style="width:25%;">
-					<input   name="topBtn" id="mu2" class="button" onclick="showTabs(2);" style=" background-color:#edf0f8; width:90% ;height: 30px;border: 0px;" value="意向车辆" type="button">
+					<input   name="topBtn" id="mu2" class="button" onclick="showTabs(2);" style=" background-color:#edf0f8; height: 30px;border: 0px;" value="意向车辆" type="button">
 				</td>
 				<td style="width:25%;">
-					<input  name="topBtn" id="mu3" class="button" onclick="showTabs(3);"  style=" background-color:#edf0f8; width: 90% ;height: 30px;border: 0px;" value="其它信息" type="button" >
+					<input  name="topBtn" id="mu3" class="button" onclick="showTabs(3);"  style=" background-color:#edf0f8; height: 30px;border: 0px;" value="其它信息" type="button" >
 				</td>
 				<td style="width:25%;">
-					<input  name="topBtn" id="mu4" class="button" onclick="showTabs(4);"  style=" background-color:#edf0f8; width: 90% ;height: 30px;border: 0px;" value="战败审批" type="button" >
+					<input  name="topBtn" id="mu4" class="button" onclick="showTabs(4);"  style=" background-color:#edf0f8; height: 30px;border: 0px;" value="战败审批" type="button" >
 				</td>
 			</tr>
 			<tr style="height: 3px;">
-				<td id="hg1" bgcolor="#FFFF00">
-					
+				<td id="hg1">
+					<span class="line"></span>
 				</td>
 				<td id="hg2">
-					
+					<span></span>
 				</td>
 				<td id="hg3">
-					
+					<span></span>
 				</td>
 				<td id="hg4">
-					
+					<span></span>
 				</td>
 			</tr>
 		</table>
 	</div>
-	<div style="height: 33px;width: 100%;">&nbsp;</div>
+	<div style="height: 44px;width: 100%;margin-bottom: 8px;">&nbsp;</div>
 	<div id="tabs1">
 		<ul class="round">
 		<li class="nob">
@@ -105,8 +110,9 @@
 					<td>手机号码</td>
 					<td>
 					<td>
-						<input name="contactorMobile" class="px" id="contactorMobile" style="width: 50%;display: inline;" value="-" placeholder="请输入手机号码" type="telphone" >
+						<input name="contactorMobile" class="px" id="contactorMobile" style="width: 65%;display: inline;" value="-" placeholder="请输入手机号码" type="telphone" >
 						<img  height="21px;" src="static/img/bohao.png" id="callTel" ></img>
+						<img height="21px;" src="static/img/duanxing.png" name="callMsg"></img>
 						&nbsp;<img id="weChat" height="21px;" src="images/weChat.png" style="display: none;"></img>
 					</td>
 				</tr>
@@ -245,6 +251,17 @@
 					<td id="CLUE_SOURCE_NAME">OEM客户来源</td>
 					<td>
 						<select name="CLUE_SOURCE" id="CLUE_SOURCE" class="download dropdown-select-nosel" disabled style="border:none;">
+						</select>
+					</td>
+				  </tr>
+				</table>
+			</li>
+			<li class="nob" id="CUS_SOURCE_SMALL_LI" style="display: none;">
+				<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="biaoge">
+					<td>二级客户来源</td>
+					<td>
+						<select name="CUS_SOURCE_SMALL" id="CUS_SOURCE_SMALL" class="download dropdown-select-nosel" disabled style="border:none;">
 						</select>
 					</td>
 				  </tr>
@@ -588,7 +605,7 @@
 						}
 					}
 					if (selIndex != -1) {
-						intentSeries.options[selIndex].selected = "selected";
+						intentSeries.options[selIndex+1].selected = "selected";
 					}
 				} else {
 					_loadSeries("intentSeries");
@@ -684,11 +701,19 @@
 						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
 					}
 				} else {
-					$("#CLUE_SOURCE_NAME").html("客户来源");
+					$("#CLUE_SOURCE_NAME").html("一级客户来源");
 					if(map.CUS_SOURCE_DESC != null) {
 						document.getElementById("CLUE_SOURCE").add(new Option(map.CUS_SOURCE_DESC,map.CUS_SOURCE));
 					} else {
 						document.getElementById("CLUE_SOURCE").add(new Option("未知",""));
+					}
+					
+					//二级客户来源
+					$("#CUS_SOURCE_SMALL_LI").show();
+					if(!IsNull(json.FIELD_J)){
+						document.getElementById("CUS_SOURCE_SMALL").setAttribute("defaultValue", json.FIELD_J);
+					} else {
+						document.getElementById("CUS_SOURCE_SMALL").add(new Option("无",""));
 					}
 				}
 				
@@ -797,9 +822,32 @@
 					}
 					document.getElementById("salesConsultantSel").value = map.SALES_CONSULTANT;
 				}
+				//加载tc_code
+				_loadTcCode("1317","CUS_SOURCE_SMALL");
+				load360Data();
 			}
 		},"fm",false,true);
 	}
+	
+	function load360Data(){
+    	var contactorMobile = $("#contactorMobile").val();
+		var url360 = httpUrlHead+"PotcusAchieveService/query360ViewData.json?contactorMobile="+contactorMobile+"&"+httpUrlEnd;
+		makeFormCall(url360,function(json){
+			//加载360试图数据
+			var view360Map = json.view360Map;
+			if( view360Map != null ){
+				var view360AppendHtml = '<li style="background-color: #4cb4d9b0;">客户360视图</li>';
+				for(var key in view360Map){
+					view360AppendHtml += '<li class="nob">';
+					view360AppendHtml += '<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">';
+					view360AppendHtml += '<tr class="biaoge">';
+					view360AppendHtml += '<td>'+key+'</td>';
+					view360AppendHtml += '<td><input name="weixin" class="px"  id="weixin" value="'+view360Map[key]+'" type="text" readonly="readonly"/></td></tr></table></li>';
+				}
+				$("#tabs1 ul").append(view360AppendHtml);
+			}
+		},"fm",false,true);
+    }
     
     function showFollowDetail(id,tabType){
     	ToUrl("potcusFollowDetail.html?id="+id+"&tabType="+tabType);
@@ -815,7 +863,7 @@
 		makeFormCall(queryUrl, function(json){
 	        		var orderStatus = json.orderStatus;
 	        		if( orderStatus == "1"){
-	        			MuiAlert("请先到店面系统取消订单，并于2小时后再操作");
+	        			MuiAlert("<div style='text-align:left;'>1.该客户为订单(O级)客户，请联系店内销售内勤或信息员在DMS店面系统中取消订单（操作不熟悉请咨询02161131633），取消2小时后客户将自动转N级新客，之后可以再做战败申请。</div><div style='text-align:left;'>2.已做了实销上报的车辆，对应客户手机号需与销售订单手机号保持一致，手机号不一致的订单与实销车辆无法对应，必须做订单取消操作。</div><div style='text-align:left;color:red;font-weight:bold;'>(由于O级客户与实销上报手机号不一致导致的订单取消，业务问题可咨询战区SDU作战管理人员)</div>");
 	        			return;
 	        		}else{
 	        			MuiConfirm("确定审核?",function(e){
@@ -834,42 +882,66 @@
     
     function showTabs(val){
     	if(val == "1"){
-    		$("#tabs1").show();
-    		$("#tabs2").hide();
-    		$("#tabs3").hide();
-    		$("#tabs4").hide();
-    		$("#hg1").attr("bgcolor","#FFFF00");
-    		$("#hg2").attr("bgcolor","");
-    		$("#hg3").attr("bgcolor","");
-    		$("#hg4").attr("bgcolor","");
-    	} else if(val == "2") {
-    		$("#tabs1").hide();
-    		$("#tabs2").show();
-    		$("#tabs3").hide();
-    		$("#tabs4").hide();
-    		$("#hg1").attr("bgcolor","");
-    		$("#hg2").attr("bgcolor","#FFFF00");
-    		$("#hg3").attr("bgcolor","");
-    		$("#hg4").attr("bgcolor","");
-    	} else if(val == "3") {
-    		$("#tabs1").hide();
-    		$("#tabs2").hide();
-    		$("#tabs3").show();
-    		$("#tabs4").hide();
-    		$("#hg1").attr("bgcolor","");
-    		$("#hg2").attr("bgcolor","");
-    		$("#hg3").attr("bgcolor","#FFFF00");
-    		$("#hg4").attr("bgcolor","");
-    	} else if(val == "4"){
-    		$("#tabs1").hide();
-    		$("#tabs2").hide();
-    		$("#tabs3").hide();
-    		$("#tabs4").show();
-    		$("#hg1").attr("bgcolor","");
-    		$("#hg2").attr("bgcolor","");
-    		$("#hg3").attr("bgcolor","");
-    		$("#hg4").attr("bgcolor","#FFFF00");
-    	}
+    				$("#tabs1").show();
+    				$("#tabs2").hide();
+    				$("#tabs3").hide();
+    				$("#tabs4").hide();
+    				// 2019-03-21 
+    				$("#hg1").find('span').addClass("line");
+    				$("#hg2").find('span').removeClass("line");
+    				$("#hg3").find('span').removeClass("line");
+    				$("#hg4").find('span').removeClass("line");
+    				// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+    	//     		$("#hg1").attr("bgcolor","#1790E4");
+    	//     		$("#hg2").attr("bgcolor","");
+    	//     		$("#hg3").attr("bgcolor","");
+    	//     		$("#hg4").attr("bgcolor","");
+    			} else if(val == "2") {
+    				$("#tabs1").hide();
+    				$("#tabs2").show();
+    				$("#tabs3").hide();
+    				$("#tabs4").hide();
+    				// 2019-03-21 
+    				$("#hg1").find('span').removeClass("line");
+    				$("#hg2").find('span').addClass("line");
+    				$("#hg3").find('span').removeClass("line");
+    				$("#hg4").find('span').removeClass("line");
+    				// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+    	//     		$("#hg1").attr("bgcolor","");
+    	//     		$("#hg2").attr("bgcolor","#1790E4");
+    	//     		$("#hg3").attr("bgcolor","");
+    	//     		$("#hg4").attr("bgcolor","");
+    			} else if(val == "3") {
+    				$("#tabs1").hide();
+    				$("#tabs2").hide();
+    				$("#tabs3").show();
+    				$("#tabs4").hide();
+    				// 2019-03-21 
+    				$("#hg1").find('span').removeClass("line");
+    				$("#hg2").find('span').removeClass("line");
+    				$("#hg3").find('span').addClass("line");
+    				$("#hg4").find('span').removeClass("line");
+    				// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+    	//     		$("#hg1").attr("bgcolor","");
+    	//     		$("#hg2").attr("bgcolor","");
+    	//     		$("#hg3").attr("bgcolor","#1790E4");
+    	//     		$("#hg4").attr("bgcolor","");
+    			} else if(val == "4"){
+    				$("#tabs1").hide();
+    				$("#tabs2").hide();
+    				$("#tabs3").hide();
+    				$("#tabs4").show();
+    				// 2019-03-21 
+    				$("#hg1").find('span').removeClass("line");
+    				$("#hg2").find('span').removeClass("line");
+    				$("#hg3").find('span').removeClass("line");
+    				$("#hg4").find('span').addClass("line");
+    				// 不采用td标签的宽度来做底线, 因此新增了个sapn标签来控制底线
+    	//     		$("#hg1").attr("bgcolor","");
+    	//     		$("#hg2").attr("bgcolor","");
+    	//     		$("#hg3").attr("bgcolor","");
+    	//     		$("#hg4").attr("bgcolor","#1790E4");
+    			}
     }
     function getStringRealLen(str){
     		var rLen = 0;

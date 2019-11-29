@@ -80,6 +80,14 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\upsdk_update_all_button.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push-base\\2.6.3.305\\res\\drawable\\upsdk_update_all_button.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\upsdk_third_download_bg.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push-base\\2.6.3.305\\res\\drawable\\upsdk_third_download_bg.xml"
+    },
+    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
@@ -112,16 +120,16 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\notification_bg_low.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_ab_back_material.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_ic_search_api_material.xml"
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
@@ -140,12 +148,12 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\drawable\\ad_dcloud_main_skip_bg.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_ic_go_search_api_material.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\dcloud_about_buttons_button_bg.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\drawable\\dcloud_about_buttons_button_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\dcloud_slt_as_ios7_cancel_bt.xml",
@@ -234,5 +242,9 @@
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\dcloud_slt_as_ios7_other_bt_title.xml",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\lib.5plus.base-release\\res\\drawable\\dcloud_slt_as_ios7_other_bt_title.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\release\\drawable\\upsdk_cancel_bg.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.aliyun.ams\\huawei-push-base\\2.6.3.305\\res\\drawable\\upsdk_cancel_bg.xml"
     }
 ]
