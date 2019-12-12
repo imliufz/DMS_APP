@@ -5,11 +5,21 @@ package com.yy.app;
 //import android.content.Context;
 //import android.content.Intent;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.yy.utils.LogUtils;
 import com.yy.utils.PmTool;
+import com.yy.utils.StringUtils;
+
+import java.util.ArrayList;
 
 import io.dcloud.PandoraEntry;
+import io.dcloud.common.DHInterface.IWebview;
+import io.dcloud.feature.internal.sdk.SDK;
+
+import static com.igexin.sdk.GTServiceManager.context;
 
 //import android.support.v4.app.NotificationCompat;
 //import com.yy.jc.R;
@@ -19,13 +29,14 @@ import io.dcloud.PandoraEntry;
  */
 
 public class AppService extends PandoraEntry {
-    public AppService(){
+    public AppService() {
 
     }
 
     protected void onCreate(Bundle var1) {
         super.onCreate(var1);
 
+        context = this;
         //取消使用极光推送2019年11月26日16:57:02----start
         /*JPushInterface.setDebugMode(false);//测试版为true
         JPushInterface.init(this.getApplicationContext());
@@ -35,33 +46,40 @@ public class AppService extends PandoraEntry {
 
         //加载权限
         PmTool.permissionAll(this);
-        //PmTool.permission(this,);
-        /*Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
-                        AppService.this).setSmallIcon(R.drawable.icon)
-                        .setContentTitle("5 new message")
-                        .setContentText("twain@android.com");
-                mBuilder.setTicker("New message");//第一次提示消息的时候显示在通知栏上
-                mBuilder.setNumber(12);
-                //mBuilder.setLargeIcon(R.drawable.icon);
-                mBuilder.setAutoCancel(true);//自己维护通知的消失
+        //推送消息定位打开页面
+        pushOpen();
+    }
 
-                //构建一个Intent
-                Intent resultIntent = new Intent(AppService.this,
-                        AppService.class);
-                //封装一个Intent
-                PendingIntent resultPendingIntent = PendingIntent.getActivity(
-                        AppService.this, 0, resultIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
-                // 设置通知主题的意图
-                mBuilder.setContentIntent(resultPendingIntent);
-                //获取通知管理器对象
-                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                mNotificationManager.notify(0, mBuilder.build());
+    /**
+     * 推送消息页面定位
+     */
+    private void pushOpen() {
+        try {
+            //打开指定Activity时，在该Activity的onCreate()中调用如下代码获取指定参数
+            Intent intent = getIntent();
+            // 通知标题
+            String title = intent.getStringExtra("title");
+            // 通知内容
+            String summary = intent.getStringExtra("summary");
+            // 通知额外参数
+            String extraMap = intent.getStringExtra("extraMap");
+            LogUtils.i(title+"-"+summary+"-"+extraMap);
+            if(extraMap != null && extraMap != "" && extraMap.contains("url")){
+                //如果需要定位到指定页面，则json字符串中必须带有"url"的key
+                String url = StringUtils.paramsToUrl(extraMap);
+                ArrayList<IWebview> weblist = SDK.obtainAllIWebview();
+                //遍历所有的webview然后进行获取对应的名字
+                for (int i = 0; i < weblist.size(); i++) {
+                    if (weblist.get(i).getOriginalUrl().contains("index.html")) {
+                        Log.d("autoDebug", (weblist.get(i)).toString());
+                        //使用evalJS进行调用
+                        weblist.get(i).evalJS("javascript:openUrl('"+url+"')");
+                        break;
+                    }
+                }
             }
-        });
-        thread.start();*/
+        }catch (Exception e){
+            LogUtils.i(e.getMessage());
+        }
     }
 }

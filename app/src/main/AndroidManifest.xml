@@ -167,7 +167,8 @@
         <!-- Oauth 授权登陆 start -->
         <!-- Oauth QQ start -->
         <!-- QQ 分享 配置和授权登陆相同 -->
-        <!--<meta-data
+        <!--
+        <meta-data
             android:name="QQ_APPID"
             android:value="%appid%" />
 
@@ -187,7 +188,8 @@
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        -->
         <!-- Oauth QQ end -->
 
 
@@ -351,7 +353,8 @@
 
 
         <!-- 支付宝支付 配置begin -->
-        <!--<activity
+        <!--
+        <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
@@ -361,7 +364,8 @@
             android:name="com.alipay.sdk.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" />-->
+            android:screenOrientation="behind" />
+        -->
         <!-- 支付宝支付 配置end -->
 
 
@@ -377,7 +381,8 @@
 
         <!-- 微信支付配置end -->
         <!-- 小米分享 -->
-        <!--<meta-data
+        <!--
+        <meta-data
             android:name="MIUI_APPID"
             android:value="_%小米分享的APPID%" />
         <meta-data
@@ -387,7 +392,8 @@
             android:name="MIUI_REDIRECT_URI"
             android:value="%小米分享的回调地址%" />
 
-        <activity android:name="com.xiaomi.account.openauth.AuthorizeActivity" />-->
+        <activity android:name="com.xiaomi.account.openauth.AuthorizeActivity" />
+        -->
         <!-- 小米分享 end -->
 
 
@@ -398,7 +404,8 @@
             <meta-data android:name="PUSH_APPID" android:value="_%小米推送的APPID%"/>
         <meta-data android:name="PUSH_APPKEY" android:value="_%小米推送的APPKEY%"/>
         -->
-        <!--<service
+        <!--
+        <service
             android:name="com.xiaomi.push.service.XMPushService"
             android:enabled="true"
             android:process=":pushservice" />
@@ -456,7 +463,9 @@
                 <action android:name="com.HBuilder.integrate.__CLEAR_NOTIFICATION" />
                 <action android:name="com.HBuilder.integrate.__CLILK_NOTIFICATION" />
             </intent-filter>
-        </receiver>-->
+        </receiver>
+        -->
+
 
         <!-- 小米推送 end -->
 
@@ -498,14 +507,23 @@
 
         <!-- ===========================================广告联盟配置相关 结束=================================== -->
 
-        <!--<activity
+
+        <!--
+        <activity
             android:name="com.HBuilder.integrate.SDK_WebApp"
             android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
             android:screenOrientation="user"
             android:theme="@style/DCloudTheme"> &lt;!&ndash; 离线配置沉浸式  SDK_WebApp  作为apk入口时  必须设置 SDK_WebApp   的主题为android:theme="@style/DCloudTheme" &ndash;&gt;
-        </activity>-->
+        </activity>
+        -->
         <activity
             android:name="com.HBuilder.integrate.SDK_WebView"
+            android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
+            android:screenOrientation="sensor"
+            android:theme="@style/DCloudTheme" />
+
+        <activity
+            android:name="com.yy.activity.SDKWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
             android:screenOrientation="sensor"
             android:theme="@style/DCloudTheme" />
@@ -536,22 +554,23 @@
 
         <meta-data
             android:name="com.huawei.hms.client.appid"
-            android:value="appid=101414995" /><!-- 请填写你自己华为平台上注册的appid -->
+            android:value="appid=101414995" /> <!-- 请填写你自己华为平台上注册的appid -->
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="xxxxxxxxxxxxxxxxxxx" />  <!-- 请填写您自己的vivo平台上的appKey -->
+            android:value="xxxxxxxxxxxxxxxxxxx" /> <!-- 请填写您自己的vivo平台上的appKey -->
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="xxxx" />    <!-- 请填写您自己的vivo平台上的appId -->
+            android:value="xxxx" /> <!-- 请填写您自己的vivo平台上的appId -->
 
-        <!--消息接收监听器-->
+
+        <!-- 消息接收监听器 -->
         <receiver android:name="io.dcloud.feature.jpush.AlibabaReceiver">
             <intent-filter>
-                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED"/>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED"/>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
             </intent-filter>
             <intent-filter>
                 <action android:name="com.taobao.accs.intent.action.COMMAND" />
@@ -569,27 +588,32 @@
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
             </intent-filter>
         </receiver>
 
         <!-- 通道保持服务 -->
-        <service android:name="com.alibaba.sdk.android.push.ChannelService"
-            android:exported="true" android:process=":channel">
+        <service
+            android:name="com.alibaba.sdk.android.push.ChannelService"
+            android:exported="true"
+            android:process=":channel">
             <intent-filter>
-                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+                <action android:name="com.taobao.accs.intent.action.SERVICE" />
             </intent-filter>
             <intent-filter>
                 <action android:name="org.agoo.android.intent.action.PING_V4" />
+
                 <category android:name="taobao" />
             </intent-filter>
         </service>
         <!-- 消息接收服务 -->
-        <service android:name="com.alibaba.sdk.android.push.MsgService"
+        <service
+            android:name="com.alibaba.sdk.android.push.MsgService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.taobao.accs.intent.action.RECEIVE" />
@@ -598,10 +622,12 @@
                 <action android:name="com.alibaba.sdk.android.push.NOTIFY_ACTION" />
             </intent-filter>
         </service>
-        <!-- 消息接收增强服务（可提高通知/消息达到率）-->
-        <service android:name="com.alibaba.sdk.android.push.channel.TaobaoRecvService" android:exported="true">
+        <!-- 消息接收增强服务（可提高通知/消息达到率） -->
+        <service
+            android:name="com.alibaba.sdk.android.push.channel.TaobaoRecvService"
+            android:exported="true">
             <intent-filter>
-                <action android:name="org.android.agoo.client.MessageReceiverService"/>
+                <action android:name="org.android.agoo.client.MessageReceiverService" />
             </intent-filter>
         </service>
 

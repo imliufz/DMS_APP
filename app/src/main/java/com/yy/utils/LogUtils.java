@@ -12,4 +12,8 @@ public class LogUtils {
     public static void i(String msg){
         Log.i(TAG, msg);
     }
+
+    public static void i(String logTag,String msg){
+        Log.i(logTag, msg);
+    }
 }
