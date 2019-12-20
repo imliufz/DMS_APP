@@ -19,8 +19,6 @@ import io.dcloud.PandoraEntry;
 import io.dcloud.common.DHInterface.IWebview;
 import io.dcloud.feature.internal.sdk.SDK;
 
-import static com.igexin.sdk.GTServiceManager.context;
-
 //import android.support.v4.app.NotificationCompat;
 //import com.yy.jc.R;
 
@@ -29,6 +27,7 @@ import static com.igexin.sdk.GTServiceManager.context;
  */
 
 public class AppService extends PandoraEntry {
+
     public AppService() {
 
     }
@@ -36,7 +35,6 @@ public class AppService extends PandoraEntry {
     protected void onCreate(Bundle var1) {
         super.onCreate(var1);
 
-        context = this;
         //取消使用极光推送2019年11月26日16:57:02----start
         /*JPushInterface.setDebugMode(false);//测试版为true
         JPushInterface.init(this.getApplicationContext());

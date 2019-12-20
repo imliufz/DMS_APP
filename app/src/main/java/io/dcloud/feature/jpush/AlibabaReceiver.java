@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.alibaba.sdk.android.push.MessageReceiver;
 import com.alibaba.sdk.android.push.notification.CPushMessage;
+import com.yy.common.CommonAppUtil;
 
 import java.util.Map;
 
@@ -16,6 +17,7 @@ import java.util.Map;
  */
 public class AlibabaReceiver extends MessageReceiver {
 
+    private static int yxbMsgNum = 0;//营销宝全局消息数量统计
     // 消息接收部分的LOG_TAG
     public static final String REC_TAG = "receiver";
 
@@ -37,6 +39,8 @@ public class AlibabaReceiver extends MessageReceiver {
             Log.i(REC_TAG,"@收到通知 && 自定义消息为空");
         }
         Log.i(REC_TAG,"收到一条推送通知 ： " + title + ", summary:" + summary);
+        yxbMsgNum++;
+        CommonAppUtil.setBadgeNum(context,yxbMsgNum);
         //MainApplication.setConsoleText("收到一条推送通知 ： " + title + ", summary:" + summary);
         //MainApplication.send();
     }
@@ -56,7 +60,6 @@ public class AlibabaReceiver extends MessageReceiver {
     @Override
     protected void onNotificationReceivedInApp(Context context, String title, String summary, Map<String, String> extraMap, int openType, String openActivity, String openUrl) {
         Log.i(REC_TAG,"onNotificationReceivedInApp ： " + " : " + title + " : " + summary + "  " + extraMap + " : " + openType + " : " + openActivity + " : " + openUrl);
-        //MainApplication.setConsoleText("onNotificationReceivedInApp ： " + " : " + title + " : " + summary);
     }
 
     /**
@@ -67,7 +70,6 @@ public class AlibabaReceiver extends MessageReceiver {
     @Override
     public void onMessage(Context context, CPushMessage cPushMessage) {
         Log.i(REC_TAG,"收到一条推送消息 ： " + cPushMessage.getTitle() + ", content:" + cPushMessage.getContent());
-        //MainApplication.setConsoleText(cPushMessage.getTitle() + ", content:" + cPushMessage.getContent());
     }
 
     /**
@@ -80,7 +82,8 @@ public class AlibabaReceiver extends MessageReceiver {
     @Override
     public void onNotificationOpened(Context context, String title, String summary, String extraMap) {
         Log.i(REC_TAG,"onNotificationOpened ： " + " : " + title + " : " + summary + " : " + extraMap);
-        //MainApplication.setConsoleText("onNotificationOpened ： " + " : " + title + " : " + summary + " : " + extraMap);
+        yxbMsgNum--;
+        CommonAppUtil.setBadgeNum(context,yxbMsgNum);
     }
 
     /**
@@ -91,7 +94,8 @@ public class AlibabaReceiver extends MessageReceiver {
     @Override
     public void onNotificationRemoved(Context context, String messageId) {
         Log.i(REC_TAG, "onNotificationRemoved ： " + messageId);
-        //MainApplication.setConsoleText("onNotificationRemoved ： " + messageId);
+        yxbMsgNum--;
+        CommonAppUtil.setBadgeNum(context,yxbMsgNum);
     }
 
     /**
@@ -104,6 +108,5 @@ public class AlibabaReceiver extends MessageReceiver {
     @Override
     protected void onNotificationClickedWithNoAction(Context context, String title, String summary, String extraMap) {
         Log.i(REC_TAG,"onNotificationClickedWithNoAction ： " + " : " + title + " : " + summary + " : " + extraMap);
-        //MainApplication.setConsoleText("onNotificationClickedWithNoAction ： " + " : " + title + " : " + summary + " : " + extraMap);
     }
 }

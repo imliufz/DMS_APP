@@ -60,7 +60,7 @@ public class DmsApplication extends DCloudApplication {
         MiPushRegister.register(applicationContext, "2882303761518229227", "5771822999227"); // 初始化小米辅助推送
         HuaWeiRegister.register(this); // 接入华为辅助推送
         VivoRegister.register(applicationContext);
-        OppoRegister.register(applicationContext, "1cdebf81880f4156a180d410e6641db2", "5aa0b80469c340e395bdafdc11382607");//OPPO_KEY(appkey)----OPPO_SECRET(appserversecret)
+        OppoRegister.register(applicationContext, "1cdebf81880f4156a180d410e6641db2", "e5215fc93388447ca861148cf7fc32d0");//OPPO_KEY(appkey)----OPPO_SECRET(appserversecret)
         MeizuRegister.register(applicationContext, "125627", "4d1de9c177b04e709ebce70fb1d3569f");//MEIZU_ID----MEIZU_KEY
 
        // GcmRegister.register(applicationContext, "send_id", "application_id"); // 接入FCM/GCM初始化推送

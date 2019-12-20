@@ -48,6 +48,9 @@
     -->
     <!-- Push(推送)-MKeyPush  end -->
 
+    <!-- 设置华为角标的显示 -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+
 
     <!-- 小米推送 -->
     <!--
@@ -558,10 +561,10 @@
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="xxxxxxxxxxxxxxxxxxx" /> <!-- 请填写您自己的vivo平台上的appKey -->
+            android:value="89267829-9fb2-424e-8e65-da7a50949e82" /> <!-- 请填写您自己的vivo平台上的appKey -->
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="xxxx" /> <!-- 请填写您自己的vivo平台上的appId -->
+            android:value="17732" /> <!-- 请填写您自己的vivo平台上的appId -->
 
 
         <!-- 消息接收监听器 -->
@@ -630,7 +633,6 @@
                 <action android:name="org.android.agoo.client.MessageReceiverService" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>
