@@ -9,13 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.yy.activity.First;
 import com.yy.utils.LogUtils;
-import com.yy.utils.PmTool;
 import com.yy.utils.StringUtils;
 
 import java.util.ArrayList;
 
-import io.dcloud.PandoraEntry;
 import io.dcloud.common.DHInterface.IWebview;
 import io.dcloud.feature.internal.sdk.SDK;
 
@@ -25,8 +24,8 @@ import io.dcloud.feature.internal.sdk.SDK;
 /**
  * Created by ERIC on 2018-08-27.
  */
-
-public class AppService extends PandoraEntry {
+//extends PandoraEntry
+public class AppService extends First {
 
     public AppService() {
 
@@ -42,8 +41,6 @@ public class AppService extends PandoraEntry {
         Log.e("1099", "run:--------->registrationId： "+registrationId );*/
         //取消使用极光推送2019年11月26日16:57:02----end
 
-        //加载权限
-        PmTool.permissionAll(this);
         //推送消息定位打开页面
         pushOpen();
     }

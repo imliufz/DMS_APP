@@ -289,6 +289,8 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="dcloud_wel_base_content_space">30dp</dimen>
     <dimen name="dcloud_wel_base_content_space_2">60dp</dimen>
     <dimen name="dcloud_wel_base_content_text_min_size">15sp</dimen>

@@ -531,6 +531,18 @@
             android:screenOrientation="sensor"
             android:theme="@style/DCloudTheme" />
 
+        <activity
+            android:name="com.yy.activity.First"
+            android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
+            android:screenOrientation="sensor"
+            android:theme="@style/DCloudTheme" />
+
+        <activity
+            android:name="com.yy.activity.YxbWebAppActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
+            android:screenOrientation="sensor"
+            android:theme="@style/DCloudTheme" />
+
         <receiver
             android:name="io.dcloud.feature.jpush.JPushReceiver"
             android:enabled="true"

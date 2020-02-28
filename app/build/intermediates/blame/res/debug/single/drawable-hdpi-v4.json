@@ -120,12 +120,12 @@
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\jpush_richpush_progressbar.xml",
-        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\cn.jiguang.sdk\\jpush\\3.1.5\\res\\drawable-hdpi-v4\\jpush_richpush_progressbar.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
         "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\26.0.0-alpha1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\jpush_richpush_progressbar.xml",
+        "source": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\exploded-aar\\cn.jiguang.sdk\\jpush\\3.1.5\\res\\drawable-hdpi-v4\\jpush_richpush_progressbar.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\DMS_APP\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dcloud_snow_black_progress.xml",

@@ -19,6 +19,7 @@
 		<!-- 首页重写样式 -->
 		<link rel="stylesheet" type="text/css" href="css/resStyle/res_index.css" />
 		<!-- 样式修改新增css-end -->
+		<script type="text/javascript" src="components/choose_list/choose_list.js"></script>
 		<script type="text/javascript">
 
 		</script>
@@ -168,6 +169,12 @@
 							<div class="font-12">客户直评</div>
 						</a>
 					</li>
+					<li class="cell-1" id="10503074" style="display: none;">
+						<a href="javascript:void(0);" target="_top">
+							<img src="images/app12.png">
+							<div class="font-12">客流档案</div>
+						</a>
+					</li>
 				</ul>
 	
 				<div class="line xf-res-line flex-box align-items-center margin-t-8">
@@ -208,6 +215,7 @@
 				<div style="height: 30px;"></div>
 			</div>
 		</div>
+		<div id="userStatus"></div>
 		<script type="text/javascript" src="js/index_bottom.js?_active_url=index.html" id="index_buttom_js"></script>
 	</body>
 	<script type="text/javascript">
@@ -250,6 +258,8 @@
 			$("#10503072").attr("url", "http://cvsses.changan.com.cn/speech/");
 			//客户直评
 			$("#10503073").attr("url", "http://tapp2smart.changan.com.cn/overview/OverviewApp?dealerId="+logonUser.DEALER_ID);
+			//智慧门店
+			$("#10503074").on("tap",toZhmd);
 			/*if (logonUser.IS_MANAGER == "10041001") {
 				$("#gwtc").show();
 			} else {
@@ -464,9 +474,28 @@
 			}
 			MuiAlert(alertMsg);
 		}
-
+		
+		/**
+		 * 打开智慧门店
+		 */
+		function toZhmd(){
+			var url = httpUrlHead+"SmartStoreService/getZhmdUrl.json?"+httpUrlEnd;
+			makeFormCall(url,function(json){
+				if(json.RESULT.funcStatus == "1"){
+					var url = json.url;
+					if(!IsNull(url)){
+						ToUrl(url);
+					}else{
+						MuiAlert("客流档案地址配置不正确");
+					}
+				}
+			},"fm");
+		}
+		
 		function openUrl(url){
 			ToUrl(url);
 		}
+		
+		//$("#userStatus").load("index_user_status.html");
 	</script>
 </html>

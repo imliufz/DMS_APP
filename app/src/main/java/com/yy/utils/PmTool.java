@@ -1,13 +1,19 @@
 package com.yy.utils;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PermissionGroupInfo;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.PermissionUtils;
 import com.blankj.utilcode.util.Utils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ERIC on 2019-11-29.
@@ -101,6 +107,35 @@ public class PmTool {
             LogUtils.i(e.getMessage());
         }
         return permissions;
+    }
+
+    /**
+     * 权限判断
+     * @param context
+     * @return
+     */
+    public static boolean perFlag(Context context) {
+        String[] prs = initPermission();
+        for (int i = 0; i < prs.length; i++) {
+            //Manifest.permission.READ_CONTACTS,android.permission.READ_CONTACTS
+            if (ContextCompat.checkSelfPermission(context, prs[i]) != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static String[] initPermission(){
+        String [] pers = new String[7];
+        pers[0] = Manifest.permission.CAMERA;
+        pers[1] = Manifest.permission.INTERNET;
+        pers[2] = Manifest.permission.READ_CONTACTS;
+        pers[3] = Manifest.permission.READ_CALL_LOG;
+        pers[4] = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        pers[5] = Manifest.permission.RECORD_AUDIO;
+        pers[6] = Manifest.permission.SEND_SMS;
+
+        return pers;
     }
 
 }

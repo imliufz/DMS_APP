@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yonyou.jcdms"
-    android:versionCode="65"
-    android:versionName="5.28" >
+    android:versionCode="68"
+    android:versionName="5.31" >
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="18"
         android:targetSdkVersion="26" />
 
     <supports-screens
@@ -53,6 +53,9 @@
     -->
     <!-- Push(推送)-MKeyPush  end -->
 
+
+    <!-- 设置华为角标的显示 -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
 
     <!-- 小米推送 -->
     <!--
@@ -184,9 +187,8 @@
 
     <meta-data
         android:name="android.support.VERSION"
-        android:value="26.0.0-alpha1" />
-
-    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+        android:value="26.0.0-alpha1" /> <!-- accs permissions end -->
+    <!-- CPushServiceListener.java 调用moveTaskToFront 需要REORDER_TASKS权限 -->
     <uses-permission android:name="android.permission.REORDER_TASKS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- 小米通道相关权限 -->
     <permission
@@ -609,6 +611,21 @@
             android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
             android:screenOrientation="sensor"
             android:theme="@style/DCloudTheme" />
+        <activity
+            android:name="com.yy.activity.SDKWebViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
+            android:screenOrientation="sensor"
+            android:theme="@style/DCloudTheme" />
+        <activity
+            android:name="com.yy.activity.First"
+            android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
+            android:screenOrientation="sensor"
+            android:theme="@style/DCloudTheme" />
+        <activity
+            android:name="com.yy.activity.YxbWebAppActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
+            android:screenOrientation="sensor"
+            android:theme="@style/DCloudTheme" />
 
         <receiver
             android:name="io.dcloud.feature.jpush.JPushReceiver"
@@ -640,10 +657,10 @@
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="xxxxxxxxxxxxxxxxxxx" /> <!-- 请填写您自己的vivo平台上的appKey -->
+            android:value="89267829-9fb2-424e-8e65-da7a50949e82" /> <!-- 请填写您自己的vivo平台上的appKey -->
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="xxxx" /> <!-- 请填写您自己的vivo平台上的appId -->
+            android:value="17732" /> <!-- 请填写您自己的vivo平台上的appId -->
 
 
         <!-- 消息接收监听器 -->

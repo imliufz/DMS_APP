@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-610:12
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-650:12
 	package
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:4:5-31
 		INJECTED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml
@@ -42,8 +42,7 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:17:5-81
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:16:5-81
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:21:5-81
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:16:5-81
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:26:5-81
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:16:5-81
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:15:5-81
 	android:name
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:17:22-78
@@ -60,7 +59,6 @@ MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\inte
 uses-permission#android.permission.VIBRATE
 ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:22:5-66
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:24:5-66
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:23:5-66
 	android:name
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:22:22-63
 uses-permission#android.permission.FLASHLIGHT
@@ -74,7 +72,7 @@ MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\inte
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:34:5-67
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:18:5-67
 MERGED from [com.growingio.android:vds-android-agent:autotrack-2.6.6] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.growingio.android\vds-android-agent\autotrack-2.6.6\AndroidManifest.xml:4:5-66
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:13:5-67
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:13:5-67
 MERGED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:12:5-67
 MERGED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:26:5-67
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:11:5-67
@@ -93,7 +91,6 @@ MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\in
 uses-permission#android.permission.WRITE_SETTINGS
 ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:33:5-73
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:23:5-73
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:12:5-73
 	android:name
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:33:22-70
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -102,7 +99,7 @@ MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\inte
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:27:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:26:5-79
 MERGED from [com.growingio.android:vds-android-agent:autotrack-2.6.6] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.growingio.android\vds-android-agent\autotrack-2.6.6\AndroidManifest.xml:5:5-78
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:14:5-79
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:14:5-79
 MERGED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:11:5-79
 MERGED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:25:5-79
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:13:5-79
@@ -113,86 +110,89 @@ ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:35:5-75
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:35:5-75
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:20:5-75
 MERGED from [com.growingio.android:vds-android-agent:autotrack-2.6.6] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.growingio.android\vds-android-agent\autotrack-2.6.6\AndroidManifest.xml:7:5-75
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:18:5-75
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:18:5-75
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:12:5-75
 	android:name
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:35:22-72
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
 ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:36:5-84
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:25:5-84
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:27:5-84
 	android:name
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:36:22-81
 uses-permission#android.permission.READ_LOGS
 ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:37:5-68
 	android:name
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:37:22-65
+uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:52:5-91
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:52:22-88
 uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:73:5-68
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:76:5-68
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:19:5-68
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:17:5-68
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:17:5-68
 MERGED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:13:5-68
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:73:22-65
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:76:22-65
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:74:5-81
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:22:5-81
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:77:5-81
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:20:5-81
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:74:22-78
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:77:22-78
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:77:5-76
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:80:5-76
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:22:5-76
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:27:5-76
 MERGED from [com.growingio.android:vds-android-agent:autotrack-2.6.6] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.growingio.android\vds-android-agent\autotrack-2.6.6\AndroidManifest.xml:6:5-75
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:15:5-76
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:15:5-76
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:16:5-76
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:77:22-73
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:80:22-73
 uses-permission#android.permission.CALL_PHONE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:78:5-69
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:81:5-69
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:78:22-66
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:81:22-66
 uses-permission#getui.permission.GetuiService.com.HBuilder.integrate
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:79:5-92
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:82:5-92
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:79:22-89
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:82:22-89
 permission#getui.permission.GetuiService.com.HBuilder.integrate
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:81:5-83:44
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:84:5-86:44
 	android:protectionLevel
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:83:9-41
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:86:9-41
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:82:9-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:85:9-76
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:89:5-76
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:92:5-76
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:32:5-76
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:89:22-73
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:92:22-73
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:100:5-80
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:103:5-80
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:100:22-77
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:103:22-77
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:108:5-71
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:111:5-71
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:31:5-71
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:108:22-68
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:111:22-68
 uses-permission#android.permission.CHANGE_NETWORK_STATE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:111:5-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:114:5-79
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:20:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:35:5-79
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:111:22-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:114:22-76
 uses-permission#android.permission.RECEIVE_USER_PRESENT
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:120:5-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:123:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:17:5-79
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:120:22-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:123:22-76
 uses-permission#com.xiaomi.permission.AUTH_SERVICE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:125:5-74
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:128:5-74
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:125:22-71
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:128:22-71
 application
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:128:5-608:19
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:131:5-648:19
 MERGED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:77:5-221:19
 MERGED from [cn.jiguang.sdk:jcore:1.2.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jcore\1.2.3\AndroidManifest.xml:11:5-12:19
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:37:5-131:19
@@ -205,511 +205,541 @@ MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] D:\AndroidProjec
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\26.0.0-alpha1\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\26.0.0-alpha1\AndroidManifest.xml:26:5-20
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:29:5-175:19
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:29:5-175:19
 MERGED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:49:5-251:19
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:18:5-32:19
 MERGED from [com.aliyun.ams:huawei-push-base:2.6.3.305] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\huawei-push-base\2.6.3.305\AndroidManifest.xml:9:5-21:19
 MERGED from [com.blankj:utilcode:1.13.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.blankj\utilcode\1.13.5\AndroidManifest.xml:9:5-16:19
 	android:label
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:133:9-41
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:136:9-41
 	android:supportsRtl
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:135:9-35
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:138:9-35
 	android:allowClearUserData
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:131:9-42
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:134:9-42
 	android:allowBackup
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:130:9-35
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:133:9-35
 	android:icon
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:132:9-38
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:135:9-38
 	android:largeHeap
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:134:9-33
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:137:9-33
 	tools:replace
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:136:9-37
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:139:9-37
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:129:9-49
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:132:9-49
 		REJECTED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:78:9-63
 meta-data#UMENG_APPKEY
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:142:9-144:46
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:145:9-147:46
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:144:13-43
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:147:13-43
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:143:13-40
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:146:13-40
 meta-data#UMENG_CHANNEL
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:145:9-147:42
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:148:9-150:42
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:147:13-39
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:150:13-39
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:146:13-41
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:149:13-41
 meta-data#IFLY_APPKEY
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:204:9-206:40
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:209:9-211:40
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:206:13-37
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:211:13-37
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:205:13-39
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:210:13-39
 meta-data#PUSH_APPID
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:216:9-218:54
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:221:9-223:54
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:218:13-51
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:223:13-51
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:217:13-38
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:222:13-38
 meta-data#PUSH_APPKEY
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:219:9-221:54
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:224:9-226:54
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:221:13-51
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:226:13-51
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:220:13-39
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:225:13-39
 meta-data#PUSH_APPSECRET
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:222:9-224:54
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:227:9-229:54
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:224:13-51
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:229:13-51
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:223:13-42
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:228:13-42
 service#com.igexin.sdk.PushService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:226:9-234:19
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:231:9-239:19
 	android:process
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:230:13-43
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:235:13-43
 	android:label
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:229:13-47
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:234:13-47
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:228:13-36
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:233:13-36
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:227:13-54
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:232:13-54
 intent-filter#com.igexin.sdk.action.service.message
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:231:13-233:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:236:13-238:29
 action#com.igexin.sdk.action.service.message
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:232:17-80
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:237:17-80
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:232:25-77
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:237:25-77
 receiver#com.igexin.sdk.PushReceiver
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:236:9-246:20
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:241:9-251:20
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:236:19-61
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:241:19-61
 intent-filter#android.intent.action.ACTION_POWER_CONNECTED+android.intent.action.ACTION_POWER_DISCONNECTED+android.intent.action.BOOT_COMPLETED+android.intent.action.MEDIA_MOUNTED+android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE+com.igexin.sdk.action.refreshls
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:237:13-245:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:242:13-250:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:238:17-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:243:17-79
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:238:25-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:243:25-76
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:239:17-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:244:17-79
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:239:25-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:244:25-76
 action#android.intent.action.USER_PRESENT
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:240:17-77
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:245:17-77
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:240:25-74
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:245:25-74
 action#com.igexin.sdk.action.refreshls
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:241:17-74
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:246:17-74
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:241:25-71
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:246:25-71
 action#android.intent.action.MEDIA_MOUNTED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:242:17-78
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:247:17-78
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:242:25-75
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:247:25-75
 action#android.intent.action.ACTION_POWER_CONNECTED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:243:17-87
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:248:17-87
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:243:25-84
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:248:25-84
 action#android.intent.action.ACTION_POWER_DISCONNECTED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:244:17-90
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:249:17-90
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:244:25-87
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:249:25-87
 activity#com.igexin.sdk.PushActivity
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:248:9-254:75
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:253:9-259:75
 	android:process
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:252:13-43
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:257:13-43
 	android:excludeFromRecents
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:250:13-46
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:255:13-46
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:251:13-37
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:256:13-37
 	android:theme
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:254:13-72
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:259:13-72
 	android:taskAffinity
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:253:13-67
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:258:13-67
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:249:13-55
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:254:13-55
 activity#com.igexin.sdk.GActivity
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:255:9-261:75
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:260:9-266:75
 	android:process
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:259:13-43
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:264:13-43
 	android:excludeFromRecents
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:257:13-46
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:262:13-46
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:258:13-36
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:263:13-36
 	android:theme
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:261:13-72
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:266:13-72
 	android:taskAffinity
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:260:13-67
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:265:13-67
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:256:13-52
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:261:13-52
 receiver#io.dcloud.feature.apsGt.GTNotificationReceiver
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:263:9-271:20
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:268:9-276:20
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:263:19-80
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:268:19-80
 intent-filter#android.intent.action.BOOT_COMPLETED+com.HBuilder.integrate.__CLEAR_NOTIFICATION+com.HBuilder.integrate.__CLILK_NOTIFICATION+com.HBuilder.integrate.__CREATE_NOTIFICATION+com.HBuilder.integrate.__REMOVE_NOTIFICATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:264:13-270:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:269:13-275:29
 action#com.HBuilder.integrate.__CREATE_NOTIFICATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:266:17-87
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:271:17-87
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:266:25-84
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:271:25-84
 action#com.HBuilder.integrate.__REMOVE_NOTIFICATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:267:17-87
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:272:17-87
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:267:25-84
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:272:25-84
 action#com.HBuilder.integrate.__CLEAR_NOTIFICATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:268:17-86
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:273:17-86
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:268:25-83
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:273:25-83
 action#com.HBuilder.integrate.__CLILK_NOTIFICATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:269:17-86
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:274:17-86
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:269:25-83
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:274:25-83
 service#io.dcloud.feature.apsGt.GTNormalIntentService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:273:9-81
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:278:9-81
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:273:18-78
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:278:18-78
 service#io.dcloud.feature.apsGt.GTNormalPushService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:274:9-278:46
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:279:9-283:46
 	android:process
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:278:13-43
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:283:13-43
 	android:label
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:277:13-40
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:282:13-40
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:276:13-36
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:281:13-36
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:275:13-71
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:280:13-71
 meta-data#SINA_REDIRECT_URI
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:286:9-288:53
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:291:9-293:53
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:288:13-50
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:293:13-50
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:287:13-45
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:292:13-45
 meta-data#SINA_SECRET
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:289:9-291:53
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:294:9-296:53
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:291:13-50
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:296:13-50
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:290:13-39
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:295:13-39
 meta-data#SINA_APPKEY
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:292:9-294:65
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:297:9-299:65
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:294:13-62
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:299:13-62
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:293:13-39
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:298:13-39
 activity#com.sina.weibo.sdk.web.WeiboSdkWebActivity
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:296:9-300:58
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:301:9-305:58
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:299:13-37
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:304:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:300:13-55
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:305:13-55
 	android:configChanges
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:298:13-63
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:303:13-63
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:297:13-70
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:302:13-70
 activity#com.sina.weibo.sdk.share.WbShareTransActivity
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:301:9-310:20
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:306:9-315:20
 	android:launchMode
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:303:13-44
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:308:13-44
 	android:theme
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:304:13-83
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:309:13-83
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:302:13-73
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:307:13-73
 intent-filter#android.intent.category.DEFAULT+com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:305:13-309:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:310:13-314:29
 action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:306:17-92
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:311:17-92
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:306:25-89
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:311:25-89
 category#android.intent.category.DEFAULT
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:308:17-76
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:313:17-76
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:308:27-73
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:313:27-73
 meta-data#TENCENT_REDIRECT_URI
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:316:9-318:53
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:321:9-323:53
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:318:13-50
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:323:13-50
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:317:13-48
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:322:13-48
 meta-data#TENCENT_SECRET
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:319:9-321:53
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:324:9-326:53
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:321:13-50
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:326:13-50
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:320:13-42
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:325:13-42
 meta-data#TENCENT_APPKEY
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:322:9-324:65
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:327:9-329:65
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:324:13-62
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:329:13-62
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:323:13-42
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:328:13-42
 activity#io.dcloud.share.tencent.WebAuthorize
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:326:9-328:63
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:331:9-333:63
 	android:theme
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:328:13-60
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:333:13-60
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:327:13-64
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:332:13-64
 meta-data#WX_SECRET
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:330:9-332:64
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:335:9-337:64
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:332:13-61
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:337:13-61
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:331:13-37
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:336:13-37
 meta-data#WX_APPID
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:333:9-335:50
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:338:9-340:50
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:335:13-47
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:340:13-47
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:334:13-36
-activity#com.HBuilder.integrate.wxapi.WXEntryActivity
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:337:9-349:20
-	android:label
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:340:13-45
-	android:launchMode
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:341:13-43
-	android:exported
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:339:13-36
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:338:13-72
-intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:342:13-348:29
-action#android.intent.action.VIEW
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:343:17-69
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:343:25-66
-data
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:347:17-61
-	android:scheme
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:347:23-58
-activity#com.HBuilder.integrate.wxapi.WXPayEntryActivity
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:369:9-372:46
+activity#com.HBuilder.integrate.wxapi.WXEntryActivity
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:342:9-354:20
+	android:label
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:345:13-45
 	android:launchMode
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:372:13-43
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:346:13-43
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:371:13-36
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:344:13-36
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:370:13-75
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:343:13-72
+intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:347:13-353:29
+action#android.intent.action.VIEW
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:348:17-69
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:348:25-66
+data
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:352:17-61
+	android:scheme
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:352:23-58
+activity#com.HBuilder.integrate.wxapi.WXPayEntryActivity
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:376:9-379:46
+	android:launchMode
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:379:13-43
+	android:exported
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:378:13-36
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:377:13-75
 activity#com.yy.app.AppService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:466:9-488:20
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:478:9-500:20
 	android:screenOrientation
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:470:13-49
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:482:13-49
 	android:hardwareAccelerated
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:469:13-47
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:481:13-47
 	android:windowSoftInputMode
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:472:13-55
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:484:13-55
 	android:configChanges
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:468:13-92
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:480:13-92
 	android:theme
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:471:13-52
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:483:13-52
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:467:13-49
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:479:13-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:473:13-477:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:485:13-489:29
 action#android.intent.action.MAIN
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:474:17-69
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:486:17-69
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:474:25-66
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:486:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:476:17-77
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:488:17-77
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:476:27-74
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:488:27-74
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:480:13-487:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:492:13-499:29
 category#android.intent.category.BROWSABLE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:486:17-78
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:498:17-78
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:486:27-75
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:498:27-75
 meta-data#DCLOUD_STREAMAPP_CHANNEL
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:495:9-497:62
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:507:9-509:62
 	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:497:13-59
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:509:13-59
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:496:13-52
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:508:13-52
 activity#com.HBuilder.integrate.SDK_WebView
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:507:9-511:50
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:522:9-526:50
 	android:screenOrientation
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:510:13-47
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:525:13-47
 	android:configChanges
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:509:13-112
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:524:13-112
 	android:theme
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:511:13-47
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:526:13-47
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:508:13-62
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:523:13-62
+activity#com.yy.activity.SDKWebViewActivity
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:528:9-532:50
+	android:screenOrientation
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:531:13-47
+	android:configChanges
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:530:13-112
+	android:theme
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:532:13-47
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:529:13-62
+activity#com.yy.activity.First
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:534:9-538:50
+	android:screenOrientation
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:537:13-47
+	android:configChanges
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:536:13-112
+	android:theme
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:538:13-47
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:535:13-49
+activity#com.yy.activity.YxbWebAppActivity
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:540:9-544:50
+	android:screenOrientation
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:543:13-47
+	android:configChanges
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:542:13-112
+	android:theme
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:544:13-47
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:541:13-61
 receiver#io.dcloud.feature.jpush.JPushReceiver
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:513:9-527:20
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:546:9-560:20
 	android:enabled
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:515:13-35
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:548:13-35
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:516:13-37
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:549:13-37
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:514:13-65
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:547:13-65
 intent-filter#${JPUSH_PKGNAME}+cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK+cn.jpush.android.intent.CONNECTION+cn.jpush.android.intent.MESSAGE_RECEIVED+cn.jpush.android.intent.NOTIFICATION_OPENED+cn.jpush.android.intent.NOTIFICATION_RECEIVED+cn.jpush.android.intent.REGISTRATION+cn.jpush.android.intent.UNREGISTRATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:517:13-526:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:550:13-559:29
 action#cn.jpush.android.intent.REGISTRATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:518:17-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:551:17-79
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:518:25-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:551:25-76
 action#cn.jpush.android.intent.UNREGISTRATION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:519:17-81
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:552:17-81
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:519:25-78
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:552:25-78
 action#cn.jpush.android.intent.MESSAGE_RECEIVED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:520:17-83
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:553:17-83
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:520:25-80
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:553:25-80
 action#cn.jpush.android.intent.NOTIFICATION_RECEIVED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:521:17-88
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:521:25-85
-action#cn.jpush.android.intent.NOTIFICATION_OPENED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:522:17-86
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:522:25-83
-action#cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:523:17-91
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:523:25-88
-action#cn.jpush.android.intent.CONNECTION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:524:17-77
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:524:25-74
-category#${JPUSH_PKGNAME}
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:525:17-61
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:525:27-58
-		INJECTED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml
-meta-data#com.alibaba.app.appkey
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:530:9-532:40
-	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:532:13-37
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:531:13-50
-meta-data#com.alibaba.app.appsecret
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:533:9-535:64
-	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:535:13-61
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:534:13-53
-meta-data#com.huawei.hms.client.appid
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:537:9-539:47
-	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:539:13-44
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:538:13-55
-meta-data#com.vivo.push.api_key
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:541:9-543:51
-	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:543:13-48
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:542:13-49
-meta-data#com.vivo.push.app_id
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:544:9-546:36
-	android:value
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:546:13-33
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:545:13-48
-receiver#io.dcloud.feature.jpush.AlibabaReceiver
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:549:9-578:20
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:549:19-73
-intent-filter#com.alibaba.push2.action.NOTIFICATION_OPENED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:550:13-552:29
-action#com.alibaba.push2.action.NOTIFICATION_OPENED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:551:17-86
-	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:551:25-84
-intent-filter#com.alibaba.push2.action.NOTIFICATION_REMOVED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:553:13-555:29
-action#com.alibaba.push2.action.NOTIFICATION_REMOVED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:554:17-87
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:554:17-88
 	android:name
 		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:554:25-85
+action#cn.jpush.android.intent.NOTIFICATION_OPENED
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:555:17-86
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:555:25-83
+action#cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:556:17-91
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:556:25-88
+action#cn.jpush.android.intent.CONNECTION
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:557:17-77
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:557:25-74
+category#${JPUSH_PKGNAME}
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:558:17-61
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:558:27-58
+		INJECTED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml
+meta-data#com.alibaba.app.appkey
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:563:9-565:40
+	android:value
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:565:13-37
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:564:13-50
+meta-data#com.alibaba.app.appsecret
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:566:9-568:64
+	android:value
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:568:13-61
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:567:13-53
+meta-data#com.huawei.hms.client.appid
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:570:9-572:47
+	android:value
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:572:13-44
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:571:13-55
+meta-data#com.vivo.push.api_key
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:574:9-576:68
+	android:value
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:576:13-65
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:575:13-49
+meta-data#com.vivo.push.app_id
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:577:9-579:37
+	android:value
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:579:13-34
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:578:13-48
+receiver#io.dcloud.feature.jpush.AlibabaReceiver
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:583:9-613:20
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:583:19-73
+intent-filter#com.alibaba.push2.action.NOTIFICATION_OPENED
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:584:13-586:29
+action#com.alibaba.push2.action.NOTIFICATION_OPENED
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:585:17-87
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:585:25-84
+intent-filter#com.alibaba.push2.action.NOTIFICATION_REMOVED
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:587:13-589:29
+action#com.alibaba.push2.action.NOTIFICATION_REMOVED
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:588:17-88
+	android:name
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:588:25-85
 intent-filter#com.taobao.accs.intent.action.COMMAND
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:556:13-558:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:590:13-592:29
 action#com.taobao.accs.intent.action.COMMAND
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:557:17-80
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:591:17-80
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:557:25-77
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:591:25-77
 intent-filter#com.taobao.taobao.intent.action.COMMAND
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:559:13-561:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:593:13-595:29
 action#com.taobao.taobao.intent.action.COMMAND
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:560:17-82
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:594:17-82
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:560:25-79
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:594:25-79
 intent-filter#com.alibaba.sdk.android.push.RECEIVE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:562:13-564:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:596:13-598:29
 action#com.alibaba.sdk.android.push.RECEIVE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:563:17-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:597:17-79
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:563:25-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:597:25-76
 intent-filter#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:565:13-567:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:599:13-601:29
 intent-filter#android.intent.action.USER_PRESENT
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:568:13-570:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:602:13-604:29
 intent-filter#android.intent.action.BOOT_COMPLETED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:571:13-573:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:605:13-607:29
 intent-filter#android.intent.action.PACKAGE_REMOVED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:574:13-577:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:608:13-612:29
 action#android.intent.action.PACKAGE_REMOVED
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:575:17-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:609:17-80
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:575:25-77
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:609:25-77
 service#com.alibaba.sdk.android.push.ChannelService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:581:9-590:19
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:616:9-628:19
 	android:process
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:582:37-63
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:619:13-39
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:582:13-36
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:618:13-36
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:581:18-76
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:617:13-71
 intent-filter#com.taobao.accs.intent.action.SERVICE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:583:13-585:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:620:13-622:29
 action#com.taobao.accs.intent.action.SERVICE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:584:17-79
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:621:17-80
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:584:25-77
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:621:25-77
 intent-filter#org.agoo.android.intent.action.PING_V4+taobao
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:586:13-589:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:623:13-627:29
 action#org.agoo.android.intent.action.PING_V4
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:587:17-81
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:624:17-81
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:587:25-78
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:624:25-78
 category#taobao
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:588:17-51
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:626:17-51
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:588:27-48
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:626:27-48
 service#com.alibaba.sdk.android.push.MsgService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:592:9-600:19
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:33:9-43:19
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:630:9-639:19
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:33:9-43:19
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:593:13-37
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:632:13-37
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:592:18-72
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:631:13-67
 intent-filter#com.taobao.accs.intent.action.RECEIVE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:594:13-596:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:633:13-635:29
 action#com.taobao.accs.intent.action.RECEIVE
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:595:17-80
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:634:17-80
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:595:25-77
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:634:25-77
 intent-filter#com.alibaba.sdk.android.push.NOTIFY_ACTION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:597:13-599:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:636:13-638:29
 action#com.alibaba.sdk.android.push.NOTIFY_ACTION
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:598:17-85
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:637:17-85
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:598:25-82
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:637:25-82
 service#com.alibaba.sdk.android.push.channel.TaobaoRecvService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:602:9-606:19
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:137:9-144:19
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:641:9-647:19
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:137:9-144:19
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:140:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:140:13-39
 	android:exported
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:602:88-111
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:643:13-36
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:602:18-87
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:642:13-82
 intent-filter#org.android.agoo.client.MessageReceiverService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:603:13-605:29
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:644:13-646:29
 action#org.android.agoo.client.MessageReceiverService
-ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:604:17-88
+ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:645:17-89
 	android:name
-		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:604:25-86
+		ADDED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:645:25-86
 uses-sdk
 INJECTED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
@@ -725,7 +755,7 @@ MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] D:\AndroidProjec
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\26.0.0-alpha1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\26.0.0-alpha1\AndroidManifest.xml:20:5-44
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:7:5-9:41
 MERGED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:7:5-9:41
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:7:5-9:41
 MERGED from [com.aliyun.ams:huawei-push:2.6.3.305] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\huawei-push\2.6.3.305\AndroidManifest.xml:5:5-7:41
@@ -741,7 +771,7 @@ MERGED from [com.blankj:utilcode:1.13.5] D:\AndroidProjects\DMS_APP\app\build\in
 		INJECTED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.GET_TASKS
 ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:19:5-68
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:20:5-68
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:19:5-68
 	android:name
 		ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:19:22-65
 uses-permission#android.permission.READ_CONTACTS
@@ -758,7 +788,6 @@ ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\inter
 		ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:28:22-87
 uses-permission#android.permission.GET_ACCOUNTS
 ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:30:5-71
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:21:5-71
 	android:name
 		ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:30:22-68
 uses-permission#com.android.launcher.permission.INSTALL_SHORTCUT
@@ -1104,14 +1133,14 @@ ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\inter
 	android:name
 		ADDED from [:lib.5plus.base-release:] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\lib.5plus.base-release\AndroidManifest.xml:219:13-46
 android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-610:12 reason: io.dcloud requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-650:12 reason: io.dcloud requested WRITE_EXTERNAL_STORAGE
 MERGED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:22:5-80
-MERGED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:25:5-80
+MERGED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:27:5-80
 MERGED from [com.aliyun.ams:meizu-push:3.8.3-fix] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\meizu-push\3.8.3-fix\AndroidManifest.xml:14:5-80
 android:uses-permission#android.permission.READ_CALL_LOG
-IMPLIED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-610:12 reason: io.dcloud has targetSdkVersion < 16 and requested READ_CONTACTS
+IMPLIED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-650:12 reason: io.dcloud has targetSdkVersion < 16 and requested READ_CONTACTS
 android:uses-permission#android.permission.WRITE_CALL_LOG
-IMPLIED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-610:12 reason: io.dcloud has targetSdkVersion < 16 and requested WRITE_CONTACTS
+IMPLIED from D:\AndroidProjects\DMS_APP\app\src\main\AndroidManifest.xml:2:1-650:12 reason: io.dcloud has targetSdkVersion < 16 and requested WRITE_CONTACTS
 permission#${JPUSH_PKGNAME}.permission.JPUSH_MESSAGE
 ADDED from [cn.jiguang.sdk:jpush:3.1.5] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\cn.jiguang.sdk\jpush\3.1.5\AndroidManifest.xml:11:5-13:47
 	android:protectionLevel
@@ -1264,122 +1293,118 @@ MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] D:\Andr
 		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\26.0.0-alpha1\AndroidManifest.xml:27:9-38
 	android:name
 		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\26.0.0-alpha1\AndroidManifest.xml:26:9-47
-uses-permission#android.permission.RESTART_PACKAGES
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:19:5-75
-	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:19:22-72
 uses-permission#android.permission.REORDER_TASKS
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:24:5-72
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:23:5-72
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:24:22-69
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:23:22-69
 service#com.alibaba.sdk.android.push.channel.CheckService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:44:9-50:19
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:44:9-50:19
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:46:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:46:13-39
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:45:13-77
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:45:13-77
 intent-filter#com.alibaba.sdk.android.push.CHECK_SERVICE
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:47:13-49:29
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:47:13-49:29
 action#com.alibaba.sdk.android.push.CHECK_SERVICE
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:48:17-85
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:48:17-85
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:48:25-82
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:48:25-82
 service#com.taobao.accs.ChannelService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:53:9-60:19
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:53:9-60:19
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:56:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:56:13-39
 	android:exported
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:55:13-36
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:55:13-36
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:54:13-58
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:54:13-58
 service#com.taobao.accs.ChannelService$KernelService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:61:9-65:19
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:61:9-65:19
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:64:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:64:13-39
 	android:exported
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:63:13-37
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:63:13-37
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:62:13-72
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:62:13-72
 service#com.taobao.accs.data.MsgDistributeService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:66:9-72:19
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:66:9-72:19
 	android:exported
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:68:13-36
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:68:13-36
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:67:13-69
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:67:13-69
 receiver#com.taobao.accs.EventReceiver
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:74:9-91:20
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:74:9-91:20
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:76:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:76:13-39
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:75:13-57
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:75:13-57
 receiver#com.taobao.accs.ServiceReceiver
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:92:9-101:20
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:92:9-101:20
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:94:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:94:13-39
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:93:13-59
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:93:13-59
 intent-filter#com.taobao.accs.intent.action.START_FROM_AGOO
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:98:13-100:29
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:98:13-100:29
 action#com.taobao.accs.intent.action.START_FROM_AGOO
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:99:17-88
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:99:17-88
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:99:25-85
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:99:25-85
 service#org.android.agoo.accs.AgooService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:106:9-112:19
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:106:9-112:19
 	android:exported
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:108:13-36
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:108:13-36
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:107:13-61
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:107:13-61
 service#com.alibaba.sdk.android.push.AliyunPushIntentService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:113:9-119:19
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:113:9-119:19
 	android:exported
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:115:13-36
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:115:13-36
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:114:13-80
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:114:13-80
 intent-filter#org.agoo.android.intent.action.RECEIVE
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:116:13-118:29
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:116:13-118:29
 action#org.agoo.android.intent.action.RECEIVE
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:117:17-81
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:117:17-81
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:117:25-78
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:117:25-78
 receiver#com.taobao.agoo.AgooCommondReceiver
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:122:9-134:20
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:122:9-134:20
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:125:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:125:13-39
 	android:exported
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:124:13-36
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:124:13-36
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:123:13-63
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:123:13-63
 intent-filter#${applicationId}.intent.action.COMMAND
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:126:13-128:29
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:126:13-128:29
 action#${applicationId}.intent.action.COMMAND
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:127:17-81
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:127:17-81
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:127:25-78
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:127:25-78
 service#com.taobao.accs.internal.AccsJobService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:145:9-148:42
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:145:9-148:42
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:148:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:148:13-39
 	android:permission
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:147:13-69
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:147:13-69
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:146:13-67
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:146:13-67
 service#com.alibaba.sdk.android.push.channel.KeepChannelService
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:149:9-152:42
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:149:9-152:42
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:152:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:152:13-39
 	android:permission
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:151:13-69
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:151:13-69
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:150:13-83
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:150:13-83
 receiver#com.alibaba.sdk.android.push.SystemEventReceiver
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:154:9-162:20
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:154:9-162:20
 	android:process
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:156:13-39
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:156:13-39
 	android:name
-		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:155:13-76
+		ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:155:13-76
 intent-filter#android.intent.action.ACTION_POWER_CONNECTED+android.intent.action.ACTION_POWER_DISCONNECTED+android.intent.action.MEDIA_MOUNTED
-ADDED from [com.aliyun.ams:alicloud-android-push:3.1.3] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.3\AndroidManifest.xml:157:13-161:29
+ADDED from [com.aliyun.ams:alicloud-android-push:3.1.7] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-push\3.1.7\AndroidManifest.xml:157:13-161:29
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.aliyun.ams:alicloud-android-third-push:3.0.9] D:\AndroidProjects\DMS_APP\app\build\intermediates\exploded-aar\com.aliyun.ams\alicloud-android-third-push\3.0.9\AndroidManifest.xml:14:5-82
 	android:name

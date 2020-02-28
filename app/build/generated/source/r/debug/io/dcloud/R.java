@@ -47,9 +47,9 @@ public final class R {
 		public static final int ime_background = 0x7f090023;
 	}
 	public static final class dimen {
-		public static final int dcloud_wel_base_content_space = 0x7f06004e;
-		public static final int dcloud_wel_base_content_space_2 = 0x7f06004f;
-		public static final int dcloud_wel_base_content_text_min_size = 0x7f060050;
+		public static final int dcloud_wel_base_content_space = 0x7f060050;
+		public static final int dcloud_wel_base_content_space_2 = 0x7f060051;
+		public static final int dcloud_wel_base_content_text_min_size = 0x7f060052;
 	}
 	public static final class drawable {
 		public static final int ad_dcloud_main_skip_bg = 0x7f020053;

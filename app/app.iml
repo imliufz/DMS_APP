@@ -117,7 +117,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/multi-dex" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/restart-dex" />
@@ -176,7 +175,7 @@
     <orderEntry type="library" exported="" name="alicloud-android-push-3.1.7" level="project" />
     <orderEntry type="library" exported="" name="tx_wx" level="project" />
     <orderEntry type="library" exported="" name="huawei-push-base-2.6.3.305" level="project" />
-    <orderEntry type="library" exported="" name="alicloud-android-ut-5.4.1" level="project" />
+    <orderEntry type="library" exported="" name="alicloud-android-ut-5.4.3" level="project" />
     <orderEntry type="library" exported="" name="ormlite-core-4.48" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="speech" level="project" />
